@@ -58,7 +58,7 @@ SHELF_DIR = REPO_ROOT / "data/pd_shelf"
 RAW_CACHE = REPO_ROOT / "data/tmp/pd_shelf_gutenberg_raw"
 GUTENBERG_TXT_URL = "https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt"
 
-USER_AGENT = "WritingAnalysis-pd-shelf-builder/1.0 (research replication corpus)"
+USER_AGENT = "author-manifold-pd-shelf-builder/1.0 (research replication corpus)"
 
 
 @dataclass(frozen=True)
