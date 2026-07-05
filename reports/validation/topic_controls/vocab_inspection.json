@@ -1,0 +1,1261 @@
+{
+ "meta": {
+  "artifact": "data/artifacts/author_space_v1_wave2.json",
+  "function_word_list": "mnemosyne.core.author_space.STYLOMETRIC_FUNCTION_WORDS (376 closed-class entries)"
+ },
+ "n_vocab": 300,
+ "n_closed_class": 160,
+ "n_content_bearing": 140,
+ "content_fraction": 0.4666666666666667,
+ "buckets": {
+  "proper_names_titles": {
+   "n": 2,
+   "words": [
+    {
+     "word": "tengo",
+     "rank": 294
+    },
+    {
+     "word": "mr",
+     "rank": 186
+    }
+   ]
+  },
+  "person_kinship_nouns": {
+   "n": 9,
+   "words": [
+    {
+     "word": "man",
+     "rank": 79
+    },
+    {
+     "word": "men",
+     "rank": 195
+    },
+    {
+     "word": "people",
+     "rank": 102
+    },
+    {
+     "word": "woman",
+     "rank": 179
+    },
+    {
+     "word": "girl",
+     "rank": 230
+    },
+    {
+     "word": "boy",
+     "rank": 249
+    },
+    {
+     "word": "children",
+     "rank": 295
+    },
+    {
+     "word": "mother",
+     "rank": 200
+    },
+    {
+     "word": "father",
+     "rank": 174
+    }
+   ]
+  },
+  "body_voice_nouns": {
+   "n": 8,
+   "words": [
+    {
+     "word": "eyes",
+     "rank": 130
+    },
+    {
+     "word": "head",
+     "rank": 134
+    },
+    {
+     "word": "face",
+     "rank": 139
+    },
+    {
+     "word": "hand",
+     "rank": 147
+    },
+    {
+     "word": "hands",
+     "rank": 205
+    },
+    {
+     "word": "hair",
+     "rank": 245
+    },
+    {
+     "word": "body",
+     "rank": 256
+    },
+    {
+     "word": "voice",
+     "rank": 279
+    }
+   ]
+  },
+  "concrete_place_object_nouns": {
+   "n": 17,
+   "words": [
+    {
+     "word": "room",
+     "rank": 125
+    },
+    {
+     "word": "house",
+     "rank": 153
+    },
+    {
+     "word": "door",
+     "rank": 164
+    },
+    {
+     "word": "window",
+     "rank": 278
+    },
+    {
+     "word": "table",
+     "rank": 248
+    },
+    {
+     "word": "bed",
+     "rank": 262
+    },
+    {
+     "word": "street",
+     "rank": 276
+    },
+    {
+     "word": "car",
+     "rank": 298
+    },
+    {
+     "word": "water",
+     "rank": 207
+    },
+    {
+     "word": "floor",
+     "rank": 292
+    },
+    {
+     "word": "home",
+     "rank": 218
+    },
+    {
+     "word": "side",
+     "rank": 223
+    },
+    {
+     "word": "front",
+     "rank": 270
+    },
+    {
+     "word": "light",
+     "rank": 173
+    },
+    {
+     "word": "air",
+     "rank": 260
+    },
+    {
+     "word": "world",
+     "rank": 160
+    },
+    {
+     "word": "place",
+     "rank": 162
+    }
+   ]
+  },
+  "time_life_nouns": {
+   "n": 9,
+   "words": [
+    {
+     "word": "time",
+     "rank": 61
+    },
+    {
+     "word": "day",
+     "rank": 122
+    },
+    {
+     "word": "days",
+     "rank": 214
+    },
+    {
+     "word": "night",
+     "rank": 148
+    },
+    {
+     "word": "morning",
+     "rank": 251
+    },
+    {
+     "word": "years",
+     "rank": 165
+    },
+    {
+     "word": "year",
+     "rank": 299
+    },
+    {
+     "word": "moment",
+     "rank": 264
+    },
+    {
+     "word": "life",
+     "rank": 159
+    }
+   ]
+  },
+  "abstract_misc_nouns": {
+   "n": 12,
+   "words": [
+    {
+     "word": "way",
+     "rank": 80
+    },
+    {
+     "word": "things",
+     "rank": 138
+    },
+    {
+     "word": "thing",
+     "rank": 149
+    },
+    {
+     "word": "name",
+     "rank": 221
+    },
+    {
+     "word": "mind",
+     "rank": 229
+    },
+    {
+     "word": "end",
+     "rank": 231
+    },
+    {
+     "word": "point",
+     "rank": 265
+    },
+    {
+     "word": "part",
+     "rank": 289
+    },
+    {
+     "word": "kind",
+     "rank": 189
+    },
+    {
+     "word": "course",
+     "rank": 236
+    },
+    {
+     "word": "work",
+     "rank": 198
+    },
+    {
+     "word": "love",
+     "rank": 281
+    }
+   ]
+  },
+  "lexical_verbs": {
+   "n": 55,
+   "words": [
+    {
+     "word": "said",
+     "rank": 28
+    },
+    {
+     "word": "say",
+     "rank": 107
+    },
+    {
+     "word": "says",
+     "rank": 194
+    },
+    {
+     "word": "tell",
+     "rank": 161
+    },
+    {
+     "word": "told",
+     "rank": 182
+    },
+    {
+     "word": "asked",
+     "rank": 213
+    },
+    {
+     "word": "talk",
+     "rank": 273
+    },
+    {
+     "word": "called",
+     "rank": 242
+    },
+    {
+     "word": "know",
+     "rank": 69
+    },
+    {
+     "word": "knew",
+     "rank": 167
+    },
+    {
+     "word": "see",
+     "rank": 81
+    },
+    {
+     "word": "saw",
+     "rank": 172
+    },
+    {
+     "word": "looked",
+     "rank": 111
+    },
+    {
+     "word": "look",
+     "rank": 131
+    },
+    {
+     "word": "looking",
+     "rank": 175
+    },
+    {
+     "word": "seemed",
+     "rank": 196
+    },
+    {
+     "word": "seen",
+     "rank": 252
+    },
+    {
+     "word": "thought",
+     "rank": 121
+    },
+    {
+     "word": "think",
+     "rank": 104
+    },
+    {
+     "word": "felt",
+     "rank": 211
+    },
+    {
+     "word": "feel",
+     "rank": 239
+    },
+    {
+     "word": "heard",
+     "rank": 244
+    },
+    {
+     "word": "hear",
+     "rank": 267
+    },
+    {
+     "word": "remember",
+     "rank": 296
+    },
+    {
+     "word": "found",
+     "rank": 219
+    },
+    {
+     "word": "find",
+     "rank": 222
+    },
+    {
+     "word": "mean",
+     "rank": 275
+    },
+    {
+     "word": "wanted",
+     "rank": 234
+    },
+    {
+     "word": "want",
+     "rank": 137
+    },
+    {
+     "word": "go",
+     "rank": 92
+    },
+    {
+     "word": "going",
+     "rank": 135
+    },
+    {
+     "word": "gone",
+     "rank": 266
+    },
+    {
+     "word": "went",
+     "rank": 114
+    },
+    {
+     "word": "come",
+     "rank": 101
+    },
+    {
+     "word": "came",
+     "rank": 115
+    },
+    {
+     "word": "coming",
+     "rank": 291
+    },
+    {
+     "word": "get",
+     "rank": 84
+    },
+    {
+     "word": "got",
+     "rank": 98
+    },
+    {
+     "word": "take",
+     "rank": 151
+    },
+    {
+     "word": "took",
+     "rank": 141
+    },
+    {
+     "word": "put",
+     "rank": 154
+    },
+    {
+     "word": "left",
+     "rank": 155
+    },
+    {
+     "word": "make",
+     "rank": 156
+    },
+    {
+     "word": "made",
+     "rank": 126
+    },
+    {
+     "word": "give",
+     "rank": 274
+    },
+    {
+     "word": "gave",
+     "rank": 290
+    },
+    {
+     "word": "turned",
+     "rank": 187
+    },
+    {
+     "word": "sat",
+     "rank": 208
+    },
+    {
+     "word": "stood",
+     "rank": 232
+    },
+    {
+     "word": "began",
+     "rank": 246
+    },
+    {
+     "word": "keep",
+     "rank": 272
+    },
+    {
+     "word": "let",
+     "rank": 163
+    },
+    {
+     "word": "set",
+     "rank": 253
+    },
+    {
+     "word": "used",
+     "rank": 268
+    },
+    {
+     "word": "trying",
+     "rank": 297
+    }
+   ]
+  },
+  "adjectives": {
+   "n": 25,
+   "words": [
+    {
+     "word": "little",
+     "rank": 86
+    },
+    {
+     "word": "old",
+     "rank": 96
+    },
+    {
+     "word": "new",
+     "rank": 166
+    },
+    {
+     "word": "good",
+     "rank": 128
+    },
+    {
+     "word": "right",
+     "rank": 94
+    },
+    {
+     "word": "white",
+     "rank": 169
+    },
+    {
+     "word": "black",
+     "rank": 209
+    },
+    {
+     "word": "dark",
+     "rank": 216
+    },
+    {
+     "word": "small",
+     "rank": 184
+    },
+    {
+     "word": "big",
+     "rank": 240
+    },
+    {
+     "word": "long",
+     "rank": 112
+    },
+    {
+     "word": "young",
+     "rank": 259
+    },
+    {
+     "word": "great",
+     "rank": 243
+    },
+    {
+     "word": "high",
+     "rank": 277
+    },
+    {
+     "word": "open",
+     "rank": 269
+    },
+    {
+     "word": "hard",
+     "rank": 271
+    },
+    {
+     "word": "dead",
+     "rank": 288
+    },
+    {
+     "word": "sure",
+     "rank": 206
+    },
+    {
+     "word": "whole",
+     "rank": 257
+    },
+    {
+     "word": "half",
+     "rank": 255
+    },
+    {
+     "word": "better",
+     "rank": 283
+    },
+    {
+     "word": "last",
+     "rank": 180
+    },
+    {
+     "word": "first",
+     "rank": 124
+    },
+    {
+     "word": "next",
+     "rank": 212
+    },
+    {
+     "word": "later",
+     "rank": 280
+    }
+   ]
+  },
+  "numerals_interjections_borderline": {
+   "n": 3,
+   "words": [
+    {
+     "word": "two",
+     "rank": 87
+    },
+    {
+     "word": "three",
+     "rank": 185
+    },
+    {
+     "word": "yes",
+     "rank": 193
+    }
+   ]
+  }
+ },
+ "top20_most_content_bearing": [
+  {
+   "word": "tengo",
+   "rank": 294
+  },
+  {
+   "word": "mr",
+   "rank": 186
+  },
+  {
+   "word": "car",
+   "rank": 298
+  },
+  {
+   "word": "street",
+   "rank": 276
+  },
+  {
+   "word": "window",
+   "rank": 278
+  },
+  {
+   "word": "table",
+   "rank": 248
+  },
+  {
+   "word": "bed",
+   "rank": 262
+  },
+  {
+   "word": "floor",
+   "rank": 292
+  },
+  {
+   "word": "door",
+   "rank": 164
+  },
+  {
+   "word": "house",
+   "rank": 153
+  },
+  {
+   "word": "room",
+   "rank": 125
+  },
+  {
+   "word": "hair",
+   "rank": 245
+  },
+  {
+   "word": "eyes",
+   "rank": 130
+  },
+  {
+   "word": "face",
+   "rank": 139
+  },
+  {
+   "word": "head",
+   "rank": 134
+  },
+  {
+   "word": "hands",
+   "rank": 205
+  },
+  {
+   "word": "body",
+   "rank": 256
+  },
+  {
+   "word": "water",
+   "rank": 207
+  },
+  {
+   "word": "father",
+   "rank": 174
+  },
+  {
+   "word": "mother",
+   "rank": 200
+  }
+ ],
+ "content_words_with_rank": [
+  {
+   "word": "said",
+   "rank": 28
+  },
+  {
+   "word": "time",
+   "rank": 61
+  },
+  {
+   "word": "know",
+   "rank": 69
+  },
+  {
+   "word": "man",
+   "rank": 79
+  },
+  {
+   "word": "way",
+   "rank": 80
+  },
+  {
+   "word": "see",
+   "rank": 81
+  },
+  {
+   "word": "get",
+   "rank": 84
+  },
+  {
+   "word": "little",
+   "rank": 86
+  },
+  {
+   "word": "two",
+   "rank": 87
+  },
+  {
+   "word": "go",
+   "rank": 92
+  },
+  {
+   "word": "right",
+   "rank": 94
+  },
+  {
+   "word": "old",
+   "rank": 96
+  },
+  {
+   "word": "got",
+   "rank": 98
+  },
+  {
+   "word": "come",
+   "rank": 101
+  },
+  {
+   "word": "people",
+   "rank": 102
+  },
+  {
+   "word": "think",
+   "rank": 104
+  },
+  {
+   "word": "say",
+   "rank": 107
+  },
+  {
+   "word": "looked",
+   "rank": 111
+  },
+  {
+   "word": "long",
+   "rank": 112
+  },
+  {
+   "word": "went",
+   "rank": 114
+  },
+  {
+   "word": "came",
+   "rank": 115
+  },
+  {
+   "word": "thought",
+   "rank": 121
+  },
+  {
+   "word": "day",
+   "rank": 122
+  },
+  {
+   "word": "first",
+   "rank": 124
+  },
+  {
+   "word": "room",
+   "rank": 125
+  },
+  {
+   "word": "made",
+   "rank": 126
+  },
+  {
+   "word": "good",
+   "rank": 128
+  },
+  {
+   "word": "eyes",
+   "rank": 130
+  },
+  {
+   "word": "look",
+   "rank": 131
+  },
+  {
+   "word": "head",
+   "rank": 134
+  },
+  {
+   "word": "going",
+   "rank": 135
+  },
+  {
+   "word": "want",
+   "rank": 137
+  },
+  {
+   "word": "things",
+   "rank": 138
+  },
+  {
+   "word": "face",
+   "rank": 139
+  },
+  {
+   "word": "took",
+   "rank": 141
+  },
+  {
+   "word": "hand",
+   "rank": 147
+  },
+  {
+   "word": "night",
+   "rank": 148
+  },
+  {
+   "word": "thing",
+   "rank": 149
+  },
+  {
+   "word": "take",
+   "rank": 151
+  },
+  {
+   "word": "house",
+   "rank": 153
+  },
+  {
+   "word": "put",
+   "rank": 154
+  },
+  {
+   "word": "left",
+   "rank": 155
+  },
+  {
+   "word": "make",
+   "rank": 156
+  },
+  {
+   "word": "life",
+   "rank": 159
+  },
+  {
+   "word": "world",
+   "rank": 160
+  },
+  {
+   "word": "tell",
+   "rank": 161
+  },
+  {
+   "word": "place",
+   "rank": 162
+  },
+  {
+   "word": "let",
+   "rank": 163
+  },
+  {
+   "word": "door",
+   "rank": 164
+  },
+  {
+   "word": "years",
+   "rank": 165
+  },
+  {
+   "word": "new",
+   "rank": 166
+  },
+  {
+   "word": "knew",
+   "rank": 167
+  },
+  {
+   "word": "white",
+   "rank": 169
+  },
+  {
+   "word": "saw",
+   "rank": 172
+  },
+  {
+   "word": "light",
+   "rank": 173
+  },
+  {
+   "word": "father",
+   "rank": 174
+  },
+  {
+   "word": "looking",
+   "rank": 175
+  },
+  {
+   "word": "woman",
+   "rank": 179
+  },
+  {
+   "word": "last",
+   "rank": 180
+  },
+  {
+   "word": "told",
+   "rank": 182
+  },
+  {
+   "word": "small",
+   "rank": 184
+  },
+  {
+   "word": "three",
+   "rank": 185
+  },
+  {
+   "word": "mr",
+   "rank": 186
+  },
+  {
+   "word": "turned",
+   "rank": 187
+  },
+  {
+   "word": "kind",
+   "rank": 189
+  },
+  {
+   "word": "yes",
+   "rank": 193
+  },
+  {
+   "word": "says",
+   "rank": 194
+  },
+  {
+   "word": "men",
+   "rank": 195
+  },
+  {
+   "word": "seemed",
+   "rank": 196
+  },
+  {
+   "word": "work",
+   "rank": 198
+  },
+  {
+   "word": "mother",
+   "rank": 200
+  },
+  {
+   "word": "hands",
+   "rank": 205
+  },
+  {
+   "word": "sure",
+   "rank": 206
+  },
+  {
+   "word": "water",
+   "rank": 207
+  },
+  {
+   "word": "sat",
+   "rank": 208
+  },
+  {
+   "word": "black",
+   "rank": 209
+  },
+  {
+   "word": "felt",
+   "rank": 211
+  },
+  {
+   "word": "next",
+   "rank": 212
+  },
+  {
+   "word": "asked",
+   "rank": 213
+  },
+  {
+   "word": "days",
+   "rank": 214
+  },
+  {
+   "word": "dark",
+   "rank": 216
+  },
+  {
+   "word": "home",
+   "rank": 218
+  },
+  {
+   "word": "found",
+   "rank": 219
+  },
+  {
+   "word": "name",
+   "rank": 221
+  },
+  {
+   "word": "find",
+   "rank": 222
+  },
+  {
+   "word": "side",
+   "rank": 223
+  },
+  {
+   "word": "mind",
+   "rank": 229
+  },
+  {
+   "word": "girl",
+   "rank": 230
+  },
+  {
+   "word": "end",
+   "rank": 231
+  },
+  {
+   "word": "stood",
+   "rank": 232
+  },
+  {
+   "word": "wanted",
+   "rank": 234
+  },
+  {
+   "word": "course",
+   "rank": 236
+  },
+  {
+   "word": "feel",
+   "rank": 239
+  },
+  {
+   "word": "big",
+   "rank": 240
+  },
+  {
+   "word": "called",
+   "rank": 242
+  },
+  {
+   "word": "great",
+   "rank": 243
+  },
+  {
+   "word": "heard",
+   "rank": 244
+  },
+  {
+   "word": "hair",
+   "rank": 245
+  },
+  {
+   "word": "began",
+   "rank": 246
+  },
+  {
+   "word": "table",
+   "rank": 248
+  },
+  {
+   "word": "boy",
+   "rank": 249
+  },
+  {
+   "word": "morning",
+   "rank": 251
+  },
+  {
+   "word": "seen",
+   "rank": 252
+  },
+  {
+   "word": "set",
+   "rank": 253
+  },
+  {
+   "word": "half",
+   "rank": 255
+  },
+  {
+   "word": "body",
+   "rank": 256
+  },
+  {
+   "word": "whole",
+   "rank": 257
+  },
+  {
+   "word": "young",
+   "rank": 259
+  },
+  {
+   "word": "air",
+   "rank": 260
+  },
+  {
+   "word": "bed",
+   "rank": 262
+  },
+  {
+   "word": "moment",
+   "rank": 264
+  },
+  {
+   "word": "point",
+   "rank": 265
+  },
+  {
+   "word": "gone",
+   "rank": 266
+  },
+  {
+   "word": "hear",
+   "rank": 267
+  },
+  {
+   "word": "used",
+   "rank": 268
+  },
+  {
+   "word": "open",
+   "rank": 269
+  },
+  {
+   "word": "front",
+   "rank": 270
+  },
+  {
+   "word": "hard",
+   "rank": 271
+  },
+  {
+   "word": "keep",
+   "rank": 272
+  },
+  {
+   "word": "talk",
+   "rank": 273
+  },
+  {
+   "word": "give",
+   "rank": 274
+  },
+  {
+   "word": "mean",
+   "rank": 275
+  },
+  {
+   "word": "street",
+   "rank": 276
+  },
+  {
+   "word": "high",
+   "rank": 277
+  },
+  {
+   "word": "window",
+   "rank": 278
+  },
+  {
+   "word": "voice",
+   "rank": 279
+  },
+  {
+   "word": "later",
+   "rank": 280
+  },
+  {
+   "word": "love",
+   "rank": 281
+  },
+  {
+   "word": "better",
+   "rank": 283
+  },
+  {
+   "word": "dead",
+   "rank": 288
+  },
+  {
+   "word": "part",
+   "rank": 289
+  },
+  {
+   "word": "gave",
+   "rank": 290
+  },
+  {
+   "word": "coming",
+   "rank": 291
+  },
+  {
+   "word": "floor",
+   "rank": 292
+  },
+  {
+   "word": "tengo",
+   "rank": 294
+  },
+  {
+   "word": "children",
+   "rank": 295
+  },
+  {
+   "word": "remember",
+   "rank": 296
+  },
+  {
+   "word": "trying",
+   "rank": 297
+  },
+  {
+   "word": "car",
+   "rank": 298
+  },
+  {
+   "word": "year",
+   "rank": 299
+  }
+ ]
+}

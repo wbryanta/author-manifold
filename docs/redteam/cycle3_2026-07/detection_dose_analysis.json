@@ -1,0 +1,79 @@
+{
+  "human_d_mean": -0.657666860368225,
+  "human_d_std": 1.3234194113565032,
+  "machine_d_mean": 4.794996340553702,
+  "sanity_machine_gt_human": true,
+  "labs": {
+    "gpt5": {
+      "paired_toward_human": {
+        "n": 10,
+        "n_toward_human": 5,
+        "mean": -0.3270004129664079,
+        "sd": 0.8545778923585897,
+        "sign_p": 1.0,
+        "t_p": 0.2570879481794765
+      },
+      "dose_mean_d": {
+        "gpt5_high": 0.9543196407870469,
+        "gpt5_low": 1.5124397036448083,
+        "gpt5_med": 1.4905665800514363,
+        "gpt5_min": 1.2813200537534546
+      },
+      "gap_to_human_lo": 1.9389869141216796,
+      "gap_to_human_hi": 1.6119865011552719
+    },
+    "opus": {
+      "paired_toward_human": {
+        "n": 10,
+        "n_toward_human": 8,
+        "mean": -0.653748717223532,
+        "sd": 1.290322319402963,
+        "sign_p": 0.109375,
+        "t_p": 0.14357851129438934
+      },
+      "dose_mean_d": {
+        "opus_high": 3.943902960898941,
+        "opus_low": 3.6719075470911613,
+        "opus_max": 3.020708319411687,
+        "opus_med": 3.697746487629357,
+        "opus_xhigh": 3.9349819952470027
+      },
+      "gap_to_human_lo": 4.329574407459386,
+      "gap_to_human_hi": 3.678375179779912
+    },
+    "gemini": {
+      "paired_toward_human": {
+        "n": 10,
+        "n_toward_human": 9,
+        "mean": -1.3745198571484438,
+        "sd": 1.1449223306690974,
+        "sign_p": 0.021484375,
+        "t_p": 0.004240575601852582
+      },
+      "dose_mean_d": {
+        "gemini_b0": 8.596533069346464,
+        "gemini_bmax": 7.2220132121980205,
+        "gemini_bmid": 6.667656070906138
+      },
+      "gap_to_human_lo": 9.254199929714689,
+      "gap_to_human_hi": 7.879680072566245
+    },
+    "deepseek": {
+      "paired_toward_human": {
+        "n": 10,
+        "n_toward_human": 9,
+        "mean": -1.192996856647973,
+        "sd": 0.7426832912381248,
+        "sign_p": 0.021484375,
+        "t_p": 0.0006631291565230916
+      },
+      "dose_mean_d": {
+        "deepseek_high": 8.95236001652445,
+        "deepseek_max": 7.8631748300647555,
+        "deepseek_off": 9.05617168671273
+      },
+      "gap_to_human_lo": 9.713838547080956,
+      "gap_to_human_hi": 8.520841690432981
+    }
+  }
+}

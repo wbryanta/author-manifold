@@ -1,0 +1,3215 @@
+{
+  "meta": {
+    "generated": "2026-06-11T05:05:47.915860+00:00",
+    "tool": "validate_lm_envelopes.py",
+    "window_words": 3000,
+    "seed": 20260609,
+    "max_windows_per_work": null,
+    "nominal_level": 90,
+    "nominal_rate": 0.9,
+    "gate_floor": 0.8
+  },
+  "experiment": "e8",
+  "name": "LM-W envelopes + same-author positive control",
+  "pass": false,
+  "shelves": [
+    {
+      "shelf": "wave2",
+      "artifact": "data/artifacts/author_space_v1_wave2.json",
+      "artifact_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+      "envelope_artifact": "data/artifacts/lm_envelopes_wave2_3000w.json",
+      "vocab_filter": "none",
+      "window_words": 3000,
+      "n_authors": 15,
+      "pooled_held_out_n": 2842,
+      "pooled_held_out_inside_p90": 2495,
+      "pooled_held_out_rate": 0.8779028852920479,
+      "pooled_rate_ci95": [
+        0.8652997097148243,
+        0.8897219359648777
+      ],
+      "pass": false,
+      "authors": [
+        {
+          "author": "delillo-don",
+          "n_works": 6,
+          "n_windows": 223,
+          "quantiles": {
+            "p50": 1.3125720573534474,
+            "p90": 1.458465075950291,
+            "p95": 1.533307489121098,
+            "p99": 1.6523708863927224
+          },
+          "held_out_n": 223,
+          "held_out_inside_p90": 201,
+          "held_out_rate": 0.9013452914798207,
+          "rate_ci95": [
+            0.8544489997925863,
+            0.9371352688333315
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.0,
+          "cluster_icc": 0.0,
+          "rate_ci95_cluster_adjusted": [
+            0.8544489997925863,
+            0.9371352688333315
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Americana",
+              "n_windows": 42,
+              "threshold": 1.4577712403137244,
+              "inside": 37
+            },
+            {
+              "work_index": 1,
+              "work": "Falling Man",
+              "n_windows": 22,
+              "threshold": 1.4586385348594326,
+              "inside": 20
+            },
+            {
+              "work_index": 2,
+              "work": "Libra",
+              "n_windows": 51,
+              "threshold": 1.473053176856133,
+              "inside": 47
+            },
+            {
+              "work_index": 3,
+              "work": "Ratner's Star",
+              "n_windows": 51,
+              "threshold": 1.4584961835085466,
+              "inside": 46
+            },
+            {
+              "work_index": 4,
+              "work": "White Noise",
+              "n_windows": 35,
+              "threshold": 1.458031428677437,
+              "inside": 31
+            },
+            {
+              "work_index": 5,
+              "work": "Zero K",
+              "n_windows": 22,
+              "threshold": 1.4586385348594326,
+              "inside": 20
+            }
+          ]
+        },
+        {
+          "author": "didion-joan",
+          "n_works": 4,
+          "n_windows": 71,
+          "quantiles": {
+            "p50": 1.3211814640825026,
+            "p90": 1.489920193952505,
+            "p95": 1.5182994897051925,
+            "p99": 1.5546589043511703
+          },
+          "held_out_n": 71,
+          "held_out_inside_p90": 63,
+          "held_out_rate": 0.8873239436619719,
+          "rate_ci95": [
+            0.789999506334595,
+            0.9500803297672589
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.0,
+          "cluster_icc": 0.0,
+          "rate_ci95_cluster_adjusted": [
+            0.789999506334595,
+            0.9500803297672589
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Book of Common Prayer",
+              "n_windows": 19,
+              "threshold": 1.4931032366024009,
+              "inside": 18
+            },
+            {
+              "work_index": 1,
+              "work": "Democracy",
+              "n_windows": 16,
+              "threshold": 1.4896501069637123,
+              "inside": 14
+            },
+            {
+              "work_index": 2,
+              "work": "Play It as It Lays",
+              "n_windows": 11,
+              "threshold": 1.4905422706963625,
+              "inside": 10
+            },
+            {
+              "work_index": 3,
+              "work": "Run River",
+              "n_windows": 25,
+              "threshold": 1.4743632858285802,
+              "inside": 21
+            }
+          ]
+        },
+        {
+          "author": "foster_wallace-david",
+          "n_works": 3,
+          "n_windows": 281,
+          "quantiles": {
+            "p50": 1.4242115980208696,
+            "p90": 1.5995129507318546,
+            "p95": 1.6601901449251515,
+            "p99": 1.7615911877935047
+          },
+          "held_out_n": 281,
+          "held_out_inside_p90": 254,
+          "held_out_rate": 0.9039145907473309,
+          "rate_ci95": [
+            0.8632832216615939,
+            0.9357206074118867
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 4.145460087873073,
+          "cluster_icc": 0.03394381389791086,
+          "rate_ci95_cluster_adjusted": [
+            0.8076855224599501,
+            0.962080629239445
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Girl With Curious Hair",
+              "n_windows": 42,
+              "threshold": 1.60625509402207,
+              "inside": 40
+            },
+            {
+              "work_index": 1,
+              "work": "Infinite jest",
+              "n_windows": 186,
+              "threshold": 1.6075840875501592,
+              "inside": 171
+            },
+            {
+              "work_index": 2,
+              "work": "The Broom of the System",
+              "n_windows": 53,
+              "threshold": 1.586741338713016,
+              "inside": 43
+            }
+          ]
+        },
+        {
+          "author": "ishiguro-kazuo",
+          "n_works": 6,
+          "n_windows": 200,
+          "quantiles": {
+            "p50": 1.54712596187407,
+            "p90": 1.7147464692594956,
+            "p95": 1.7677857808335256,
+            "p99": 1.8929893824772
+          },
+          "held_out_n": 200,
+          "held_out_inside_p90": 178,
+          "held_out_rate": 0.89,
+          "rate_ci95": [
+            0.8382037844304998,
+            0.9297668364707882
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 4.531269410375051,
+          "cluster_icc": 0.10921451784665105,
+          "rate_ci95_cluster_adjusted": [
+            0.7592388866350275,
+            0.9640790911303257
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Pale View of Hills",
+              "n_windows": 18,
+              "threshold": 1.7126945235944493,
+              "inside": 16
+            },
+            {
+              "work_index": 1,
+              "work": "An Artist of the Floating World (Vintage International)",
+              "n_windows": 22,
+              "threshold": 1.7355191223781408,
+              "inside": 22
+            },
+            {
+              "work_index": 2,
+              "work": "Klara and the Sun",
+              "n_windows": 31,
+              "threshold": 1.7155145950319566,
+              "inside": 28
+            },
+            {
+              "work_index": 3,
+              "work": "Never Let Me Go",
+              "n_windows": 33,
+              "threshold": 1.695241563928162,
+              "inside": 23
+            },
+            {
+              "work_index": 4,
+              "work": "The Remains of the Day",
+              "n_windows": 25,
+              "threshold": 1.6977034896888665,
+              "inside": 20
+            },
+            {
+              "work_index": 5,
+              "work": "The Unconsoled",
+              "n_windows": 71,
+              "threshold": 1.7407026507544179,
+              "inside": 69
+            }
+          ]
+        },
+        {
+          "author": "mccarthy-cormac",
+          "n_works": 8,
+          "n_windows": 251,
+          "quantiles": {
+            "p50": 1.4580135978943862,
+            "p90": 1.7153463306553394,
+            "p95": 1.912813188131751,
+            "p99": 2.082777268119031
+          },
+          "held_out_n": 251,
+          "held_out_inside_p90": 227,
+          "held_out_rate": 0.9043824701195219,
+          "rate_ci95": [
+            0.8610726921566062,
+            0.9377714495914671
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 23.141188319800435,
+          "cluster_icc": 0.7289280105284094,
+          "rate_ci95_cluster_adjusted": [
+            0.5783265620150642,
+            0.997288855624415
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Blood Meridian",
+              "n_windows": 40,
+              "threshold": 1.7153463306553394,
+              "inside": 36
+            },
+            {
+              "work_index": 1,
+              "work": "Cities of the Plain",
+              "n_windows": 29,
+              "threshold": 1.732796321470816,
+              "inside": 28
+            },
+            {
+              "work_index": 2,
+              "work": "No Country for Old Men",
+              "n_windows": 23,
+              "threshold": 1.717044688625389,
+              "inside": 21
+            },
+            {
+              "work_index": 3,
+              "work": "Outer Dark",
+              "n_windows": 19,
+              "threshold": 1.732796321470816,
+              "inside": 19
+            },
+            {
+              "work_index": 4,
+              "work": "Stella Maris",
+              "n_windows": 17,
+              "threshold": 1.633523456182489,
+              "inside": 0
+            },
+            {
+              "work_index": 5,
+              "work": "Suttree",
+              "n_windows": 59,
+              "threshold": 1.79681607754547,
+              "inside": 59
+            },
+            {
+              "work_index": 6,
+              "work": "The Orchard Keeper",
+              "n_windows": 23,
+              "threshold": 1.7419421880106218,
+              "inside": 23
+            },
+            {
+              "work_index": 7,
+              "work": "The Passenger",
+              "n_windows": 41,
+              "threshold": 1.7836856144755429,
+              "inside": 41
+            }
+          ]
+        },
+        {
+          "author": "morrison-toni",
+          "n_works": 9,
+          "n_windows": 203,
+          "quantiles": {
+            "p50": 1.3446799716651827,
+            "p90": 1.5095639367625855,
+            "p95": 1.5594476638064148,
+            "p99": 2.0266068046218613
+          },
+          "held_out_n": 203,
+          "held_out_inside_p90": 180,
+          "held_out_rate": 0.8866995073891626,
+          "rate_ci95": [
+            0.8348554870011106,
+            0.9268063606145807
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.8761971204432073,
+          "cluster_icc": 0.040648320020561166,
+          "rate_ci95_cluster_adjusted": [
+            0.8114273996319231,
+            0.9395843317392804
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "1988 Beloved",
+              "n_windows": 33,
+              "threshold": 1.5107838524628958,
+              "inside": 30
+            },
+            {
+              "work_index": 1,
+              "work": "A Mercy",
+              "n_windows": 14,
+              "threshold": 1.5111751082822646,
+              "inside": 13
+            },
+            {
+              "work_index": 2,
+              "work": "God Help the Child: A novel",
+              "n_windows": 13,
+              "threshold": 1.5107838524628958,
+              "inside": 12
+            },
+            {
+              "work_index": 3,
+              "work": "Home",
+              "n_windows": 10,
+              "threshold": 1.5135226431984767,
+              "inside": 10
+            },
+            {
+              "work_index": 4,
+              "work": "Jazz",
+              "n_windows": 23,
+              "threshold": 1.5060833103868474,
+              "inside": 19
+            },
+            {
+              "work_index": 5,
+              "work": "Paradise",
+              "n_windows": 37,
+              "threshold": 1.5266437924362202,
+              "inside": 36
+            },
+            {
+              "work_index": 6,
+              "work": "Song of Solomon",
+              "n_windows": 39,
+              "threshold": 1.4950303956770385,
+              "inside": 30
+            },
+            {
+              "work_index": 7,
+              "work": "Sula",
+              "n_windows": 16,
+              "threshold": 1.5171915086948509,
+              "inside": 16
+            },
+            {
+              "work_index": 8,
+              "work": "The Bluest Eye",
+              "n_windows": 18,
+              "threshold": 1.5055761397330918,
+              "inside": 14
+            }
+          ]
+        },
+        {
+          "author": "murakami-haruki",
+          "n_works": 7,
+          "n_windows": 436,
+          "quantiles": {
+            "p50": 1.4642857318830034,
+            "p90": 1.6270384294358298,
+            "p95": 1.6797464584250594,
+            "p99": 1.8059291587806672
+          },
+          "held_out_n": 436,
+          "held_out_inside_p90": 387,
+          "held_out_rate": 0.8876146788990825,
+          "rate_ci95": [
+            0.8541522601993276,
+            0.9156911327162496
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 3.6703763993890846,
+          "cluster_icc": 0.043572575281406976,
+          "rate_ci95_cluster_adjusted": [
+            0.816631636544267,
+            0.9382041826678861
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "1Q84",
+              "n_windows": 141,
+              "threshold": 1.6285173766634715,
+              "inside": 128
+            },
+            {
+              "work_index": 1,
+              "work": "A Wild Sheep Chase",
+              "n_windows": 29,
+              "threshold": 1.6314473965925427,
+              "inside": 28
+            },
+            {
+              "work_index": 2,
+              "work": "End of the World and Hard-boiled Wonderland : A New Translation",
+              "n_windows": 59,
+              "threshold": 1.6351300737669996,
+              "inside": 56
+            },
+            {
+              "work_index": 3,
+              "work": "Kafka on the shore",
+              "n_windows": 58,
+              "threshold": 1.6199067893338048,
+              "inside": 50
+            },
+            {
+              "work_index": 4,
+              "work": "Men Without Women",
+              "n_windows": 22,
+              "threshold": 1.624956491780295,
+              "inside": 19
+            },
+            {
+              "work_index": 5,
+              "work": "Norwegian Wood",
+              "n_windows": 42,
+              "threshold": 1.6352540759752867,
+              "inside": 41
+            },
+            {
+              "work_index": 6,
+              "work": "The Wind-Up Bird Chronicle",
+              "n_windows": 85,
+              "threshold": 1.6132537589580176,
+              "inside": 65
+            }
+          ]
+        },
+        {
+          "author": "ondaatje-michael",
+          "n_works": 7,
+          "n_windows": 158,
+          "quantiles": {
+            "p50": 1.2913117212511882,
+            "p90": 1.4085389941563662,
+            "p95": 1.4422813787466306,
+            "p99": 1.576971970535191
+          },
+          "held_out_n": 158,
+          "held_out_inside_p90": 140,
+          "held_out_rate": 0.8860759493670886,
+          "rate_ci95": [
+            0.8259360648978201,
+            0.9310664048690913
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 3.139131761352393,
+          "cluster_icc": 0.09916504853951491,
+          "rate_ci95_cluster_adjusted": [
+            0.7649176317029968,
+            0.9582424596700753
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Anil's Ghost",
+              "n_windows": 26,
+              "threshold": 1.4135805799871104,
+              "inside": 25
+            },
+            {
+              "work_index": 1,
+              "work": "Coming Through Slaughter",
+              "n_windows": 12,
+              "threshold": 1.3961670236339225,
+              "inside": 7
+            },
+            {
+              "work_index": 2,
+              "work": "Divisadero",
+              "n_windows": 26,
+              "threshold": 1.411137797916881,
+              "inside": 24
+            },
+            {
+              "work_index": 3,
+              "work": "In the Skin of a Lion",
+              "n_windows": 20,
+              "threshold": 1.3975922720229312,
+              "inside": 15
+            },
+            {
+              "work_index": 4,
+              "work": "The Cat's Table",
+              "n_windows": 23,
+              "threshold": 1.4129106972837293,
+              "inside": 22
+            },
+            {
+              "work_index": 5,
+              "work": "The English Patient",
+              "n_windows": 27,
+              "threshold": 1.4138038742215708,
+              "inside": 26
+            },
+            {
+              "work_index": 6,
+              "work": "Warlight",
+              "n_windows": 24,
+              "threshold": 1.4057312521740044,
+              "inside": 21
+            }
+          ]
+        },
+        {
+          "author": "proulx-annie",
+          "n_works": 4,
+          "n_windows": 155,
+          "quantiles": {
+            "p50": 1.276053175008141,
+            "p90": 1.4366189299672738,
+            "p95": 1.4961783823917443,
+            "p99": 1.5568326757852315
+          },
+          "held_out_n": 155,
+          "held_out_inside_p90": 126,
+          "held_out_rate": 0.8129032258064516,
+          "rate_ci95": [
+            0.7424785016920961,
+            0.8709727191757107
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 6.873881286377204,
+          "cluster_icc": 0.1555995042748928,
+          "rate_ci95_cluster_adjusted": [
+            0.5944014736047516,
+            0.9441028021895375
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bad Dirt",
+              "n_windows": 20,
+              "threshold": 1.4403624585226944,
+              "inside": 19
+            },
+            {
+              "work_index": 1,
+              "work": "Barkskins",
+              "n_windows": 77,
+              "threshold": 1.3744389519503097,
+              "inside": 52
+            },
+            {
+              "work_index": 2,
+              "work": "Fine Just the Way It Is",
+              "n_windows": 21,
+              "threshold": 1.4448985462163717,
+              "inside": 21
+            },
+            {
+              "work_index": 3,
+              "work": "The Shipping News",
+              "n_windows": 37,
+              "threshold": 1.4386393675048625,
+              "inside": 34
+            }
+          ]
+        },
+        {
+          "author": "pynchon-thomas",
+          "n_works": 4,
+          "n_windows": 263,
+          "quantiles": {
+            "p50": 1.2766698385020205,
+            "p90": 1.430677624034038,
+            "p95": 1.4797642675912726,
+            "p99": 1.5628662449573039
+          },
+          "held_out_n": 263,
+          "held_out_inside_p90": 227,
+          "held_out_rate": 0.8631178707224335,
+          "rate_ci95": [
+            0.8155655910602527,
+            0.9022536800603101
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 38.846851144694114,
+          "cluster_icc": 0.5845073535860095,
+          "rate_ci95_cluster_adjusted": [
+            0.4188526943414804,
+            0.9973203173007288
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bleeding Edge",
+              "n_windows": 49,
+              "threshold": 1.444535400290295,
+              "inside": 49
+            },
+            {
+              "work_index": 1,
+              "work": "Gravity's Rainbow",
+              "n_windows": 113,
+              "threshold": 1.4614650187004106,
+              "inside": 110
+            },
+            {
+              "work_index": 2,
+              "work": "V.",
+              "n_windows": 53,
+              "threshold": 1.3641480002719064,
+              "inside": 20
+            },
+            {
+              "work_index": 3,
+              "work": "Vineland",
+              "n_windows": 48,
+              "threshold": 1.4442241126233473,
+              "inside": 48
+            }
+          ]
+        },
+        {
+          "author": "robinson-marilynne",
+          "n_works": 3,
+          "n_windows": 85,
+          "quantiles": {
+            "p50": 1.5425385035862795,
+            "p90": 1.7310739110895244,
+            "p95": 1.812071335991485,
+            "p99": 1.8708438341760385
+          },
+          "held_out_n": 85,
+          "held_out_inside_p90": 70,
+          "held_out_rate": 0.8235294117647058,
+          "rate_ci95": [
+            0.7256950983018604,
+            0.8977298878574526
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 19.282280385763343,
+          "cluster_icc": 0.6688639165523175,
+          "rate_ci95_cluster_adjusted": [
+            0.26988262681594116,
+            0.9982476566444365
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Housekeeping",
+              "n_windows": 20,
+              "threshold": 1.6151456439480731,
+              "inside": 6
+            },
+            {
+              "work_index": 1,
+              "work": "Jack: A Novel",
+              "n_windows": 33,
+              "threshold": 1.796269584785991,
+              "inside": 33
+            },
+            {
+              "work_index": 2,
+              "work": "Lila: A Novel",
+              "n_windows": 32,
+              "threshold": 1.7772627194358974,
+              "inside": 31
+            }
+          ]
+        },
+        {
+          "author": "saunders-george",
+          "n_works": 4,
+          "n_windows": 79,
+          "quantiles": {
+            "p50": 1.4010188974192912,
+            "p90": 1.5345143454566323,
+            "p95": 1.5629799817583616,
+            "p99": 1.7123781584926596
+          },
+          "held_out_n": 79,
+          "held_out_inside_p90": 70,
+          "held_out_rate": 0.8860759493670886,
+          "rate_ci95": [
+            0.794722151872362,
+            0.9465631276984409
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 2.530908479230333,
+          "cluster_icc": 0.08164845222561774,
+          "rate_ci95_cluster_adjusted": [
+            0.7212498921463524,
+            0.9712885745745179
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "CivilWarLand in Bad Decline: Stories and a Novella",
+              "n_windows": 23,
+              "threshold": 1.5431909150016785,
+              "inside": 23
+            },
+            {
+              "work_index": 1,
+              "work": "Liberation Day: Stories",
+              "n_windows": 21,
+              "threshold": 1.5280529136768204,
+              "inside": 17
+            },
+            {
+              "work_index": 2,
+              "work": "Pastoralia",
+              "n_windows": 16,
+              "threshold": 1.523574305390317,
+              "inside": 12
+            },
+            {
+              "work_index": 3,
+              "work": "Tenth of December: Stories",
+              "n_windows": 19,
+              "threshold": 1.538552986259056,
+              "inside": 18
+            }
+          ]
+        },
+        {
+          "author": "sebald-w_g",
+          "n_works": 3,
+          "n_windows": 57,
+          "quantiles": {
+            "p50": 1.1681900408180992,
+            "p90": 1.2935558889179908,
+            "p95": 1.352875882437403,
+            "p99": 1.4214448222617146
+          },
+          "held_out_n": 57,
+          "held_out_inside_p90": 50,
+          "held_out_rate": 0.8771929824561403,
+          "rate_ci95": [
+            0.7632050006375726,
+            0.9491710598414328
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 2.223532868577819,
+          "cluster_icc": 0.06797404825432328,
+          "rate_ci95_cluster_adjusted": [
+            0.6874187458149467,
+            0.9725342942206519
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Austerlitz",
+              "n_windows": 28,
+              "threshold": 1.2688019795563583,
+              "inside": 22
+            },
+            {
+              "work_index": 1,
+              "work": "the Emigrants",
+              "n_windows": 20,
+              "threshold": 1.30421207050225,
+              "inside": 19
+            },
+            {
+              "work_index": 2,
+              "work": "The Rings of Saturn",
+              "n_windows": 9,
+              "threshold": 1.302788111194834,
+              "inside": 9
+            }
+          ]
+        },
+        {
+          "author": "tokarczuk-olga",
+          "n_works": 6,
+          "n_windows": 269,
+          "quantiles": {
+            "p50": 1.3110843535024401,
+            "p90": 1.452172916108033,
+            "p95": 1.511692281679599,
+            "p99": 1.5732410104199532
+          },
+          "held_out_n": 269,
+          "held_out_inside_p90": 236,
+          "held_out_rate": 0.8773234200743495,
+          "rate_ci95": [
+            0.8320484353120754,
+            0.9140302496848386
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.9167289795795035,
+          "cluster_icc": 0.020913969115882208,
+          "rate_ci95_cluster_adjusted": [
+            0.8113561506640323,
+            0.9266090274416641
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Drive Your Plow Over the Bones of the Dead",
+              "n_windows": 26,
+              "threshold": 1.46117175714026,
+              "inside": 26
+            },
+            {
+              "work_index": 1,
+              "work": "Flights",
+              "n_windows": 39,
+              "threshold": 1.4507045366756515,
+              "inside": 34
+            },
+            {
+              "work_index": 2,
+              "work": "House of Day, House of Night",
+              "n_windows": 34,
+              "threshold": 1.4374761247525332,
+              "inside": 28
+            },
+            {
+              "work_index": 3,
+              "work": "Primeval and Other Times",
+              "n_windows": 24,
+              "threshold": 1.453974840369253,
+              "inside": 22
+            },
+            {
+              "work_index": 4,
+              "work": "The Books of Jacob",
+              "n_windows": 115,
+              "threshold": 1.4244188290339985,
+              "inside": 96
+            },
+            {
+              "work_index": 5,
+              "work": "The Empusium",
+              "n_windows": 31,
+              "threshold": 1.4608060670485277,
+              "inside": 30
+            }
+          ]
+        },
+        {
+          "author": "whitehead-colson",
+          "n_works": 4,
+          "n_windows": 111,
+          "quantiles": {
+            "p50": 1.2401801338721339,
+            "p90": 1.4539453558325903,
+            "p95": 1.5108677534923087,
+            "p99": 1.6082484372685881
+          },
+          "held_out_n": 111,
+          "held_out_inside_p90": 86,
+          "held_out_rate": 0.7747747747747747,
+          "rate_ci95": [
+            0.6857305756499985,
+            0.8486316109868446
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": false,
+          "pass": false,
+          "cluster_design_effect": 24.80633244213951,
+          "cluster_icc": 0.889956352977178,
+          "rate_ci95_cluster_adjusted": [
+            0.237094196303972,
+            0.9941683892871597
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Crook Manifesto",
+              "n_windows": 35,
+              "threshold": 1.4898701688840932,
+              "inside": 35
+            },
+            {
+              "work_index": 1,
+              "work": "The Intuitionist",
+              "n_windows": 28,
+              "threshold": 1.3180038050121436,
+              "inside": 3
+            },
+            {
+              "work_index": 2,
+              "work": "The Nickel Boys",
+              "n_windows": 19,
+              "threshold": 1.459203264431034,
+              "inside": 19
+            },
+            {
+              "work_index": 3,
+              "work": "The Underground Railroad",
+              "n_windows": 29,
+              "threshold": 1.4847359445529766,
+              "inside": 29
+            }
+          ]
+        }
+      ],
+      "envelope_meta": {
+        "version": "1.0.0",
+        "generated": "2026-06-11T05:05:43.801675+00:00",
+        "window_words": 3000,
+        "window_unit": "mfw_tokens",
+        "seed": 20260609,
+        "max_windows_per_work": null,
+        "loo": "work_level (window's own work excluded from its centroid)",
+        "distance_variant": "mfw_delta",
+        "n_mfw": 300,
+        "tokenizer": "lowercase_regex_v1",
+        "vocab_filter": "none",
+        "quantile_levels": [
+          50,
+          90,
+          95,
+          99
+        ],
+        "source_artifact": "data/artifacts/author_space_v1_wave2.json",
+        "source_artifact_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+        "n_authors": 15,
+        "skipped_authors": [],
+        "works_without_text": [],
+        "works_too_short": []
+      }
+    },
+    {
+      "shelf": "wave2_fwonly",
+      "artifact": "data/artifacts/author_space_v1_wave2_fwonly.json",
+      "artifact_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+      "envelope_artifact": "data/artifacts/lm_envelopes_wave2_fwonly_3000w.json",
+      "vocab_filter": "function_words_only",
+      "window_words": 3000,
+      "n_authors": 15,
+      "pooled_held_out_n": 2842,
+      "pooled_held_out_inside_p90": 2380,
+      "pooled_held_out_rate": 0.8374384236453202,
+      "pooled_rate_ci95": [
+        0.8233514622281779,
+        0.8508266978094418
+      ],
+      "pass": false,
+      "authors": [
+        {
+          "author": "delillo-don",
+          "n_works": 6,
+          "n_windows": 223,
+          "quantiles": {
+            "p50": 1.1165583026433032,
+            "p90": 1.2871980364053401,
+            "p95": 1.318558517943873,
+            "p99": 1.3610337016941108
+          },
+          "held_out_n": 223,
+          "held_out_inside_p90": 196,
+          "held_out_rate": 0.8789237668161435,
+          "rate_ci95": [
+            0.8287470387563192,
+            0.9186731309761691
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 5.073448880123858,
+          "cluster_icc": 0.11262992295273341,
+          "rate_ci95_cluster_adjusted": [
+            0.7450962793151379,
+            0.9576877860885926
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Americana",
+              "n_windows": 42,
+              "threshold": 1.2873733968067946,
+              "inside": 38
+            },
+            {
+              "work_index": 1,
+              "work": "Falling Man",
+              "n_windows": 22,
+              "threshold": 1.2893916333744364,
+              "inside": 21
+            },
+            {
+              "work_index": 2,
+              "work": "Libra",
+              "n_windows": 51,
+              "threshold": 1.2921237307570939,
+              "inside": 50
+            },
+            {
+              "work_index": 3,
+              "work": "Ratner's Star",
+              "n_windows": 51,
+              "threshold": 1.2382883422629491,
+              "inside": 35
+            },
+            {
+              "work_index": 4,
+              "work": "White Noise",
+              "n_windows": 35,
+              "threshold": 1.2897045007782375,
+              "inside": 33
+            },
+            {
+              "work_index": 5,
+              "work": "Zero K",
+              "n_windows": 22,
+              "threshold": 1.2864965947995226,
+              "inside": 19
+            }
+          ]
+        },
+        {
+          "author": "didion-joan",
+          "n_works": 4,
+          "n_windows": 71,
+          "quantiles": {
+            "p50": 1.1140526480290778,
+            "p90": 1.2389102345550191,
+            "p95": 1.2757880420360461,
+            "p99": 1.3372600258233809
+          },
+          "held_out_n": 71,
+          "held_out_inside_p90": 61,
+          "held_out_rate": 0.8591549295774648,
+          "rate_ci95": [
+            0.7561952845028386,
+            0.9303374139449683
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.544529056948706,
+          "cluster_icc": 0.032509197429773484,
+          "rate_ci95_cluster_adjusted": [
+            0.7247827180209963,
+            0.9439916861236055
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Book of Common Prayer",
+              "n_windows": 19,
+              "threshold": 1.2347721205202187,
+              "inside": 16
+            },
+            {
+              "work_index": 1,
+              "work": "Democracy",
+              "n_windows": 16,
+              "threshold": 1.2517894660496316,
+              "inside": 15
+            },
+            {
+              "work_index": 2,
+              "work": "Play It as It Lays",
+              "n_windows": 11,
+              "threshold": 1.2606074701313528,
+              "inside": 11
+            },
+            {
+              "work_index": 3,
+              "work": "Run River",
+              "n_windows": 25,
+              "threshold": 1.2200233075518085,
+              "inside": 19
+            }
+          ]
+        },
+        {
+          "author": "foster_wallace-david",
+          "n_works": 3,
+          "n_windows": 281,
+          "quantiles": {
+            "p50": 1.4643936658647394,
+            "p90": 1.688567776424977,
+            "p95": 1.7407259381713767,
+            "p99": 1.9046138534432353
+          },
+          "held_out_n": 281,
+          "held_out_inside_p90": 201,
+          "held_out_rate": 0.7153024911032029,
+          "rate_ci95": [
+            0.658674340399058,
+            0.7673248388873053
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": false,
+          "pass": false,
+          "cluster_design_effect": 27.49539651471394,
+          "cluster_icc": 0.28592154512281226,
+          "rate_ci95_cluster_adjusted": [
+            0.36553905819936383,
+            0.9390646950030413
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Girl With Curious Hair",
+              "n_windows": 42,
+              "threshold": 1.705289469894707,
+              "inside": 41
+            },
+            {
+              "work_index": 1,
+              "work": "Infinite jest",
+              "n_windows": 186,
+              "threshold": 1.5297644075225036,
+              "inside": 108
+            },
+            {
+              "work_index": 2,
+              "work": "The Broom of the System",
+              "n_windows": 53,
+              "threshold": 1.7165998044671302,
+              "inside": 52
+            }
+          ]
+        },
+        {
+          "author": "ishiguro-kazuo",
+          "n_works": 6,
+          "n_windows": 200,
+          "quantiles": {
+            "p50": 1.3820695175576645,
+            "p90": 1.5747226473711136,
+            "p95": 1.6534198665353952,
+            "p99": 1.7696929068586722
+          },
+          "held_out_n": 200,
+          "held_out_inside_p90": 174,
+          "held_out_rate": 0.87,
+          "rate_ci95": [
+            0.8153476694765874,
+            0.9132916472314246
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 12.702282797477206,
+          "cluster_icc": 0.3619262720869239,
+          "rate_ci95_cluster_adjusted": [
+            0.6077313482657851,
+            0.9832491343979494
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Pale View of Hills",
+              "n_windows": 18,
+              "threshold": 1.6016443542839813,
+              "inside": 18
+            },
+            {
+              "work_index": 1,
+              "work": "An Artist of the Floating World (Vintage International)",
+              "n_windows": 22,
+              "threshold": 1.5952180000311507,
+              "inside": 21
+            },
+            {
+              "work_index": 2,
+              "work": "Klara and the Sun",
+              "n_windows": 31,
+              "threshold": 1.6062407153497662,
+              "inside": 31
+            },
+            {
+              "work_index": 3,
+              "work": "Never Let Me Go",
+              "n_windows": 33,
+              "threshold": 1.540220045999029,
+              "inside": 16
+            },
+            {
+              "work_index": 4,
+              "work": "The Remains of the Day",
+              "n_windows": 25,
+              "threshold": 1.5654067291476919,
+              "inside": 18
+            },
+            {
+              "work_index": 5,
+              "work": "The Unconsoled",
+              "n_windows": 71,
+              "threshold": 1.6164197509964842,
+              "inside": 70
+            }
+          ]
+        },
+        {
+          "author": "mccarthy-cormac",
+          "n_works": 8,
+          "n_windows": 251,
+          "quantiles": {
+            "p50": 1.2416770364834333,
+            "p90": 1.5528470739525142,
+            "p95": 1.6687625093569793,
+            "p99": 1.804900400102888
+          },
+          "held_out_n": 251,
+          "held_out_inside_p90": 223,
+          "held_out_rate": 0.8884462151394422,
+          "rate_ci95": [
+            0.8428209478987869,
+            0.9245809119351249
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 23.031452405233463,
+          "cluster_icc": 0.7253153055220893,
+          "rate_ci95_cluster_adjusted": [
+            0.5599478582748298,
+            0.9950295305233092
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Blood Meridian",
+              "n_windows": 40,
+              "threshold": 1.5615024459611497,
+              "inside": 39
+            },
+            {
+              "work_index": 1,
+              "work": "Cities of the Plain",
+              "n_windows": 29,
+              "threshold": 1.5589968901823872,
+              "inside": 28
+            },
+            {
+              "work_index": 2,
+              "work": "No Country for Old Men",
+              "n_windows": 23,
+              "threshold": 1.4868826053340174,
+              "inside": 14
+            },
+            {
+              "work_index": 3,
+              "work": "Outer Dark",
+              "n_windows": 19,
+              "threshold": 1.5589968901823872,
+              "inside": 19
+            },
+            {
+              "work_index": 4,
+              "work": "Stella Maris",
+              "n_windows": 17,
+              "threshold": 1.4525685947956288,
+              "inside": 0
+            },
+            {
+              "work_index": 5,
+              "work": "Suttree",
+              "n_windows": 59,
+              "threshold": 1.6279723929627314,
+              "inside": 59
+            },
+            {
+              "work_index": 6,
+              "work": "The Orchard Keeper",
+              "n_windows": 23,
+              "threshold": 1.559835663259449,
+              "inside": 23
+            },
+            {
+              "work_index": 7,
+              "work": "The Passenger",
+              "n_windows": 41,
+              "threshold": 1.5834568962922082,
+              "inside": 41
+            }
+          ]
+        },
+        {
+          "author": "morrison-toni",
+          "n_works": 9,
+          "n_windows": 203,
+          "quantiles": {
+            "p50": 1.1793947961080282,
+            "p90": 1.33599093168753,
+            "p95": 1.3596243092659615,
+            "p99": 1.786818857259939
+          },
+          "held_out_n": 203,
+          "held_out_inside_p90": 181,
+          "held_out_rate": 0.8916256157635468,
+          "rate_ci95": [
+            0.8405251870225661,
+            0.9308244631253811
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 2.602764609086069,
+          "cluster_icc": 0.07435505918440526,
+          "rate_ci95_cluster_adjusted": [
+            0.8007472423022486,
+            0.9507156314858216
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "1988 Beloved",
+              "n_windows": 33,
+              "threshold": 1.336607215466287,
+              "inside": 30
+            },
+            {
+              "work_index": 1,
+              "work": "A Mercy",
+              "n_windows": 14,
+              "threshold": 1.325402799456447,
+              "inside": 8
+            },
+            {
+              "work_index": 2,
+              "work": "God Help the Child: A novel",
+              "n_windows": 13,
+              "threshold": 1.3370268830601633,
+              "inside": 13
+            },
+            {
+              "work_index": 3,
+              "work": "Home",
+              "n_windows": 10,
+              "threshold": 1.3368315314965884,
+              "inside": 10
+            },
+            {
+              "work_index": 4,
+              "work": "Jazz",
+              "n_windows": 23,
+              "threshold": 1.3370268830601633,
+              "inside": 22
+            },
+            {
+              "work_index": 5,
+              "work": "Paradise",
+              "n_windows": 37,
+              "threshold": 1.3375519281369752,
+              "inside": 35
+            },
+            {
+              "work_index": 6,
+              "work": "Song of Solomon",
+              "n_windows": 39,
+              "threshold": 1.3317616836129542,
+              "inside": 33
+            },
+            {
+              "work_index": 7,
+              "work": "Sula",
+              "n_windows": 16,
+              "threshold": 1.3348224544243878,
+              "inside": 14
+            },
+            {
+              "work_index": 8,
+              "work": "The Bluest Eye",
+              "n_windows": 18,
+              "threshold": 1.335406693055959,
+              "inside": 16
+            }
+          ]
+        },
+        {
+          "author": "murakami-haruki",
+          "n_works": 7,
+          "n_windows": 436,
+          "quantiles": {
+            "p50": 1.379942343911949,
+            "p90": 1.7376244095725364,
+            "p95": 1.8561803368245096,
+            "p99": 2.033296488816645
+          },
+          "held_out_n": 436,
+          "held_out_inside_p90": 375,
+          "held_out_rate": 0.8600917431192661,
+          "rate_ci95": [
+            0.8239384267331169,
+            0.8912623057725673
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 55.6913527138889,
+          "cluster_icc": 0.8923996946322198,
+          "rate_ci95_cluster_adjusted": [
+            0.4521151056049232,
+            0.9953224697911277
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "1Q84",
+              "n_windows": 141,
+              "threshold": 1.8238009321996407,
+              "inside": 141
+            },
+            {
+              "work_index": 1,
+              "work": "A Wild Sheep Chase",
+              "n_windows": 29,
+              "threshold": 1.7611579534952633,
+              "inside": 29
+            },
+            {
+              "work_index": 2,
+              "work": "End of the World and Hard-boiled Wonderland : A New Translation",
+              "n_windows": 59,
+              "threshold": 1.776701628740388,
+              "inside": 58
+            },
+            {
+              "work_index": 3,
+              "work": "Kafka on the shore",
+              "n_windows": 58,
+              "threshold": 1.545173278126725,
+              "inside": 2
+            },
+            {
+              "work_index": 4,
+              "work": "Men Without Women",
+              "n_windows": 22,
+              "threshold": 1.7539007895879917,
+              "inside": 22
+            },
+            {
+              "work_index": 5,
+              "work": "Norwegian Wood",
+              "n_windows": 42,
+              "threshold": 1.7713893172344661,
+              "inside": 42
+            },
+            {
+              "work_index": 6,
+              "work": "The Wind-Up Bird Chronicle",
+              "n_windows": 85,
+              "threshold": 1.7739896705849802,
+              "inside": 81
+            }
+          ]
+        },
+        {
+          "author": "ondaatje-michael",
+          "n_works": 7,
+          "n_windows": 158,
+          "quantiles": {
+            "p50": 1.1040450716094319,
+            "p90": 1.2266086994239063,
+            "p95": 1.2409270950950841,
+            "p99": 1.2972229494213714
+          },
+          "held_out_n": 158,
+          "held_out_inside_p90": 141,
+          "held_out_rate": 0.8924050632911392,
+          "rate_ci95": [
+            0.8333247386746999,
+            0.9360601769729369
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 6.994825722402141,
+          "cluster_icc": 0.2779058281908277,
+          "rate_ci95_cluster_adjusted": [
+            0.6903286733992865,
+            0.9823418249985282
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Anil's Ghost",
+              "n_windows": 26,
+              "threshold": 1.2337152879310473,
+              "inside": 26
+            },
+            {
+              "work_index": 1,
+              "work": "Coming Through Slaughter",
+              "n_windows": 12,
+              "threshold": 1.2052500905864896,
+              "inside": 5
+            },
+            {
+              "work_index": 2,
+              "work": "Divisadero",
+              "n_windows": 26,
+              "threshold": 1.2337152879310473,
+              "inside": 26
+            },
+            {
+              "work_index": 3,
+              "work": "In the Skin of a Lion",
+              "n_windows": 20,
+              "threshold": 1.2319318287010257,
+              "inside": 19
+            },
+            {
+              "work_index": 4,
+              "work": "The Cat's Table",
+              "n_windows": 23,
+              "threshold": 1.2217335485798941,
+              "inside": 20
+            },
+            {
+              "work_index": 5,
+              "work": "The English Patient",
+              "n_windows": 27,
+              "threshold": 1.2337501174175074,
+              "inside": 27
+            },
+            {
+              "work_index": 6,
+              "work": "Warlight",
+              "n_windows": 24,
+              "threshold": 1.2153629934597099,
+              "inside": 18
+            }
+          ]
+        },
+        {
+          "author": "proulx-annie",
+          "n_works": 4,
+          "n_windows": 155,
+          "quantiles": {
+            "p50": 1.0085141648763138,
+            "p90": 1.1972248002511257,
+            "p95": 1.2318538523483349,
+            "p99": 1.2869478880258254
+          },
+          "held_out_n": 155,
+          "held_out_inside_p90": 115,
+          "held_out_rate": 0.7419354838709677,
+          "rate_ci95": [
+            0.6655868770590916,
+            0.8087938616520747
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": false,
+          "pass": false,
+          "cluster_design_effect": 16.00716618376568,
+          "cluster_icc": 0.397540826060018,
+          "rate_ci95_cluster_adjusted": [
+            0.3802491957010411,
+            0.9544532245488307
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bad Dirt",
+              "n_windows": 20,
+              "threshold": 1.2043994105869569,
+              "inside": 20
+            },
+            {
+              "work_index": 1,
+              "work": "Barkskins",
+              "n_windows": 77,
+              "threshold": 1.0592991572213528,
+              "inside": 38
+            },
+            {
+              "work_index": 2,
+              "work": "Fine Just the Way It Is",
+              "n_windows": 21,
+              "threshold": 1.2049754564031894,
+              "inside": 21
+            },
+            {
+              "work_index": 3,
+              "work": "The Shipping News",
+              "n_windows": 37,
+              "threshold": 1.2070639668439607,
+              "inside": 36
+            }
+          ]
+        },
+        {
+          "author": "pynchon-thomas",
+          "n_works": 4,
+          "n_windows": 263,
+          "quantiles": {
+            "p50": 1.312295982074162,
+            "p90": 1.4978099260941844,
+            "p95": 1.5699556121376061,
+            "p99": 1.7104556737199392
+          },
+          "held_out_n": 263,
+          "held_out_inside_p90": 218,
+          "held_out_rate": 0.8288973384030418,
+          "rate_ci95": [
+            0.7778328781755314,
+            0.8723742589566041
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 47.56598678927677,
+          "cluster_icc": 0.7191658191394096,
+          "rate_ci95_cluster_adjusted": [
+            0.3336775097468011,
+            0.9964075343090311
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bleeding Edge",
+              "n_windows": 49,
+              "threshold": 1.4995443748526853,
+              "inside": 46
+            },
+            {
+              "work_index": 1,
+              "work": "Gravity's Rainbow",
+              "n_windows": 113,
+              "threshold": 1.5367325600314694,
+              "inside": 112
+            },
+            {
+              "work_index": 2,
+              "work": "V.",
+              "n_windows": 53,
+              "threshold": 1.4044074025450792,
+              "inside": 12
+            },
+            {
+              "work_index": 3,
+              "work": "Vineland",
+              "n_windows": 48,
+              "threshold": 1.5116502513284542,
+              "inside": 48
+            }
+          ]
+        },
+        {
+          "author": "robinson-marilynne",
+          "n_works": 3,
+          "n_windows": 85,
+          "quantiles": {
+            "p50": 1.3093985200039713,
+            "p90": 1.4965732650387233,
+            "p95": 1.5399090134718383,
+            "p99": 1.595291707687042
+          },
+          "held_out_n": 85,
+          "held_out_inside_p90": 73,
+          "held_out_rate": 0.8588235294117647,
+          "rate_ci95": [
+            0.7663753811449798,
+            0.9248686534535081
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 12.274730456387887,
+          "cluster_icc": 0.4124901386483374,
+          "rate_ci95_cluster_adjusted": [
+            0.42025366091745064,
+            0.9966861628463125
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Housekeeping",
+              "n_windows": 20,
+              "threshold": 1.442438754643784,
+              "inside": 10
+            },
+            {
+              "work_index": 1,
+              "work": "Jack: A Novel",
+              "n_windows": 33,
+              "threshold": 1.5347561228247877,
+              "inside": 33
+            },
+            {
+              "work_index": 2,
+              "work": "Lila: A Novel",
+              "n_windows": 32,
+              "threshold": 1.5197793440569045,
+              "inside": 30
+            }
+          ]
+        },
+        {
+          "author": "saunders-george",
+          "n_works": 4,
+          "n_windows": 79,
+          "quantiles": {
+            "p50": 1.256745024813307,
+            "p90": 1.3731886579883568,
+            "p95": 1.485986184978057,
+            "p99": 1.6372804039279316
+          },
+          "held_out_n": 79,
+          "held_out_inside_p90": 70,
+          "held_out_rate": 0.8860759493670886,
+          "rate_ci95": [
+            0.794722151872362,
+            0.9465631276984409
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 8.386955530959046,
+          "cluster_icc": 0.39397096165114914,
+          "rate_ci95_cluster_adjusted": [
+            0.5248461528566296,
+            0.9964172730968689
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "CivilWarLand in Bad Decline: Stories and a Novella",
+              "n_windows": 23,
+              "threshold": 1.3956112057060661,
+              "inside": 23
+            },
+            {
+              "work_index": 1,
+              "work": "Liberation Day: Stories",
+              "n_windows": 21,
+              "threshold": 1.3441787408013286,
+              "inside": 12
+            },
+            {
+              "work_index": 2,
+              "work": "Pastoralia",
+              "n_windows": 16,
+              "threshold": 1.3887165518538815,
+              "inside": 16
+            },
+            {
+              "work_index": 3,
+              "work": "Tenth of December: Stories",
+              "n_windows": 19,
+              "threshold": 1.3927958067798107,
+              "inside": 19
+            }
+          ]
+        },
+        {
+          "author": "sebald-w_g",
+          "n_works": 3,
+          "n_windows": 57,
+          "quantiles": {
+            "p50": 1.1078669492640214,
+            "p90": 1.2358444047433406,
+            "p95": 1.251404859119646,
+            "p99": 1.2752651373183774
+          },
+          "held_out_n": 57,
+          "held_out_inside_p90": 48,
+          "held_out_rate": 0.8421052631578947,
+          "rate_ci95": [
+            0.7213173699312707,
+            0.9251688307994875
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.173657984945401,
+          "cluster_icc": 0.009647665830300049,
+          "rate_ci95_cluster_adjusted": [
+            0.7090147821407385,
+            0.9307851999160618
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Austerlitz",
+              "n_windows": 28,
+              "threshold": 1.2063869370210767,
+              "inside": 22
+            },
+            {
+              "work_index": 1,
+              "work": "the Emigrants",
+              "n_windows": 20,
+              "threshold": 1.228429792452371,
+              "inside": 17
+            },
+            {
+              "work_index": 2,
+              "work": "The Rings of Saturn",
+              "n_windows": 9,
+              "threshold": 1.239436657290195,
+              "inside": 9
+            }
+          ]
+        },
+        {
+          "author": "tokarczuk-olga",
+          "n_works": 6,
+          "n_windows": 269,
+          "quantiles": {
+            "p50": 1.248818372256374,
+            "p90": 1.3912794340139798,
+            "p95": 1.444324057727889,
+            "p99": 1.546232968836884
+          },
+          "held_out_n": 269,
+          "held_out_inside_p90": 217,
+          "held_out_rate": 0.8066914498141264,
+          "rate_ci95": [
+            0.7543568130247951,
+            0.8521273411755479
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 11.710272545636215,
+          "cluster_icc": 0.24434081853162468,
+          "rate_ci95_cluster_adjusted": [
+            0.5897705371670211,
+            0.9397149698960591
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Drive Your Plow Over the Bones of the Dead",
+              "n_windows": 26,
+              "threshold": 1.3926372154595874,
+              "inside": 25
+            },
+            {
+              "work_index": 1,
+              "work": "Flights",
+              "n_windows": 39,
+              "threshold": 1.391158172678903,
+              "inside": 35
+            },
+            {
+              "work_index": 2,
+              "work": "House of Day, House of Night",
+              "n_windows": 34,
+              "threshold": 1.3980897058342596,
+              "inside": 34
+            },
+            {
+              "work_index": 3,
+              "work": "Primeval and Other Times",
+              "n_windows": 24,
+              "threshold": 1.3925402927683392,
+              "inside": 23
+            },
+            {
+              "work_index": 4,
+              "work": "The Books of Jacob",
+              "n_windows": 115,
+              "threshold": 1.3261686179979553,
+              "inside": 69
+            },
+            {
+              "work_index": 5,
+              "work": "The Empusium",
+              "n_windows": 31,
+              "threshold": 1.3956245705982215,
+              "inside": 31
+            }
+          ]
+        },
+        {
+          "author": "whitehead-colson",
+          "n_works": 4,
+          "n_windows": 111,
+          "quantiles": {
+            "p50": 1.035900756607531,
+            "p90": 1.2432035397989998,
+            "p95": 1.2744183567635088,
+            "p99": 1.3528673690421973
+          },
+          "held_out_n": 111,
+          "held_out_inside_p90": 87,
+          "held_out_rate": 0.7837837837837838,
+          "rate_ci95": [
+            0.6955837582417059,
+            0.8562834683883305
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": false,
+          "pass": false,
+          "cluster_design_effect": 19.789345982866507,
+          "cluster_icc": 0.7024054573034209,
+          "rate_ci95_cluster_adjusted": [
+            0.2985229713596812,
+            0.990355831466748
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Crook Manifesto",
+              "n_windows": 35,
+              "threshold": 1.2644266676397198,
+              "inside": 35
+            },
+            {
+              "work_index": 1,
+              "work": "The Intuitionist",
+              "n_windows": 28,
+              "threshold": 1.0985420417731935,
+              "inside": 6
+            },
+            {
+              "work_index": 2,
+              "work": "The Nickel Boys",
+              "n_windows": 19,
+              "threshold": 1.2446020656619865,
+              "inside": 18
+            },
+            {
+              "work_index": 3,
+              "work": "The Underground Railroad",
+              "n_windows": 29,
+              "threshold": 1.2504732718103282,
+              "inside": 28
+            }
+          ]
+        }
+      ],
+      "envelope_meta": {
+        "version": "1.0.0",
+        "generated": "2026-06-11T05:05:45.140698+00:00",
+        "window_words": 3000,
+        "window_unit": "mfw_tokens",
+        "seed": 20260609,
+        "max_windows_per_work": null,
+        "loo": "work_level (window's own work excluded from its centroid)",
+        "distance_variant": "mfw_delta",
+        "n_mfw": 300,
+        "tokenizer": "lowercase_regex_v1",
+        "vocab_filter": "function_words_only",
+        "quantile_levels": [
+          50,
+          90,
+          95,
+          99
+        ],
+        "source_artifact": "data/artifacts/author_space_v1_wave2_fwonly.json",
+        "source_artifact_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+        "n_authors": 15,
+        "skipped_authors": [],
+        "works_without_text": [],
+        "works_too_short": []
+      }
+    },
+    {
+      "shelf": "pd",
+      "artifact": "data/artifacts/author_space_pd_v1.json",
+      "artifact_sha256": "9568b219ba7eb316c09901009470924e7166297ee97a9613a15e85933820d503",
+      "envelope_artifact": "data/artifacts/lm_envelopes_pd_3000w.json",
+      "vocab_filter": "none",
+      "window_words": 3000,
+      "n_authors": 9,
+      "pooled_held_out_n": 1575,
+      "pooled_held_out_inside_p90": 1375,
+      "pooled_held_out_rate": 0.873015873015873,
+      "pooled_rate_ci95": [
+        0.8555574664298254,
+        0.8890698869295661
+      ],
+      "pass": true,
+      "authors": [
+        {
+          "author": "austen-jane",
+          "n_works": 5,
+          "n_windows": 214,
+          "quantiles": {
+            "p50": 1.5737026506080696,
+            "p90": 1.706001029894825,
+            "p95": 1.7542550296666821,
+            "p99": 1.84990029548986
+          },
+          "held_out_n": 214,
+          "held_out_inside_p90": 189,
+          "held_out_rate": 0.883177570093458,
+          "rate_ci95": [
+            0.8323917086103044,
+            0.9229544113806919
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 4.141761210933781,
+          "cluster_icc": 0.07516175145774596,
+          "rate_ci95_cluster_adjusted": [
+            0.7633332328994604,
+            0.9557358070521116
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Emma",
+              "n_windows": 53,
+              "threshold": 1.69776111324199,
+              "inside": 43
+            },
+            {
+              "work_index": 1,
+              "work": "Mansfield Park",
+              "n_windows": 53,
+              "threshold": 1.721487749093905,
+              "inside": 52
+            },
+            {
+              "work_index": 2,
+              "work": "Persuasion",
+              "n_windows": 28,
+              "threshold": 1.7080666698706561,
+              "inside": 26
+            },
+            {
+              "work_index": 3,
+              "work": "Pride and Prejudice",
+              "n_windows": 40,
+              "threshold": 1.7160318892248783,
+              "inside": 38
+            },
+            {
+              "work_index": 4,
+              "work": "Sense and Sensibility",
+              "n_windows": 40,
+              "threshold": 1.694934392718347,
+              "inside": 30
+            }
+          ]
+        },
+        {
+          "author": "bronte-charlotte",
+          "n_works": 4,
+          "n_windows": 228,
+          "quantiles": {
+            "p50": 1.4937285887611789,
+            "p90": 1.6399157366106747,
+            "p95": 1.6967107036348128,
+            "p99": 1.7992673596809818
+          },
+          "held_out_n": 228,
+          "held_out_inside_p90": 201,
+          "held_out_rate": 0.881578947368421,
+          "rate_ci95": [
+            0.8323960811828648,
+            0.92049111635799
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 4.132504575698938,
+          "cluster_icc": 0.055937581708909605,
+          "rate_ci95_cluster_adjusted": [
+            0.7662284370792874,
+            0.9529222953464974
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Jane Eyre",
+              "n_windows": 62,
+              "threshold": 1.6212283123652091,
+              "inside": 52
+            },
+            {
+              "work_index": 1,
+              "work": "Shirley",
+              "n_windows": 72,
+              "threshold": 1.6136809155202287,
+              "inside": 58
+            },
+            {
+              "work_index": 2,
+              "work": "The Professor",
+              "n_windows": 29,
+              "threshold": 1.6414218284230546,
+              "inside": 27
+            },
+            {
+              "work_index": 3,
+              "work": "Villette",
+              "n_windows": 65,
+              "threshold": 1.6485166965710796,
+              "inside": 64
+            }
+          ]
+        },
+        {
+          "author": "dickens-charles",
+          "n_works": 4,
+          "n_windows": 355,
+          "quantiles": {
+            "p50": 1.646806629870621,
+            "p90": 1.8384636138812704,
+            "p95": 1.8769543874895027,
+            "p99": 2.001573943831959
+          },
+          "held_out_n": 355,
+          "held_out_inside_p90": 315,
+          "held_out_rate": 0.8873239436619719,
+          "rate_ci95": [
+            0.8497386089082589,
+            0.9182718203607759
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 7.041818206796386,
+          "cluster_icc": 0.06885262913728075,
+          "rate_ci95_cluster_adjusted": [
+            0.7665903692072478,
+            0.9589635492265448
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bleak House",
+              "n_windows": 120,
+              "threshold": 1.8154144350178305,
+              "inside": 101
+            },
+            {
+              "work_index": 1,
+              "work": "David Copperfield",
+              "n_windows": 120,
+              "threshold": 1.856028325551221,
+              "inside": 116
+            },
+            {
+              "work_index": 2,
+              "work": "Great Expectations",
+              "n_windows": 62,
+              "threshold": 1.8414801302079282,
+              "inside": 58
+            },
+            {
+              "work_index": 3,
+              "work": "Oliver Twist",
+              "n_windows": 53,
+              "threshold": 1.8151808532038487,
+              "inside": 40
+            }
+          ]
+        },
+        {
+          "author": "fitzgerald-f_scott",
+          "n_works": 3,
+          "n_windows": 85,
+          "quantiles": {
+            "p50": 1.5567882493846603,
+            "p90": 1.7229206350207331,
+            "p95": 1.7611886481240735,
+            "p99": 1.8401677180151546
+          },
+          "held_out_n": 85,
+          "held_out_inside_p90": 77,
+          "held_out_rate": 0.9058823529411765,
+          "rate_ci95": [
+            0.8229477775511406,
+            0.9584848633199219
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.0,
+          "cluster_icc": 0.0,
+          "rate_ci95_cluster_adjusted": [
+            0.8229477775511406,
+            0.9584848633199219
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "The Beautiful and Damned",
+              "n_windows": 41,
+              "threshold": 1.73289548443534,
+              "inside": 38
+            },
+            {
+              "work_index": 1,
+              "work": "The Great Gatsby",
+              "n_windows": 16,
+              "threshold": 1.7217116869295956,
+              "inside": 14
+            },
+            {
+              "work_index": 2,
+              "work": "This Side of Paradise",
+              "n_windows": 28,
+              "threshold": 1.7223161609751643,
+              "inside": 25
+            }
+          ]
+        },
+        {
+          "author": "forster-e_m",
+          "n_works": 5,
+          "n_windows": 141,
+          "quantiles": {
+            "p50": 1.485434053206759,
+            "p90": 1.5780149586300127,
+            "p95": 1.6126177446384353,
+            "p99": 1.6986381000453197
+          },
+          "held_out_n": 141,
+          "held_out_inside_p90": 128,
+          "held_out_rate": 0.9078014184397163,
+          "rate_ci95": [
+            0.8474983837071242,
+            0.9499906035875658
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.5106023730417568,
+          "cluster_icc": 0.01877214606771165,
+          "rate_ci95_cluster_adjusted": [
+            0.8300368730773742,
+            0.9578666356760945
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Passage to India",
+              "n_windows": 34,
+              "threshold": 1.5728611035802715,
+              "inside": 29
+            },
+            {
+              "work_index": 1,
+              "work": "A Room with a View",
+              "n_windows": 22,
+              "threshold": 1.5808824974806075,
+              "inside": 21
+            },
+            {
+              "work_index": 2,
+              "work": "Howards End",
+              "n_windows": 37,
+              "threshold": 1.5737006412957928,
+              "inside": 32
+            },
+            {
+              "work_index": 3,
+              "work": "The Longest Journey",
+              "n_windows": 32,
+              "threshold": 1.585937630427438,
+              "inside": 32
+            },
+            {
+              "work_index": 4,
+              "work": "Where Angels Fear to Tread",
+              "n_windows": 16,
+              "threshold": 1.5766250467825331,
+              "inside": 14
+            }
+          ]
+        },
+        {
+          "author": "hawthorne-nathaniel",
+          "n_works": 3,
+          "n_windows": 82,
+          "quantiles": {
+            "p50": 1.422872414288487,
+            "p90": 1.5372877856230134,
+            "p95": 1.556735483747222,
+            "p99": 1.617524896824795
+          },
+          "held_out_n": 82,
+          "held_out_inside_p90": 74,
+          "held_out_rate": 0.9024390243902439,
+          "rate_ci95": [
+            0.8167860616005723,
+            0.9569311565598961
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.5696741548966298,
+          "cluster_icc": 0.02163319575556822,
+          "rate_ci95_cluster_adjusted": [
+            0.7882550556574112,
+            0.9671113091685533
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "The Blithedale Romance",
+              "n_windows": 25,
+              "threshold": 1.5267568665746636,
+              "inside": 21
+            },
+            {
+              "work_index": 1,
+              "work": "The House of the Seven Gables",
+              "n_windows": 34,
+              "threshold": 1.5422817552435972,
+              "inside": 33
+            },
+            {
+              "work_index": 2,
+              "work": "The Scarlet Letter",
+              "n_windows": 23,
+              "threshold": 1.5311862761226196,
+              "inside": 20
+            }
+          ]
+        },
+        {
+          "author": "joyce-james",
+          "n_works": 3,
+          "n_windows": 140,
+          "quantiles": {
+            "p50": 1.735250952836267,
+            "p90": 2.0435249733022873,
+            "p95": 2.143198453398324,
+            "p99": 2.2422979646165135
+          },
+          "held_out_n": 140,
+          "held_out_inside_p90": 114,
+          "held_out_rate": 0.8142857142857143,
+          "rate_ci95": [
+            0.7398479577173891,
+            0.8749524059155506
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 8.316533971586988,
+          "cluster_icc": 0.16021607237051802,
+          "rate_ci95_cluster_adjusted": [
+            0.5536677737240048,
+            0.9581024303561393
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Portrait of the Artist as a Young Man",
+              "n_windows": 28,
+              "threshold": 2.0807894718991893,
+              "inside": 27
+            },
+            {
+              "work_index": 1,
+              "work": "Dubliners",
+              "n_windows": 23,
+              "threshold": 2.0898127120848735,
+              "inside": 23
+            },
+            {
+              "work_index": 2,
+              "work": "Ulysses",
+              "n_windows": 89,
+              "threshold": 1.9032525289722297,
+              "inside": 64
+            }
+          ]
+        },
+        {
+          "author": "melville-herman",
+          "n_works": 4,
+          "n_windows": 189,
+          "quantiles": {
+            "p50": 1.505174623988396,
+            "p90": 1.7241039402778902,
+            "p95": 1.807113001777117,
+            "p99": 1.9396054398553968
+          },
+          "held_out_n": 189,
+          "held_out_inside_p90": 152,
+          "held_out_rate": 0.8042328042328042,
+          "rate_ci95": [
+            0.7404052821327938,
+            0.8582574823879889
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 14.989461904178008,
+          "cluster_icc": 0.3024748519822272,
+          "rate_ci95_cluster_adjusted": [
+            0.49332057164939097,
+            0.9665202653489172
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Moby-Dick",
+              "n_windows": 71,
+              "threshold": 1.6292361778118856,
+              "inside": 39
+            },
+            {
+              "work_index": 1,
+              "work": "Omoo",
+              "n_windows": 34,
+              "threshold": 1.7555222377880035,
+              "inside": 34
+            },
+            {
+              "work_index": 2,
+              "work": "Typee",
+              "n_windows": 36,
+              "threshold": 1.7317546371803396,
+              "inside": 33
+            },
+            {
+              "work_index": 3,
+              "work": "White-Jacket",
+              "n_windows": 48,
+              "threshold": 1.7545930721802696,
+              "inside": 46
+            }
+          ]
+        },
+        {
+          "author": "woolf-virginia",
+          "n_works": 4,
+          "n_windows": 141,
+          "quantiles": {
+            "p50": 1.578810827071841,
+            "p90": 1.7435557568148086,
+            "p95": 1.7762228059121048,
+            "p99": 1.8209374047702929
+          },
+          "held_out_n": 141,
+          "held_out_inside_p90": 125,
+          "held_out_rate": 0.8865248226950354,
+          "rate_ci95": [
+            0.8222706950993113,
+            0.9337302830274316
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 3.291145851053027,
+          "cluster_icc": 0.066894769373811,
+          "rate_ci95_cluster_adjusted": [
+            0.752348853750761,
+            0.9628756547574894
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Jacob's Room",
+              "n_windows": 18,
+              "threshold": 1.749236339467499,
+              "inside": 18
+            },
+            {
+              "work_index": 1,
+              "work": "Mrs. Dalloway",
+              "n_windows": 21,
+              "threshold": 1.7245210094459487,
+              "inside": 15
+            },
+            {
+              "work_index": 2,
+              "work": "Night and Day",
+              "n_windows": 56,
+              "threshold": 1.7384918854536016,
+              "inside": 49
+            },
+            {
+              "work_index": 3,
+              "work": "The Voyage Out",
+              "n_windows": 46,
+              "threshold": 1.7484653956102758,
+              "inside": 43
+            }
+          ]
+        }
+      ],
+      "envelope_meta": {
+        "version": "1.0.0",
+        "generated": "2026-06-11T05:05:46.461153+00:00",
+        "window_words": 3000,
+        "window_unit": "mfw_tokens",
+        "seed": 20260609,
+        "max_windows_per_work": null,
+        "loo": "work_level (window's own work excluded from its centroid)",
+        "distance_variant": "mfw_delta",
+        "n_mfw": 300,
+        "tokenizer": "lowercase_regex_v1",
+        "vocab_filter": "none",
+        "quantile_levels": [
+          50,
+          90,
+          95,
+          99
+        ],
+        "source_artifact": "data/artifacts/author_space_pd_v1.json",
+        "source_artifact_sha256": "9568b219ba7eb316c09901009470924e7166297ee97a9613a15e85933820d503",
+        "n_authors": 9,
+        "skipped_authors": [],
+        "works_without_text": [],
+        "works_too_short": []
+      }
+    },
+    {
+      "shelf": "pd_fwonly",
+      "artifact": "data/artifacts/author_space_pd_v1_fwonly.json",
+      "artifact_sha256": "e1ef12ad426517af66a7ff7a692fca654783f45e80d70759f471a86d5d2b09fe",
+      "envelope_artifact": "data/artifacts/lm_envelopes_pd_fwonly_3000w.json",
+      "vocab_filter": "function_words_only",
+      "window_words": 3000,
+      "n_authors": 9,
+      "pooled_held_out_n": 1575,
+      "pooled_held_out_inside_p90": 1378,
+      "pooled_held_out_rate": 0.8749206349206349,
+      "pooled_rate_ci95": [
+        0.8575643055444789,
+        0.8908651769110844
+      ],
+      "pass": false,
+      "authors": [
+        {
+          "author": "austen-jane",
+          "n_works": 5,
+          "n_windows": 214,
+          "quantiles": {
+            "p50": 1.3144748089699847,
+            "p90": 1.4525911684670088,
+            "p95": 1.4978503846700044,
+            "p99": 1.5638398374563467
+          },
+          "held_out_n": 214,
+          "held_out_inside_p90": 193,
+          "held_out_rate": 0.9018691588785047,
+          "rate_ci95": [
+            0.8539119784243097,
+            0.9382236464998832
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.0136302466379288,
+          "cluster_icc": 0.0003260824554528437,
+          "rate_ci95_cluster_adjusted": [
+            0.8535292958738245,
+            0.9384440178854841
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Emma",
+              "n_windows": 53,
+              "threshold": 1.447168264426206,
+              "inside": 46
+            },
+            {
+              "work_index": 1,
+              "work": "Mansfield Park",
+              "n_windows": 53,
+              "threshold": 1.453833615318312,
+              "inside": 48
+            },
+            {
+              "work_index": 2,
+              "work": "Persuasion",
+              "n_windows": 28,
+              "threshold": 1.4555277161752753,
+              "inside": 28
+            },
+            {
+              "work_index": 3,
+              "work": "Pride and Prejudice",
+              "n_windows": 40,
+              "threshold": 1.4525911684670088,
+              "inside": 36
+            },
+            {
+              "work_index": 4,
+              "work": "Sense and Sensibility",
+              "n_windows": 40,
+              "threshold": 1.448934967397639,
+              "inside": 35
+            }
+          ]
+        },
+        {
+          "author": "bronte-charlotte",
+          "n_works": 4,
+          "n_windows": 228,
+          "quantiles": {
+            "p50": 1.3633852351087992,
+            "p90": 1.5502908469600765,
+            "p95": 1.6094517703151072,
+            "p99": 1.751621756571874
+          },
+          "held_out_n": 228,
+          "held_out_inside_p90": 198,
+          "held_out_rate": 0.868421052631579,
+          "rate_ci95": [
+            0.8175190393969123,
+            0.9094328293411325
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 12.125986360804173,
+          "cluster_icc": 0.19867832787150308,
+          "rate_ci95_cluster_adjusted": [
+            0.6341850457242071,
+            0.9777717224490381
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Jane Eyre",
+              "n_windows": 62,
+              "threshold": 1.5571558623746191,
+              "inside": 59
+            },
+            {
+              "work_index": 1,
+              "work": "Shirley",
+              "n_windows": 72,
+              "threshold": 1.4889883075906658,
+              "inside": 48
+            },
+            {
+              "work_index": 2,
+              "work": "The Professor",
+              "n_windows": 29,
+              "threshold": 1.55624140067129,
+              "inside": 28
+            },
+            {
+              "work_index": 3,
+              "work": "Villette",
+              "n_windows": 65,
+              "threshold": 1.563102580959184,
+              "inside": 63
+            }
+          ]
+        },
+        {
+          "author": "dickens-charles",
+          "n_works": 4,
+          "n_windows": 355,
+          "quantiles": {
+            "p50": 1.4452819521553184,
+            "p90": 1.6119589382079489,
+            "p95": 1.6604647837526245,
+            "p99": 1.7417197208038213
+          },
+          "held_out_n": 355,
+          "held_out_inside_p90": 318,
+          "held_out_rate": 0.895774647887324,
+          "rate_ci95": [
+            0.8592072012928444,
+            0.9255478909380729
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 3.784403919135437,
+          "cluster_icc": 0.03173109879356623,
+          "rate_ci95_cluster_adjusted": [
+            0.8155614356024273,
+            0.9493730458577267
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Bleak House",
+              "n_windows": 120,
+              "threshold": 1.6119589382079489,
+              "inside": 108
+            },
+            {
+              "work_index": 1,
+              "work": "David Copperfield",
+              "n_windows": 120,
+              "threshold": 1.6219209141740394,
+              "inside": 110
+            },
+            {
+              "work_index": 2,
+              "work": "Great Expectations",
+              "n_windows": 62,
+              "threshold": 1.627783315759855,
+              "inside": 59
+            },
+            {
+              "work_index": 3,
+              "work": "Oliver Twist",
+              "n_windows": 53,
+              "threshold": 1.590460229280147,
+              "inside": 41
+            }
+          ]
+        },
+        {
+          "author": "fitzgerald-f_scott",
+          "n_works": 3,
+          "n_windows": 85,
+          "quantiles": {
+            "p50": 1.7015051296295418,
+            "p90": 2.0709988212127155,
+            "p95": 2.133689826269896,
+            "p99": 2.172276080911341
+          },
+          "held_out_n": 85,
+          "held_out_inside_p90": 67,
+          "held_out_rate": 0.788235294117647,
+          "rate_ci95": [
+            0.6861269250831601,
+            0.8693978630633472
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": false,
+          "pass": false,
+          "cluster_design_effect": 11.133652440481253,
+          "cluster_icc": 0.37074338196882634,
+          "rate_ci95_cluster_adjusted": [
+            0.37435361258165817,
+            0.9817010109633204
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "The Beautiful and Damned",
+              "n_windows": 41,
+              "threshold": 1.866832986258575,
+              "inside": 23
+            },
+            {
+              "work_index": 1,
+              "work": "The Great Gatsby",
+              "n_windows": 16,
+              "threshold": 2.0942267663153102,
+              "inside": 16
+            },
+            {
+              "work_index": 2,
+              "work": "This Side of Paradise",
+              "n_windows": 28,
+              "threshold": 2.1102337222317447,
+              "inside": 28
+            }
+          ]
+        },
+        {
+          "author": "forster-e_m",
+          "n_works": 5,
+          "n_windows": 141,
+          "quantiles": {
+            "p50": 1.391611328855882,
+            "p90": 1.5693687994507988,
+            "p95": 1.5836793345420712,
+            "p99": 1.6566662609538676
+          },
+          "held_out_n": 141,
+          "held_out_inside_p90": 124,
+          "held_out_rate": 0.8794326241134752,
+          "rate_ci95": [
+            0.8139893300103229,
+            0.9281721485760963
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.2027934530367101,
+          "cluster_icc": 0.007455641655761405,
+          "rate_ci95_cluster_adjusted": [
+            0.8064040310733712,
+            0.9322732307408069
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Passage to India",
+              "n_windows": 34,
+              "threshold": 1.5656400012471685,
+              "inside": 29
+            },
+            {
+              "work_index": 1,
+              "work": "A Room with a View",
+              "n_windows": 22,
+              "threshold": 1.566752639547586,
+              "inside": 19
+            },
+            {
+              "work_index": 2,
+              "work": "Howards End",
+              "n_windows": 37,
+              "threshold": 1.5602482710090595,
+              "inside": 30
+            },
+            {
+              "work_index": 3,
+              "work": "The Longest Journey",
+              "n_windows": 32,
+              "threshold": 1.5728696056265572,
+              "inside": 31
+            },
+            {
+              "work_index": 4,
+              "work": "Where Angels Fear to Tread",
+              "n_windows": 16,
+              "threshold": 1.5702703300024676,
+              "inside": 15
+            }
+          ]
+        },
+        {
+          "author": "hawthorne-nathaniel",
+          "n_works": 3,
+          "n_windows": 82,
+          "quantiles": {
+            "p50": 1.3622992298579881,
+            "p90": 1.4864647924917307,
+            "p95": 1.571429458697479,
+            "p99": 1.6124445059472294
+          },
+          "held_out_n": 82,
+          "held_out_inside_p90": 71,
+          "held_out_rate": 0.8658536585365854,
+          "rate_ci95": [
+            0.7726393752767824,
+            0.9310878548522303
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 5.246972148177825,
+          "cluster_icc": 0.16127742334852502,
+          "rate_ci95_cluster_adjusted": [
+            0.6014598588557634,
+            0.9820501180828753
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "The Blithedale Romance",
+              "n_windows": 25,
+              "threshold": 1.4599521774554547,
+              "inside": 17
+            },
+            {
+              "work_index": 1,
+              "work": "The House of the Seven Gables",
+              "n_windows": 34,
+              "threshold": 1.5299372869866745,
+              "inside": 33
+            },
+            {
+              "work_index": 2,
+              "work": "The Scarlet Letter",
+              "n_windows": 23,
+              "threshold": 1.4917083640741193,
+              "inside": 21
+            }
+          ]
+        },
+        {
+          "author": "joyce-james",
+          "n_works": 3,
+          "n_windows": 140,
+          "quantiles": {
+            "p50": 1.4476534757608015,
+            "p90": 1.7848460478085055,
+            "p95": 2.085409573171192,
+            "p99": 2.667744461589187
+          },
+          "held_out_n": 140,
+          "held_out_inside_p90": 114,
+          "held_out_rate": 0.8142857142857143,
+          "rate_ci95": [
+            0.7398479577173891,
+            0.8749524059155506
+          ],
+          "ci_contains_nominal_090": false,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 8.316533971586988,
+          "cluster_icc": 0.16021607237051802,
+          "rate_ci95_cluster_adjusted": [
+            0.5536677737240048,
+            0.9581024303561393
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "A Portrait of the Artist as a Young Man",
+              "n_windows": 28,
+              "threshold": 1.821320488658515,
+              "inside": 27
+            },
+            {
+              "work_index": 1,
+              "work": "Dubliners",
+              "n_windows": 23,
+              "threshold": 1.826988175015703,
+              "inside": 23
+            },
+            {
+              "work_index": 2,
+              "work": "Ulysses",
+              "n_windows": 89,
+              "threshold": 1.6211231956681775,
+              "inside": 64
+            }
+          ]
+        },
+        {
+          "author": "melville-herman",
+          "n_works": 4,
+          "n_windows": 189,
+          "quantiles": {
+            "p50": 1.5342997210600622,
+            "p90": 1.719008088649957,
+            "p95": 1.7689889571232575,
+            "p99": 1.929407944127696
+          },
+          "held_out_n": 189,
+          "held_out_inside_p90": 166,
+          "held_out_rate": 0.8783068783068783,
+          "rate_ci95": [
+            0.8230133498361755,
+            0.9212702223019782
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 3.7629117011222637,
+          "cluster_icc": 0.05973863137561651,
+          "rate_ci95_cluster_adjusted": [
+            0.7551696176632106,
+            0.9534753623213439
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Moby-Dick",
+              "n_windows": 71,
+              "threshold": 1.6898190962722104,
+              "inside": 56
+            },
+            {
+              "work_index": 1,
+              "work": "Omoo",
+              "n_windows": 34,
+              "threshold": 1.7258137688681905,
+              "inside": 32
+            },
+            {
+              "work_index": 2,
+              "work": "Typee",
+              "n_windows": 36,
+              "threshold": 1.7117680066760388,
+              "inside": 31
+            },
+            {
+              "work_index": 3,
+              "work": "White-Jacket",
+              "n_windows": 48,
+              "threshold": 1.738278188185701,
+              "inside": 47
+            }
+          ]
+        },
+        {
+          "author": "woolf-virginia",
+          "n_works": 4,
+          "n_windows": 141,
+          "quantiles": {
+            "p50": 1.449139774465787,
+            "p90": 1.6269787934060267,
+            "p95": 1.690718153393071,
+            "p99": 1.7445246175093254
+          },
+          "held_out_n": 141,
+          "held_out_inside_p90": 127,
+          "held_out_rate": 0.900709219858156,
+          "rate_ci95": [
+            0.8390197377707312,
+            0.9446458385226368
+          ],
+          "ci_contains_nominal_090": true,
+          "rate_ge_gate_floor_080": true,
+          "pass": true,
+          "cluster_design_effect": 1.277858135823016,
+          "cluster_icc": 0.008112646301401932,
+          "rate_ci95_cluster_adjusted": [
+            0.8291077654033676,
+            0.9494657246538608
+          ],
+          "cluster_adjusted_ci_contains_090": true,
+          "per_work": [
+            {
+              "work_index": 0,
+              "work": "Jacob's Room",
+              "n_windows": 18,
+              "threshold": 1.6119471665887124,
+              "inside": 14
+            },
+            {
+              "work_index": 1,
+              "work": "Mrs. Dalloway",
+              "n_windows": 21,
+              "threshold": 1.6512671621982196,
+              "inside": 20
+            },
+            {
+              "work_index": 2,
+              "work": "Night and Day",
+              "n_windows": 56,
+              "threshold": 1.639181310467908,
+              "inside": 51
+            },
+            {
+              "work_index": 3,
+              "work": "The Voyage Out",
+              "n_windows": 46,
+              "threshold": 1.641534941426037,
+              "inside": 42
+            }
+          ]
+        }
+      ],
+      "envelope_meta": {
+        "version": "1.0.0",
+        "generated": "2026-06-11T05:05:47.188822+00:00",
+        "window_words": 3000,
+        "window_unit": "mfw_tokens",
+        "seed": 20260609,
+        "max_windows_per_work": null,
+        "loo": "work_level (window's own work excluded from its centroid)",
+        "distance_variant": "mfw_delta",
+        "n_mfw": 300,
+        "tokenizer": "lowercase_regex_v1",
+        "vocab_filter": "function_words_only",
+        "quantile_levels": [
+          50,
+          90,
+          95,
+          99
+        ],
+        "source_artifact": "data/artifacts/author_space_pd_v1_fwonly.json",
+        "source_artifact_sha256": "e1ef12ad426517af66a7ff7a692fca654783f45e80d70759f471a86d5d2b09fe",
+        "n_authors": 9,
+        "skipped_authors": [],
+        "works_without_text": [],
+        "works_too_short": []
+      }
+    }
+  ]
+}

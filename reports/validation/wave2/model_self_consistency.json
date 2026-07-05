@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "generated": "2026-06-11T00:32:02.321217+00:00",
+    "artifact": "data/artifacts/author_space_v1_wave2.json",
+    "min_words": 1500
+  },
+  "experiment": "p6_self_consistency",
+  "human_reference": {
+    "within_author_pairs_p50": 0.7395876249235569,
+    "within_author_pairs_p90": 1.0838618233482737,
+    "between_author_pairs_p50": 1.076098283134362
+  },
+  "per_model": {
+    "claude-fable-5": {
+      "n_samples": 50,
+      "within_median": 1.6325328874513287,
+      "within_p90": 1.8311031036994296
+    },
+    "claude-haiku-4-5": {
+      "n_samples": 50,
+      "within_median": 1.8549849202251887,
+      "within_p90": 2.097001219476986
+    },
+    "claude-opus-4-8": {
+      "n_samples": 50,
+      "within_median": 1.8302763582733448,
+      "within_p90": 2.022958559040644
+    },
+    "claude-sonnet-4-6": {
+      "n_samples": 50,
+      "within_median": 1.7077794815164142,
+      "within_p90": 1.9329816376103646
+    },
+    "gemma4:26b": {
+      "n_samples": 50,
+      "within_median": 1.5480129567326848,
+      "within_p90": 1.7686481285936595
+    },
+    "gpt-5": {
+      "n_samples": 50,
+      "within_median": 1.3731828738733398,
+      "within_p90": 1.5705361504701238
+    },
+    "gpt-5-mini": {
+      "n_samples": 50,
+      "within_median": 1.4044334895021593,
+      "within_p90": 1.5808324341455124
+    },
+    "qwen3.6:35b": {
+      "n_samples": 50,
+      "within_median": 1.8008061260897217,
+      "within_p90": 2.0882886193697816
+    }
+  },
+  "cross_model_centroid_delta": {
+    "claude-fable-5|claude-haiku-4-5": 1.003763435630831,
+    "claude-fable-5|claude-opus-4-8": 0.548966219956497,
+    "claude-fable-5|claude-sonnet-4-6": 0.8215227792606276,
+    "claude-fable-5|gemma4:26b": 1.4204804436976899,
+    "claude-fable-5|gpt-5": 0.9597183577049585,
+    "claude-fable-5|gpt-5-mini": 1.18889802276049,
+    "claude-fable-5|qwen3.6:35b": 1.0458090883857858,
+    "claude-haiku-4-5|claude-opus-4-8": 0.9294439288851574,
+    "claude-haiku-4-5|claude-sonnet-4-6": 0.6093059384590767,
+    "claude-haiku-4-5|gemma4:26b": 1.2312860784231874,
+    "claude-haiku-4-5|gpt-5": 1.098330520769839,
+    "claude-haiku-4-5|gpt-5-mini": 0.9922858469103574,
+    "claude-haiku-4-5|qwen3.6:35b": 1.0240536634158612,
+    "claude-opus-4-8|claude-sonnet-4-6": 0.790782580689387,
+    "claude-opus-4-8|gemma4:26b": 1.3934986018702065,
+    "claude-opus-4-8|gpt-5": 0.9135744053514827,
+    "claude-opus-4-8|gpt-5-mini": 1.1219033415330735,
+    "claude-opus-4-8|qwen3.6:35b": 1.0551516907106737,
+    "claude-sonnet-4-6|gemma4:26b": 1.2921747696677528,
+    "claude-sonnet-4-6|gpt-5": 1.070123658903376,
+    "claude-sonnet-4-6|gpt-5-mini": 1.051110607694922,
+    "claude-sonnet-4-6|qwen3.6:35b": 1.046204057460636,
+    "gemma4:26b|gpt-5": 1.4824535075141438,
+    "gemma4:26b|gpt-5-mini": 1.306573181457978,
+    "gemma4:26b|qwen3.6:35b": 0.955365519430318,
+    "gpt-5|gpt-5-mini": 0.803348380518945,
+    "gpt-5|qwen3.6:35b": 1.1670442045320784,
+    "gpt-5-mini|qwen3.6:35b": 1.1612972284291634
+  },
+  "loo_self_attribution": {
+    "accuracy": 0.9775,
+    "n_trials": 400,
+    "n_models": 8,
+    "chance": 0.125,
+    "confusion": {
+      "claude-fable-5": {
+        "claude-fable-5": 50
+      },
+      "claude-haiku-4-5": {
+        "claude-haiku-4-5": 49,
+        "claude-sonnet-4-6": 1
+      },
+      "claude-opus-4-8": {
+        "claude-opus-4-8": 47,
+        "claude-fable-5": 3
+      },
+      "claude-sonnet-4-6": {
+        "claude-sonnet-4-6": 50
+      },
+      "gemma4:26b": {
+        "gemma4:26b": 50
+      },
+      "gpt-5": {
+        "gpt-5": 50
+      },
+      "gpt-5-mini": {
+        "gpt-5-mini": 50
+      },
+      "qwen3.6:35b": {
+        "gemma4:26b": 5,
+        "qwen3.6:35b": 45
+      }
+    }
+  }
+}

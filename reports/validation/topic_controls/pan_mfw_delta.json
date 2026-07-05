@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "dataset": "PAN14 authorship verification (validation/datasets/pan_cross_topic, training corpora)",
+  "method": "Burrows Delta over top-300 MFW (corpus norm from known docs); score = -Delta(unknown z, mean known z); AUC over Y/N labels; accuracy at the median-score threshold (label-balanced sets)",
+  "note": "Sanity check only: PAN14 essays are cross-topic by construction; novels corpus is cross-genre. Verification (not closed-set attribution), so numbers are not comparable to E2 gates."
+ },
+ "results": {
+  "english_essays": {
+   "none": {
+    "n_trials": 200,
+    "n_mfw": 300,
+    "auc": 0.5951,
+    "accuracy_at_median_threshold": 0.57
+   },
+   "function_words_only": {
+    "n_trials": 200,
+    "n_mfw": 300,
+    "auc": 0.6328,
+    "accuracy_at_median_threshold": 0.61
+   }
+  },
+  "english_novels": {
+   "none": {
+    "n_trials": 100,
+    "n_mfw": 300,
+    "auc": 0.8404,
+    "accuracy_at_median_threshold": 0.72
+   },
+   "function_words_only": {
+    "n_trials": 100,
+    "n_mfw": 297,
+    "auc": 0.614,
+    "accuracy_at_median_threshold": 0.58
+   }
+  }
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "meta": {
+  "generated": "2026-06-10T00:05:27.617967+00:00",
+  "baseline_dir": "data/baselines/author_space_build/work_baselines",
+  "manifest": "data/baselines/author_space_build/control_shelf_manifest.yaml",
+  "authors_filter": null,
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 15,
+  "n_works": 78,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "mfw_delta",
+  "mfw_n": 300,
+  "mfw_n_effective": 300,
+  "mfw_vocab_filter": "function_words_only",
+  "blend_scale": 5.889544734021734
+ },
+ "experiment": "e2",
+ "name": "Leave-one-work-out attribution",
+ "distance_variant": "mfw_delta",
+ "pass": true,
+ "criteria": {
+  "top1_accuracy": {
+   "threshold": 0.7,
+   "comparison": ">=",
+   "observed": 0.9230769230769231,
+   "pass": true
+  },
+  "top3_accuracy": {
+   "threshold": 0.85,
+   "comparison": ">=",
+   "observed": 0.9743589743589743,
+   "pass": true
+  }
+ },
+ "n_trials": 78,
+ "n_candidate_authors": 15,
+ "skipped_authors": [],
+ "per_author": {
+  "delillo-don": {
+   "n_works": 6,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "didion-joan": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "foster_wallace-david": {
+   "n_works": 3,
+   "top1_accuracy": 0.3333333333333333,
+   "top3_accuracy": 1.0
+  },
+  "ishiguro-kazuo": {
+   "n_works": 6,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "mccarthy-cormac": {
+   "n_works": 8,
+   "top1_accuracy": 0.75,
+   "top3_accuracy": 0.875
+  },
+  "morrison-toni": {
+   "n_works": 9,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "murakami-haruki": {
+   "n_works": 7,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "ondaatje-michael": {
+   "n_works": 7,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "proulx-annie": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "pynchon-thomas": {
+   "n_works": 4,
+   "top1_accuracy": 0.75,
+   "top3_accuracy": 1.0
+  },
+  "robinson-marilynne": {
+   "n_works": 3,
+   "top1_accuracy": 0.6666666666666666,
+   "top3_accuracy": 0.6666666666666666
+  },
+  "saunders-george": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "sebald-w_g": {
+   "n_works": 3,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "tokarczuk-olga": {
+   "n_works": 6,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "whitehead-colson": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  }
+ },
+ "confusion_matrix": {
+  "delillo-don": {
+   "delillo-don": 6
+  },
+  "didion-joan": {
+   "didion-joan": 4
+  },
+  "foster_wallace-david": {
+   "foster_wallace-david": 1,
+   "pynchon-thomas": 1,
+   "saunders-george": 1
+  },
+  "ishiguro-kazuo": {
+   "ishiguro-kazuo": 6
+  },
+  "mccarthy-cormac": {
+   "mccarthy-cormac": 6,
+   "robinson-marilynne": 1,
+   "proulx-annie": 1
+  },
+  "morrison-toni": {
+   "morrison-toni": 9
+  },
+  "murakami-haruki": {
+   "murakami-haruki": 7
+  },
+  "ondaatje-michael": {
+   "ondaatje-michael": 7
+  },
+  "proulx-annie": {
+   "proulx-annie": 4
+  },
+  "pynchon-thomas": {
+   "pynchon-thomas": 3,
+   "foster_wallace-david": 1
+  },
+  "robinson-marilynne": {
+   "ondaatje-michael": 1,
+   "robinson-marilynne": 2
+  },
+  "saunders-george": {
+   "saunders-george": 4
+  },
+  "sebald-w_g": {
+   "sebald-w_g": 3
+  },
+  "tokarczuk-olga": {
+   "tokarczuk-olga": 6
+  },
+  "whitehead-colson": {
+   "whitehead-colson": 4
+  }
+ },
+ "c_llr": {
+  "value": 1.8542291643275273,
+  "min": 0.7512338946177184,
+  "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+ },
+ "sanity_check": {
+  "method": null,
+  "top1_accuracy": null,
+  "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: mfw_delta)."
+ }
+}

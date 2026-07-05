@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "generated": "2026-06-11T00:32:03.988500+00:00",
+    "artifact": "data/artifacts/author_space_v1_wave2.json",
+    "paraphrase_scenarios": [
+      "estate_sale",
+      "hotel_fire",
+      "irrigation",
+      "night_ferry"
+    ],
+    "n_rows": 586
+  },
+  "experiment": "p4_paraphrase_sensitivity",
+  "per_phrasing": {
+    "base": {
+      "n": 160,
+      "median_nearest_distance": 1.6246541032286685,
+      "off_manifold_rate": 1.0
+    },
+    "workshop": {
+      "n": 64,
+      "median_nearest_distance": 1.618928852562497,
+      "off_manifold_rate": 1.0
+    },
+    "editor_brief": {
+      "n": 60,
+      "median_nearest_distance": 1.591400984785237,
+      "off_manifold_rate": 1.0
+    },
+    "terse": {
+      "n": 62,
+      "median_nearest_distance": 1.5925320786821326,
+      "off_manifold_rate": 1.0
+    }
+  },
+  "per_model_spread": {
+    "claude-fable-5": {
+      "per_phrasing_median": {
+        "base": 1.5710882524234524,
+        "workshop": 1.538532316541857,
+        "editor_brief": 1.5497410209555298,
+        "terse": 1.558198629938517
+      },
+      "max_abs_spread": 0.032555935881595444
+    },
+    "claude-haiku-4-5": {
+      "per_phrasing_median": {
+        "base": 1.6988529939662897,
+        "workshop": 1.6722435974298473,
+        "editor_brief": 1.620679173232861,
+        "terse": 1.6662796768389734
+      },
+      "max_abs_spread": 0.07817382073342882
+    },
+    "claude-opus-4-8": {
+      "per_phrasing_median": {
+        "base": 1.648351688543432,
+        "workshop": 1.6197738276238096,
+        "editor_brief": 1.615440476155342,
+        "terse": 1.5482425889368254
+      },
+      "max_abs_spread": 0.10010909960660652
+    },
+    "claude-sonnet-4-6": {
+      "per_phrasing_median": {
+        "base": 1.651662799868442,
+        "workshop": 1.6293621675141292,
+        "editor_brief": 1.6340026917212815,
+        "terse": 1.5763863478280906
+      },
+      "max_abs_spread": 0.0752764520403515
+    },
+    "gemma4:26b": {
+      "per_phrasing_median": {
+        "base": 1.7656712242538264,
+        "workshop": 1.8588959043785154,
+        "editor_brief": 1.8368818163479201,
+        "terse": 1.807720533059613
+      },
+      "max_abs_spread": 0.09322468012468899
+    },
+    "gpt-5": {
+      "per_phrasing_median": {
+        "base": 1.3047182041902374,
+        "workshop": 1.2927508899094762,
+        "editor_brief": 1.3114488206971089,
+        "terse": 1.294397374676487
+      },
+      "max_abs_spread": 0.01869793078763271
+    },
+    "gpt-5-mini": {
+      "per_phrasing_median": {
+        "base": 1.5458276765111334,
+        "workshop": 1.4881362905210023,
+        "editor_brief": 1.4817880091206892,
+        "terse": 1.5385635272001719
+      },
+      "max_abs_spread": 0.0640396673904442
+    },
+    "qwen3.6:35b": {
+      "per_phrasing_median": {
+        "base": 1.7146254546285946,
+        "workshop": 1.8109344594311236,
+        "editor_brief": 1.7774225923465639,
+        "terse": 1.7049070620609048
+      },
+      "max_abs_spread": 0.10602739737021882
+    }
+  },
+  "max_model_spread": 0.10602739737021882,
+  "reading": "Placement is prompt-wording-robust if per-phrasing medians sit within the within-model sampling spread and off-manifold rates stay at 1.0 across phrasings."
+}

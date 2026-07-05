@@ -1,0 +1,171 @@
+The pump had been dead since Tuesday, and by Thursday the trees at the far end of the lower block were starting to show it, the leaves going that particular dull green that Daniel had learned to read the way other men read faces. He stood at the edge of the row with his coffee going cold in his hand and looked down the slope toward the irrigation main where it surfaced near the equipment shed, a length of black poly pipe that had been patched so many times it looked diseased.
+
+Wesley came out of the house behind him, the screen door clapping shut. He was carrying two pairs of work gloves and a thermos, and he'd put on the boots that he kept here for visits, the ones that never broke in because he never wore them long enough.
+
+"Mom's still asleep," Wesley said.
+
+"She gets up later now."
+
+"I noticed." Wesley handed him a pair of gloves. "You didn't have to wait for me."
+
+"I wasn't waiting. I was looking."
+
+They walked down together through the rows of Bartletts that their grandfather had planted in the year the war ended, the trees gone gnarled and overgrown now, untrimmed for two seasons because Daniel couldn't do it all himself and couldn't afford to pay anyone to help. The grass between the rows was high and dry and full of the small sounds of insects. June in the valley had a way of pressing down on everything, a heat that wasn't cruel yet but promised to be by August, the light coming flat and white off the hills.
+
+"Where's the break?" Wesley asked.
+
+"Don't know yet. Pump's not pulling, so either it's the pump or it's a leak somewhere bleeding off the pressure. Probably both, knowing this place."
+
+"You check the pump first?"
+
+"I checked the pump." Daniel said it with an edge he hadn't meant to put there, and he saw Wesley register it and decide to let it go. That was the thing about his brother now—he had learned in the city to let things go, to absorb them and move past, the way you did in offices where everyone had to keep working together. Daniel found it maddening. He wanted Wesley to fight back the way he used to when they were boys, when a wrong word would put the two of them rolling in the dirt under these same trees while their father shouted at them to quit it or he'd give them both something to cry about.
+
+The pump house was a concrete box at the bottom of the slope, hot and dark and smelling of rust and the mineral breath of the well below it. Daniel pulled the cover off the control box and they crouched together looking at the wiring, and for a while it was almost good, the two of them with their heads close over the same problem, the way work could erase for a little while everything that lay between two people.
+
+"Capacitor's gone," Wesley said. "Look at the top of it. Bulged."
+
+"I saw that."
+
+"You got a spare?"
+
+"I got the one I pulled off the old pump. Might be the right rating, might not."
+
+"Let's try it."
+
+They worked at it with the heat building in the little room, and Daniel found the capacitor in the coffee can of parts he kept on the shelf, furred with dust, and Wesley held the flashlight while Daniel's hands did the work they had done a thousand times. There was a satisfaction in it that he didn't want to admit to, having his brother there to hold the light. For nine years he had done all of it alone—the pruning and the spraying and the harvest and the endless breakdowns of a farm that was older than either of them, that had been dying slowly the whole time like an animal too stubborn to lie down.
+
+When they wired the capacitor in and threw the breaker, the pump hummed and caught and they heard the water move in the line, a deep gulp somewhere underground, and then far up the slope the sound of it beginning to weep out of a hundred small failures in the old pipe.
+
+"There's your leaks," Wesley said.
+
+"There's my leaks."
+
+They climbed back up into the light. The morning had warmed and the smell of the orchard had come up, the green and the dust and the faint sweetness of the few pears that had set, and they walked the main line looking for where the water surfaced. They found the worst of it a third of the way up, where the poly had split along a seam and water was bubbling up dark through the grass, and Daniel marked it with a stake and they kept walking and found two more, smaller, and marked those too.
+
+"You want to splice these or replace the run?" Wesley asked.
+
+"Can't afford to replace the run."
+
+"How much is the run?"
+
+Daniel told him, and Wesley didn't say anything, just looked off down the slope at the trees, and Daniel knew exactly what he was thinking because it was the thing they had been not-saying since Wesley's car had come up the drive the evening before. He could feel it gathering between them like the heat.
+
+"We'll splice them," Daniel said. "I've got couplings."
+
+They went back to the shed for the tools, and Daniel dug through the parts bins for the right couplings while Wesley stood in the doorway looking at the equipment, the old tractor that started one morning in three, the sprayer their father had bought used the year before he died. There was a quality to the way Wesley looked at things now, an appraising distance, like a man pricing an estate, and Daniel hated it and understood it. Wesley sold things for a living. He worked for a company that bought failing businesses and broke them into parts and sold the parts, and he was good at it, he made more money in a year than the orchard had made in the last five combined, and he had a way of seeing a thing in terms of what it could be turned into.
+
+"Cut the pump," Daniel said. "We can't splice it under pressure."
+
+Wesley went back down and killed the breaker, and the water in the line subsided, and they knelt in the wet grass at the first break and Daniel cut the pipe clean on either side of the split with the ratchet cutter and they fitted the coupling, working the stiff black poly over the barbs, Wesley holding while Daniel drove the clamps tight.
+
+"You ever think," Wesley said, not looking up, "about what your hourly comes to? On a place like this?"
+
+"No."
+
+"I did the math once. Last year. From what Mom told me you cleared."
+
+"You did the math."
+
+"It came to about three dollars an hour. Three dollars and change."
+
+Daniel set the clamp and tightened it and didn't say anything. The water was cold where it had soaked through the knees of his jeans. A jay was going off in the windbreak cypresses along the property line, and somewhere a long way off a tractor was working, one of the big operations down on the valley floor where they grew almonds in blocks a mile square and ran the whole thing off a computer.
+
+"That's not a wage, Dan. That's not even—it's not anything. You'd make more at the lumberyard. You'd make a lot more at the lumberyard, and you'd have your evenings, and you wouldn't be out here at midnight in February when the pump freezes."
+
+"You did the math," Daniel said again. "That's good. That's real good. You sit up there in your office and you do the math on my life."
+
+"I'm not doing the math on your life. I'm doing the math on the orchard. They're different things. That's the whole point I'm trying to—" Wesley stopped himself, breathed, did the thing where he let it go. "You're treating them like the same thing."
+
+"They are the same thing."
+
+"They don't have to be."
+
+Daniel stood up. His knee popped when he stood now, which it hadn't a few years ago, and he registered that the way he registered the leaves going dull, as information about a system that was failing. He picked up the tools and walked to the second break and Wesley followed.
+
+"Hold this," Daniel said, and Wesley held it, and they did the second splice in silence, and it was a worse split, the pipe brittle on one side so that it crumbled when Daniel tried to fit the coupling, and he had to cut back farther to find good material, and the run came up short, and he had to go back to the shed for a length of new pipe to bridge it, and by the time it was done his hands were aching and the sun was high and the good feeling of the morning was entirely gone.
+
+"There's a developer," Wesley said while Daniel was tightening the last clamp. "I didn't bring it up to—I wanted to do this first. Help you with the pump. But there's a developer, and they're not lowballing. They're not vultures, Dan, it's a good number, it's a number that would—"
+
+"I know there's a developer."
+
+Wesley stopped. "How do you know there's a developer?"
+
+"Because they sent a man around in April. Walked the property line with a tablet. I ran him off." Daniel set the cutter down. "And then Mom called you, didn't she. That's what this is. That's why you drove up."
+
+"She's worried about you."
+
+"She's worried about the money."
+
+"She's worried about both. She's allowed to be worried about both. She's seventy-six and her son is working himself into the ground for three dollars an hour on land that's worth more empty than it's ever going to be with trees on it. Yeah. She's worried."
+
+Daniel walked away from him, down toward the third break, and Wesley let him go this time, and Daniel stood over the last stake looking at the water seeping up and felt something in his chest that he couldn't name, that he hadn't let himself name in a long time. Below him the orchard ran down to the road, two hundred trees their grandfather had planted, that their father had kept, that Daniel had given his whole adult life to keeping, and they were dying. Not dramatically. There was no blight, no single thing he could fight. They were just old, and the market for pears had gone to the big operations, and the water cost more every year, and the equipment was failing, and he was failing, and the truth that he had been holding off the way you hold off sleep when you are exhausted was that Wesley was right. The math was the math. You could not love your way past the math. Their father had believed you could, had said it in his way, a man who never said anything directly: We don't sell the land, said the way you'd state a law of physics, and he had died at sixty-one in the cab of the tractor with the engine still running and the orchard still here, and he had handed it to Daniel like a relay baton in a race that could not be won, only run until you dropped.
+
+Wesley came down the slope and stood beside him. For a while neither of them spoke. The jay had gone quiet. The heat lay over everything.
+
+"You remember," Daniel said finally, "when Dad took us out here, the spring after Grandpa died. And he made us walk every row."
+
+"I remember."
+
+"Made us touch every tree. I thought it was the dumbest thing. We were out here four hours. My feet were killing me."
+
+"You were nine. You complained the whole time."
+
+"I did." Daniel almost smiled. "And he said—you remember what he said?"
+
+Wesley didn't answer. Daniel looked over and saw that his brother was looking down at the water in the grass and his jaw was working, and Daniel understood that Wesley remembered exactly what their father had said, that he had perhaps been carrying it the same way Daniel had, a stone in the pocket all these years.
+
+"He said a tree doesn't know it's yours," Daniel said. "He said you can put your name on the deed but the tree doesn't know about deeds. The only way it knows you is you come and put your hands on it. That's the only way it knows you're there. So you better come, and you better put your hands on it, because nobody else is going to."
+
+"I remember," Wesley said. His voice had gone rough.
+
+"You drove away from that. I didn't. That's the whole thing between us, right there. I stayed and put my hands on it and you drove away."
+
+Wesley turned to him then, and Daniel saw that he had it wrong, saw it in his brother's face before Wesley said anything, and felt the old shame of having reached for the easy cruelty.
+
+"You think I don't know that," Wesley said quietly. "You think there's a day I don't know that. I drove away because there was nothing here for two of us. The math didn't work for two of us, Dan, it barely worked for one. One of us had to go make money so the other one could stay. And I went. And you stayed. And I have spent—" He stopped. His eyes were wet and he was furious about it, Daniel could see, furious at himself. "Where do you think the new spray rig came from? Three years ago. Mom told you a grant. There was no grant. Where do you think the money came for the well work in—" He waved his hand. "Forget it."
+
+Daniel stared at him. "What well work."
+
+"Forget it."
+
+"What well work, Wes."
+
+"The deepening. In the drought year. When the static level dropped and you said you'd found money. You didn't find money. I sent it to Mom and Mom gave it to you and told you she'd had a CD come due. There was no CD." Wesley wiped his face with the back of his glove, leaving a smear of dirt. "So don't tell me I drove away. I drove away to a desk where I sell off other people's whole lives in pieces so that I can keep this one going. So that you could keep putting your hands on it. And now I'm telling you that I can't do it anymore, and Mom can't either, because she's seventy-six and she needs the money to not be afraid, and you are the only one of the three of us who gets to pretend that love is a kind of arithmetic that comes out different from the real kind. It doesn't. I learned that a long time ago. I learned it sending you money I told you was a grant."
+
+The water seeped up between them out of the broken ground. Far off the big tractor turned and the sound of it changed and then steadied. Daniel found that he had sat down in the wet grass without deciding to, and that his face was in his hands, and that he was not crying, exactly, but doing something close to it, something dry and worse than crying, while his brother stood over him not knowing what to do with his hands.
+
+"You should have told me," Daniel said into his palms.
+
+"You wouldn't have taken it."
+
+"You should have told me."
+
+"You wouldn't have taken it, and you know it, and that's why I didn't, and I'd do it the same way again." Wesley crouched down beside him, his bad city boots in the mud, ruined now, and Daniel almost laughed at that, at the boots, at the absurdity of his brother crouching in the muck of the dying orchard in his three-hundred-dollar boots. "Listen to me. I'm not the enemy here. The bank's not even the enemy. There's no enemy. That's what's so—there's nobody to fight. The trees are old and the water's expensive and we're tired, all of us, and Dad's been gone twelve years, and I miss him too, and the orchard isn't him. You know that. You have to know that. You can sell the land and you don't sell him. He's not in the dirt. He's in—" Wesley's voice failed and he tried again. "He's in the way you fix a pump. He's in the way I can't throw anything away. He's in us. He's not in the trees. The trees are just trees, Dan. They were always just trees."
+
+Daniel lifted his head. The orchard ran down to the road, green and gold and dying, two hundred trees, and the light moved in them as the heat moved the air, and for the first time in a long time he let himself see it the way Wesley saw it, the way the man with the tablet had seen it, the way the developer saw it—as a thing, a piece of ground with a number attached, and the seeing was a kind of agony and also a kind of release, like setting down a weight he had been carrying so long he'd forgotten it was a weight and had come to think it was just the shape of his own body.
+
+"It's a good number?" Daniel said.
+
+Wesley nodded slowly. "It's a good number. It would take care of Mom. It would take care of you, for a while. Long enough to figure out what's next."
+
+"What's next."
+
+"I don't know. There's a next, though. There's always a next. That's the thing you stop believing when you're out here alone for nine years, but there is."
+
+Daniel looked at his hands, the cracks in them, the dirt worked permanently into the creases, the hands of a man who had put them on every one of these trees a thousand times. The pump waited at the bottom of the slope, fixed, the new capacitor good for a few more years. The splices were done. The water would run again. He could turn the breaker and the line would hold and the trees would get their drink and would live another season, dull green going back to true green, and then there would be August and the harvest such as it was, the few good pears, and then the rains, and the pruning he couldn't keep up with, and February, and the pump freezing, and the whole turning of it, again, the way it had turned his whole life, the way it had turned his father's, the great wheel of the place that did not care whether you could afford it, that asked everything and gave back three dollars an hour and a way to feel your father's hand on your shoulder.
+
+"Let me think about it," Daniel said.
+
+"Okay."
+
+"I'm not saying yes."
+
+"I know."
+
+"I want to get the line running first. I want to see the water come up."
+
+"Okay," Wesley said. "Let's get the line running."
+
+They did the third splice together, the worst of them, and they had to cut and bridge it the way they had the second, and it took the better part of an hour, and by the end of it they were both soaked and filthy and the sun was straight overhead. Then they walked back down to the pump house, and Daniel put his hand on the breaker, and looked at his brother, and threw it, and the pump caught and hummed and they heard the water move in the line below them, the deep underground gulp, and they went out and walked up the slope to watch it reach the trees.
+
+It came up the line and they could follow it by the sound, the pipe filling, and then far up at the end of the lower block the first emitters began to tick and spit and run, and the dry ground under the trees went dark with water, and the smell of it came up, wet dust, the oldest good smell there was, and Daniel stood there with his brother in the heat and watched the orchard drink, the whole failing length of it, two hundred trees their grandfather had planted, getting one more season whether it deserved one or not, and he did not say anything and Wesley did not say anything, and that, at last, was the two of them not-saying the same thing instead of opposite things, which was as close to peace as they were going to get that day, standing in the mud in their wet clothes while the water ran and ran into ground that would not, in the end, be theirs to keep.

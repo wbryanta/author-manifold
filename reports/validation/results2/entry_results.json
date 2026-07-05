@@ -1,0 +1,2667 @@
+{
+  "meta": {
+    "generated": "2026-06-11T08:06:52.273417+00:00",
+    "tool": "rerun_entry_analysis.py",
+    "window_words": 3000,
+    "hard_floor": 1500,
+    "practice_floor": 3000,
+    "floor_unit": "mfw_tokens",
+    "seed": 20260609,
+    "n_bootstrap": 2000,
+    "n_corpus_samples": 1069,
+    "n_styled_total": 318,
+    "n_styled_primary": 236,
+    "n_styled_subfloor": 76,
+    "n_styled_hard_floor_excluded": 6,
+    "hard_floor_excluded_files": [
+      "gemma4_26b/estate_sale__exemplar_morrison-toni__s2.txt",
+      "gemma4_26b/irrigation__exemplar_mccarthy-cormac__s1.txt",
+      "gemma4_26b/irrigation__exemplar_mccarthy-cormac__s3.txt",
+      "gemma4_26b/irrigation__exemplar_mccarthy-cormac__s4.txt",
+      "gemma4_26b/irrigation__exemplar_mccarthy-cormac__s5.txt",
+      "gemma4_26b/night_ferry__exemplar_ondaatje-michael__s3.txt"
+    ],
+    "subfloor_files": [
+      "claude-fable-5/hotel_fire__exemplar_didion-joan__s5.txt",
+      "claude-haiku-4-5/estate_sale__exemplar_morrison-toni__s1.txt",
+      "claude-haiku-4-5/estate_sale__exemplar_morrison-toni__s2.txt",
+      "claude-haiku-4-5/estate_sale__exemplar_morrison-toni__s3.txt",
+      "claude-haiku-4-5/estate_sale__exemplar_morrison-toni__s4.txt",
+      "claude-haiku-4-5/estate_sale__exemplar_morrison-toni__s5.txt",
+      "claude-haiku-4-5/estate_sale__style_morrison-toni.txt",
+      "claude-haiku-4-5/estate_sale__style_morrison-toni__s2.txt",
+      "claude-haiku-4-5/estate_sale__style_morrison-toni__s3.txt",
+      "claude-haiku-4-5/estate_sale__style_morrison-toni__s5.txt",
+      "claude-haiku-4-5/hotel_fire__style_didion-joan__s3.txt",
+      "claude-haiku-4-5/hotel_fire__style_didion-joan__s4.txt",
+      "claude-haiku-4-5/irrigation__exemplar_mccarthy-cormac__s1.txt",
+      "claude-haiku-4-5/irrigation__exemplar_mccarthy-cormac__s2.txt",
+      "claude-haiku-4-5/irrigation__exemplar_mccarthy-cormac__s3.txt",
+      "claude-haiku-4-5/irrigation__exemplar_mccarthy-cormac__s4.txt",
+      "claude-haiku-4-5/irrigation__exemplar_mccarthy-cormac__s5.txt",
+      "claude-haiku-4-5/irrigation__style_mccarthy-cormac.txt",
+      "claude-haiku-4-5/irrigation__style_mccarthy-cormac__s5.txt",
+      "claude-haiku-4-5/night_ferry__exemplar_ondaatje-michael__s1.txt",
+      "claude-haiku-4-5/night_ferry__exemplar_ondaatje-michael__s4.txt",
+      "claude-haiku-4-5/night_ferry__style_ondaatje-michael__s2.txt",
+      "claude-haiku-4-5/night_ferry__style_ondaatje-michael__s3.txt",
+      "claude-haiku-4-5/night_ferry__style_ondaatje-michael__s4.txt",
+      "claude-sonnet-4-6/irrigation__exemplar_mccarthy-cormac__s1.txt",
+      "claude-sonnet-4-6/irrigation__exemplar_mccarthy-cormac__s2.txt",
+      "claude-sonnet-4-6/irrigation__exemplar_mccarthy-cormac__s3.txt",
+      "claude-sonnet-4-6/irrigation__exemplar_mccarthy-cormac__s5.txt",
+      "claude-sonnet-4-6/night_ferry__exemplar_ondaatje-michael__s2.txt",
+      "claude-sonnet-4-6/night_ferry__exemplar_ondaatje-michael__s3.txt",
+      "claude-sonnet-4-6/night_ferry__exemplar_ondaatje-michael__s4.txt",
+      "claude-sonnet-4-6/night_ferry__exemplar_ondaatje-michael__s5.txt",
+      "gemma4_26b/estate_sale__exemplar_morrison-toni__s1.txt",
+      "gemma4_26b/estate_sale__exemplar_morrison-toni__s3.txt",
+      "gemma4_26b/estate_sale__exemplar_morrison-toni__s4.txt",
+      "gemma4_26b/estate_sale__exemplar_morrison-toni__s5.txt",
+      "gemma4_26b/estate_sale__style_morrison-toni.txt",
+      "gemma4_26b/estate_sale__style_morrison-toni__s2.txt",
+      "gemma4_26b/estate_sale__style_morrison-toni__s3.txt",
+      "gemma4_26b/estate_sale__style_morrison-toni__s4.txt",
+      "gemma4_26b/estate_sale__style_morrison-toni__s5.txt",
+      "gemma4_26b/hotel_fire__exemplar_didion-joan__s1.txt",
+      "gemma4_26b/hotel_fire__exemplar_didion-joan__s2.txt",
+      "gemma4_26b/hotel_fire__exemplar_didion-joan__s3.txt",
+      "gemma4_26b/hotel_fire__exemplar_didion-joan__s4.txt",
+      "gemma4_26b/hotel_fire__exemplar_didion-joan__s5.txt",
+      "gemma4_26b/hotel_fire__style_didion-joan.txt",
+      "gemma4_26b/hotel_fire__style_didion-joan__s2.txt",
+      "gemma4_26b/hotel_fire__style_didion-joan__s3.txt",
+      "gemma4_26b/hotel_fire__style_didion-joan__s4.txt",
+      "gemma4_26b/hotel_fire__style_didion-joan__s5.txt",
+      "gemma4_26b/irrigation__exemplar_mccarthy-cormac__s2.txt",
+      "gemma4_26b/irrigation__style_mccarthy-cormac.txt",
+      "gemma4_26b/irrigation__style_mccarthy-cormac__s2.txt",
+      "gemma4_26b/irrigation__style_mccarthy-cormac__s3.txt",
+      "gemma4_26b/irrigation__style_mccarthy-cormac__s4.txt",
+      "gemma4_26b/irrigation__style_mccarthy-cormac__s5.txt",
+      "gemma4_26b/night_ferry__exemplar_ondaatje-michael__s1.txt",
+      "gemma4_26b/night_ferry__exemplar_ondaatje-michael__s2.txt",
+      "gemma4_26b/night_ferry__exemplar_ondaatje-michael__s4.txt",
+      "gemma4_26b/night_ferry__exemplar_ondaatje-michael__s5.txt",
+      "gemma4_26b/night_ferry__style_ondaatje-michael.txt",
+      "gemma4_26b/night_ferry__style_ondaatje-michael__s2.txt",
+      "gemma4_26b/night_ferry__style_ondaatje-michael__s3.txt",
+      "gemma4_26b/night_ferry__style_ondaatje-michael__s4.txt",
+      "gemma4_26b/night_ferry__style_ondaatje-michael__s5.txt",
+      "qwen3_6_35b/estate_sale__exemplar_morrison-toni__s3.txt",
+      "qwen3_6_35b/estate_sale__style_morrison-toni__s4.txt",
+      "qwen3_6_35b/hotel_fire__exemplar_didion-joan__s2.txt",
+      "qwen3_6_35b/irrigation__exemplar_mccarthy-cormac__s5.txt",
+      "qwen3_6_35b/irrigation__style_mccarthy-cormac.txt",
+      "qwen3_6_35b/night_ferry__exemplar_ondaatje-michael__s3.txt",
+      "qwen3_6_35b/night_ferry__exemplar_ondaatje-michael__s4.txt",
+      "qwen3_6_35b/night_ferry__exemplar_ondaatje-michael__s5.txt",
+      "qwen3_6_35b/night_ferry__style_ondaatje-michael.txt",
+      "qwen3_6_35b/night_ferry__style_ondaatje-michael__s2.txt"
+    ],
+    "condition_counts": {
+      "completion": 159,
+      "exemplar": 159,
+      "paraphrase": 192,
+      "style_prompted": 159,
+      "unprompted": 400
+    },
+    "out_of_scope_conditions": [
+      "paraphrase (robustness battery, not styled-to-target)",
+      "completion (K8 \u2014 separate generation run, separate analysis)"
+    ],
+    "models_with_zero_primary_styled": [
+      "gemma4:26b"
+    ],
+    "artifacts": {
+      "full": {
+        "space": "data/artifacts/author_space_v1_wave2.json",
+        "space_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+        "envelopes": "data/artifacts/lm_envelopes_wave2_3000w.json",
+        "envelopes_source_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+        "pd_space": "data/artifacts/author_space_pd_v1.json",
+        "pd_envelopes": "data/artifacts/lm_envelopes_pd_3000w.json",
+        "window_words": 3000,
+        "vocab_filter": "none"
+      },
+      "fwonly": {
+        "space": "data/artifacts/author_space_v1_wave2_fwonly.json",
+        "space_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+        "envelopes": "data/artifacts/lm_envelopes_wave2_fwonly_3000w.json",
+        "envelopes_source_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+        "pd_space": "data/artifacts/author_space_pd_v1_fwonly.json",
+        "pd_envelopes": "data/artifacts/lm_envelopes_pd_fwonly_3000w.json",
+        "window_words": 3000,
+        "vocab_filter": "function_words_only"
+      }
+    }
+  },
+  "entry": {
+    "full": {
+      "primary": {
+        "stratum": "primary (>= practice floor)",
+        "n": 236,
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 54,
+        "icc_target_distance": 0.6978189300567341,
+        "median_target_distance": 1.7075658547698613,
+        "per_level": {
+          "p90": {
+            "entered": 48,
+            "n": 236,
+            "rate": 0.2033898305084746,
+            "cp_ci95": [
+              0.15393708721276442,
+              0.26045866132756623
+            ],
+            "cp_one_sided_upper95": 0.25130646714857446,
+            "icc_entered": 0.6971746516117158,
+            "design_effect": 3.349736788765412,
+            "n_eff": 70.45329674603502,
+            "cp_ci95_design_effect_adjusted": [
+              0.11679519050613568,
+              0.31611406353283156
+            ],
+            "cell_bootstrap_ci95": [
+              0.1061065185567898,
+              0.3058000703358536
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.15254237288135594,
+              0.2627118644067797
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.489920193952505,
+                "ci95": [
+                  1.432862403914189,
+                  1.536502316363249
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.7153463306553394,
+                "ci95": [
+                  1.644700440358356,
+                  1.8153862469981543
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.5095639367625855,
+                "ci95": [
+                  1.485563262280955,
+                  1.5497328815262448
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.4085389941563662,
+                "ci95": [
+                  1.3862143452997586,
+                  1.4338298115234362
+                ]
+              }
+            }
+          },
+          "p95": {
+            "entered": 65,
+            "n": 236,
+            "rate": 0.2754237288135593,
+            "cp_ci95": [
+              0.21945752903158067,
+              0.33712838717419136
+            ],
+            "cp_one_sided_upper95": 0.327329481877127,
+            "icc_entered": 0.7847221870871527,
+            "design_effect": 3.644804408330774,
+            "n_eff": 64.74970219542779,
+            "cp_ci95_design_effect_adjusted": [
+              0.17166356725188062,
+              0.4005678033368637
+            ],
+            "cell_bootstrap_ci95": [
+              0.16455559208723763,
+              0.39149804602692134
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.2245762711864407,
+              0.3305084745762712
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.5182994897051925,
+                "ci95": [
+                  1.4743632858285802,
+                  1.5464398942779962
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.912813188131751,
+                "ci95": [
+                  1.7715116208984494,
+                  1.9921280604387002
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.5594476638064148,
+                "ci95": [
+                  1.5300106249402579,
+                  1.638192052280092
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.4422813787466306,
+                "ci95": [
+                  1.4119058732286576,
+                  1.5268837959614585
+                ]
+              }
+            }
+          },
+          "p99": {
+            "entered": 128,
+            "n": 236,
+            "rate": 0.5423728813559322,
+            "cp_ci95": [
+              0.47650293387438,
+              0.6071651061885335
+            ],
+            "cp_one_sided_upper95": 0.5972062745806321,
+            "icc_entered": 0.8175690490837334,
+            "design_effect": 3.755510498763694,
+            "n_eff": 62.84099061304467,
+            "cp_ci95_design_effect_adjusted": [
+              0.4118673715428083,
+              0.6687525500242324
+            ],
+            "cell_bootstrap_ci95": [
+              0.40948275862068967,
+              0.6667025862068964
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.2966101694915254,
+              0.5889830508474576
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.5546589043511703,
+                "ci95": [
+                  1.5101560112972967,
+                  1.5738365945219102
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 2.082777268119031,
+                "ci95": [
+                  1.9881793215874477,
+                  2.128117601700186
+                ]
+              },
+              "morrison-toni": {
+                "value": 2.0266068046218613,
+                "ci95": [
+                  1.62083757390633,
+                  2.3425156214432885
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.576971970535191,
+                "ci95": [
+                  1.483865467692519,
+                  1.6329255842418289
+                ]
+              }
+            }
+          }
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "n": 39,
+            "entered_p90": 11,
+            "rate_p90": 0.28205128205128205,
+            "cp_ci95": [
+              0.1500141304705207,
+              0.4487363233949208
+            ],
+            "median_target_distance": 1.5755102091261146
+          },
+          "claude-haiku-4-5": {
+            "n": 17,
+            "entered_p90": 1,
+            "rate_p90": 0.058823529411764705,
+            "cp_ci95": [
+              0.0014881743912666346,
+              0.2868893966672207
+            ],
+            "median_target_distance": 1.7814804607187897
+          },
+          "claude-opus-4-8": {
+            "n": 40,
+            "entered_p90": 9,
+            "rate_p90": 0.225,
+            "cp_ci95": [
+              0.10839663898407201,
+              0.3845116773034227
+            ],
+            "median_target_distance": 1.7969817347340724
+          },
+          "claude-sonnet-4-6": {
+            "n": 32,
+            "entered_p90": 6,
+            "rate_p90": 0.1875,
+            "cp_ci95": [
+              0.07207616545849763,
+              0.3643923098640901
+            ],
+            "median_target_distance": 1.732422797969789
+          },
+          "gpt-5": {
+            "n": 40,
+            "entered_p90": 16,
+            "rate_p90": 0.4,
+            "cp_ci95": [
+              0.2486499865877438,
+              0.5667329478067032
+            ],
+            "median_target_distance": 1.523526182489277
+          },
+          "gpt-5-mini": {
+            "n": 40,
+            "entered_p90": 5,
+            "rate_p90": 0.125,
+            "cp_ci95": [
+              0.04185962613861671,
+              0.2680329173617204
+            ],
+            "median_target_distance": 1.7211032763133862
+          },
+          "qwen3.6:35b": {
+            "n": 28,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.12343611850026383
+            ],
+            "median_target_distance": 2.048889918900616
+          }
+        },
+        "best_model_p90": {
+          "model": "gpt-5",
+          "n": 40,
+          "entered_p90": 16,
+          "rate_p90": 0.4,
+          "cp_ci95": [
+            0.2486499865877438,
+            0.5667329478067032
+          ],
+          "median_target_distance": 1.523526182489277
+        },
+        "per_target": {
+          "didion-joan": {
+            "n": 66,
+            "entered_p90": 2,
+            "rate_p90": 0.030303030303030304,
+            "lm_p90": 1.489920193952505,
+            "median_target_distance": 1.7322148219751534
+          },
+          "mccarthy-cormac": {
+            "n": 56,
+            "entered_p90": 41,
+            "rate_p90": 0.7321428571428571,
+            "lm_p90": 1.7153463306553394,
+            "median_target_distance": 1.5913381110931497
+          },
+          "morrison-toni": {
+            "n": 58,
+            "entered_p90": 3,
+            "rate_p90": 0.05172413793103448,
+            "lm_p90": 1.5095639367625855,
+            "median_target_distance": 1.787612492408348
+          },
+          "ondaatje-michael": {
+            "n": 56,
+            "entered_p90": 2,
+            "rate_p90": 0.03571428571428571,
+            "lm_p90": 1.4085389941563662,
+            "median_target_distance": 1.6678482781072341
+          }
+        },
+        "per_condition": {
+          "style_prompted": {
+            "n": 124,
+            "entered_p90": 25,
+            "rate_p90": 0.20161290322580644
+          },
+          "exemplar": {
+            "n": 112,
+            "entered_p90": 23,
+            "rate_p90": 0.20535714285714285
+          }
+        }
+      },
+      "subfloor": {
+        "stratum": "sub-floor (hard floor <= n < practice floor; native length)",
+        "n": 76,
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 25,
+        "icc_target_distance": 0.7056595791196256,
+        "median_target_distance": 1.8756854787069988,
+        "per_level": {
+          "p90": {
+            "entered": 6,
+            "n": 76,
+            "rate": 0.07894736842105263,
+            "cp_ci95": [
+              0.02952378366906871,
+              0.16395590488076908
+            ],
+            "cp_one_sided_upper95": 0.14987835941745878,
+            "icc_entered": 0.4241497898356898,
+            "design_effect": 1.8652655712648072,
+            "n_eff": 40.74486827549473,
+            "cp_ci95_design_effect_adjusted": [
+              0.01786218985264821,
+              0.2075272994715983
+            ],
+            "cell_bootstrap_ci95": [
+              0.0,
+              0.1686746987951807
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.02631578947368421,
+              0.15789473684210525
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.489920193952505,
+                "ci95": [
+                  1.432862403914189,
+                  1.536502316363249
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.7153463306553394,
+                "ci95": [
+                  1.644700440358356,
+                  1.8153862469981543
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.5095639367625855,
+                "ci95": [
+                  1.485563262280955,
+                  1.5497328815262448
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.4085389941563662,
+                "ci95": [
+                  1.3862143452997586,
+                  1.4338298115234362
+                ]
+              }
+            }
+          },
+          "p95": {
+            "entered": 15,
+            "n": 76,
+            "rate": 0.19736842105263158,
+            "cp_ci95": [
+              0.11488530434881021,
+              0.30455125069259564
+            ],
+            "cp_one_sided_upper95": 0.28751875290756557,
+            "icc_entered": 0.8106795068339342,
+            "design_effect": 2.653786193941226,
+            "n_eff": 28.638328201990483,
+            "cp_ci95_design_effect_adjusted": [
+              0.07324031288204351,
+              0.38790207974944885
+            ],
+            "cell_bootstrap_ci95": [
+              0.06408730158730158,
+              0.3582280903176424
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.09210526315789473,
+              0.25
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.5182994897051925,
+                "ci95": [
+                  1.4743632858285802,
+                  1.5464398942779962
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.912813188131751,
+                "ci95": [
+                  1.7715116208984494,
+                  1.9921280604387002
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.5594476638064148,
+                "ci95": [
+                  1.5300106249402579,
+                  1.638192052280092
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.4422813787466306,
+                "ci95": [
+                  1.4119058732286576,
+                  1.5268837959614585
+                ]
+              }
+            }
+          },
+          "p99": {
+            "entered": 30,
+            "n": 76,
+            "rate": 0.39473684210526316,
+            "cp_ci95": [
+              0.2844331779982396,
+              0.5135049683161297
+            ],
+            "cp_one_sided_upper95": 0.49544056574032624,
+            "icc_entered": 0.8826552462526767,
+            "design_effect": 2.8006167023554607,
+            "n_eff": 27.136880222159693,
+            "cp_ci95_design_effect_adjusted": [
+              0.21397781054492482,
+              0.5993731776302766
+            ],
+            "cell_bootstrap_ci95": [
+              0.19043650793650793,
+              0.6091954022988506
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.23684210526315788,
+              0.5394736842105263
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.5546589043511703,
+                "ci95": [
+                  1.5101560112972967,
+                  1.5738365945219102
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 2.082777268119031,
+                "ci95": [
+                  1.9881793215874477,
+                  2.128117601700186
+                ]
+              },
+              "morrison-toni": {
+                "value": 2.0266068046218613,
+                "ci95": [
+                  1.62083757390633,
+                  2.3425156214432885
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.576971970535191,
+                "ci95": [
+                  1.483865467692519,
+                  1.6329255842418289
+                ]
+              }
+            }
+          }
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "n": 1,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.975
+            ],
+            "median_target_distance": 1.5128120338760798
+          },
+          "claude-haiku-4-5": {
+            "n": 23,
+            "entered_p90": 4,
+            "rate_p90": 0.17391304347826086,
+            "cp_ci95": [
+              0.04950764530579343,
+              0.38781188995479754
+            ],
+            "median_target_distance": 1.842703613954911
+          },
+          "claude-sonnet-4-6": {
+            "n": 8,
+            "entered_p90": 2,
+            "rate_p90": 0.25,
+            "cp_ci95": [
+              0.031854026249944226,
+              0.6508557944128242
+            ],
+            "median_target_distance": 1.7280791621650664
+          },
+          "gemma4:26b": {
+            "n": 34,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.10281792425901261
+            ],
+            "median_target_distance": 1.9586425830071228
+          },
+          "qwen3.6:35b": {
+            "n": 10,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.3084971078187608
+            ],
+            "median_target_distance": 1.8337251905010903
+          }
+        },
+        "best_model_p90": {
+          "model": "claude-sonnet-4-6",
+          "n": 8,
+          "entered_p90": 2,
+          "rate_p90": 0.25,
+          "cp_ci95": [
+            0.031854026249944226,
+            0.6508557944128242
+          ],
+          "median_target_distance": 1.7280791621650664
+        },
+        "per_target": {
+          "didion-joan": {
+            "n": 14,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.489920193952505,
+            "median_target_distance": 1.9695881007670761
+          },
+          "mccarthy-cormac": {
+            "n": 19,
+            "entered_p90": 6,
+            "rate_p90": 0.3157894736842105,
+            "lm_p90": 1.7153463306553394,
+            "median_target_distance": 1.7901595661154428
+          },
+          "morrison-toni": {
+            "n": 20,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.5095639367625855,
+            "median_target_distance": 2.10363702074127
+          },
+          "ondaatje-michael": {
+            "n": 23,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.4085389941563662,
+            "median_target_distance": 1.808547179208478
+          }
+        },
+        "per_condition": {
+          "style_prompted": {
+            "n": 35,
+            "entered_p90": 2,
+            "rate_p90": 0.05714285714285714
+          },
+          "exemplar": {
+            "n": 41,
+            "entered_p90": 4,
+            "rate_p90": 0.0975609756097561
+          }
+        }
+      }
+    },
+    "fwonly": {
+      "primary": {
+        "stratum": "primary (>= practice floor)",
+        "n": 236,
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 54,
+        "icc_target_distance": 0.5473946634160605,
+        "median_target_distance": 1.418412248103054,
+        "per_level": {
+          "p90": {
+            "entered": 72,
+            "n": 236,
+            "rate": 0.3050847457627119,
+            "cp_ci95": [
+              0.24700587272029403,
+              0.36813754478160715
+            ],
+            "cp_one_sided_upper95": 0.35816127020463656,
+            "icc_entered": 0.5454151816940345,
+            "design_effect": 2.8382511679317455,
+            "n_eff": 83.14979402332985,
+            "cp_ci95_design_effect_adjusted": [
+              0.2087835732726196,
+              0.4157495850853344
+            ],
+            "cell_bootstrap_ci95": [
+              0.20076771653543307,
+              0.4094915912945166
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.2330508474576271,
+              0.3347457627118644
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.2389102345550191,
+                "ci95": [
+                  1.192555130572861,
+                  1.2805298600295494
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.5528470739525142,
+                "ci95": [
+                  1.4717827788891042,
+                  1.6458166163213
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.33599093168753,
+                "ci95": [
+                  1.3218207641906454,
+                  1.3529397511622625
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2266086994239063,
+                "ci95": [
+                  1.1999098708386757,
+                  1.2375966469876352
+                ]
+              }
+            }
+          },
+          "p95": {
+            "entered": 82,
+            "n": 236,
+            "rate": 0.3474576271186441,
+            "cp_ci95": [
+              0.2868517366139324,
+              0.411950571323556
+            ],
+            "cp_one_sided_upper95": 0.40179801335356885,
+            "icc_entered": 0.6136300689208337,
+            "design_effect": 3.068160602659106,
+            "n_eff": 76.91905038982122,
+            "cp_ci95_design_effect_adjusted": [
+              0.24242350023614778,
+              0.4646306999344804
+            ],
+            "cell_bootstrap_ci95": [
+              0.23627494334199325,
+              0.4579919467787114
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.3135593220338983,
+              0.4279661016949153
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.2757880420360461,
+                "ci95": [
+                  1.2328225096812275,
+                  1.3099127001012105
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.6687625093569793,
+                "ci95": [
+                  1.5747872435879833,
+                  1.7159599195692203
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.3596243092659615,
+                "ci95": [
+                  1.3414668483704753,
+                  1.4298248160603222
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2409270950950841,
+                "ci95": [
+                  1.2316168300184798,
+                  1.2748181352101353
+                ]
+              }
+            }
+          },
+          "p99": {
+            "entered": 145,
+            "n": 236,
+            "rate": 0.614406779661017,
+            "cp_ci95": [
+              0.5490667043059987,
+              0.6768342337472352
+            ],
+            "cp_one_sided_upper95": 0.6673401898870086,
+            "icc_entered": 0.6965791422846923,
+            "design_effect": 3.347729701774333,
+            "n_eff": 70.49553608671496,
+            "cp_ci95_design_effect_adjusted": [
+              0.49088512800720063,
+              0.7279970396506277
+            ],
+            "cell_bootstrap_ci95": [
+              0.49572557471264367,
+              0.724336104812295
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.3728813559322034,
+              0.7033898305084746
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.3372600258233809,
+                "ci95": [
+                  1.2722363450461374,
+                  1.4010704525084456
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.804900400102888,
+                "ci95": [
+                  1.7159599195692203,
+                  1.9072454771350897
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.786818857259939,
+                "ci95": [
+                  1.3904980212989249,
+                  2.219395408629875
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2972229494213714,
+                "ci95": [
+                  1.2563107160055331,
+                  1.3471637987100766
+                ]
+              }
+            }
+          }
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "n": 39,
+            "entered_p90": 14,
+            "rate_p90": 0.358974358974359,
+            "cp_ci95": [
+              0.21203718556079984,
+              0.5282048863745881
+            ],
+            "median_target_distance": 1.3597746237804975
+          },
+          "claude-haiku-4-5": {
+            "n": 17,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.19506432296909318
+            ],
+            "median_target_distance": 1.5144178546347453
+          },
+          "claude-opus-4-8": {
+            "n": 40,
+            "entered_p90": 9,
+            "rate_p90": 0.225,
+            "cp_ci95": [
+              0.10839663898407201,
+              0.3845116773034227
+            ],
+            "median_target_distance": 1.4713030275169126
+          },
+          "claude-sonnet-4-6": {
+            "n": 32,
+            "entered_p90": 3,
+            "rate_p90": 0.09375,
+            "cp_ci95": [
+              0.01976718017328487,
+              0.2502269506837947
+            ],
+            "median_target_distance": 1.5572905285622372
+          },
+          "gpt-5": {
+            "n": 40,
+            "entered_p90": 29,
+            "rate_p90": 0.725,
+            "cp_ci95": [
+              0.5611170928209519,
+              0.8539910080361343
+            ],
+            "median_target_distance": 1.2508237016024517
+          },
+          "gpt-5-mini": {
+            "n": 40,
+            "entered_p90": 14,
+            "rate_p90": 0.35,
+            "cp_ci95": [
+              0.2062824908707669,
+              0.5168444536489907
+            ],
+            "median_target_distance": 1.3604209975747201
+          },
+          "qwen3.6:35b": {
+            "n": 28,
+            "entered_p90": 3,
+            "rate_p90": 0.10714285714285714,
+            "cp_ci95": [
+              0.022665090639058937,
+              0.2822643957153244
+            ],
+            "median_target_distance": 1.539293747407273
+          }
+        },
+        "best_model_p90": {
+          "model": "gpt-5",
+          "n": 40,
+          "entered_p90": 29,
+          "rate_p90": 0.725,
+          "cp_ci95": [
+            0.5611170928209519,
+            0.8539910080361343
+          ],
+          "median_target_distance": 1.2508237016024517
+        },
+        "per_target": {
+          "didion-joan": {
+            "n": 66,
+            "entered_p90": 9,
+            "rate_p90": 0.13636363636363635,
+            "lm_p90": 1.2389102345550191,
+            "median_target_distance": 1.4192880572730653
+          },
+          "mccarthy-cormac": {
+            "n": 56,
+            "entered_p90": 43,
+            "rate_p90": 0.7678571428571429,
+            "lm_p90": 1.5528470739525142,
+            "median_target_distance": 1.421698263931394
+          },
+          "morrison-toni": {
+            "n": 58,
+            "entered_p90": 14,
+            "rate_p90": 0.2413793103448276,
+            "lm_p90": 1.33599093168753,
+            "median_target_distance": 1.4771877724086158
+          },
+          "ondaatje-michael": {
+            "n": 56,
+            "entered_p90": 6,
+            "rate_p90": 0.10714285714285714,
+            "lm_p90": 1.2266086994239063,
+            "median_target_distance": 1.3766495235171603
+          }
+        },
+        "per_condition": {
+          "style_prompted": {
+            "n": 124,
+            "entered_p90": 36,
+            "rate_p90": 0.2903225806451613
+          },
+          "exemplar": {
+            "n": 112,
+            "entered_p90": 36,
+            "rate_p90": 0.32142857142857145
+          }
+        }
+      },
+      "subfloor": {
+        "stratum": "sub-floor (hard floor <= n < practice floor; native length)",
+        "n": 76,
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 25,
+        "icc_target_distance": 0.6425606419174168,
+        "median_target_distance": 1.5625060784649039,
+        "per_level": {
+          "p90": {
+            "entered": 9,
+            "n": 76,
+            "rate": 0.11842105263157894,
+            "cp_ci95": [
+              0.0556042081514251,
+              0.21293324449408876
+            ],
+            "cp_one_sided_upper95": 0.19754945738497787,
+            "icc_entered": 0.8566242600647545,
+            "design_effect": 2.747513490532099,
+            "n_eff": 27.661374643616913,
+            "cp_ci95_design_effect_adjusted": [
+              0.027564967831333182,
+              0.29796195431163536
+            ],
+            "cell_bootstrap_ci95": [
+              0.022727272727272728,
+              0.2692567567567566
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.06578947368421052,
+              0.15789473684210525
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.2389102345550191,
+                "ci95": [
+                  1.192555130572861,
+                  1.2805298600295494
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.5528470739525142,
+                "ci95": [
+                  1.4717827788891042,
+                  1.6458166163213
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.33599093168753,
+                "ci95": [
+                  1.3218207641906454,
+                  1.3529397511622625
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2266086994239063,
+                "ci95": [
+                  1.1999098708386757,
+                  1.2375966469876352
+                ]
+              }
+            }
+          },
+          "p95": {
+            "entered": 12,
+            "n": 76,
+            "rate": 0.15789473684210525,
+            "cp_ci95": [
+              0.0843377279200718,
+              0.25957123739929405
+            ],
+            "cp_one_sided_upper95": 0.24323633687584448,
+            "icc_entered": 0.6883466032468203,
+            "design_effect": 2.4042270706235134,
+            "n_eff": 31.61099087878173,
+            "cp_ci95_design_effect_adjusted": [
+              0.05326159292668319,
+              0.33114036412062003
+            ],
+            "cell_bootstrap_ci95": [
+              0.038461538461538464,
+              0.3115243454856861
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.11842105263157894,
+              0.17105263157894737
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.2757880420360461,
+                "ci95": [
+                  1.2328225096812275,
+                  1.3099127001012105
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.6687625093569793,
+                "ci95": [
+                  1.5747872435879833,
+                  1.7159599195692203
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.3596243092659615,
+                "ci95": [
+                  1.3414668483704753,
+                  1.4298248160603222
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2409270950950841,
+                "ci95": [
+                  1.2316168300184798,
+                  1.2748181352101353
+                ]
+              }
+            }
+          },
+          "p99": {
+            "entered": 30,
+            "n": 76,
+            "rate": 0.39473684210526316,
+            "cp_ci95": [
+              0.2844331779982396,
+              0.5135049683161297
+            ],
+            "cp_one_sided_upper95": 0.49544056574032624,
+            "icc_entered": 0.6712894092806755,
+            "design_effect": 2.369430394932578,
+            "n_eff": 32.07521949686248,
+            "cp_ci95_design_effect_adjusted": [
+              0.22751599488189553,
+              0.5821685894883974
+            ],
+            "cell_bootstrap_ci95": [
+              0.1999382716049383,
+              0.5949509315886786
+            ],
+            "rate_range_over_threshold_ci95": [
+              0.17105263157894737,
+              0.5263157894736842
+            ],
+            "thresholds": {
+              "didion-joan": {
+                "value": 1.3372600258233809,
+                "ci95": [
+                  1.2722363450461374,
+                  1.4010704525084456
+                ]
+              },
+              "mccarthy-cormac": {
+                "value": 1.804900400102888,
+                "ci95": [
+                  1.7159599195692203,
+                  1.9072454771350897
+                ]
+              },
+              "morrison-toni": {
+                "value": 1.786818857259939,
+                "ci95": [
+                  1.3904980212989249,
+                  2.219395408629875
+                ]
+              },
+              "ondaatje-michael": {
+                "value": 1.2972229494213714,
+                "ci95": [
+                  1.2563107160055331,
+                  1.3471637987100766
+                ]
+              }
+            }
+          }
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "n": 1,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.975
+            ],
+            "median_target_distance": 1.3419473971132077
+          },
+          "claude-haiku-4-5": {
+            "n": 23,
+            "entered_p90": 1,
+            "rate_p90": 0.043478260869565216,
+            "cp_ci95": [
+              0.0011001686304414997,
+              0.2194866074534804
+            ],
+            "median_target_distance": 1.7774651277096867
+          },
+          "claude-sonnet-4-6": {
+            "n": 8,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "cp_ci95": [
+              0.0,
+              0.3694166475528192
+            ],
+            "median_target_distance": 1.5827566507474273
+          },
+          "gemma4:26b": {
+            "n": 34,
+            "entered_p90": 6,
+            "rate_p90": 0.17647058823529413,
+            "cp_ci95": [
+              0.06764065268275714,
+              0.34531513106813394
+            ],
+            "median_target_distance": 1.5386731978905552
+          },
+          "qwen3.6:35b": {
+            "n": 10,
+            "entered_p90": 2,
+            "rate_p90": 0.2,
+            "cp_ci95": [
+              0.02521072632683336,
+              0.5560954623076415
+            ],
+            "median_target_distance": 1.4904808385729815
+          }
+        },
+        "best_model_p90": {
+          "model": "qwen3.6:35b",
+          "n": 10,
+          "entered_p90": 2,
+          "rate_p90": 0.2,
+          "cp_ci95": [
+            0.02521072632683336,
+            0.5560954623076415
+          ],
+          "median_target_distance": 1.4904808385729815
+        },
+        "per_target": {
+          "didion-joan": {
+            "n": 14,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.2389102345550191,
+            "median_target_distance": 1.5490416678309815
+          },
+          "mccarthy-cormac": {
+            "n": 19,
+            "entered_p90": 9,
+            "rate_p90": 0.47368421052631576,
+            "lm_p90": 1.5528470739525142,
+            "median_target_distance": 1.5823689993069856
+          },
+          "morrison-toni": {
+            "n": 20,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.33599093168753,
+            "median_target_distance": 1.6824167951147837
+          },
+          "ondaatje-michael": {
+            "n": 23,
+            "entered_p90": 0,
+            "rate_p90": 0.0,
+            "lm_p90": 1.2266086994239063,
+            "median_target_distance": 1.5115183834853427
+          }
+        },
+        "per_condition": {
+          "style_prompted": {
+            "n": 35,
+            "entered_p90": 6,
+            "rate_p90": 0.17142857142857143
+          },
+          "exemplar": {
+            "n": 41,
+            "entered_p90": 3,
+            "rate_p90": 0.07317073170731707
+          }
+        }
+      }
+    }
+  },
+  "human_baselines": {
+    "full": {
+      "pastiche": "data/pastiche/brinton_old_friends_new_fancies_1913.txt",
+      "target": "austen-jane",
+      "n_chunks": 36,
+      "clustering": "single work \u2014 chunks are NOT independent (one author, one novel, shared characters/world); n is descriptive, not inferential",
+      "nearest_is_target": 31,
+      "median_target_distance": 1.5490189168463917,
+      "lm_quantiles": {
+        "p50": 1.5737026506080696,
+        "p90": 1.706001029894825,
+        "p95": 1.7542550296666821,
+        "p99": 1.84990029548986
+      },
+      "entered_p90": {
+        "entered": 34,
+        "n": 36,
+        "rate": 0.9444444444444444,
+        "cp_ci95": [
+          0.813363293542446,
+          0.9931996993459772
+        ],
+        "rate_range_over_threshold_ci95": [
+          0.9444444444444444,
+          1.0
+        ]
+      },
+      "entered_p95": {
+        "entered": 36,
+        "n": 36,
+        "rate": 1.0,
+        "cp_ci95": [
+          0.902606244085508,
+          1.0
+        ],
+        "rate_range_over_threshold_ci95": [
+          0.9444444444444444,
+          1.0
+        ]
+      },
+      "entered_p99": {
+        "entered": 36,
+        "n": 36,
+        "rate": 1.0,
+        "cp_ci95": [
+          0.902606244085508,
+          1.0
+        ],
+        "rate_range_over_threshold_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "chunks": [
+        {
+          "chunk": 0,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4674166991900908
+        },
+        {
+          "chunk": 1,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.6115683872016704
+        },
+        {
+          "chunk": 2,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5083656252680318
+        },
+        {
+          "chunk": 3,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.6676577064226563
+        },
+        {
+          "chunk": 4,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4695239579715205
+        },
+        {
+          "chunk": 5,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4899208957027636
+        },
+        {
+          "chunk": 6,
+          "nearest_author": "forster-e_m",
+          "target_distance": 1.7266246839073593
+        },
+        {
+          "chunk": 7,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5561809291845756
+        },
+        {
+          "chunk": 8,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5405896782413404
+        },
+        {
+          "chunk": 9,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5922465009028643
+        },
+        {
+          "chunk": 10,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.6249572545061062
+        },
+        {
+          "chunk": 11,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5707831319350727
+        },
+        {
+          "chunk": 12,
+          "nearest_author": "forster-e_m",
+          "target_distance": 1.6642872224058716
+        },
+        {
+          "chunk": 13,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.7335255709480304
+        },
+        {
+          "chunk": 14,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5095392991466863
+        },
+        {
+          "chunk": 15,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.545969909122879
+        },
+        {
+          "chunk": 16,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4534565877180774
+        },
+        {
+          "chunk": 17,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3909935467293197
+        },
+        {
+          "chunk": 18,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5008502588645307
+        },
+        {
+          "chunk": 19,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.473117825458673
+        },
+        {
+          "chunk": 20,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4563780832913658
+        },
+        {
+          "chunk": 21,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5399365434871497
+        },
+        {
+          "chunk": 22,
+          "nearest_author": "forster-e_m",
+          "target_distance": 1.4987599213891765
+        },
+        {
+          "chunk": 23,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5572252190502422
+        },
+        {
+          "chunk": 24,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5411390223710342
+        },
+        {
+          "chunk": 25,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5537863204527003
+        },
+        {
+          "chunk": 26,
+          "nearest_author": "dickens-charles",
+          "target_distance": 1.6371359651008295
+        },
+        {
+          "chunk": 27,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5960793799488153
+        },
+        {
+          "chunk": 28,
+          "nearest_author": "forster-e_m",
+          "target_distance": 1.601568401522501
+        },
+        {
+          "chunk": 29,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.6015643194128093
+        },
+        {
+          "chunk": 30,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.477292130525535
+        },
+        {
+          "chunk": 31,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5520679245699045
+        },
+        {
+          "chunk": 32,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.585931244702673
+        },
+        {
+          "chunk": 33,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5863012729737078
+        },
+        {
+          "chunk": 34,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5259226515996231
+        },
+        {
+          "chunk": 35,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4582249621056822
+        }
+      ]
+    },
+    "fwonly": {
+      "pastiche": "data/pastiche/brinton_old_friends_new_fancies_1913.txt",
+      "target": "austen-jane",
+      "n_chunks": 36,
+      "clustering": "single work \u2014 chunks are NOT independent (one author, one novel, shared characters/world); n is descriptive, not inferential",
+      "nearest_is_target": 36,
+      "median_target_distance": 1.4109050080254182,
+      "lm_quantiles": {
+        "p50": 1.3144748089699847,
+        "p90": 1.4525911684670088,
+        "p95": 1.4978503846700044,
+        "p99": 1.5638398374563467
+      },
+      "entered_p90": {
+        "entered": 27,
+        "n": 36,
+        "rate": 0.75,
+        "cp_ci95": [
+          0.577970415421856,
+          0.8787967058761648
+        ],
+        "rate_range_over_threshold_ci95": [
+          0.6111111111111112,
+          0.8055555555555556
+        ]
+      },
+      "entered_p95": {
+        "entered": 31,
+        "n": 36,
+        "rate": 0.8611111111111112,
+        "cp_ci95": [
+          0.7050250518893684,
+          0.9533223393969097
+        ],
+        "rate_range_over_threshold_ci95": [
+          0.75,
+          0.9722222222222222
+        ]
+      },
+      "entered_p99": {
+        "entered": 35,
+        "n": 36,
+        "rate": 0.9722222222222222,
+        "cp_ci95": [
+          0.8547107352531467,
+          0.9992969747940952
+        ],
+        "rate_range_over_threshold_ci95": [
+          0.9722222222222222,
+          1.0
+        ]
+      },
+      "chunks": [
+        {
+          "chunk": 0,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.331581674477959
+        },
+        {
+          "chunk": 1,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.5121351478256164
+        },
+        {
+          "chunk": 2,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.293489949957103
+        },
+        {
+          "chunk": 3,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3990273553612371
+        },
+        {
+          "chunk": 4,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2741018271313032
+        },
+        {
+          "chunk": 5,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4517664533418493
+        },
+        {
+          "chunk": 6,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4327873174506962
+        },
+        {
+          "chunk": 7,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4618307296329598
+        },
+        {
+          "chunk": 8,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2677103006261767
+        },
+        {
+          "chunk": 9,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3616988859929486
+        },
+        {
+          "chunk": 10,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2867722495720941
+        },
+        {
+          "chunk": 11,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3427095729143912
+        },
+        {
+          "chunk": 12,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4146968088204757
+        },
+        {
+          "chunk": 13,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4939948480948164
+        },
+        {
+          "chunk": 14,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.417445718825415
+        },
+        {
+          "chunk": 15,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4902759275719104
+        },
+        {
+          "chunk": 16,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2804882132054316
+        },
+        {
+          "chunk": 17,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4693639837857935
+        },
+        {
+          "chunk": 18,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4987729474521247
+        },
+        {
+          "chunk": 19,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2659326466448066
+        },
+        {
+          "chunk": 20,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.2901440901173267
+        },
+        {
+          "chunk": 21,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4457927680828855
+        },
+        {
+          "chunk": 22,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.511556930845838
+        },
+        {
+          "chunk": 23,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4178672518699764
+        },
+        {
+          "chunk": 24,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.438200869898677
+        },
+        {
+          "chunk": 25,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3325408902359355
+        },
+        {
+          "chunk": 26,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.582460932646425
+        },
+        {
+          "chunk": 27,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.506867508404808
+        },
+        {
+          "chunk": 28,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.4165521846132831
+        },
+        {
+          "chunk": 29,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3892613382634245
+        },
+        {
+          "chunk": 30,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.249422737967917
+        },
+        {
+          "chunk": 31,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.436674493152184
+        },
+        {
+          "chunk": 32,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3321675232218377
+        },
+        {
+          "chunk": 33,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.407113207230361
+        },
+        {
+          "chunk": 34,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3678251272995665
+        },
+        {
+          "chunk": 35,
+          "nearest_author": "austen-jane",
+          "target_distance": 1.3648924966442049
+        }
+      ]
+    },
+    "positive_controls": {
+      "available": true,
+      "e8_path": "reports/validation/wave2/e8_results.json",
+      "shelves": {
+        "wave2": {
+          "pooled_inside_p90": 2495,
+          "pooled_n": 2842,
+          "pooled_rate": 0.8779028852920479,
+          "pooled_rate_ci95": [
+            0.8652997097148243,
+            0.8897219359648777
+          ],
+          "construction": "leave-work-out held-out windows (E8)",
+          "per_author": {
+            "delillo-don": {
+              "inside": 201,
+              "n": 223,
+              "rate": 0.9013452914798207
+            },
+            "didion-joan": {
+              "inside": 63,
+              "n": 71,
+              "rate": 0.8873239436619719
+            },
+            "foster_wallace-david": {
+              "inside": 254,
+              "n": 281,
+              "rate": 0.9039145907473309
+            },
+            "ishiguro-kazuo": {
+              "inside": 178,
+              "n": 200,
+              "rate": 0.89
+            },
+            "mccarthy-cormac": {
+              "inside": 227,
+              "n": 251,
+              "rate": 0.9043824701195219
+            },
+            "morrison-toni": {
+              "inside": 180,
+              "n": 203,
+              "rate": 0.8866995073891626
+            },
+            "murakami-haruki": {
+              "inside": 387,
+              "n": 436,
+              "rate": 0.8876146788990825
+            },
+            "ondaatje-michael": {
+              "inside": 140,
+              "n": 158,
+              "rate": 0.8860759493670886
+            },
+            "proulx-annie": {
+              "inside": 126,
+              "n": 155,
+              "rate": 0.8129032258064516
+            },
+            "pynchon-thomas": {
+              "inside": 227,
+              "n": 263,
+              "rate": 0.8631178707224335
+            },
+            "robinson-marilynne": {
+              "inside": 70,
+              "n": 85,
+              "rate": 0.8235294117647058
+            },
+            "saunders-george": {
+              "inside": 70,
+              "n": 79,
+              "rate": 0.8860759493670886
+            },
+            "sebald-w_g": {
+              "inside": 50,
+              "n": 57,
+              "rate": 0.8771929824561403
+            },
+            "tokarczuk-olga": {
+              "inside": 236,
+              "n": 269,
+              "rate": 0.8773234200743495
+            },
+            "whitehead-colson": {
+              "inside": 86,
+              "n": 111,
+              "rate": 0.7747747747747747
+            }
+          }
+        },
+        "wave2_fwonly": {
+          "pooled_inside_p90": 2380,
+          "pooled_n": 2842,
+          "pooled_rate": 0.8374384236453202,
+          "pooled_rate_ci95": [
+            0.8233514622281779,
+            0.8508266978094418
+          ],
+          "construction": "leave-work-out held-out windows (E8)",
+          "per_author": {
+            "delillo-don": {
+              "inside": 196,
+              "n": 223,
+              "rate": 0.8789237668161435
+            },
+            "didion-joan": {
+              "inside": 61,
+              "n": 71,
+              "rate": 0.8591549295774648
+            },
+            "foster_wallace-david": {
+              "inside": 201,
+              "n": 281,
+              "rate": 0.7153024911032029
+            },
+            "ishiguro-kazuo": {
+              "inside": 174,
+              "n": 200,
+              "rate": 0.87
+            },
+            "mccarthy-cormac": {
+              "inside": 223,
+              "n": 251,
+              "rate": 0.8884462151394422
+            },
+            "morrison-toni": {
+              "inside": 181,
+              "n": 203,
+              "rate": 0.8916256157635468
+            },
+            "murakami-haruki": {
+              "inside": 375,
+              "n": 436,
+              "rate": 0.8600917431192661
+            },
+            "ondaatje-michael": {
+              "inside": 141,
+              "n": 158,
+              "rate": 0.8924050632911392
+            },
+            "proulx-annie": {
+              "inside": 115,
+              "n": 155,
+              "rate": 0.7419354838709677
+            },
+            "pynchon-thomas": {
+              "inside": 218,
+              "n": 263,
+              "rate": 0.8288973384030418
+            },
+            "robinson-marilynne": {
+              "inside": 73,
+              "n": 85,
+              "rate": 0.8588235294117647
+            },
+            "saunders-george": {
+              "inside": 70,
+              "n": 79,
+              "rate": 0.8860759493670886
+            },
+            "sebald-w_g": {
+              "inside": 48,
+              "n": 57,
+              "rate": 0.8421052631578947
+            },
+            "tokarczuk-olga": {
+              "inside": 217,
+              "n": 269,
+              "rate": 0.8066914498141264
+            },
+            "whitehead-colson": {
+              "inside": 87,
+              "n": 111,
+              "rate": 0.7837837837837838
+            }
+          }
+        },
+        "pd": {
+          "pooled_inside_p90": 1375,
+          "pooled_n": 1575,
+          "pooled_rate": 0.873015873015873,
+          "pooled_rate_ci95": [
+            0.8555574664298254,
+            0.8890698869295661
+          ],
+          "construction": "leave-work-out held-out windows (E8)",
+          "per_author": {
+            "austen-jane": {
+              "inside": 189,
+              "n": 214,
+              "rate": 0.883177570093458
+            },
+            "bronte-charlotte": {
+              "inside": 201,
+              "n": 228,
+              "rate": 0.881578947368421
+            },
+            "dickens-charles": {
+              "inside": 315,
+              "n": 355,
+              "rate": 0.8873239436619719
+            },
+            "fitzgerald-f_scott": {
+              "inside": 77,
+              "n": 85,
+              "rate": 0.9058823529411765
+            },
+            "forster-e_m": {
+              "inside": 128,
+              "n": 141,
+              "rate": 0.9078014184397163
+            },
+            "hawthorne-nathaniel": {
+              "inside": 74,
+              "n": 82,
+              "rate": 0.9024390243902439
+            },
+            "joyce-james": {
+              "inside": 114,
+              "n": 140,
+              "rate": 0.8142857142857143
+            },
+            "melville-herman": {
+              "inside": 152,
+              "n": 189,
+              "rate": 0.8042328042328042
+            },
+            "woolf-virginia": {
+              "inside": 125,
+              "n": 141,
+              "rate": 0.8865248226950354
+            }
+          }
+        },
+        "pd_fwonly": {
+          "pooled_inside_p90": 1378,
+          "pooled_n": 1575,
+          "pooled_rate": 0.8749206349206349,
+          "pooled_rate_ci95": [
+            0.8575643055444789,
+            0.8908651769110844
+          ],
+          "construction": "leave-work-out held-out windows (E8)",
+          "per_author": {
+            "austen-jane": {
+              "inside": 193,
+              "n": 214,
+              "rate": 0.9018691588785047
+            },
+            "bronte-charlotte": {
+              "inside": 198,
+              "n": 228,
+              "rate": 0.868421052631579
+            },
+            "dickens-charles": {
+              "inside": 318,
+              "n": 355,
+              "rate": 0.895774647887324
+            },
+            "fitzgerald-f_scott": {
+              "inside": 67,
+              "n": 85,
+              "rate": 0.788235294117647
+            },
+            "forster-e_m": {
+              "inside": 124,
+              "n": 141,
+              "rate": 0.8794326241134752
+            },
+            "hawthorne-nathaniel": {
+              "inside": 71,
+              "n": 82,
+              "rate": 0.8658536585365854
+            },
+            "joyce-james": {
+              "inside": 114,
+              "n": 140,
+              "rate": 0.8142857142857143
+            },
+            "melville-herman": {
+              "inside": 166,
+              "n": 189,
+              "rate": 0.8783068783068783
+            },
+            "woolf-virginia": {
+              "inside": 127,
+              "n": 141,
+              "rate": 0.900709219858156
+            }
+          }
+        }
+      }
+    }
+  },
+  "approach": {
+    "full": {
+      "target_scenario_binding": {
+        "mccarthy-cormac": [
+          "irrigation"
+        ],
+        "didion-joan": [
+          "hotel_fire"
+        ],
+        "ondaatje-michael": [
+          "night_ferry"
+        ],
+        "morrison-toni": [
+          "estate_sale"
+        ]
+      },
+      "per_target": {
+        "didion-joan": {
+          "scenarios": [
+            "hotel_fire"
+          ],
+          "styled_nearest_is_target": 27,
+          "styled_n": 66,
+          "styled_rate": 0.4090909090909091,
+          "scenario_matched_null_hits": 4,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.1,
+          "binomial_p_greater_vs_matched_null": 4.752842769120037e-11,
+          "cell_bootstrap_ci95": [
+            0.24615384615384617,
+            0.5763175317796608
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "mccarthy-cormac": {
+          "scenarios": [
+            "irrigation"
+          ],
+          "styled_nearest_is_target": 39,
+          "styled_n": 56,
+          "styled_rate": 0.6964285714285714,
+          "scenario_matched_null_hits": 4,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.1,
+          "binomial_p_greater_vs_matched_null": 1.7149831849320135e-26,
+          "cell_bootstrap_ci95": [
+            0.4560575968222443,
+            0.90326420890937
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "morrison-toni": {
+          "scenarios": [
+            "estate_sale"
+          ],
+          "styled_nearest_is_target": 14,
+          "styled_n": 58,
+          "styled_rate": 0.2413793103448276,
+          "scenario_matched_null_hits": 0,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.0,
+          "binomial_p_greater_vs_matched_null": 0.0,
+          "cell_bootstrap_ci95": [
+            0.0847457627118644,
+            0.4138256343526348
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "ondaatje-michael": {
+          "scenarios": [
+            "night_ferry"
+          ],
+          "styled_nearest_is_target": 42,
+          "styled_n": 56,
+          "styled_rate": 0.75,
+          "scenario_matched_null_hits": 26,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.65,
+          "binomial_p_greater_vs_matched_null": 0.07392412306636553,
+          "cell_bootstrap_ci95": [
+            0.6557377049180327,
+            0.8333333333333334
+          ],
+          "clustering": "(model x condition) cells within target"
+        }
+      },
+      "pooled": {
+        "styled_nearest_is_target": 122,
+        "styled_n": 236,
+        "styled_rate": 0.5169491525423728,
+        "scenario_matched_null_p0": 0.2125,
+        "scenario_matched_null_hits": 34,
+        "scenario_matched_null_n": 160,
+        "binomial_p_greater_vs_matched_null": 8.590308646848348e-25,
+        "icc": 0.4287197260801498,
+        "design_effect": 2.444944261973838,
+        "n_eff": 96.52571785398243,
+        "cp_ci95_design_effect_adjusted": [
+          0.4129382871350879,
+          0.6198921254870977
+        ],
+        "cell_bootstrap_ci95": [
+          0.4148471615720524,
+          0.6198410263813201
+        ],
+        "clustering": "(model x target x condition) cells"
+      },
+      "per_model": {
+        "claude-fable-5": {
+          "nearest_is_target": 26,
+          "n": 39,
+          "rate": 0.6666666666666666,
+          "cp_ci95": [
+            0.49782773530109037,
+            0.809119020953654
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-haiku-4-5": {
+          "nearest_is_target": 13,
+          "n": 17,
+          "rate": 0.7647058823529411,
+          "cp_ci95": [
+            0.5010067267954198,
+            0.9318922595626433
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-opus-4-8": {
+          "nearest_is_target": 27,
+          "n": 40,
+          "rate": 0.675,
+          "cp_ci95": [
+            0.5087051245215516,
+            0.8142710332366502
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-sonnet-4-6": {
+          "nearest_is_target": 14,
+          "n": 32,
+          "rate": 0.4375,
+          "cp_ci95": [
+            0.26363812441098466,
+            0.6233742684099061
+          ],
+          "above_scenario_matched_null": true
+        },
+        "gpt-5": {
+          "nearest_is_target": 27,
+          "n": 40,
+          "rate": 0.675,
+          "cp_ci95": [
+            0.5087051245215516,
+            0.8142710332366502
+          ],
+          "above_scenario_matched_null": true
+        },
+        "gpt-5-mini": {
+          "nearest_is_target": 8,
+          "n": 40,
+          "rate": 0.2,
+          "cp_ci95": [
+            0.09052240939999068,
+            0.35647801867923473
+          ],
+          "above_scenario_matched_null": false
+        },
+        "qwen3.6:35b": {
+          "nearest_is_target": 7,
+          "n": 28,
+          "rate": 0.25,
+          "cp_ci95": [
+            0.10690799182922664,
+            0.4487154515286084
+          ],
+          "above_scenario_matched_null": true
+        }
+      },
+      "best_model": {
+        "model": "claude-haiku-4-5",
+        "nearest_is_target": 13,
+        "n": 17,
+        "rate": 0.7647058823529411,
+        "cp_ci95": [
+          0.5010067267954198,
+          0.9318922595626433
+        ],
+        "above_scenario_matched_null": true
+      },
+      "rank_vs_metric": {
+        "definition": "styled target distance minus median matched-unprompted (same model, same scenario) distance to the same target; positive = styled is FARTHER from the target",
+        "n": 236,
+        "n_unmatched_skipped": 0,
+        "median_delta": -0.005118234222103002,
+        "fraction_closer_than_matched_unprompted": 0.5127118644067796,
+        "cell_bootstrap_ci95_median": [
+          -0.04229453678187079,
+          0.03992829901520745
+        ],
+        "clustering": "(model x target x condition) cells"
+      },
+      "rank_vs_metric_native_length_reference": {
+        "definition": "same delta as rank_vs_metric but at native sample lengths (scale-mixed; reference only)",
+        "n": 236,
+        "median_delta": 0.002690003083931969,
+        "fraction_closer_than_matched_unprompted": 0.4872881355932203
+      }
+    },
+    "fwonly": {
+      "target_scenario_binding": {
+        "mccarthy-cormac": [
+          "irrigation"
+        ],
+        "didion-joan": [
+          "hotel_fire"
+        ],
+        "ondaatje-michael": [
+          "night_ferry"
+        ],
+        "morrison-toni": [
+          "estate_sale"
+        ]
+      },
+      "per_target": {
+        "didion-joan": {
+          "scenarios": [
+            "hotel_fire"
+          ],
+          "styled_nearest_is_target": 34,
+          "styled_n": 66,
+          "styled_rate": 0.5151515151515151,
+          "scenario_matched_null_hits": 2,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.05,
+          "binomial_p_greater_vs_matched_null": 8.29902935678711e-27,
+          "cell_bootstrap_ci95": [
+            0.35481389578163774,
+            0.6818181818181818
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "mccarthy-cormac": {
+          "scenarios": [
+            "irrigation"
+          ],
+          "styled_nearest_is_target": 31,
+          "styled_n": 56,
+          "styled_rate": 0.5535714285714286,
+          "scenario_matched_null_hits": 1,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.025,
+          "binomial_p_greater_vs_matched_null": 6.549868668326788e-35,
+          "cell_bootstrap_ci95": [
+            0.29403743315508024,
+            0.8000892857142853
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "morrison-toni": {
+          "scenarios": [
+            "estate_sale"
+          ],
+          "styled_nearest_is_target": 0,
+          "styled_n": 58,
+          "styled_rate": 0.0,
+          "scenario_matched_null_hits": 0,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.0,
+          "binomial_p_greater_vs_matched_null": 1.0,
+          "cell_bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "clustering": "(model x condition) cells within target"
+        },
+        "ondaatje-michael": {
+          "scenarios": [
+            "night_ferry"
+          ],
+          "styled_nearest_is_target": 4,
+          "styled_n": 56,
+          "styled_rate": 0.07142857142857142,
+          "scenario_matched_null_hits": 2,
+          "scenario_matched_null_n": 40,
+          "scenario_matched_null_p0": 0.05,
+          "binomial_p_greater_vs_matched_null": 0.30685412058237027,
+          "cell_bootstrap_ci95": [
+            0.0,
+            0.15688854489164072
+          ],
+          "clustering": "(model x condition) cells within target"
+        }
+      },
+      "pooled": {
+        "styled_nearest_is_target": 69,
+        "styled_n": 236,
+        "styled_rate": 0.2923728813559322,
+        "scenario_matched_null_p0": 0.03125,
+        "scenario_matched_null_hits": 5,
+        "scenario_matched_null_n": 160,
+        "binomial_p_greater_vs_matched_null": 3.6788913379907814e-46,
+        "icc": 0.6185140832845404,
+        "design_effect": 3.0846215399590062,
+        "n_eff": 76.50857550684691,
+        "cp_ci95_design_effect_adjusted": [
+          0.19391272308291285,
+          0.4074981476384081
+        ],
+        "cell_bootstrap_ci95": [
+          0.1864333406706288,
+          0.39574689716312056
+        ],
+        "clustering": "(model x target x condition) cells"
+      },
+      "per_model": {
+        "claude-fable-5": {
+          "nearest_is_target": 16,
+          "n": 39,
+          "rate": 0.41025641025641024,
+          "cp_ci95": [
+            0.2556677968862328,
+            0.579001330595147
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-haiku-4-5": {
+          "nearest_is_target": 9,
+          "n": 17,
+          "rate": 0.5294117647058824,
+          "cp_ci95": [
+            0.27811830033110657,
+            0.7701673127340096
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-opus-4-8": {
+          "nearest_is_target": 16,
+          "n": 40,
+          "rate": 0.4,
+          "cp_ci95": [
+            0.2486499865877438,
+            0.5667329478067032
+          ],
+          "above_scenario_matched_null": true
+        },
+        "claude-sonnet-4-6": {
+          "nearest_is_target": 14,
+          "n": 32,
+          "rate": 0.4375,
+          "cp_ci95": [
+            0.26363812441098466,
+            0.6233742684099061
+          ],
+          "above_scenario_matched_null": true
+        },
+        "gpt-5": {
+          "nearest_is_target": 11,
+          "n": 40,
+          "rate": 0.275,
+          "cp_ci95": [
+            0.1460089919638657,
+            0.43888290717904815
+          ],
+          "above_scenario_matched_null": true
+        },
+        "gpt-5-mini": {
+          "nearest_is_target": 2,
+          "n": 40,
+          "rate": 0.05,
+          "cp_ci95": [
+            0.006113646599350838,
+            0.16919686395941763
+          ],
+          "above_scenario_matched_null": true
+        },
+        "qwen3.6:35b": {
+          "nearest_is_target": 1,
+          "n": 28,
+          "rate": 0.03571428571428571,
+          "cp_ci95": [
+            0.0009037987556580578,
+            0.18347759754462362
+          ],
+          "above_scenario_matched_null": true
+        }
+      },
+      "best_model": {
+        "model": "claude-haiku-4-5",
+        "nearest_is_target": 9,
+        "n": 17,
+        "rate": 0.5294117647058824,
+        "cp_ci95": [
+          0.27811830033110657,
+          0.7701673127340096
+        ],
+        "above_scenario_matched_null": true
+      },
+      "rank_vs_metric": {
+        "definition": "styled target distance minus median matched-unprompted (same model, same scenario) distance to the same target; positive = styled is FARTHER from the target",
+        "n": 236,
+        "n_unmatched_skipped": 0,
+        "median_delta": -0.08680619792910171,
+        "fraction_closer_than_matched_unprompted": 0.7161016949152542,
+        "cell_bootstrap_ci95_median": [
+          -0.12148891165059039,
+          -0.05463662652973045
+        ],
+        "clustering": "(model x target x condition) cells"
+      },
+      "rank_vs_metric_native_length_reference": {
+        "definition": "same delta as rank_vs_metric but at native sample lengths (scale-mixed; reference only)",
+        "n": 236,
+        "median_delta": -0.057621487329688414,
+        "fraction_closer_than_matched_unprompted": 0.6694915254237288
+      }
+    }
+  },
+  "translation": {
+    "design": "within translated authors: all work pairs where both works carry a single-translator tag; distance = window-level (3000-token) Burrows Delta, all cross-work window pairs, summarized per WORK PAIR (the inferential unit); window pairs within a work pair are not independent",
+    "n_work_pairs_same_translator": 5,
+    "n_work_pairs_cross_translator": 8,
+    "median_same_translator": 1.7305770022828268,
+    "median_cross_translator": 1.7894472030956199,
+    "cross_minus_same": 0.05887020081279304,
+    "exact_permutation_p_one_sided": 0.10023310023310024,
+    "reference_same_author_no_translator_median": 1.803033064668631,
+    "reference_n_work_pairs": 50,
+    "pairs": [
+      {
+        "author": "sebald-w_g",
+        "work_a": "Austerlitz",
+        "translator_a": "Anthea Bell",
+        "work_b": "the Emigrants",
+        "translator_b": "Michael Hulse",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 560,
+        "median_window_delta": 1.56675406442268
+      },
+      {
+        "author": "sebald-w_g",
+        "work_a": "Austerlitz",
+        "translator_a": "Anthea Bell",
+        "work_b": "The Rings of Saturn",
+        "translator_b": "Michael Hulse",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 252,
+        "median_window_delta": 1.496119019045119
+      },
+      {
+        "author": "sebald-w_g",
+        "work_a": "the Emigrants",
+        "translator_a": "Michael Hulse",
+        "work_b": "The Rings of Saturn",
+        "translator_b": "Michael Hulse",
+        "pair_type": "same_translator",
+        "n_window_pairs": 180,
+        "median_window_delta": 1.4760309005352212
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Drive Your Plow Over the Bones of the Dead",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "Flights",
+        "translator_b": "Jennifer Croft",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 780,
+        "median_window_delta": 1.7478753880160758
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Drive Your Plow Over the Bones of the Dead",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "House of Day, House of Night",
+        "translator_b": "Antonia Lloyd-Jones",
+        "pair_type": "same_translator",
+        "n_window_pairs": 780,
+        "median_window_delta": 1.7387247745523076
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Drive Your Plow Over the Bones of the Dead",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "Primeval and Other Times",
+        "translator_b": "Antonia Lloyd-Jones",
+        "pair_type": "same_translator",
+        "n_window_pairs": 624,
+        "median_window_delta": 1.7514678801595214
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Drive Your Plow Over the Bones of the Dead",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "The Books of Jacob",
+        "translator_b": "Jennifer Croft",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 780,
+        "median_window_delta": 1.7847357121794496
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Flights",
+        "translator_a": "Jennifer Croft",
+        "work_b": "House of Day, House of Night",
+        "translator_b": "Antonia Lloyd-Jones",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 900,
+        "median_window_delta": 1.7941586940117902
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Flights",
+        "translator_a": "Jennifer Croft",
+        "work_b": "Primeval and Other Times",
+        "translator_b": "Antonia Lloyd-Jones",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 720,
+        "median_window_delta": 1.815150665626509
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Flights",
+        "translator_a": "Jennifer Croft",
+        "work_b": "The Books of Jacob",
+        "translator_b": "Jennifer Croft",
+        "pair_type": "same_translator",
+        "n_window_pairs": 900,
+        "median_window_delta": 1.7090151677294243
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "House of Day, House of Night",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "Primeval and Other Times",
+        "translator_b": "Antonia Lloyd-Jones",
+        "pair_type": "same_translator",
+        "n_window_pairs": 720,
+        "median_window_delta": 1.7305770022828268
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "House of Day, House of Night",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "The Books of Jacob",
+        "translator_b": "Jennifer Croft",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 900,
+        "median_window_delta": 1.8610569704270907
+      },
+      {
+        "author": "tokarczuk-olga",
+        "work_a": "Primeval and Other Times",
+        "translator_a": "Antonia Lloyd-Jones",
+        "work_b": "The Books of Jacob",
+        "translator_b": "Jennifer Croft",
+        "pair_type": "cross_translator",
+        "n_window_pairs": 720,
+        "median_window_delta": 1.8616299434100254
+      }
+    ],
+    "validity": {
+      "scale_valid": true,
+      "note": "window-level recomputation removes the F8 length confound (novel-pair vs sample distances); what remains is the tiny work-pair n",
+      "supports_magnitude_claim_vs_prompting": false
+    },
+    "recommendation": "cut from paper"
+  },
+  "chassis": {
+    "available": true,
+    "r3_path": "reports/validation/r3_dimension_gap.json",
+    "n": 318,
+    "median_movement_delta": -0.029976986767881075,
+    "median_movement_ci95": [
+      -0.04754951754962988,
+      -0.013137289871832047
+    ],
+    "median_gap_unprompted": 1.6537856172135048,
+    "gap_closure_range_pct": [
+      -2.87519234988553,
+      -0.7943768367007158
+    ],
+    "sign_test_p_holm": 0.041652515804526606,
+    "per_target_mfw_median_movement": {
+      "didion-joan": 0.033391027357816294,
+      "mccarthy-cormac": 0.05839667988349895,
+      "morrison-toni": -0.07896564100510184,
+      "ondaatje-michael": -0.06728403853385456
+    },
+    "per_target_sign": {
+      "didion-joan": "toward",
+      "mccarthy-cormac": "toward",
+      "morrison-toni": "away",
+      "ondaatje-michael": "away"
+    },
+    "reading": "Immobility, not directed movement-away: aggregate MFW movement median -0.030 Delta [-0.048, -0.013] on an unprompted gap of 1.654 (closure -2.9% to -0.8%), with per-target signs split 2/4 toward. The CI brackets zero-to-slightly-negative and the sign flips across targets; the defensible claim is |closure| <= ~3% in either direction against 14-21% closure on texture dimensions (K10)."
+  }
+}

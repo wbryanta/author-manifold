@@ -1,0 +1,2000 @@
+{
+  "meta": {
+    "generated": "2026-06-11T08:06:40.225669+00:00",
+    "n_records": 160,
+    "n_records_loaded": 159,
+    "n_zero_length_refused": 1,
+    "zero_length_files": [
+      "qwen3_6_35b/completion_mccarthy-cormac__s3.txt"
+    ],
+    "zero_length_note": "zero-length outputs are counted in the refused/partial column; n_records is the MANIFEST count (every generation recorded), not the loadable count",
+    "window_words": 3000,
+    "hard_floor_tokens": 1500,
+    "practice_floor_tokens": 3000,
+    "primary_vocab": "fwonly (content carry-over confound \u2014 see generator note)",
+    "provenance": {
+      "full": {
+        "space": "data/artifacts/author_space_v1_wave2.json",
+        "space_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+        "envelopes": "data/artifacts/lm_envelopes_wave2_3000w.json",
+        "envelopes_source_sha256": "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338",
+        "pd_space": "data/artifacts/author_space_pd_v1.json",
+        "pd_envelopes": "data/artifacts/lm_envelopes_pd_3000w.json",
+        "window_words": 3000,
+        "vocab_filter": "none"
+      },
+      "fwonly": {
+        "space": "data/artifacts/author_space_v1_wave2_fwonly.json",
+        "space_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+        "envelopes": "data/artifacts/lm_envelopes_wave2_fwonly_3000w.json",
+        "envelopes_source_sha256": "fb401057db7a0b85de569afb532f85dfa99f44f9df7ef1d4a28f68a1f8d7f3ca",
+        "pd_space": "data/artifacts/author_space_pd_v1_fwonly.json",
+        "pd_envelopes": "data/artifacts/lm_envelopes_pd_fwonly_3000w.json",
+        "window_words": 3000,
+        "vocab_filter": "function_words_only"
+      }
+    }
+  },
+  "compliance_per_model": {
+    "claude-fable-5": {
+      "compliant": 20,
+      "subfloor": 0,
+      "refused": 0
+    },
+    "claude-haiku-4-5": {
+      "compliant": 2,
+      "subfloor": 18,
+      "refused": 0
+    },
+    "claude-opus-4-8": {
+      "compliant": 20,
+      "subfloor": 0,
+      "refused": 0
+    },
+    "claude-sonnet-4-6": {
+      "compliant": 20,
+      "subfloor": 0,
+      "refused": 0
+    },
+    "gemma4:26b": {
+      "compliant": 1,
+      "subfloor": 14,
+      "refused": 5
+    },
+    "gpt-5": {
+      "compliant": 0,
+      "subfloor": 0,
+      "refused": 20
+    },
+    "gpt-5-mini": {
+      "compliant": 8,
+      "subfloor": 0,
+      "refused": 12
+    },
+    "qwen3.6:35b": {
+      "compliant": 16,
+      "subfloor": 3,
+      "refused": 1
+    }
+  },
+  "entry": {
+    "full": {
+      "n_placed": 87,
+      "entered_p90": 18,
+      "rate_p90": 0.20689655172413793,
+      "cp95": [
+        0.12747486687013446,
+        0.3071316475235606
+      ],
+      "cp_upper_1s": 0.2912067489711869,
+      "clustering": "(model x target) cells",
+      "n_cells": 21,
+      "icc_entered_p90": 0.7525528073481388,
+      "design_effect_p90": 3.365165965951294,
+      "n_eff_p90": 25.853108250904974,
+      "cp95_design_effect_adjusted": [
+        0.0742057027605512,
+        0.41068996557078763
+      ],
+      "cell_bootstrap_ci95_p90": [
+        0.05478335318642048,
+        0.37240691489361666
+      ],
+      "entered_p95": 29,
+      "entered_p99": 55,
+      "per_model": {
+        "claude-fable-5": {
+          "n": 20,
+          "p90": 10,
+          "p95": 14,
+          "p99": 20
+        },
+        "claude-haiku-4-5": {
+          "n": 2,
+          "p90": 0,
+          "p95": 0,
+          "p99": 0
+        },
+        "claude-opus-4-8": {
+          "n": 20,
+          "p90": 3,
+          "p95": 5,
+          "p99": 12
+        },
+        "claude-sonnet-4-6": {
+          "n": 20,
+          "p90": 5,
+          "p95": 5,
+          "p99": 12
+        },
+        "gemma4:26b": {
+          "n": 1,
+          "p90": 0,
+          "p95": 0,
+          "p99": 1
+        },
+        "gpt-5-mini": {
+          "n": 8,
+          "p90": 0,
+          "p95": 5,
+          "p99": 5
+        },
+        "qwen3.6:35b": {
+          "n": 16,
+          "p90": 0,
+          "p95": 0,
+          "p99": 5
+        }
+      },
+      "per_target": {
+        "didion-joan": {
+          "n": 24,
+          "p90": 4
+        },
+        "mccarthy-cormac": {
+          "n": 25,
+          "p90": 13
+        },
+        "morrison-toni": {
+          "n": 18,
+          "p90": 0
+        },
+        "ondaatje-michael": {
+          "n": 20,
+          "p90": 1
+        }
+      },
+      "placements": [
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3410,
+          "target_distance": 1.5644294434107135,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3857,
+          "target_distance": 1.796181063638293,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 7569,
+          "target_distance": 1.9031491769714088,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3295,
+          "target_distance": 1.6084001693684653,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gemma4:26b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3228,
+          "target_distance": 1.9378683198026556,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3439,
+          "target_distance": 1.5840869086020564,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3948,
+          "target_distance": 1.6838684915269306,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-haiku-4-5",
+          "target": "didion-joan",
+          "n_tokens": 3347,
+          "target_distance": 1.7188793075041209,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 9320,
+          "target_distance": 1.719522134323729,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3738,
+          "target_distance": 1.5977470656099808,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3386,
+          "target_distance": 1.576220189826063,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3897,
+          "target_distance": 1.6026511768913907,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6949,
+          "target_distance": 1.7297878120954193,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3042,
+          "target_distance": 1.6722816100938818,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3660,
+          "target_distance": 1.5852375094209956,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 9292,
+          "target_distance": 1.7401785282121656,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 4047,
+          "target_distance": 1.742319962207652,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3624,
+          "target_distance": 1.7106217244040567,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6657,
+          "target_distance": 1.855665015325109,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-haiku-4-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3871,
+          "target_distance": 1.6410878119426275,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 4110,
+          "target_distance": 1.6127524932722008,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3670,
+          "target_distance": 1.6076358293833506,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 6064,
+          "target_distance": 1.68647705134947,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3510,
+          "target_distance": 1.8469487436876084,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 4983,
+          "target_distance": 1.6298664760098098,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3918,
+          "target_distance": 1.6143665888077523,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3847,
+          "target_distance": 1.8312332512530467,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 5668,
+          "target_distance": 1.7740072573320693,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3919,
+          "target_distance": 1.6775537757768586,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 4021,
+          "target_distance": 1.7438948255948215,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3718,
+          "target_distance": 1.7946307103125574,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3496,
+          "target_distance": 1.3912931408006095,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3644,
+          "target_distance": 1.8030907461898205,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3996,
+          "target_distance": 1.8685836530523996,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 4107,
+          "target_distance": 1.834188505506969,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3310,
+          "target_distance": 1.826524023879934,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3466,
+          "target_distance": 1.2738428807905668,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3757,
+          "target_distance": 1.797561403724028,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3685,
+          "target_distance": 1.5324414256837642,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3909,
+          "target_distance": 1.6384531281766672,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3626,
+          "target_distance": 1.4991337796181998,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3120,
+          "target_distance": 1.8105511302359427,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3943,
+          "target_distance": 1.5665130449440372,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3624,
+          "target_distance": 1.692381533165659,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3653,
+          "target_distance": 1.461592444448303,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3091,
+          "target_distance": 1.5405737675423636,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3772,
+          "target_distance": 1.7095013452716943,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3269,
+          "target_distance": 1.7965686738409776,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3600,
+          "target_distance": 1.4692423217715855,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3930,
+          "target_distance": 1.6037381180955073,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3810,
+          "target_distance": 1.7509651529609414,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3619,
+          "target_distance": 1.483221038580647,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3906,
+          "target_distance": 1.5534731558226846,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3571,
+          "target_distance": 1.9158151836901303,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3870,
+          "target_distance": 1.7486912780324333,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3932,
+          "target_distance": 1.7590763212900107,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3703,
+          "target_distance": 1.4235521402240487,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3519,
+          "target_distance": 1.7050065872522588,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3755,
+          "target_distance": 2.0968707103577833,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3718,
+          "target_distance": 1.6542530597572258,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3672,
+          "target_distance": 1.4463812596065286,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3449,
+          "target_distance": 1.7761615425058614,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3763,
+          "target_distance": 1.6192406978792995,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3535,
+          "target_distance": 1.8262202426506589,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3506,
+          "target_distance": 1.335882711477842,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3847,
+          "target_distance": 1.6834314728827944,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3549,
+          "target_distance": 1.5226645033805533,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3748,
+          "target_distance": 1.8816461351563407,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3397,
+          "target_distance": 1.6261976938608247,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3488,
+          "target_distance": 1.6638913792484602,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3900,
+          "target_distance": 2.958138351692481,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3601,
+          "target_distance": 1.5230359485748635,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3618,
+          "target_distance": 1.5627027123783497,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6412,
+          "target_distance": 2.238031731243096,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3298,
+          "target_distance": 1.5352933387024537,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 3859,
+          "target_distance": 1.745039060925956,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 10224,
+          "target_distance": 2.4796204539150395,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 3522,
+          "target_distance": 2.3309443046727347,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 9082,
+          "target_distance": 1.767881074411673,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 12841,
+          "target_distance": 2.02545283937674,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 5073,
+          "target_distance": 1.51297416240887,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 4118,
+          "target_distance": 1.6813556902451303,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 3085,
+          "target_distance": 1.8317654186127497,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 6552,
+          "target_distance": 1.765006292445921,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 3164,
+          "target_distance": 1.7808860553160153,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 4242,
+          "target_distance": 1.7661091687154369,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 6427,
+          "target_distance": 1.9969216810855066,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        }
+      ]
+    },
+    "fwonly": {
+      "n_placed": 87,
+      "entered_p90": 27,
+      "rate_p90": 0.3103448275862069,
+      "cp95": [
+        0.21546541495472826,
+        0.4185676767618487
+      ],
+      "cp_upper_1s": 0.4017493854414788,
+      "clustering": "(model x target) cells",
+      "n_cells": 21,
+      "icc_entered_p90": 0.5697498884962432,
+      "design_effect_p90": 2.790642506702479,
+      "n_eff_p90": 31.17561629303864,
+      "cp95_design_effect_adjusted": [
+        0.157771380034693,
+        0.5005749464568281
+      ],
+      "cell_bootstrap_ci95_p90": [
+        0.14285714285714285,
+        0.48057545902373455
+      ],
+      "entered_p95": 32,
+      "entered_p99": 55,
+      "per_model": {
+        "claude-fable-5": {
+          "n": 20,
+          "p90": 10,
+          "p95": 11,
+          "p99": 16
+        },
+        "claude-haiku-4-5": {
+          "n": 2,
+          "p90": 0,
+          "p95": 0,
+          "p99": 1
+        },
+        "claude-opus-4-8": {
+          "n": 20,
+          "p90": 7,
+          "p95": 7,
+          "p99": 10
+        },
+        "claude-sonnet-4-6": {
+          "n": 20,
+          "p90": 3,
+          "p95": 4,
+          "p99": 10
+        },
+        "gemma4:26b": {
+          "n": 1,
+          "p90": 0,
+          "p95": 1,
+          "p99": 1
+        },
+        "gpt-5-mini": {
+          "n": 8,
+          "p90": 5,
+          "p95": 6,
+          "p99": 7
+        },
+        "qwen3.6:35b": {
+          "n": 16,
+          "p90": 2,
+          "p95": 3,
+          "p99": 10
+        }
+      },
+      "per_target": {
+        "didion-joan": {
+          "n": 24,
+          "p90": 3
+        },
+        "mccarthy-cormac": {
+          "n": 25,
+          "p90": 19
+        },
+        "morrison-toni": {
+          "n": 18,
+          "p90": 4
+        },
+        "ondaatje-michael": {
+          "n": 20,
+          "p90": 1
+        }
+      },
+      "placements": [
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3410,
+          "target_distance": 1.6073208596582682,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3857,
+          "target_distance": 1.3448206243270697,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 7569,
+          "target_distance": 1.470010196128087,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3295,
+          "target_distance": 1.4196133985264547,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gemma4:26b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3228,
+          "target_distance": 1.5566921606000954,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3439,
+          "target_distance": 1.5361927657420316,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3948,
+          "target_distance": 1.2631542314953272,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-haiku-4-5",
+          "target": "didion-joan",
+          "n_tokens": 3347,
+          "target_distance": 2.33899799259873,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 9320,
+          "target_distance": 1.363022314999777,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3738,
+          "target_distance": 1.379365527824328,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3386,
+          "target_distance": 1.6959638161334003,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3897,
+          "target_distance": 1.4127558468721686,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6949,
+          "target_distance": 1.4670023316689753,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3042,
+          "target_distance": 1.3497777113613358,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3660,
+          "target_distance": 1.339689760795129,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 9292,
+          "target_distance": 1.453084301926957,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 4047,
+          "target_distance": 1.426253832807641,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-sonnet-4-6",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3624,
+          "target_distance": 1.4682380648706344,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "gpt-5-mini",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6657,
+          "target_distance": 1.4551982605033134,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-haiku-4-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3871,
+          "target_distance": 1.2938691953511885,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-opus-4-8",
+          "target": "mccarthy-cormac",
+          "n_tokens": 4110,
+          "target_distance": 1.4400615775387517,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3670,
+          "target_distance": 1.4014452316459036,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 6064,
+          "target_distance": 1.312834572896425,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3510,
+          "target_distance": 1.4753549295949442,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 4983,
+          "target_distance": 1.2470446174697976,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3918,
+          "target_distance": 1.699673079801482,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3847,
+          "target_distance": 1.6856417819192606,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "gpt-5-mini",
+          "target": "didion-joan",
+          "n_tokens": 5668,
+          "target_distance": 1.866269163757897,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "claude-fable-5",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3919,
+          "target_distance": 1.3191590887045723,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 4021,
+          "target_distance": 1.4218501367348353,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3718,
+          "target_distance": 1.590614298341138,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3496,
+          "target_distance": 1.1997674761474741,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3644,
+          "target_distance": 1.7378612002421485,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3996,
+          "target_distance": 1.4599248538833123,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 4107,
+          "target_distance": 1.3759441338326257,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-sonnet-4-6",
+          "target": "didion-joan",
+          "n_tokens": 3310,
+          "target_distance": 1.5400435741308767,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3466,
+          "target_distance": 1.1467558677860765,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-opus-4-8",
+          "target": "didion-joan",
+          "n_tokens": 3757,
+          "target_distance": 1.4500134733343315,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3685,
+          "target_distance": 1.3486611260034045,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3909,
+          "target_distance": 1.3656446815212124,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3626,
+          "target_distance": 1.3230593016090086,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3120,
+          "target_distance": 1.5370099214326638,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3943,
+          "target_distance": 1.4048111846407456,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3624,
+          "target_distance": 1.4474784291741374,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3653,
+          "target_distance": 1.2565182111235884,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3091,
+          "target_distance": 1.3719876496535666,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3772,
+          "target_distance": 1.470877477847179,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-sonnet-4-6",
+          "target": "ondaatje-michael",
+          "n_tokens": 3269,
+          "target_distance": 1.4218902709247179,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "claude-fable-5",
+          "target": "didion-joan",
+          "n_tokens": 3600,
+          "target_distance": 1.210892564782815,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3930,
+          "target_distance": 1.5097189436002447,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3810,
+          "target_distance": 1.5668872423275244,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3619,
+          "target_distance": 1.3153626166179742,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-opus-4-8",
+          "target": "ondaatje-michael",
+          "n_tokens": 3906,
+          "target_distance": 1.3044119709977557,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3571,
+          "target_distance": 1.5530075540967103,
+          "entered_p90": false,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3870,
+          "target_distance": 1.7044401611686697,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3932,
+          "target_distance": 1.4217509992384079,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3703,
+          "target_distance": 1.338887954778611,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3519,
+          "target_distance": 1.5674955606613212,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3755,
+          "target_distance": 1.4262822651623832,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3718,
+          "target_distance": 1.327457651394523,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3672,
+          "target_distance": 1.3956404591447054,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3449,
+          "target_distance": 1.5765922993257346,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3763,
+          "target_distance": 1.2830070070406736,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-sonnet-4-6",
+          "target": "morrison-toni",
+          "n_tokens": 3535,
+          "target_distance": 1.690076777026323,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3506,
+          "target_distance": 1.277502774856273,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3847,
+          "target_distance": 1.4512039192269306,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "claude-fable-5",
+          "target": "ondaatje-michael",
+          "n_tokens": 3549,
+          "target_distance": 1.3170237881174587,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-opus-4-8",
+          "target": "morrison-toni",
+          "n_tokens": 3748,
+          "target_distance": 1.5498340224956582,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3397,
+          "target_distance": 1.3279274620311967,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3488,
+          "target_distance": 1.4605710015974114,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 3900,
+          "target_distance": 1.6781419581656545,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3601,
+          "target_distance": 1.335762901460704,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3618,
+          "target_distance": 1.4406026189809824,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_mccarthy-cormac",
+          "model": "qwen3.6:35b",
+          "target": "mccarthy-cormac",
+          "n_tokens": 6412,
+          "target_distance": 1.794990240862744,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "claude-fable-5",
+          "target": "morrison-toni",
+          "n_tokens": 3298,
+          "target_distance": 1.5228544511140842,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 3859,
+          "target_distance": 1.4571713116447131,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 10224,
+          "target_distance": 1.587570315897558,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 3522,
+          "target_distance": 1.5891480537108018,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 9082,
+          "target_distance": 14.055598423106831,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_didion-joan",
+          "model": "qwen3.6:35b",
+          "target": "didion-joan",
+          "n_tokens": 12841,
+          "target_distance": 1.826951498678591,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 5073,
+          "target_distance": 1.1932040996990076,
+          "entered_p90": true,
+          "entered_p95": true,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 4118,
+          "target_distance": 1.261397110710775,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 3085,
+          "target_distance": 1.2727378236865754,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_ondaatje-michael",
+          "model": "qwen3.6:35b",
+          "target": "ondaatje-michael",
+          "n_tokens": 6552,
+          "target_distance": 1.384374658049683,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": false
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 3164,
+          "target_distance": 1.3801737624151318,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 4242,
+          "target_distance": 1.4644817127065637,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        },
+        {
+          "sample_id": "completion_morrison-toni",
+          "model": "qwen3.6:35b",
+          "target": "morrison-toni",
+          "n_tokens": 6427,
+          "target_distance": 1.6977181821506633,
+          "entered_p90": false,
+          "entered_p95": false,
+          "entered_p99": true
+        }
+      ]
+    }
+  }
+}

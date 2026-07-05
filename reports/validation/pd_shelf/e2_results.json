@@ -1,0 +1,126 @@
+{
+ "meta": {
+  "generated": "2026-06-10T15:49:36.718302+00:00",
+  "baseline_dir": "data/pd_work_baselines",
+  "manifest": "data/pd_manifest.yaml",
+  "authors_filter": null,
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 9,
+  "n_works": 35,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "mfw_delta",
+  "mfw_n": 300,
+  "mfw_n_effective": 300,
+  "mfw_vocab_filter": "none",
+  "blend_scale": 5.072545506638538
+ },
+ "experiment": "e2",
+ "name": "Leave-one-work-out attribution",
+ "distance_variant": "mfw_delta",
+ "pass": true,
+ "criteria": {
+  "top1_accuracy": {
+   "threshold": 0.7,
+   "comparison": ">=",
+   "observed": 1.0,
+   "pass": true
+  },
+  "top3_accuracy": {
+   "threshold": 0.85,
+   "comparison": ">=",
+   "observed": 1.0,
+   "pass": true
+  }
+ },
+ "n_trials": 35,
+ "n_candidate_authors": 9,
+ "skipped_authors": [],
+ "per_author": {
+  "austen-jane": {
+   "n_works": 5,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "bronte-charlotte": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "dickens-charles": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "fitzgerald-f_scott": {
+   "n_works": 3,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "forster-e_m": {
+   "n_works": 5,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "hawthorne-nathaniel": {
+   "n_works": 3,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "joyce-james": {
+   "n_works": 3,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "melville-herman": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  },
+  "woolf-virginia": {
+   "n_works": 4,
+   "top1_accuracy": 1.0,
+   "top3_accuracy": 1.0
+  }
+ },
+ "confusion_matrix": {
+  "austen-jane": {
+   "austen-jane": 5
+  },
+  "bronte-charlotte": {
+   "bronte-charlotte": 4
+  },
+  "dickens-charles": {
+   "dickens-charles": 4
+  },
+  "fitzgerald-f_scott": {
+   "fitzgerald-f_scott": 3
+  },
+  "forster-e_m": {
+   "forster-e_m": 5
+  },
+  "hawthorne-nathaniel": {
+   "hawthorne-nathaniel": 3
+  },
+  "joyce-james": {
+   "joyce-james": 3
+  },
+  "melville-herman": {
+   "melville-herman": 4
+  },
+  "woolf-virginia": {
+   "woolf-virginia": 4
+  }
+ },
+ "c_llr": {
+  "value": 1.4820609547863681,
+  "min": 0.5417830358688462,
+  "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+ },
+ "sanity_check": {
+  "method": null,
+  "top1_accuracy": null,
+  "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: mfw_delta)."
+ }
+}

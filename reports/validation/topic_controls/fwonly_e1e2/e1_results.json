@@ -1,0 +1,135 @@
+{
+ "meta": {
+  "generated": "2026-06-10T00:05:27.617967+00:00",
+  "baseline_dir": "data/baselines/author_space_build/work_baselines",
+  "manifest": "data/baselines/author_space_build/control_shelf_manifest.yaml",
+  "authors_filter": null,
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 15,
+  "n_works": 78,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "mfw_delta",
+  "mfw_n": 300,
+  "mfw_n_effective": 300,
+  "mfw_vocab_filter": "function_words_only",
+  "blend_scale": 5.889544734021734
+ },
+ "experiment": "e1",
+ "name": "Within vs between author separation",
+ "distance_variant": "mfw_delta",
+ "pass": true,
+ "criteria": {
+  "pooled_auc": {
+   "threshold": 0.9,
+   "comparison": ">=",
+   "observed": 0.9111369399830938,
+   "pass": true
+  },
+  "silhouette_positive_fraction": {
+   "threshold": 0.8,
+   "comparison": ">=",
+   "observed": 0.8666666666666667,
+   "pass": true
+  }
+ },
+ "n_within": 78,
+ "n_between": 1092,
+ "within_median": 0.5428667280311313,
+ "between_median": 0.870207911868524,
+ "per_author": {
+  "delillo-don": {
+   "n_works": 6,
+   "silhouette": 0.1566846390966432,
+   "within_median": 0.49826933415478325,
+   "between_median": 0.7790599328504049
+  },
+  "didion-joan": {
+   "n_works": 4,
+   "silhouette": 0.18634848542123816,
+   "within_median": 0.5592549606708606,
+   "between_median": 0.8360503223831511
+  },
+  "foster_wallace-david": {
+   "n_works": 3,
+   "silhouette": 0.06388997763832475,
+   "within_median": 0.6824821765032699,
+   "between_median": 0.8566123318830464
+  },
+  "ishiguro-kazuo": {
+   "n_works": 6,
+   "silhouette": 0.10696448494233478,
+   "within_median": 0.6722043831106839,
+   "between_median": 1.0447734667296462
+  },
+  "mccarthy-cormac": {
+   "n_works": 8,
+   "silhouette": -0.039301659290331165,
+   "within_median": 0.7426896305425661,
+   "between_median": 1.1226986077046126
+  },
+  "morrison-toni": {
+   "n_works": 9,
+   "silhouette": 0.24822271122225695,
+   "within_median": 0.4458323894350388,
+   "between_median": 0.8194270725189987
+  },
+  "murakami-haruki": {
+   "n_works": 7,
+   "silhouette": 0.10284068501103528,
+   "within_median": 0.609610448008807,
+   "between_median": 0.8192607099768079
+  },
+  "ondaatje-michael": {
+   "n_works": 7,
+   "silhouette": 0.1958558478760785,
+   "within_median": 0.5255921135225463,
+   "between_median": 0.8667740759926271
+  },
+  "proulx-annie": {
+   "n_works": 4,
+   "silhouette": 0.21013019151343043,
+   "within_median": 0.41945009523091226,
+   "between_median": 0.7583363837240795
+  },
+  "pynchon-thomas": {
+   "n_works": 4,
+   "silhouette": 0.06366876181090442,
+   "within_median": 0.63826506214681,
+   "between_median": 0.8798225566104907
+  },
+  "robinson-marilynne": {
+   "n_works": 3,
+   "silhouette": -0.023035815062927623,
+   "within_median": 0.8248418465722207,
+   "between_median": 0.9006092980026392
+  },
+  "saunders-george": {
+   "n_works": 4,
+   "silhouette": 0.19961203963205898,
+   "within_median": 0.5637108967717388,
+   "between_median": 0.8428201148737422
+  },
+  "sebald-w_g": {
+   "n_works": 3,
+   "silhouette": 0.38436525845234754,
+   "within_median": 0.5118867066950332,
+   "between_median": 1.0676357599198347
+  },
+  "tokarczuk-olga": {
+   "n_works": 6,
+   "silhouette": 0.19905782043636366,
+   "within_median": 0.4887777171626602,
+   "between_median": 0.8082103603614823
+  },
+  "whitehead-colson": {
+   "n_works": 4,
+   "silhouette": 0.12811779003995646,
+   "within_median": 0.4483874858180154,
+   "between_median": 0.7953419276705541
+  }
+ },
+ "n_authors_silhouette_positive": 13,
+ "n_authors": 15
+}

@@ -1,0 +1,1019 @@
+schema_version: 1.0.0
+generated: '2026-06-10T00:18:20+00:00'
+corpus_root: data/pd_shelf/
+works:
+- file_path: austen-jane/emma-jane-austen-1815-dc76d413.txt
+  source_hash: dc76d413
+  author_slug: austen-jane
+  title: Emma
+  year_published: 1815
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 307
+  body_end_offset: 878906
+  body_word_count: 157432
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #158 (https://www.gutenberg.org/ebooks/158)'
+  books_yaml_ref:
+    canonical_author: Austen, Jane
+    canonical_title: Emma
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: austen-jane/mansfield-park-jane-austen-1814-ff1cd3ba.txt
+  source_hash: ff1cd3ba
+  author_slug: austen-jane
+  title: Mansfield Park
+  year_published: 1814
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 317
+  body_end_offset: 881935
+  body_word_count: 159607
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #141 (https://www.gutenberg.org/ebooks/141)'
+  books_yaml_ref:
+    canonical_author: Austen, Jane
+    canonical_title: Mansfield Park
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: austen-jane/persuasion-jane-austen-1817-1f041970.txt
+  source_hash: 1f041970
+  author_slug: austen-jane
+  title: Persuasion
+  year_published: 1817
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 312
+  body_end_offset: 464525
+  body_word_count: 83278
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #105 (https://www.gutenberg.org/ebooks/105)'
+  books_yaml_ref:
+    canonical_author: Austen, Jane
+    canonical_title: Persuasion
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: austen-jane/pride-and-prejudice-jane-austen-1813-5ec9b55e.txt
+  source_hash: 5ec9b55e
+  author_slug: austen-jane
+  title: Pride and Prejudice
+  year_published: 1813
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 687134
+  body_word_count: 121725
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1342 (https://www.gutenberg.org/ebooks/1342)'
+  books_yaml_ref:
+    canonical_author: Austen, Jane
+    canonical_title: Pride and Prejudice
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: austen-jane/sense-and-sensibility-jane-austen-1811-13917f75.txt
+  source_hash: 13917f75
+  author_slug: austen-jane
+  title: Sense and Sensibility
+  year_published: 1811
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 669208
+  body_word_count: 118747
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #161 (https://www.gutenberg.org/ebooks/161)'
+  books_yaml_ref:
+    canonical_author: Austen, Jane
+    canonical_title: Sense and Sensibility
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: bronte-charlotte/jane-eyre-charlotte-bronte-1847-e3700b99.txt
+  source_hash: e3700b99
+  author_slug: bronte-charlotte
+  title: Jane Eyre
+  year_published: 1847
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 1016703
+  body_word_count: 184450
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1260 (https://www.gutenberg.org/ebooks/1260)'
+  books_yaml_ref:
+    canonical_author: Bronte, Charlotte
+    canonical_title: Jane Eyre
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: bronte-charlotte/shirley-charlotte-bronte-1849-00d154df.txt
+  source_hash: 00d154df
+  author_slug: bronte-charlotte
+  title: Shirley
+  year_published: 1849
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 1211973
+  body_word_count: 214089
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #30486 (https://www.gutenberg.org/ebooks/30486)'
+  books_yaml_ref:
+    canonical_author: Bronte, Charlotte
+    canonical_title: Shirley
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: bronte-charlotte/the-professor-charlotte-bronte-1857-e2c0e4bb.txt
+  source_hash: e2c0e4bb
+  author_slug: bronte-charlotte
+  title: The Professor
+  year_published: 1857
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 327
+  body_end_offset: 497513
+  body_word_count: 87409
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1028 (https://www.gutenberg.org/ebooks/1028)'
+  books_yaml_ref:
+    canonical_author: Bronte, Charlotte
+    canonical_title: The Professor
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: bronte-charlotte/villette-charlotte-bronte-1853-6b236538.txt
+  source_hash: 6b236538
+  author_slug: bronte-charlotte
+  title: Villette
+  year_published: 1853
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 323
+  body_end_offset: 1091040
+  body_word_count: 192406
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #9182 (https://www.gutenberg.org/ebooks/9182)'
+  books_yaml_ref:
+    canonical_author: Bronte, Charlotte
+    canonical_title: Villette
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: dickens-charles/bleak-house-charles-dickens-1853-ce224db1.txt
+  source_hash: ce224db1
+  author_slug: dickens-charles
+  title: Bleak House
+  year_published: 1853
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 1932643
+  body_word_count: 352392
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1023 (https://www.gutenberg.org/ebooks/1023)'
+  books_yaml_ref:
+    canonical_author: Dickens, Charles
+    canonical_title: Bleak House
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: dickens-charles/david-copperfield-charles-dickens-1850-e18be4b8.txt
+  source_hash: e18be4b8
+  author_slug: dickens-charles
+  title: David Copperfield
+  year_published: 1850
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 328
+  body_end_offset: 1928951
+  body_word_count: 353899
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #766 (https://www.gutenberg.org/ebooks/766)'
+  books_yaml_ref:
+    canonical_author: Dickens, Charles
+    canonical_title: David Copperfield
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: dickens-charles/great-expectations-charles-dickens-1861-00e51ee7.txt
+  source_hash: 00e51ee7
+  author_slug: dickens-charles
+  title: Great Expectations
+  year_published: 1861
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 331
+  body_end_offset: 993014
+  body_word_count: 184334
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1400 (https://www.gutenberg.org/ebooks/1400)'
+  books_yaml_ref:
+    canonical_author: Dickens, Charles
+    canonical_title: Great Expectations
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: dickens-charles/oliver-twist-charles-dickens-1838-2fa2ad7b.txt
+  source_hash: 2fa2ad7b
+  author_slug: dickens-charles
+  title: Oliver Twist
+  year_published: 1838
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 323
+  body_end_offset: 887486
+  body_word_count: 157157
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #730 (https://www.gutenberg.org/ebooks/730)'
+  books_yaml_ref:
+    canonical_author: Dickens, Charles
+    canonical_title: Oliver Twist
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: fitzgerald-f_scott/the-beautiful-and-damned-f-scott-fitzgerald-1922-568f1874.txt
+  source_hash: 568f1874
+  author_slug: fitzgerald-f_scott
+  title: The Beautiful and Damned
+  year_published: 1922
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 345
+  body_end_offset: 719618
+  body_word_count: 123499
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #9830 (https://www.gutenberg.org/ebooks/9830)'
+  books_yaml_ref:
+    canonical_author: Fitzgerald, F. Scott
+    canonical_title: The Beautiful and Damned
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: fitzgerald-f_scott/the-great-gatsby-f-scott-fitzgerald-1925-e3f37030.txt
+  source_hash: e3f37030
+  author_slug: fitzgerald-f_scott
+  title: The Great Gatsby
+  year_published: 1925
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 338
+  body_end_offset: 270483
+  body_word_count: 48151
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #64317 (https://www.gutenberg.org/ebooks/64317)'
+  books_yaml_ref:
+    canonical_author: Fitzgerald, F. Scott
+    canonical_title: The Great Gatsby
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: fitzgerald-f_scott/this-side-of-paradise-f-scott-fitzgerald-1920-b3140161.txt
+  source_hash: b3140161
+  author_slug: fitzgerald-f_scott
+  title: This Side of Paradise
+  year_published: 1920
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 339
+  body_end_offset: 516870
+  body_word_count: 80463
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #805 (https://www.gutenberg.org/ebooks/805)'
+  books_yaml_ref:
+    canonical_author: Fitzgerald, F. Scott
+    canonical_title: This Side of Paradise
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: forster-e_m/a-passage-to-india-e-m-forster-1924-b4521ee4.txt
+  source_hash: b4521ee4
+  author_slug: forster-e_m
+  title: A Passage to India
+  year_published: 1924
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 329
+  body_end_offset: 567796
+  body_word_count: 100763
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #61221 (https://www.gutenberg.org/ebooks/61221)'
+  books_yaml_ref:
+    canonical_author: Forster, E. M.
+    canonical_title: A Passage to India
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: forster-e_m/a-room-with-a-view-e-m-forster-1908-8aaf626b.txt
+  source_hash: 8aaf626b
+  author_slug: forster-e_m
+  title: A Room with a View
+  year_published: 1908
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 326
+  body_end_offset: 374124
+  body_word_count: 66420
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2641 (https://www.gutenberg.org/ebooks/2641)'
+  books_yaml_ref:
+    canonical_author: Forster, E. M.
+    canonical_title: A Room with a View
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: forster-e_m/howards-end-e-m-forster-1910-24a660c3.txt
+  source_hash: 24a660c3
+  author_slug: forster-e_m
+  title: Howards End
+  year_published: 1910
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 320
+  body_end_offset: 612756
+  body_word_count: 108653
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2946 (https://www.gutenberg.org/ebooks/2946)'
+  books_yaml_ref:
+    canonical_author: Forster, E. M.
+    canonical_title: Howards End
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: forster-e_m/the-longest-journey-e-m-forster-1907-96498f83.txt
+  source_hash: 96498f83
+  author_slug: forster-e_m
+  title: The Longest Journey
+  year_published: 1907
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 327
+  body_end_offset: 522431
+  body_word_count: 93947
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2604 (https://www.gutenberg.org/ebooks/2604)'
+  books_yaml_ref:
+    canonical_author: Forster, E. M.
+    canonical_title: The Longest Journey
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: forster-e_m/where-angels-fear-to-tread-e-m-forster-1905-91aa49fc.txt
+  source_hash: 91aa49fc
+  author_slug: forster-e_m
+  title: Where Angels Fear to Tread
+  year_published: 1905
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 334
+  body_end_offset: 275696
+  body_word_count: 49459
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2948 (https://www.gutenberg.org/ebooks/2948)'
+  books_yaml_ref:
+    canonical_author: Forster, E. M.
+    canonical_title: Where Angels Fear to Tread
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: hawthorne-nathaniel/the-blithedale-romance-nathaniel-hawthorne-1852-617df47a.txt
+  source_hash: 617df47a
+  author_slug: hawthorne-nathaniel
+  title: The Blithedale Romance
+  year_published: 1852
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 341
+  body_end_offset: 435817
+  body_word_count: 75728
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2081 (https://www.gutenberg.org/ebooks/2081)'
+  books_yaml_ref:
+    canonical_author: Hawthorne, Nathaniel
+    canonical_title: The Blithedale Romance
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: hawthorne-nathaniel/the-house-of-the-seven-gables-nathaniel-hawthorne-1851-cdfb23e4.txt
+  source_hash: cdfb23e4
+  author_slug: hawthorne-nathaniel
+  title: The House of the Seven Gables
+  year_published: 1851
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 345
+  body_end_offset: 595797
+  body_word_count: 102207
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #77 (https://www.gutenberg.org/ebooks/77)'
+  books_yaml_ref:
+    canonical_author: Hawthorne, Nathaniel
+    canonical_title: The House of the Seven Gables
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: hawthorne-nathaniel/the-scarlet-letter-nathaniel-hawthorne-1850-94e6be5f.txt
+  source_hash: 94e6be5f
+  author_slug: hawthorne-nathaniel
+  title: The Scarlet Letter
+  year_published: 1850
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 339
+  body_end_offset: 396473
+  body_word_count: 68065
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #25344 (https://www.gutenberg.org/ebooks/25344)'
+  books_yaml_ref:
+    canonical_author: Hawthorne, Nathaniel
+    canonical_title: The Scarlet Letter
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: joyce-james/a-portrait-of-the-artist-as-a-young-man-james-joyce-1916-16ec2dbb.txt
+  source_hash: 16ec2dbb
+  author_slug: joyce-james
+  title: A Portrait of the Artist as a Young Man
+  year_published: 1916
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 343
+  body_end_offset: 462450
+  body_word_count: 84793
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #4217 (https://www.gutenberg.org/ebooks/4217)'
+  books_yaml_ref:
+    canonical_author: Joyce, James
+    canonical_title: A Portrait of the Artist as a Young Man
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: joyce-james/dubliners-james-joyce-1914-6a28c5ba.txt
+  source_hash: 6a28c5ba
+  author_slug: joyce-james
+  title: Dubliners
+  year_published: 1914
+  year_edition: null
+  publisher_edition: null
+  form: story_collection
+  translation_status: original_english
+  translator: null
+  body_start_offset: 313
+  body_end_offset: 369487
+  body_word_count: 67518
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2814 (https://www.gutenberg.org/ebooks/2814)'
+  books_yaml_ref:
+    canonical_author: Joyce, James
+    canonical_title: Dubliners
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: joyce-james/ulysses-james-joyce-1922-3e301b12.txt
+  source_hash: 3e301b12
+  author_slug: joyce-james
+  title: Ulysses
+  year_published: 1922
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 312
+  body_end_offset: 1516300
+  body_word_count: 264980
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #4300 (https://www.gutenberg.org/ebooks/4300)'
+  books_yaml_ref:
+    canonical_author: Joyce, James
+    canonical_title: Ulysses
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: melville-herman/moby-dick-herman-melville-1851-9ebfe4a2.txt
+  source_hash: 9ebfe4a2
+  author_slug: melville-herman
+  title: Moby-Dick
+  year_published: 1851
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 322
+  body_end_offset: 1191422
+  body_word_count: 208455
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #2701 (https://www.gutenberg.org/ebooks/2701)'
+  books_yaml_ref:
+    canonical_author: Melville, Herman
+    canonical_title: Moby-Dick
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: melville-herman/omoo-herman-melville-1847-4bea27ce.txt
+  source_hash: 4bea27ce
+  author_slug: melville-herman
+  title: Omoo
+  year_published: 1847
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 317
+  body_end_offset: 580088
+  body_word_count: 101134
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #4045 (https://www.gutenberg.org/ebooks/4045)'
+  books_yaml_ref:
+    canonical_author: Melville, Herman
+    canonical_title: Omoo
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: melville-herman/typee-herman-melville-1846-0f95e90b.txt
+  source_hash: 0f95e90b
+  author_slug: melville-herman
+  title: Typee
+  year_published: 1846
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 318
+  body_end_offset: 617812
+  body_word_count: 106749
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1900 (https://www.gutenberg.org/ebooks/1900)'
+  books_yaml_ref:
+    canonical_author: Melville, Herman
+    canonical_title: Typee
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: melville-herman/white-jacket-herman-melville-1850-c56747e5.txt
+  source_hash: c56747e5
+  author_slug: melville-herman
+  title: White-Jacket
+  year_published: 1850
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 327
+  body_end_offset: 809928
+  body_word_count: 138600
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #10712 (https://www.gutenberg.org/ebooks/10712)'
+  books_yaml_ref:
+    canonical_author: Melville, Herman
+    canonical_title: White-Jacket
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: woolf-virginia/jacobs-room-virginia-woolf-1922-0e20f465.txt
+  source_hash: 0e20f465
+  author_slug: woolf-virginia
+  title: Jacob's Room
+  year_published: 1922
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 322
+  body_end_offset: 314105
+  body_word_count: 54504
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #5670 (https://www.gutenberg.org/ebooks/5670)'
+  books_yaml_ref:
+    canonical_author: Woolf, Virginia
+    canonical_title: Jacob's Room
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: woolf-virginia/mrs-dalloway-virginia-woolf-1925-32e6f7a3.txt
+  source_hash: 32e6f7a3
+  author_slug: woolf-virginia
+  title: Mrs. Dalloway
+  year_published: 1925
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 360212
+  body_word_count: 63424
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #71865 (https://www.gutenberg.org/ebooks/71865)'
+  books_yaml_ref:
+    canonical_author: Woolf, Virginia
+    canonical_title: Mrs. Dalloway
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: woolf-virginia/night-and-day-virginia-woolf-1919-ca3a721e.txt
+  source_hash: ca3a721e
+  author_slug: woolf-virginia
+  title: Night and Day
+  year_published: 1919
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 324
+  body_end_offset: 945414
+  body_word_count: 166178
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #1245 (https://www.gutenberg.org/ebooks/1245)'
+  books_yaml_ref:
+    canonical_author: Woolf, Virginia
+    canonical_title: Night and Day
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null
+- file_path: woolf-virginia/the-voyage-out-virginia-woolf-1915-dcb7cb47.txt
+  source_hash: dcb7cb47
+  author_slug: woolf-virginia
+  title: The Voyage Out
+  year_published: 1915
+  year_edition: null
+  publisher_edition: null
+  form: novel
+  translation_status: original_english
+  translator: null
+  body_start_offset: 323
+  body_end_offset: 763599
+  body_word_count: 136285
+  fidelity_verdict: clean
+  fidelity_notes: null
+  contamination_types_found: []
+  centroid_membership:
+    fiction_centroid: true
+    translator_envelope: false
+    control_shelf_calibration: true
+  extraction_source: 'Project Gutenberg eBook #144 (https://www.gutenberg.org/ebooks/144)'
+  books_yaml_ref:
+    canonical_author: Woolf, Virginia
+    canonical_title: The Voyage Out
+    rights_status: public_domain
+  release_eligible_for_aggregates: true
+  release_eligible_for_quotation: true
+  added_in_sprint: 'pd_shelf (issue #95 P8)'
+  notes: null

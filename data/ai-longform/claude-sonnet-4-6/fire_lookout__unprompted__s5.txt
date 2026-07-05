@@ -1,0 +1,111 @@
+The smoke came up slow, the way bad news always does—not the quick white pulse of a signal fire or the gray boil of a lightning strike running crown-to-crown, but a dark column rising from the drainage with a patience that suggested something feeding rather than something burning. Mara saw it at twenty past eleven, two hours into the morning watch, her coffee still warm enough to hold against her chin when she stepped out onto the catwalk and looked southeast.
+
+She had been in the Alvarado tower for eleven summers. This was supposed to be the last. The Forest Service had told her in April, politely and in writing, that the lookout program was being discontinued as of October, that aerial surveillance and a network of automated sensors would take over the responsibility she had carried alone up here on this particular ridge at an elevation of seven thousand four hundred feet. She had signed the acknowledgment without comment. She had also begun a habit, sometime in late May, of touching the railing as she came back inside each evening, pressing her palm flat against the wood as though learning its grain by feel, or as though saying something she didn't know how to say out loud.
+
+The drainage below was called Hendrix Creek, a name that had nothing to do with the musician—it came from a surveyor named William Hendrix who had mapped the watershed in 1891 and subsequently drowned in it, which was the kind of irony that the mountains accumulated the way they accumulated deadfall, without intention, without apology. The creek ran northeast to southwest through a canyon dense with old-growth fir and the tangles of vine maple that got so thick by August you could not see sky through them. At its upper end, accessible by a jeep road that turned off the main forest road about three miles below where Mara had parked her truck in June, there was a cabin. A small thing, board-and-batten siding gone silver with weather, a corrugated metal roof that sang in rain. Their father had built it in 1978, the year before Mara was born, and Delia had claimed it in the settlement after their mother died, which was the way most things had been settled between them—Delia claiming, Mara conceding, and then Mara spending years wondering whether she had conceded from generosity or from some failure of desire she still couldn't name.
+
+She went back inside and picked up the radio handset.
+
+Nothing. The same deep blankness she had been managing since the previous afternoon, when the repeater on Saddle Mountain had apparently gone offline without warning, leaving her with a microphone that felt as useful as a conch shell held to the mouth. She had documented the outage at 1347 hours the previous day, tried the backup frequency, tried the emergency channel, noted the failure in the logbook in the careful block letters she'd maintained for eleven years, and then sat with the uselessness of it for a long hour before going to bed early because there was nothing else to do with the information.
+
+She tried it again now. She said her identifier and her location, the way she had been trained to do, calmly and without redundancy. She waited. She tried again. The silence coming back through the speaker was not the silence of someone choosing not to answer; it was the silence of a broken line, a silence with texture to it, a white noise beneath the absence that meant the electronics were working but the signal was going nowhere.
+
+Outside, the column had not changed. It was still rising, still dark, still coming from exactly the area of the creek drainage where the cabin sat. She put the Osborne firefinder over it and took a reading and wrote it in the logbook and then looked at the reading for a long moment as though the numbers might reinterpret themselves.
+
+The road was eight miles. She had walked it once before, in her second summer, when her truck had a blowout on the way up and she walked the remaining three miles to the tower with her pack and then the five miles back down to the nearest trailhead to get a signal on her personal cell phone. That had taken her an hour and forty minutes of sustained effort on a good trail in good weather. The forest road was not a good trail. It was rough gravel with drainage cuts and washouts, and in the steeper sections it switchbacked in a way that made the distance feel elastic, gave you the sensation that you were working harder than you were moving. In June she had timed herself driving it, as she did every summer, and it had taken thirty-one minutes. On foot it would be two and a half hours minimum, probably three. She had done the math involuntarily, the way you do math when you are trying to talk yourself out of something or into something and aren't yet sure which.
+
+She got out the binoculars instead and spent ten minutes studying the smoke. What she knew, from eleven summers of watching fire: the column was not crown fire, not yet. The base was obscured by terrain—the canyon walls cut off her line of sight below about a thousand feet of elevation—but the behavior at the top suggested something low and feeding slowly, working through duff and ground fuel rather than moving through the canopy. There was no spot pattern downwind, no secondary columns. The color was wrong for a structure fire; structure fires burned orange-black and had a greasy quality to the smoke, and this was denser than that, woodier. If she had to guess—and in eleven summers she had become skilled at exactly this kind of guessing—she would say it was a campfire that had gotten out and was moving through the understory along the creek. Moving slowly, still manageable, the kind of fire you could check with a hand tool and a wet bandana if you got to it within the first hour.
+
+If you got to it.
+
+She stood at the firefinder for another minute, watching. Then she opened the logbook and wrote: *1134. Column stationary, moving to creeping surface behavior, no spotting visible. Wind SE at approx 8 mph. Source appears lower Hendrix drainage, est. grid 7-L. Radio non-functional, no contact with dispatch. Initiating road protocol.*
+
+Road protocol was not an official term. She had invented it in her own mind over the years for the scenario in which she had to leave the tower, which had never happened. There were procedures, of course—the actual procedures required her to make contact with dispatch before leaving, or to leave only in a life-safety situation, and she recognized as she wrote the words that she was naming something she had already decided in language that would look like procedure in the logbook rather than what it actually was, which was the act of a woman picking up her radio and her pack and her fire shelter and walking eight miles downhill toward a smoke column because her sister kept a cabin at the bottom of it.
+
+She and Delia had not spoken in four years.
+
+This was not, as estrangements go, a dramatic one. There had been no final scene, no thrown objects, no accusations landing like precise instruments. There had instead been an accumulation—small failures of the kind that don't resolve and don't worsen but simply accumulate until one day you look across the pile of them and realize that calling would require climbing over all of it, and you don't call, and then a season passes, and then another, and by the third year the pile is so high that the person on the other side of it is someone you only know in the past tense, which is its own kind of mourning, quieter than the other kinds and in Mara's experience more persistent.
+
+What had started it: Delia had asked Mara to come down from the tower for their mother's birthday in August, the first birthday after their mother's death, and Mara had said she couldn't leave the tower mid-summer, which was true, and Delia had heard something in that truth—the relief of it, maybe, the way the constraint gave Mara permission to do what she would have chosen anyway, which was to stay up here on the ridge in the clean air with her logbook and her binoculars rather than sit in their mother's house in the valley and be required to feel things in the presence of another person. Delia had not said any of this. Delia had said, fine, and hung up, and that was the beginning of the pile.
+
+The road was eight miles and her sister's cabin was at the bottom of the smoke column and the radio was dead.
+
+She changed her boots—the tower sandals she'd been wearing for the morning watch for the heavier boots she used when she hiked the perimeter, the boots she'd conditioned with mink oil in May and worn around the catwalk for a week before they gave up their stiffness. She filled a two-liter bottle. She put on the chest harness with the radio and the fire shelter and the small kit: space blanket, first aid, matches she would never need because she was never without fire-starting materials but that were protocol. She wrote the time of departure in the logbook. She looked around the cab of the tower the way you look at a room you're leaving, which is the same way you look at a room you're memorizing, taking in the Osborne firefinder on its tripod in the center, the maps pinned to the south wall, the little propane stove she'd cooked six thousand breakfasts on, the shelf of paperback novels worn to softness, the photograph tacked above the window that showed her father at thirty standing in the meadow below this ridge with a chainsaw over one shoulder, squinting into sun, looking like a man who believed in the legibility of the future.
+
+She locked the door behind her because there was no reason to, and because it was what she always did.
+
+The first mile was the steepest, the road cutting down the northwest face of the ridge in long switchbacks through open lodgepole, the trees thinning enough that she could see the valley floor far below and, to the southeast, the smoke column, which from this angle looked closer—she was descending toward it—but also more diffuse, spreading at the top in a way that meant it was gaining heat. She walked faster than she should have in the first quarter mile, the downhill grade pulling at her knees, and made herself slow to a sustainable pace. Three miles an hour. That was the number to hold.
+
+She had been thinking about what she would say, and had not gotten far with it. Four years was not nothing. Four years was a girl becoming a person, was a decade turning, was the kind of time in which people got sick and got better or got sick and didn't, the kind of time in which opinions calcified and photographs faded and you could begin, if you were not careful, to think of the person you'd stopped speaking to as a fixed thing rather than a living one. She had let herself think of Delia that way. She recognized this now, descending through the lodgepole, the gravel loose under her boots, the smoke visible every time she crossed a gap in the tree line. She had stored Delia somewhere in herself at a particular moment in time and had stopped updating the file, had continued to carry her around like that, a static thing, a grievance preserved in amber, and the truth was that she didn't know who Delia was now. She didn't know what four years had done to her. She didn't know if she was at the cabin alone. She didn't know if she was at the cabin at all.
+
+She ran the scenarios and kept walking.
+
+Two and a half miles down, where the road crossed Hendrix Creek on a culvert bridge made of corrugated steel that boomed under vehicle weight and sounded, she had always thought, like a struck bell, she stopped and crouched and looked into the creek bed. The water was low—late July, it was always low—but it was running, a clear trickle through the cobbles, cold enough that when she cupped it to her face she felt it all the way back into her sinuses. She drank from her bottle instead, tasting the iodine in it, looking at the way the tree canopy closed over the creek downstream, a dark tunnel of fir boughs going toward the fire. The smell was here now, not overwhelming, not the thick throat-coating smell of a big fire, but present—the particular dry woody smell of a ground fire burning in old duff, a smell that she associated not with catastrophe but with endings, with autumn, with the slow decomposition that is indistinguishable from combustion if you slow it down far enough.
+
+She crossed the bridge, listened to it boom, kept moving.
+
+The cabin came into view around a bend in the road at what her watch said was 1357, two hours and twenty-three minutes after she had locked the tower door. She saw the fire before she saw the cabin—a low crawl of flame moving through the dry grass and duff on the uphill side of the structure, eating its way along the base of the tree line in a line about forty feet wide, unhurried, the kind of fire that seemed almost lazy until you watched it for sixty seconds and understood that it had covered three feet in that time and was accelerating in the light upslope wind. The cabin was not on fire. There was perhaps thirty feet between the fire line and the nearest corner of the structure. Twenty-five minutes. Maybe less if the wind picked up.
+
+She was already moving off the road and up the slope before she had consciously made the decision to do so, which was a thing she understood about herself—that her body often moved toward problems before her mind had caught up with the implications. She grabbed a branch that had already been burned off the tree that bore it, a dead gray limb three feet long, and began beating at the fire line, working from the far edge toward the cabin, trying to create breaks in the fuel, pulling burning duff away from unburned duff with the branch and the toe of her boot, her eyes stinging, breathing through her nose to filter the smoke. It was not the right tool. The right tool was a Pulaski, which was at the tower, or a shovel, which might be in the woodshed behind the cabin. She kept working. She beat out a section, moved upslope, beat another, felt the heat on her forearms and the backs of her hands where her sleeves had pulled back, felt the sweat on her neck.
+
+She heard the cabin door.
+
+"Hey." The voice was flat with shock, and then: "What the hell are you—" A pause. "Mara."
+
+Delia came across the clearing at a run, wearing canvas pants and a flannel shirt, her hair shorter than Mara remembered—gray at the temples now, cut practically above the ears—carrying a green plastic bucket that sloshed water as she ran, which told Mara she had already known about the fire and had already started responding to it, which also told her that Delia was here, was real, was alive and moving through the world in the present tense.
+
+They worked in parallel without speaking, Delia with the bucket and Mara with the dead limb and later with a shovel she found in the woodshed, building a dirt line across the path of the fire, cutting off fuel, knocking down the hot spots, moving in the same direction without negotiating it. They had grown up doing this—parallel work, the kind of cooperation that doesn't require speech because it has its own logic, the logic of a task with visible edges. Their father had made them work like this on the property when they were girls: clearing brush, stacking wood, the work that had seasons to it and outcomes you could see. Mara thought about this while she worked, the shovel burning in her palms, the fire line narrowing.
+
+It took forty minutes to stop it. When it was done—truly done, the line cold and the hot spots smothered—Mara stood at the edge of the burn scar with her hands on the shovel handle and breathed. Her arms ached. Her eyes felt scraped. The smell was everywhere, on her clothes and in her hair and on the skin of her hands, a smell she would still smell in the middle of the night for weeks.
+
+Delia stood twenty feet away, looking at the cabin. She was not looking at Mara.
+
+"It started from the fire ring," Delia said, finally. "I was burning cardboard. I thought it was out."
+
+"It wasn't."
+
+"No."
+
+A long silence. A camp jay landed on the roof of the woodshed and regarded them with frank indifference.
+
+"The radio's been out since yesterday afternoon," Mara said. "I didn't have any other way to—" She stopped. She looked at the burn scar and at the cabin and at her sister's back. "I walked down."
+
+Delia turned. Her face was something Mara hadn't seen before, or hadn't seen recently enough to have it memorized—a face in middle age, their mother's jaw now, lines at the eyes that weren't there in photographs from four years ago, a watchfulness that Mara recognized as her own inheritance, that thing they had both gotten from somewhere, the watching of things carefully, the taking of slow readings.
+
+"Eight miles?" Delia said.
+
+"More or less."
+
+Delia looked at her for a long moment, the way you look at a stranger you are trying to locate in some category of meaning. "Come inside," she said. "I'll make coffee."
+
+The inside of the cabin was exactly the same. This was what struck Mara first—the same single table her father had built, the same iron cookstove, the same shelf of mismatched dishes, the same two windows looking out onto the creek. The smell of the place was deep and consistent, the smell of the wood itself and the woodsmoke of decades, a smell that existed nowhere else in the world that Mara knew of and that acted on her now the way smells do, not through the intellect but through the older system, the one that stores things without organizing them, the one that returns you to the precise temperature of a summer morning when you were nine years old and the world had not yet become the world.
+
+She sat in the chair she had always sat in. Delia put water on the stove. Neither of them spoke, but the silence was not the silence of the radio—not a broken line, not an absence with texture. It was the silence of two people in a small space who have just done a physical thing together and are still inside the body of it, still breathing the same air, waiting for the words to come up from wherever words come from when you have not used them with a particular person in four years.
+
+"I didn't know you were up here," Mara said.
+
+"I come every summer."
+
+"I know. I just—I didn't know when. This summer."
+
+Delia poured water into the percolator. She had her back to Mara still, and Mara watched the set of her shoulders, the familiar architecture of them, the way Delia held tension in the left side, slightly higher than the right, a thing she had noticed in childhood and could still read as clearly as a fire read through the firefinder.
+
+"The tower's closing," Mara said.
+
+"I heard."
+
+"They sent letters. I don't know who they sent them to."
+
+"One of the union newsletters. Somebody reprinted the announcement." Delia brought the percolator to the stove and turned around. She looked at Mara the same way she'd looked at her in the clearing—the locating look. "So this is your last summer."
+
+"Yes."
+
+Outside the window, the creek made its small consistent sound. The smoke smell was still coming through, faintly, the smell of the thing they had just stopped, together, in the last possible hour in which it could have been stopped with the tools they had. Mara looked at her sister's hands on the edge of the table—she had come to stand near it without sitting, the way she always stood, one hand resting on surfaces, the other free—and she thought about the eight miles, the going down, the fact of having left the tower for the first time in eleven summers, and about what it meant that she had not hesitated. That the body had already known before the mind arrived at the knowing, as it always did, as it had always done, the way smoke rises before the alarm sounds, the way a column forms before you have a name for the fire that's making it.
+
+"I've been up there," Mara said, meaning the tower, meaning also something else, something less locatable. "I've been up there for a long time."
+
+Delia sat down then. She sat in the other chair, the one that had always been hers, across the table where the grain of the wood ran in a long diagonal their father had not planned and had not tried to correct. She put both hands flat on the table and looked at them and then looked at Mara.
+
+"I know," she said. "The coffee will be a few minutes."
+
+And so they sat, and the percolator began its patient work on the stove, and the smoke settled into the canyon the way it does after a fire is over—not gone, not finished, but stilled, dropping slowly through the afternoon air in a thin pale veil that by evening would be indistinguishable from weather, from the ordinary gray of the sky above the firs, from the particular light of summer moving toward its end.

@@ -1,0 +1,1084 @@
+{
+  "tool": "tier1_statistics",
+  "relates": "issue #95 P7; TIER1_PAPER_OUTLINE.md \u00a710",
+  "meta": {
+    "generated": "2026-06-11T00:32:04.855686+00:00",
+    "e4_results": "reports/validation/wave2/e4_results.json",
+    "artifact": "data/artifacts/author_space_v1_wave2.json",
+    "n_placed": 910,
+    "n_unprompted": 400,
+    "n_style_prompted": 159,
+    "n_exemplar": 159,
+    "n_models": 8,
+    "n_authors": 15,
+    "w_info": {
+      "artifact": "data/artifacts/author_space_v1_wave2.json",
+      "n_authors": 15,
+      "n_works": 78,
+      "n_w_loo": 78,
+      "n_w_pooled": 268
+    },
+    "seed": 20260609,
+    "n_boot": 10000,
+    "n_perm": 10000,
+    "trajectory_results": null
+  },
+  "enter_rate": {
+    "claim": "0/159 style-prompted samples entered the target author's W-p90 region",
+    "k": 0,
+    "n": 159,
+    "rate": 0.0,
+    "clopper_pearson_95_two_sided": [
+      0.0,
+      0.02293343743096093
+    ],
+    "clopper_pearson_95_one_sided_upper": 0.018664699758660745,
+    "max_enter_rate_excluded_one_sided_95": 0.018664699758660697,
+    "exact_tests_vs_alternatives": {
+      "p0_0.05": {
+        "null": "enter-rate >= 0.05",
+        "p_value": 0.0002871132537654362,
+        "rejected_at_0.05": true
+      },
+      "p0_0.1": {
+        "null": "enter-rate >= 0.1",
+        "p_value": 5.303456375681157e-08,
+        "rejected_at_0.05": true
+      },
+      "p0_0.125": {
+        "null": "enter-rate >= 0.125",
+        "p_value": 6.015620498589185e-10,
+        "rejected_at_0.05": true
+      },
+      "p0_0.2": {
+        "null": "enter-rate >= 0.2",
+        "p_value": 3.902185687894988e-16,
+        "rejected_at_0.05": true
+      }
+    },
+    "permutation_vs_unprompted_target_region": {
+      "observed_count_a": 0,
+      "n_a": 159,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260609,
+      "degenerate": true
+    },
+    "permutation_vs_unprompted_any_region": {
+      "observed_count_a": 0,
+      "n_a": 159,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260610,
+      "degenerate": true
+    },
+    "assumptions": [
+      "Samples treated as independent Bernoulli trials; the 159 samples come from 8 models x 4 targets, so model/target clustering is ignored \u2014 with k=0 the CP bound is unaffected by clustering direction but the effective n may be smaller than the nominal n.",
+      "Permutation framing assumes exchangeability of prompted and unprompted samples w.r.t. region membership under the null."
+    ],
+    "notes": "The permutation test is DEGENERATE when no sample in either condition lies inside any W-p90 region (pooled event count 0): p = 1.0 by construction and the test has zero power. The informative quantity is the exact Clopper-Pearson upper bound."
+  },
+  "off_manifold": {
+    "claim": "400/400 unprompted samples off-manifold (nearest-author W-pct > 90)",
+    "k": 400,
+    "n": 400,
+    "rate": 1.0,
+    "observed_min_nearest_w_percentile": 97.43589743589743,
+    "clopper_pearson_95_two_sided": [
+      0.9908201954163347,
+      1.0
+    ],
+    "clopper_pearson_95_one_sided_lower": 0.9925386444712004,
+    "max_on_manifold_rate_excluded_one_sided_95": 0.0074613555287995625,
+    "exact_test_vs_off_manifold_rate_le_90pct": {
+      "null": "off-manifold rate <= 0.90",
+      "p_value": 4.977414122938527e-19
+    },
+    "w_percentile_resolution": {
+      "available": true,
+      "n_w_loo_samples": 78,
+      "n_w_pooled_samples": 268,
+      "percentile_basis": "w_percentile is an empirical mid-rank percentile against the artifact's W LOO distribution (n=78); it is NOT a parametric tail probability.",
+      "granularity_pct_points": 1.2820512820512822,
+      "max_resolvable_percentile_below_100": 99.35897435897436,
+      "observed_min_nearest_w_percentile": 97.43589743589743,
+      "observed_min_rank_interpretation": "min observed 97.4359 => the AI distance exceeds ~76.0 of 78 W LOO values; a value of 100.0 only certifies the distance exceeds all 78 reference values, i.e. an exceedance probability <= 1/79 (~1.27%) under exchangeability, not literally zero."
+    },
+    "assumptions": [
+      "Samples treated as independent across models and prompts (n=400 unprompted samples; 8 models); per-model clustering would widen the effective CI.",
+      "The W-percentile inherits sampling noise from the finite W LOO reference sample; ranks, not tail probabilities, are the claim."
+    ]
+  },
+  "model_medians": {
+    "claim": "model proximity ordering (median unprompted nearest-author distance)",
+    "order_by_median": [
+      "gpt-5",
+      "gpt-5-mini",
+      "claude-fable-5",
+      "claude-sonnet-4-6",
+      "claude-opus-4-8",
+      "claude-haiku-4-5",
+      "qwen3.6:35b",
+      "gemma4:26b"
+    ],
+    "medians_bootstrap": {
+      "gpt-5": {
+        "median": 1.3196837864815345,
+        "ci_lo": 1.2939219894396872,
+        "ci_hi": 1.3571452503040407,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260609
+      },
+      "gpt-5-mini": {
+        "median": 1.5039796293482501,
+        "ci_lo": 1.4725903112265912,
+        "ci_hi": 1.536445575627315,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260610
+      },
+      "claude-fable-5": {
+        "median": 1.5501580047479049,
+        "ci_lo": 1.5286984487806758,
+        "ci_hi": 1.5866280901004612,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260611
+      },
+      "claude-sonnet-4-6": {
+        "median": 1.6324410216300003,
+        "ci_lo": 1.606255891221506,
+        "ci_hi": 1.6673045929758596,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260612
+      },
+      "claude-opus-4-8": {
+        "median": 1.6359502786270892,
+        "ci_lo": 1.6071254820720515,
+        "ci_hi": 1.667754912386533,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260613
+      },
+      "claude-haiku-4-5": {
+        "median": 1.6369424888882194,
+        "ci_lo": 1.6168173094182645,
+        "ci_hi": 1.70351668384158,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260614
+      },
+      "qwen3.6:35b": {
+        "median": 1.7286377654268095,
+        "ci_lo": 1.7056799434597576,
+        "ci_hi": 1.7546749266739434,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260615
+      },
+      "gemma4:26b": {
+        "median": 1.7705830271250875,
+        "ci_lo": 1.7380299229234337,
+        "ci_hi": 1.7916079621984,
+        "n": 50,
+        "n_boot": 10000,
+        "seed": 20260616
+      }
+    },
+    "pairwise_mann_whitney_holm": [
+      {
+        "pair": "gpt-5 vs gpt-5-mini",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.5039796293482501,
+        "U": 91.0,
+        "p_raw": 1.0455359761050767e-20,
+        "p_holm": 2.0910719522101534e-19,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs claude-fable-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.5501580047479049,
+        "U": 8.0,
+        "p_raw": 1.328161504870058e-27,
+        "p_holm": 3.187587611688139e-26,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs claude-sonnet-4-6",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.6324410216300003,
+        "U": 4.0,
+        "p_raw": 2.3787967251404024e-28,
+        "p_holm": 5.946991812851006e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs claude-opus-4-8",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.6359502786270892,
+        "U": 1.0,
+        "p_raw": 3.964661208567337e-29,
+        "p_holm": 1.0704585263131811e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs claude-haiku-4-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.6369424888882194,
+        "U": 3.0,
+        "p_raw": 1.387631422998568e-28,
+        "p_holm": 3.607841699796277e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.7286377654268095,
+        "U": 16.0,
+        "p_raw": 1.8138325029195567e-26,
+        "p_holm": 4.17181475671498e-25,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5 vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.3196837864815345,
+        "median_b": 1.7705830271250875,
+        "U": 0.0,
+        "p_raw": 1.9823306042836686e-29,
+        "p_holm": 5.550525691994272e-28,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs claude-fable-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.5501580047479049,
+        "U": 751.0,
+        "p_raw": 0.0004912186124592059,
+        "p_holm": 0.0034385302872144414,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs claude-sonnet-4-6",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.6324410216300003,
+        "U": 342.0,
+        "p_raw": 1.998060186143129e-11,
+        "p_holm": 3.196896297829006e-10,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs claude-opus-4-8",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.6359502786270892,
+        "U": 327.0,
+        "p_raw": 7.948594540074337e-12,
+        "p_holm": 1.3512610718126374e-10,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs claude-haiku-4-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.6369424888882194,
+        "U": 315.0,
+        "p_raw": 3.720775553919967e-12,
+        "p_holm": 6.697395997055941e-11,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.7286377654268095,
+        "U": 233.0,
+        "p_raw": 1.1467311588468242e-14,
+        "p_holm": 2.178789201808966e-13,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "gpt-5-mini vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5039796293482501,
+        "median_b": 1.7705830271250875,
+        "U": 27.0,
+        "p_raw": 2.922351776834984e-25,
+        "p_holm": 6.429173909036964e-24,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-fable-5 vs claude-sonnet-4-6",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5501580047479049,
+        "median_b": 1.6324410216300003,
+        "U": 610.0,
+        "p_raw": 5.849997653297629e-06,
+        "p_holm": 5.2649978879678667e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-fable-5 vs claude-opus-4-8",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5501580047479049,
+        "median_b": 1.6359502786270892,
+        "U": 607.0,
+        "p_raw": 5.2502148993936485e-06,
+        "p_holm": 5.2502148993936485e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-fable-5 vs claude-haiku-4-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5501580047479049,
+        "median_b": 1.6369424888882194,
+        "U": 587.0,
+        "p_raw": 2.5119759112667512e-06,
+        "p_holm": 2.7631735023934262e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-fable-5 vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5501580047479049,
+        "median_b": 1.7286377654268095,
+        "U": 372.0,
+        "p_raw": 1.1601249646234007e-10,
+        "p_holm": 1.740187446935101e-09,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-fable-5 vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.5501580047479049,
+        "median_b": 1.7705830271250875,
+        "U": 85.0,
+        "p_raw": 4.779571450573968e-21,
+        "p_holm": 1.0037100046205333e-19,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-sonnet-4-6 vs claude-opus-4-8",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6324410216300003,
+        "median_b": 1.6359502786270892,
+        "U": 1226.0,
+        "p_raw": 0.8718742222837952,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "pair": "claude-sonnet-4-6 vs claude-haiku-4-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6324410216300003,
+        "median_b": 1.6369424888882194,
+        "U": 1131.0,
+        "p_raw": 0.4156256653375008,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "pair": "claude-sonnet-4-6 vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6324410216300003,
+        "median_b": 1.7286377654268095,
+        "U": 746.0,
+        "p_raw": 0.0004285115836492268,
+        "p_holm": 0.0034280926691938143,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-sonnet-4-6 vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6324410216300003,
+        "median_b": 1.7705830271250875,
+        "U": 433.0,
+        "p_raw": 3.0344438441794134e-09,
+        "p_holm": 3.944776997433238e-08,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-opus-4-8 vs claude-haiku-4-5",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6359502786270892,
+        "median_b": 1.6369424888882194,
+        "U": 1158.0,
+        "p_raw": 0.5298046823963465,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "pair": "claude-opus-4-8 vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6359502786270892,
+        "median_b": 1.7286377654268095,
+        "U": 765.0,
+        "p_raw": 0.0007146370216527039,
+        "p_holm": 0.004287822129916224,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-opus-4-8 vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6359502786270892,
+        "median_b": 1.7705830271250875,
+        "U": 425.0,
+        "p_raw": 2.021819525514195e-09,
+        "p_holm": 2.8305473357198733e-08,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "claude-haiku-4-5 vs qwen3.6:35b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6369424888882194,
+        "median_b": 1.7286377654268095,
+        "U": 892.0,
+        "p_raw": 0.01327289046430201,
+        "p_holm": 0.06636445232151006,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "pair": "claude-haiku-4-5 vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.6369424888882194,
+        "median_b": 1.7705830271250875,
+        "U": 581.0,
+        "p_raw": 2.0024664649753557e-06,
+        "p_holm": 2.402959757970427e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "pair": "qwen3.6:35b vs gemma4:26b",
+        "n_a": 50,
+        "n_b": 50,
+        "median_a": 1.7286377654268095,
+        "median_b": 1.7705830271250875,
+        "U": 981.0,
+        "p_raw": 0.0639969537407218,
+        "p_holm": 0.2559878149628872,
+        "significant_at_0.05_holm": false
+      }
+    ],
+    "n_pairs": 28,
+    "min_possible_exact_p_two_sided": 1.9823306042836678e-29,
+    "assumptions": [
+      "Exact Mann-Whitney U assumes independent samples within and between groups (prompts are shared across models, which induces positive correlation across groups; the test ignores this).",
+      "At n per group = [50], the smallest achievable two-sided exact p is 0.00000.",
+      "Bootstrap median CIs at n=6 are coarse (only 462 distinct resamples exist); treat them as descriptive ranges."
+    ],
+    "interpretation": "Pairs NOT significant after Holm cannot be ordered from these data; PRIMARY_ARTIFACT.md's 'intra-family order unresolved' note is the supported reading."
+  },
+  "approach": {
+    "claim": "63/159 style-prompted samples have nearest_author == style_target",
+    "k": 63,
+    "n": 159,
+    "rate": 0.39622641509433965,
+    "clopper_pearson_95_two_sided": [
+      0.31964714049770426,
+      0.4767494799261028
+    ],
+    "design_null": {
+      "null": "uniform random target among 15 anchors (p0 = 1/15)",
+      "p0": 0.06666666666666667,
+      "p_value_one_sided_greater": 1.7970876450023195e-32
+    },
+    "empirical_null": {
+      "null": "nearest author distributed as in the unprompted condition, targets fixed at the design multiset ({'didion-joan': 40, 'mccarthy-cormac': 39, 'morrison-toni': 40, 'ondaatje-michael': 40}); unprompted nearest counts {'delillo-don': 34, 'didion-joan': 27, 'foster_wallace-david': 8, 'mccarthy-cormac': 7, 'morrison-toni': 9, 'murakami-haruki': 7, 'ondaatje-michael': 133, 'proulx-annie': 107, 'robinson-marilynne': 1, 'saunders-george': 2, 'sebald-w_g': 38, 'tokarczuk-olga': 24, 'whitehead-colson': 3}",
+      "p0": 0.11058176100628932,
+      "p_value_one_sided_greater": 1.3521830721152505e-20
+    },
+    "assumptions": [
+      "Binomial tests treat the 159 samples as independent; they share models and prompts (clustering ignored).",
+      "The empirical null is the stronger (more conservative) one: it credits the prompted condition only for matches beyond what the models' baseline nearest-author preferences already produce.",
+      "Targets that never appear as unprompted nearest authors (e.g. mccarthy-cormac) contribute 0 to the empirical p0, so prompted matches on those targets are pure signal under this null."
+    ]
+  },
+  "enter_rate_exemplar": {
+    "claim": "0/159 exemplar (few-shot) samples entered the target author's W-p90 region",
+    "k": 0,
+    "n": 159,
+    "rate": 0.0,
+    "clopper_pearson_95_two_sided": [
+      0.0,
+      0.02293343743096093
+    ],
+    "clopper_pearson_95_one_sided_upper": 0.018664699758660745,
+    "max_enter_rate_excluded_one_sided_95": 0.018664699758660697,
+    "exact_tests_vs_alternatives": {
+      "p0_0.05": {
+        "null": "enter-rate >= 0.05",
+        "p_value": 0.0002871132537654362,
+        "rejected_at_0.05": true
+      },
+      "p0_0.1": {
+        "null": "enter-rate >= 0.1",
+        "p_value": 5.303456375681157e-08,
+        "rejected_at_0.05": true
+      },
+      "p0_0.125": {
+        "null": "enter-rate >= 0.125",
+        "p_value": 6.015620498589185e-10,
+        "rejected_at_0.05": true
+      },
+      "p0_0.2": {
+        "null": "enter-rate >= 0.2",
+        "p_value": 3.902185687894988e-16,
+        "rejected_at_0.05": true
+      }
+    },
+    "permutation_vs_unprompted_target_region": {
+      "observed_count_a": 0,
+      "n_a": 159,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260616,
+      "degenerate": true
+    },
+    "permutation_vs_unprompted_any_region": {
+      "observed_count_a": 0,
+      "n_a": 159,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260617,
+      "degenerate": true
+    },
+    "assumptions": [
+      "Samples treated as independent Bernoulli trials; the 159 samples come from 8 models x 4 targets, so model/target clustering is ignored \u2014 with k=0 the CP bound is unaffected by clustering direction but the effective n may be smaller than the nominal n.",
+      "Permutation framing assumes exchangeability of prompted and unprompted samples w.r.t. region membership under the null."
+    ],
+    "notes": "The permutation test is DEGENERATE when no sample in either condition lies inside any W-p90 region (pooled event count 0): p = 1.0 by construction and the test has zero power. The informative quantity is the exact Clopper-Pearson upper bound."
+  },
+  "enter_rate_combined": {
+    "claim": "0/318 styled (style-prompted + exemplar) samples entered the target author's W-p90 region",
+    "k": 0,
+    "n": 318,
+    "rate": 0.0,
+    "clopper_pearson_95_two_sided": [
+      0.0,
+      0.011533226370739828
+    ],
+    "clopper_pearson_95_one_sided_upper": 0.009376307450029108,
+    "max_enter_rate_excluded_one_sided_95": 0.009376307450029153,
+    "exact_tests_vs_alternatives": {
+      "p0_0.05": {
+        "null": "enter-rate >= 0.05",
+        "p_value": 8.243402048777578e-08,
+        "rejected_at_0.05": true
+      },
+      "p0_0.1": {
+        "null": "enter-rate >= 0.1",
+        "p_value": 2.8126649528753117e-15,
+        "rejected_at_0.05": true
+      },
+      "p0_0.125": {
+        "null": "enter-rate >= 0.125",
+        "p_value": 3.6187689983046396e-19,
+        "rejected_at_0.05": true
+      },
+      "p0_0.2": {
+        "null": "enter-rate >= 0.2",
+        "p_value": 1.522705314281248e-31,
+        "rejected_at_0.05": true
+      }
+    },
+    "permutation_vs_unprompted_target_region": {
+      "observed_count_a": 0,
+      "n_a": 318,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260620,
+      "degenerate": true
+    },
+    "permutation_vs_unprompted_any_region": {
+      "observed_count_a": 0,
+      "n_a": 318,
+      "n_b": 400,
+      "pooled_successes": 0,
+      "p_exact_hypergeometric": 1.0,
+      "p_monte_carlo": 1.0,
+      "n_perm": 10000,
+      "seed": 20260621,
+      "degenerate": true
+    },
+    "assumptions": [
+      "Samples treated as independent Bernoulli trials; the 318 samples come from 8 models x 4 targets, so model/target clustering is ignored \u2014 with k=0 the CP bound is unaffected by clustering direction but the effective n may be smaller than the nominal n.",
+      "Permutation framing assumes exchangeability of prompted and unprompted samples w.r.t. region membership under the null."
+    ],
+    "notes": "The permutation test is DEGENERATE when no sample in either condition lies inside any W-p90 region (pooled event count 0): p = 1.0 by construction and the test has zero power. The informative quantity is the exact Clopper-Pearson upper bound."
+  },
+  "registry": {
+    "n_tests_in_holm_family": 33,
+    "note": "Holm-Bonferroni applied across the full confirmatory family (33 tests: 3 headline claims + 28 model pairs). The manuscript row is descriptive (non-independent chapters) and is excluded from the family; its raw p-value is shown for context only.",
+    "rows": [
+      {
+        "id": "C1_enter_rate",
+        "claim": "0/159 style-prompted samples entered the target author's W-p90 region",
+        "estimate": "0/159",
+        "ci95": [
+          0.0,
+          0.02293343743096093
+        ],
+        "test": "exact binomial, H0: enter-rate >= 0.10 (one-sided)",
+        "p_raw": 5.303456375681157e-08,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 7.42483892595362e-07,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C1b_enter_rate_exemplar",
+        "claim": "0/159 exemplar (few-shot) samples entered the target author's W-p90 region",
+        "estimate": "0/159",
+        "ci95": [
+          0.0,
+          0.02293343743096093
+        ],
+        "test": "exact binomial, H0: enter-rate >= 0.10 (one-sided)",
+        "p_raw": 5.303456375681157e-08,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 7.42483892595362e-07,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C1c_enter_rate_combined",
+        "claim": "0/318 styled (style-prompted + exemplar) samples entered the target author's W-p90 region",
+        "estimate": "0/318",
+        "ci95": [
+          0.0,
+          0.011533226370739828
+        ],
+        "test": "exact binomial, H0: enter-rate >= 0.10 (one-sided)",
+        "p_raw": 2.8126649528753117e-15,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 6.187862896325686e-14,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C2_off_manifold",
+        "claim": "400/400 unprompted samples off-manifold (nearest-author W-pct > 90)",
+        "estimate": "400/400",
+        "ci95": [
+          0.9908201954163347,
+          1.0
+        ],
+        "test": "exact binomial, H0: off-manifold rate <= 0.90 (one-sided)",
+        "p_raw": 4.977414122938527e-19,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.1448052482758612e-17,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C3_approach",
+        "claim": "63/159 style-prompted samples have nearest_author == style_target",
+        "estimate": "63/159",
+        "ci95": [
+          0.31964714049770426,
+          0.4767494799261028
+        ],
+        "test": "exact binomial vs empirical null p0=0.1106 (one-sided greater)",
+        "p_raw": 1.3521830721152505e-20,
+        "family": "confirmatory",
+        "in_holm": true,
+        "sensitivity": {
+          "design_null_p0": 0.06666666666666667,
+          "design_null_p": 1.7970876450023195e-32
+        },
+        "p_holm": 3.245239373076601e-19,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__gpt-5-mini",
+        "claim": "median ordering: gpt-5 vs gpt-5-mini",
+        "estimate": "1.320 vs 1.504",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.0455359761050767e-20,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 2.6138399402626916e-19,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__claude-fable-5",
+        "claim": "median ordering: gpt-5 vs claude-fable-5",
+        "estimate": "1.320 vs 1.550",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.328161504870058e-27,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 3.851668364123168e-26,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__claude-sonnet-4-6",
+        "claim": "median ordering: gpt-5 vs claude-sonnet-4-6",
+        "estimate": "1.320 vs 1.632",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 2.3787967251404024e-28,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 7.136390175421207e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__claude-opus-4-8",
+        "claim": "median ordering: gpt-5 vs claude-opus-4-8",
+        "estimate": "1.320 vs 1.636",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 3.964661208567337e-29,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.2686915867415479e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__claude-haiku-4-5",
+        "claim": "median ordering: gpt-5 vs claude-haiku-4-5",
+        "estimate": "1.320 vs 1.637",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.387631422998568e-28,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 4.30165741129556e-27,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__qwen3.6:35b",
+        "claim": "median ordering: gpt-5 vs qwen3.6:35b",
+        "estimate": "1.320 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.8138325029195567e-26,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 5.078731008174759e-25,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5__vs__gemma4:26b",
+        "claim": "median ordering: gpt-5 vs gemma4:26b",
+        "estimate": "1.320 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.9823306042836686e-29,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 6.541690994136107e-28,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__claude-fable-5",
+        "claim": "median ordering: gpt-5-mini vs claude-fable-5",
+        "estimate": "1.504 vs 1.550",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.0004912186124592059,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 0.0034385302872144414,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__claude-sonnet-4-6",
+        "claim": "median ordering: gpt-5-mini vs claude-sonnet-4-6",
+        "estimate": "1.504 vs 1.632",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.998060186143129e-11,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 3.596508335057632e-10,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__claude-opus-4-8",
+        "claim": "median ordering: gpt-5-mini vs claude-opus-4-8",
+        "estimate": "1.504 vs 1.636",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 7.948594540074337e-12,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.510232962614124e-10,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__claude-haiku-4-5",
+        "claim": "median ordering: gpt-5-mini vs claude-haiku-4-5",
+        "estimate": "1.504 vs 1.637",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 3.720775553919967e-12,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 7.441551107839935e-11,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__qwen3.6:35b",
+        "claim": "median ordering: gpt-5-mini vs qwen3.6:35b",
+        "estimate": "1.504 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.1467311588468242e-14,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 2.4081354335783307e-13,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_gpt-5-mini__vs__gemma4:26b",
+        "claim": "median ordering: gpt-5-mini vs gemma4:26b",
+        "estimate": "1.504 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 2.922351776834984e-25,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 7.890349797454457e-24,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-fable-5__vs__claude-sonnet-4-6",
+        "claim": "median ordering: claude-fable-5 vs claude-sonnet-4-6",
+        "estimate": "1.550 vs 1.632",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 5.849997653297629e-06,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 5.2649978879678667e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-fable-5__vs__claude-opus-4-8",
+        "claim": "median ordering: claude-fable-5 vs claude-opus-4-8",
+        "estimate": "1.550 vs 1.636",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 5.2502148993936485e-06,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 5.2502148993936485e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-fable-5__vs__claude-haiku-4-5",
+        "claim": "median ordering: claude-fable-5 vs claude-haiku-4-5",
+        "estimate": "1.550 vs 1.637",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 2.5119759112667512e-06,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 2.7631735023934262e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-fable-5__vs__qwen3.6:35b",
+        "claim": "median ordering: claude-fable-5 vs qwen3.6:35b",
+        "estimate": "1.550 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 1.1601249646234007e-10,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.972212439859781e-09,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-fable-5__vs__gemma4:26b",
+        "claim": "median ordering: claude-fable-5 vs gemma4:26b",
+        "estimate": "1.550 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 4.779571450573968e-21,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.2426885771492318e-19,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-sonnet-4-6__vs__claude-opus-4-8",
+        "claim": "median ordering: claude-sonnet-4-6 vs claude-opus-4-8",
+        "estimate": "1.632 vs 1.636",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.8718742222837952,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "id": "C4_order_claude-sonnet-4-6__vs__claude-haiku-4-5",
+        "claim": "median ordering: claude-sonnet-4-6 vs claude-haiku-4-5",
+        "estimate": "1.632 vs 1.637",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.4156256653375008,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "id": "C4_order_claude-sonnet-4-6__vs__qwen3.6:35b",
+        "claim": "median ordering: claude-sonnet-4-6 vs qwen3.6:35b",
+        "estimate": "1.632 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.0004285115836492268,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 0.0034280926691938143,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-sonnet-4-6__vs__gemma4:26b",
+        "claim": "median ordering: claude-sonnet-4-6 vs gemma4:26b",
+        "estimate": "1.632 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 3.0344438441794134e-09,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 4.5516657662691205e-08,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-opus-4-8__vs__claude-haiku-4-5",
+        "claim": "median ordering: claude-opus-4-8 vs claude-haiku-4-5",
+        "estimate": "1.636 vs 1.637",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.5298046823963465,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 1.0,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "id": "C4_order_claude-opus-4-8__vs__qwen3.6:35b",
+        "claim": "median ordering: claude-opus-4-8 vs qwen3.6:35b",
+        "estimate": "1.636 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.0007146370216527039,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 0.004287822129916224,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-opus-4-8__vs__gemma4:26b",
+        "claim": "median ordering: claude-opus-4-8 vs gemma4:26b",
+        "estimate": "1.636 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 2.021819525514195e-09,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 3.234911240822712e-08,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_claude-haiku-4-5__vs__qwen3.6:35b",
+        "claim": "median ordering: claude-haiku-4-5 vs qwen3.6:35b",
+        "estimate": "1.637 vs 1.729",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.01327289046430201,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 0.06636445232151006,
+        "significant_at_0.05_holm": false
+      },
+      {
+        "id": "C4_order_claude-haiku-4-5__vs__gemma4:26b",
+        "claim": "median ordering: claude-haiku-4-5 vs gemma4:26b",
+        "estimate": "1.637 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 2.0024664649753557e-06,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 2.402959757970427e-05,
+        "significant_at_0.05_holm": true
+      },
+      {
+        "id": "C4_order_qwen3.6:35b__vs__gemma4:26b",
+        "claim": "median ordering: qwen3.6:35b vs gemma4:26b",
+        "estimate": "1.729 vs 1.771",
+        "ci95": null,
+        "test": "exact Mann-Whitney U (two-sided)",
+        "p_raw": 0.0639969537407218,
+        "family": "confirmatory",
+        "in_holm": true,
+        "p_holm": 0.2559878149628872,
+        "significant_at_0.05_holm": false
+      }
+    ]
+  },
+  "manuscript": null
+}

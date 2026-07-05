@@ -1,0 +1,284 @@
+% references.bib — Tier 1 paper (draft_v01.md)
+% Generated 2026-06-10 from the YAML catalog in docs/research/papers/
+% (the 15 tier1-relevant entries, i.e. those with a relevance_to_tier1
+% block, plus catalog entries referenced by the draft's citation
+% placeholders). Keys are stable authoryear-style. The six entries that
+% previously carried "% TODO" (incomplete venue/year/page data in the
+% catalog, or no catalog entry at all) were verified against the
+% publisher/journal record on 2026-07-02; see each entry's comment for
+% its source.
+
+% ---------------------------------------------------------------------
+% Classical attribution / Delta lineage
+% ---------------------------------------------------------------------
+
+% verified academic.oup.com/dsh (Oxford Academic) 2026-07-02.
+@article{burrows2002,
+  author  = {Burrows, John},
+  title   = {`{Delta}': a Measure of Stylistic Difference and a Guide to Likely Authorship},
+  journal = {Literary and Linguistic Computing},
+  year    = {2002},
+  volume  = {17},
+  number  = {3},
+  pages   = {267--287},
+  doi     = {10.1093/llc/17.3.267},
+}
+
+% Note retained: the catalog's juola-attribution.yaml is Juola (2019),
+% "An Analytic Method for Authorship Attribution in Forensic
+% Linguistics", a different paper; this is the standard 2006 reference
+% for the draft's [Juola2006] placeholder.
+% verified dl.acm.org/doi/10.1561/1500000005 2026-07-02.
+@article{juola2006,
+  author  = {Juola, Patrick},
+  title   = {Authorship Attribution},
+  journal = {Foundations and Trends in Information Retrieval},
+  year    = {2006},
+  volume  = {1},
+  number  = {3},
+  pages   = {233--334},
+  doi     = {10.1561/1500000005},
+}
+
+@article{evert2017,
+  author  = {Evert, Stefan and Proisl, Thomas and Jannidis, Fotis and Reger, Isabella and Pielstr{\"o}m, Steffen and Sch{\"o}ch, Christof and Vitt, Thorsten},
+  title   = {Understanding and Explaining {Delta} Measures for Authorship Attribution},
+  journal = {Digital Scholarship in the Humanities},
+  year    = {2017},
+  volume  = {32},
+  number  = {suppl.\ 2},
+  pages   = {ii4--ii16},
+  doi     = {10.1093/llc/fqx023},
+}
+
+@inproceedings{altakrori2021,
+  author    = {Altakrori, Malik H. and Cheung, Jackie Chi Kit and Fung, Benjamin C. M.},
+  title     = {The Topic Confusion Task: A Novel Evaluation Scenario for Authorship Attribution},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2021},
+  year      = {2021},
+  note      = {arXiv:2104.08530},
+}
+
+% ---------------------------------------------------------------------
+% LLM stylometry and AI-text detection
+% ---------------------------------------------------------------------
+
+% verified nature.com/articles/s41599-025-05986-3 2026-07-02.
+@article{osullivan2025,
+  author       = {O'Sullivan, James},
+  title        = {Stylometric Comparisons of Human versus {AI}-Generated Creative Writing},
+  journal      = {Humanities and Social Sciences Communications},
+  year         = {2025},
+  volume       = {12},
+  number       = {1},
+  articleno    = {1708},
+  doi          = {10.1057/s41599-025-05986-3},
+  url          = {https://www.nature.com/articles/s41599-025-05986-3},
+}
+
+% verified sciencedirect.com/science/article/pii/S0957417425026181 2026-07-02.
+@article{przystalski2026,
+  author    = {Przystalski, Karol and Argasi{\'n}ski, Jan K. and Grabska-Gradzi{\'n}ska, Iwona and Ochab, Jeremi K.},
+  title     = {Stylometry Recognizes Human and {LLM}-Generated Texts in Short Samples},
+  journal   = {Expert Systems with Applications},
+  year      = {2026},
+  volume    = {296},
+  number    = {Part B},
+  articleno = {129001},
+  doi       = {10.1016/j.eswa.2025.129001},
+  note      = {arXiv:2507.00838},
+}
+
+@misc{bitton2025,
+  author        = {Bitton, Yehonatan and Bitton, Elad and Nisan, Shai},
+  title         = {Detecting Stylistic Fingerprints of Large Language Models},
+  year          = {2025},
+  eprint        = {2503.01659},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+@misc{dentella2025,
+  author        = {Dentella, Vittoria and Huang, Weihang and Mansi, Silvia Angela and Grieve, Jack and Leivada, Evelina},
+  title         = {{ChatGPT}-Generated Texts Show Authorship Traits That Identify Them as Non-Human},
+  year          = {2025},
+  eprint        = {2508.16385},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+% Verified against the arXiv abstract page, 2026-07-02. First author is
+% mononym-style ("Thennal DK"); braces protect it from name parsing.
+@misc{thennal2026,
+  author        = {{Thennal DK} and Hatzel, Hans Ole},
+  title         = {Do Large Language Models Always Tell the Same Stories?},
+  year          = {2026},
+  eprint        = {2606.17350},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+@article{reinhart2025,
+  author  = {Reinhart, Alex and Markey, Ben and Laudenbach, Michael and Pantusen, Kachatad and Yurko, Ronald and Weinberg, Gordon and Brown, David West},
+  title   = {Do {LLMs} Write Like Humans? {Variation} in Grammatical and Rhetorical Styles},
+  journal = {Proceedings of the National Academy of Sciences},
+  year    = {2025},
+  volume  = {122},
+  number  = {8},
+  pages   = {e2422455122},
+  doi     = {10.1073/pnas.2422455122},
+}
+
+% ---------------------------------------------------------------------
+% LLM author imitation — the contrast class
+% ---------------------------------------------------------------------
+
+@inproceedings{jones2022,
+  author    = {Jones, Keenan and Nurse, Jason R. C. and Li, Shujun},
+  title     = {Are You {Robert} or {RoBERTa}? {Deceiving} Online Authorship Attribution Models Using Neural Text Generators},
+  booktitle = {Proceedings of the Sixteenth International AAAI Conference on Web and Social Media (ICWSM 2022)},
+  year      = {2022},
+  note      = {arXiv:2203.09813},
+}
+
+@inproceedings{jemama2025,
+  author    = {Jemama, Rebira and Kumar, Rajesh},
+  title     = {How Well Do {LLMs} Imitate Human Writing Style?},
+  booktitle = {IEEE Annual Ubiquitous Computing, Electronics \& Mobile Communication Conference (UEMCON 2025)},
+  year      = {2025},
+  note      = {arXiv:2509.24930},
+}
+
+@inproceedings{wang2025,
+  author    = {Wang, Zhengxiang and Tripto, Nafis Irtiza and Park, Solha and Li, Zhenzhen and Zhou, Jiawei},
+  title     = {Catch Me If You Can? {Not} Yet: {LLMs} Still Struggle to Imitate the Implicit Writing Styles of Everyday Authors},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+  year      = {2025},
+  note      = {arXiv:2509.14543},
+}
+
+% verified academic.oup.com/dsh/article/40/2/587/8118784 2026-07-02.
+@article{mikros2025,
+  author  = {Mikros, George},
+  title   = {Beyond the Surface: Stylometric Analysis of {GPT-4o}'s Capacity for Literary Style Imitation},
+  journal = {Digital Scholarship in the Humanities},
+  year    = {2025},
+  volume  = {40},
+  number  = {2},
+  pages   = {587--600},
+  doi     = {10.1093/llc/fqaf035},
+}
+
+@misc{zeng2026,
+  author        = {Zeng, Baoyi and Nini, Andrea},
+  title         = {Authorship Impersonation via {LLM} Prompting Does Not Evade Authorship Verification Methods},
+  year          = {2026},
+  eprint        = {2603.29454},
+  archiveprefix = {arXiv},
+}
+
+% verified academic.oup.com/dsh/article-abstract/41/2/594/8586905 2026-07-02
+% (now formally published; catalog's "accepted"/in-press status was
+% superseded — volume/issue/pages filled from the published record).
+@article{alsadhan2026,
+  author  = {Alsadhan, Nasser A.},
+  title   = {Decoding {AI} Authorship: Can {LLMs} Truly Mimic Human Style Across Literature and Politics?},
+  journal = {Digital Scholarship in the Humanities},
+  year    = {2026},
+  volume  = {41},
+  number  = {2},
+  pages   = {594--612},
+  doi     = {10.1093/llc/fqag040},
+  note    = {arXiv:2603.23219},
+}
+
+% ---------------------------------------------------------------------
+% Calibrated-baseline evaluation
+% ---------------------------------------------------------------------
+
+@misc{sawant2026,
+  author        = {Sawant, Yash Ganpat},
+  title         = {Theory-Grounded Evaluation Exposes the Authorship Gap in {LLM} Personalization},
+  year          = {2026},
+  eprint        = {2604.26460},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+@article{ishihara2024,
+  author  = {Ishihara, Shunichi and Kulkarni, Sonia and Carne, Michael and Ehrhardt, Sabine and Nini, Andrea},
+  title   = {Validation in Forensic Text Comparison: Issues and Opportunities},
+  journal = {Languages},
+  year    = {2024},
+  volume  = {9},
+  number  = {2},
+  pages   = {47},
+  doi     = {10.3390/languages9020047},
+}
+
+% ---------------------------------------------------------------------
+% Persona and style-prompting effectiveness (§2.5)
+% Verified against arXiv abstract pages, 2026-06-11.
+% ---------------------------------------------------------------------
+
+@inproceedings{lutz2025,
+  author    = {Lutz, Marlene and Sen, Indira and Ahnert, Georg and Rogers, Elisa and Strohmaier, Markus},
+  title     = {The Prompt Makes the Person(a): A Systematic Evaluation of Sociodemographic Persona Prompting for Large Language Models},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+  year      = {2025},
+  note      = {arXiv:2507.16076},
+}
+
+@misc{banayeeanzade2025,
+  author        = {Banayeeanzade, Amin and Tak, Ala N. and Bahrani, Fatemeh and Bolourani, Anahita and Blas, Leonardo and Ferrara, Emilio and Gratch, Jonathan and Karimireddy, Sai Praneeth},
+  title         = {Psychological Steering in {LLMs}: An Evaluation of Effectiveness and Trustworthiness},
+  year          = {2025},
+  eprint        = {2510.04484},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+@misc{izawa2026,
+  author        = {Izawa, Yoshihiro and Minegishi, Gouki and Eguchi, Koshi and Hosokawa, Sosuke and Taura, Kenjiro},
+  title         = {Steering at the Source: Style Modulation Heads for Robust Persona Control},
+  year          = {2026},
+  eprint        = {2603.13249},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+}
+
+% ---------------------------------------------------------------------
+% Human pastiche and parody scholarship (§2.6); pastiche baseline text
+% ---------------------------------------------------------------------
+
+@book{dyer2007,
+  author    = {Dyer, Richard},
+  title     = {Pastiche},
+  publisher = {Routledge},
+  address   = {London},
+  year      = {2007},
+  isbn      = {9780415340106},
+}
+
+% Publication year given as 1913 by Project Gutenberg (and used in §5.2);
+% some secondary sources date the Holden & Hardingham printing 1914.
+@book{brinton1913,
+  author    = {Brinton, Sybil G.},
+  title     = {Old Friends and New Fancies: An Imaginary Sequel to the Novels of {Jane Austen}},
+  publisher = {Holden \& Hardingham},
+  address   = {London},
+  year      = {1913},
+}
+
+% ---------------------------------------------------------------------
+% Creativity evaluation (tier1-relevant catalog entry; not yet cited
+% in draft_v01.md body)
+% ---------------------------------------------------------------------
+
+@inproceedings{chakrabarty2024,
+  author    = {Chakrabarty, Tuhin and Laban, Philippe and Agarwal, Divyansh and Muresan, Smaranda and Wu, Chien-Sheng},
+  title     = {Art or Artifice? {Large} Language Models and the False Promise of Creativity},
+  booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI 2024)},
+  year      = {2024},
+  doi       = {10.1145/3613904.3642731},
+}

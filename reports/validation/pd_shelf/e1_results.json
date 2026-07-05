@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "generated": "2026-06-10T15:49:36.718302+00:00",
+  "baseline_dir": "data/pd_work_baselines",
+  "manifest": "data/pd_manifest.yaml",
+  "authors_filter": null,
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 9,
+  "n_works": 35,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "mfw_delta",
+  "mfw_n": 300,
+  "mfw_n_effective": 300,
+  "mfw_vocab_filter": "none",
+  "blend_scale": 5.072545506638538
+ },
+ "experiment": "e1",
+ "name": "Within vs between author separation",
+ "distance_variant": "mfw_delta",
+ "pass": true,
+ "criteria": {
+  "pooled_auc": {
+   "threshold": 0.9,
+   "comparison": ">=",
+   "observed": 0.9990816326530612,
+   "pass": true
+  },
+  "silhouette_positive_fraction": {
+   "threshold": 0.8,
+   "comparison": ">=",
+   "observed": 1.0,
+   "pass": true
+  }
+ },
+ "n_within": 35,
+ "n_between": 280,
+ "within_median": 0.5708903694997679,
+ "between_median": 1.047551255491125,
+ "per_author": {
+  "austen-jane": {
+   "n_works": 5,
+   "silhouette": 0.41900920355422977,
+   "within_median": 0.5067706094437646,
+   "between_median": 1.1851430259547548
+  },
+  "bronte-charlotte": {
+   "n_works": 4,
+   "silhouette": 0.38914734868061984,
+   "within_median": 0.45062832360710536,
+   "between_median": 0.9302616694722067
+  },
+  "dickens-charles": {
+   "n_works": 4,
+   "silhouette": 0.25372232469848793,
+   "within_median": 0.5357275528010663,
+   "between_median": 0.9770484104784466
+  },
+  "fitzgerald-f_scott": {
+   "n_works": 3,
+   "silhouette": 0.2175021493875419,
+   "within_median": 0.6455471967373616,
+   "between_median": 1.0038247058118739
+  },
+  "forster-e_m": {
+   "n_works": 5,
+   "silhouette": 0.36516936309733367,
+   "within_median": 0.48776813482296555,
+   "between_median": 0.9928300629952198
+  },
+  "hawthorne-nathaniel": {
+   "n_works": 3,
+   "silhouette": 0.3420381784166559,
+   "within_median": 0.5755921774710827,
+   "between_median": 1.098234090304476
+  },
+  "joyce-james": {
+   "n_works": 3,
+   "silhouette": 0.10551581836879713,
+   "within_median": 0.7845156870236903,
+   "between_median": 1.0630530807714431
+  },
+  "melville-herman": {
+   "n_works": 4,
+   "silhouette": 0.22397781584983506,
+   "within_median": 0.7071296410937398,
+   "between_median": 1.1680446922042425
+  },
+  "woolf-virginia": {
+   "n_works": 4,
+   "silhouette": 0.11228463891792778,
+   "within_median": 0.7567835055818419,
+   "between_median": 1.0249830460804261
+  }
+ },
+ "n_authors_silhouette_positive": 9,
+ "n_authors": 9
+}

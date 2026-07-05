@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "generated": "2026-06-10T15:49:55.926352+00:00",
+    "artifact": "data/artifacts/author_space_pd_v1.json",
+    "pastiche": "data/pastiche/brinton_old_friends_new_fancies_1913.txt",
+    "target_author": "austen-jane",
+    "chunk_words": 3000,
+    "provenance": "Brinton 1913, Project Gutenberg #43741, public domain"
+  },
+  "experiment": "p5_pastiche_baseline",
+  "n_chunks": 37,
+  "target_is_nearest": 33,
+  "entered_target_w_p90": 0,
+  "median_target_distance": 1.5374266934723615,
+  "median_target_w_percentile": 100.0,
+  "placements": [
+    {
+      "chunk": 0,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.472162965798187,
+      "target_distance": 1.472162965798187,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 1,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5930646962301154,
+      "target_distance": 1.5930646962301154,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 2,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5017655630323425,
+      "target_distance": 1.5017655630323425,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 3,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.6711366670502052,
+      "target_distance": 1.6711366670502052,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 4,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.461327755307312,
+      "target_distance": 1.461327755307312,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 5,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.52068940672562,
+      "target_distance": 1.52068940672562,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 6,
+      "nearest_author": "forster-e_m",
+      "nearest_distance": 1.6427342457430814,
+      "target_distance": 1.672699330003624,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": false,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 7,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5451492682680448,
+      "target_distance": 1.5451492682680448,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 8,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4917191001936332,
+      "target_distance": 1.4917191001936332,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 9,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5642950882103965,
+      "target_distance": 1.5642950882103965,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 10,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.634690545775261,
+      "target_distance": 1.634690545775261,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 11,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5859828810169547,
+      "target_distance": 1.5859828810169547,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 12,
+      "nearest_author": "forster-e_m",
+      "nearest_distance": 1.555492186855439,
+      "target_distance": 1.6759657154507466,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": false,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 13,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.7142530326999041,
+      "target_distance": 1.7142530326999041,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 14,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5296164531641652,
+      "target_distance": 1.5296164531641652,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 15,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5381467541577707,
+      "target_distance": 1.5381467541577707,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 16,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4388853724195971,
+      "target_distance": 1.4388853724195971,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 17,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4069954014058395,
+      "target_distance": 1.4069954014058395,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 18,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5011802349577612,
+      "target_distance": 1.5011802349577612,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 19,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.463950143270521,
+      "target_distance": 1.463950143270521,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 20,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4893463393517228,
+      "target_distance": 1.4893463393517228,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 21,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5184586988864432,
+      "target_distance": 1.5184586988864432,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 22,
+      "nearest_author": "forster-e_m",
+      "nearest_distance": 1.4335769810847248,
+      "target_distance": 1.4440883265083777,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": false,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 23,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5379249245888333,
+      "target_distance": 1.5379249245888333,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 24,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.6261172790333231,
+      "target_distance": 1.6261172790333231,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 25,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5374266934723615,
+      "target_distance": 1.5374266934723615,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 26,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.6856951214967766,
+      "target_distance": 1.6856951214967766,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 27,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4664908394897536,
+      "target_distance": 1.4664908394897536,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 28,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.6419815859146956,
+      "target_distance": 1.6419815859146956,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 29,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.6241451393482247,
+      "target_distance": 1.6241451393482247,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 30,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.4551032627995009,
+      "target_distance": 1.4551032627995009,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 31,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.506122547513498,
+      "target_distance": 1.506122547513498,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 32,
+      "nearest_author": "forster-e_m",
+      "nearest_distance": 1.601409334840823,
+      "target_distance": 1.6296632670038165,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": false,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 33,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5153549189720985,
+      "target_distance": 1.5153549189720985,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 34,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5188254027449837,
+      "target_distance": 1.5188254027449837,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 35,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.5993973703008062,
+      "target_distance": 1.5993973703008062,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    },
+    {
+      "chunk": 36,
+      "nearest_author": "austen-jane",
+      "nearest_distance": 1.7985185252599747,
+      "target_distance": 1.7985185252599747,
+      "target_w_percentile": 100.0,
+      "target_is_nearest": true,
+      "entered_target_w_p90": false
+    }
+  ]
+}

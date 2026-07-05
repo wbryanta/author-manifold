@@ -1,0 +1,246 @@
+books:
+- canonical_author: Austen, Jane
+  canonical_title: Sense and Sensibility
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 161
+  year_published: 1811
+- canonical_author: Austen, Jane
+  canonical_title: Pride and Prejudice
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1342
+  year_published: 1813
+- canonical_author: Austen, Jane
+  canonical_title: Mansfield Park
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 141
+  year_published: 1814
+- canonical_author: Austen, Jane
+  canonical_title: Emma
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 158
+  year_published: 1815
+- canonical_author: Austen, Jane
+  canonical_title: Persuasion
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 105
+  year_published: 1817
+- canonical_author: Bronte, Charlotte
+  canonical_title: Jane Eyre
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1260
+  year_published: 1847
+- canonical_author: Bronte, Charlotte
+  canonical_title: Shirley
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 30486
+  year_published: 1849
+- canonical_author: Bronte, Charlotte
+  canonical_title: Villette
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 9182
+  year_published: 1853
+- canonical_author: Bronte, Charlotte
+  canonical_title: The Professor
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1028
+  year_published: 1857
+- canonical_author: Dickens, Charles
+  canonical_title: Oliver Twist
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 730
+  year_published: 1838
+- canonical_author: Dickens, Charles
+  canonical_title: David Copperfield
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 766
+  year_published: 1850
+- canonical_author: Dickens, Charles
+  canonical_title: Bleak House
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1023
+  year_published: 1853
+- canonical_author: Dickens, Charles
+  canonical_title: Great Expectations
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1400
+  year_published: 1861
+- canonical_author: Fitzgerald, F. Scott
+  canonical_title: This Side of Paradise
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 805
+  year_published: 1920
+- canonical_author: Fitzgerald, F. Scott
+  canonical_title: The Beautiful and Damned
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 9830
+  year_published: 1922
+- canonical_author: Fitzgerald, F. Scott
+  canonical_title: The Great Gatsby
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 64317
+  year_published: 1925
+- canonical_author: Forster, E. M.
+  canonical_title: Where Angels Fear to Tread
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2948
+  year_published: 1905
+- canonical_author: Forster, E. M.
+  canonical_title: The Longest Journey
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2604
+  year_published: 1907
+- canonical_author: Forster, E. M.
+  canonical_title: A Room with a View
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2641
+  year_published: 1908
+- canonical_author: Forster, E. M.
+  canonical_title: Howards End
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2946
+  year_published: 1910
+- canonical_author: Forster, E. M.
+  canonical_title: A Passage to India
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 61221
+  year_published: 1924
+- canonical_author: Hawthorne, Nathaniel
+  canonical_title: The Scarlet Letter
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 25344
+  year_published: 1850
+- canonical_author: Hawthorne, Nathaniel
+  canonical_title: The House of the Seven Gables
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 77
+  year_published: 1851
+- canonical_author: Hawthorne, Nathaniel
+  canonical_title: The Blithedale Romance
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2081
+  year_published: 1852
+- canonical_author: Joyce, James
+  canonical_title: Dubliners
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2814
+  year_published: 1914
+- canonical_author: Joyce, James
+  canonical_title: A Portrait of the Artist as a Young Man
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 4217
+  year_published: 1916
+- canonical_author: Joyce, James
+  canonical_title: Ulysses
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 4300
+  year_published: 1922
+- canonical_author: Melville, Herman
+  canonical_title: Typee
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1900
+  year_published: 1846
+- canonical_author: Melville, Herman
+  canonical_title: Omoo
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 4045
+  year_published: 1847
+- canonical_author: Melville, Herman
+  canonical_title: White-Jacket
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 10712
+  year_published: 1850
+- canonical_author: Melville, Herman
+  canonical_title: Moby-Dick
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 2701
+  year_published: 1851
+- canonical_author: Woolf, Virginia
+  canonical_title: The Voyage Out
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 144
+  year_published: 1915
+- canonical_author: Woolf, Virginia
+  canonical_title: Night and Day
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 1245
+  year_published: 1919
+- canonical_author: Woolf, Virginia
+  canonical_title: Jacob's Room
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 5670
+  year_published: 1922
+- canonical_author: Woolf, Virginia
+  canonical_title: Mrs. Dalloway
+  original_language: english
+  status: public_domain
+  source: project_gutenberg
+  gutenberg_id: 71865
+  year_published: 1925

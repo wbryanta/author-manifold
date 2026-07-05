@@ -1,0 +1,881 @@
+{
+ "meta": {
+  "generated": "2026-06-10T00:09:34.940637+00:00",
+  "artifact": "data/artifacts/author_space_v1_wave2.json",
+  "distance_variant": "mfw_delta",
+  "content_n": 2000
+ },
+ "experiment": "cross_topic_probe",
+ "name": "Within-shelf cross-topic robustness of MFW-Delta attribution",
+ "content_vocabulary": {
+  "candidate_top_n": 2000,
+  "n_content_words": 1724,
+  "n_function_words_removed": 276,
+  "definition": "top shelf words minus STYLOMETRIC_FUNCTION_WORDS, per-work tf normalized to sum 1"
+ },
+ "n_authors": 12,
+ "min_works": 4,
+ "n_works": 69,
+ "top1_accuracy": 0.9710144927536232,
+ "n_errors": 2,
+ "topic_similarity": {
+  "within_author_loo": {
+   "min": 0.5397810319048163,
+   "p25": 0.7547734836932353,
+   "p50": 0.8537400541041672,
+   "p75": 0.9046005987954044,
+   "max": 0.9510720690374213
+  },
+  "between_author_context": {
+   "n": 759,
+   "p25": 0.6359628479843361,
+   "p50": 0.7138696012125412,
+   "p75": 0.7823333375578524
+  }
+ },
+ "correlations": {
+  "spearman_topic_sim_vs_margin": {
+   "rho": -0.3725246620387286,
+   "p": 0.001620556063688607
+  },
+  "spearman_topic_sim_vs_d_own_loo": {
+   "rho": -0.4326269638290099,
+   "p": 0.00020519851964717747
+  },
+  "pointbiserial_error_vs_topic_sim": {
+   "r": -0.4590183640670776,
+   "p": 7.278332251618333e-05
+  }
+ },
+ "bins": [
+  {
+   "bin": "Q1",
+   "topic_sim_range": [
+    0.5397810319048163,
+    0.7547734836932353
+   ],
+   "n": 18,
+   "top1_accuracy": 0.8888888888888888,
+   "median_margin": -0.14044133235879347,
+   "median_d_own": 0.6488544868102645
+  },
+  {
+   "bin": "Q2",
+   "topic_sim_range": [
+    0.7554131411186652,
+    0.8537400541041672
+   ],
+   "n": 17,
+   "top1_accuracy": 1.0,
+   "median_margin": -0.16968399429474113,
+   "median_d_own": 0.6554941963072783
+  },
+  {
+   "bin": "Q3",
+   "topic_sim_range": [
+    0.8624510894502292,
+    0.9046005987954044
+   ],
+   "n": 17,
+   "top1_accuracy": 1.0,
+   "median_margin": -0.23917888199947146,
+   "median_d_own": 0.5298193750407784
+  },
+  {
+   "bin": "Q4",
+   "topic_sim_range": [
+    0.9065506987413255,
+    0.9510720690374213
+   ],
+   "n": 17,
+   "top1_accuracy": 1.0,
+   "median_margin": -0.26006630500410804,
+   "median_d_own": 0.5074659070030746
+  }
+ ],
+ "errors": [
+  {
+   "author": "mccarthy-cormac",
+   "title": "Stella Maris",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.5406526568711626,
+   "d_own_loo": 1.6008397541711579,
+   "d_best_other": 1.1627683405751592,
+   "margin": 0.43807141359599866,
+   "top1_correct": false,
+   "own_rank": 14
+  },
+  {
+   "author": "whitehead-colson",
+   "title": "The Intuitionist",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.5397810319048163,
+   "d_own_loo": 0.7522996572918591,
+   "d_best_other": 0.7222366257171877,
+   "margin": 0.030063031574671384,
+   "top1_correct": false,
+   "own_rank": 4
+  }
+ ],
+ "rows": [
+  {
+   "author": "delillo-don",
+   "title": "Americana",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.9387255539798255,
+   "d_own_loo": 0.5732644919096691,
+   "d_best_other": 0.6537857949409233,
+   "margin": -0.08052130303125415,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "delillo-don",
+   "title": "Falling Man",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.9355452693105651,
+   "d_own_loo": 0.6558977355276119,
+   "d_best_other": 0.8911780860724485,
+   "margin": -0.23528035054483665,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "delillo-don",
+   "title": "Libra",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8956277986112654,
+   "d_own_loo": 0.509356807221035,
+   "d_best_other": 0.7024352560634419,
+   "margin": -0.19307844884240688,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "delillo-don",
+   "title": "Ratner's Star",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.9046005987954044,
+   "d_own_loo": 0.5446579834445519,
+   "d_best_other": 0.6960877715197165,
+   "margin": -0.1514297880751646,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "delillo-don",
+   "title": "White Noise",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.9300673505902026,
+   "d_own_loo": 0.49566887612720306,
+   "d_best_other": 0.7557351811313111,
+   "margin": -0.26006630500410804,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "delillo-don",
+   "title": "Zero K",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.9065506987413255,
+   "d_own_loo": 0.6249619138368936,
+   "d_best_other": 0.9135786505514378,
+   "margin": -0.28861673671454424,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "didion-joan",
+   "title": "A Book of Common Prayer",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.6143513719949867,
+   "d_own_loo": 0.495964960585623,
+   "d_best_other": 0.8980145527868878,
+   "margin": -0.4020495922012648,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "didion-joan",
+   "title": "Democracy",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.5754380220006303,
+   "d_own_loo": 0.6580252769748234,
+   "d_best_other": 0.8099906726909342,
+   "margin": -0.15196539571611078,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "didion-joan",
+   "title": "Play It as It Lays",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.6587151790612854,
+   "d_own_loo": 0.6616139934177309,
+   "d_best_other": 0.9493855897045762,
+   "margin": -0.28777159628684534,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "didion-joan",
+   "title": "Run River",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.5824681507404237,
+   "d_own_loo": 0.6396836966457056,
+   "d_best_other": 0.8315687198365946,
+   "margin": -0.19188502319088907,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "A Pale View of Hills",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8316528763592573,
+   "d_own_loo": 0.7889258099584359,
+   "d_best_other": 1.026788567802039,
+   "margin": -0.2378627578436031,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "An Artist of the Floating World (Vintage International)",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8912820926674676,
+   "d_own_loo": 0.7600582182628368,
+   "d_best_other": 1.0139275974297208,
+   "margin": -0.253869379166884,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "Klara and the Sun",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.7009442529545548,
+   "d_own_loo": 0.808926671925276,
+   "d_best_other": 0.9378439409267522,
+   "margin": -0.12891726900147615,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "Never Let Me Go",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.7494827815738974,
+   "d_own_loo": 0.9647922463247024,
+   "d_best_other": 1.0094970204707319,
+   "margin": -0.04470477414602947,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "The Remains of the Day",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.7554131411186652,
+   "d_own_loo": 0.9366602166119862,
+   "d_best_other": 1.0485252013253634,
+   "margin": -0.11186498471337725,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ishiguro-kazuo",
+   "title": "The Unconsoled",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8859973556645092,
+   "d_own_loo": 0.5298193750407784,
+   "d_best_other": 0.8679016774236273,
+   "margin": -0.338082302382849,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "Blood Meridian",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.72924177473555,
+   "d_own_loo": 0.9203642403498455,
+   "d_best_other": 1.0116461744854142,
+   "margin": -0.09128193413556862,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "Cities of the Plain",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.884447493818646,
+   "d_own_loo": 0.52362535694765,
+   "d_best_other": 0.9540451639534934,
+   "margin": -0.43041980700584337,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "No Country for Old Men",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.8918922719755507,
+   "d_own_loo": 0.7383388363963247,
+   "d_best_other": 1.1439886199348557,
+   "margin": -0.405649783538531,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "Outer Dark",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.7971810382356408,
+   "d_own_loo": 0.778623743315855,
+   "d_best_other": 1.0752260906547144,
+   "margin": -0.2966023473388594,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "Stella Maris",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.5406526568711626,
+   "d_own_loo": 1.6008397541711579,
+   "d_best_other": 1.1627683405751592,
+   "margin": 0.43807141359599866,
+   "top1_correct": false,
+   "own_rank": 14
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "Suttree",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.7953782265983205,
+   "d_own_loo": 0.7120627480749605,
+   "d_best_other": 0.9900065431567301,
+   "margin": -0.2779437950817696,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "The Orchard Keeper",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.8371984306489724,
+   "d_own_loo": 0.8184599855505432,
+   "d_best_other": 0.9562960208920437,
+   "margin": -0.13783603534150046,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "mccarthy-cormac",
+   "title": "The Passenger",
+   "n_author_works": 8,
+   "topic_similarity_loo": 0.8360899448792168,
+   "d_own_loo": 0.675018066434332,
+   "d_best_other": 0.9237700562277147,
+   "margin": -0.24875198979338264,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "1988 Beloved",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.8067407127928746,
+   "d_own_loo": 0.48191430644792715,
+   "d_best_other": 0.8232216892259887,
+   "margin": -0.34130738277806155,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "A Mercy",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.8537400541041672,
+   "d_own_loo": 0.6586457358388662,
+   "d_best_other": 0.8274744624730651,
+   "margin": -0.1688287266341989,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "God Help the Child: A novel",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.9165998222286417,
+   "d_own_loo": 0.5191473611592596,
+   "d_best_other": 0.781149382213945,
+   "margin": -0.2620020210546854,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "Home",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.8017457963037907,
+   "d_own_loo": 0.4959410102500991,
+   "d_best_other": 0.7549062072146322,
+   "margin": -0.2589651969645331,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "Jazz",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.937594416661528,
+   "d_own_loo": 0.4691803433987112,
+   "d_best_other": 0.7826971510055755,
+   "margin": -0.3135168076068643,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "Paradise",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.9510720690374213,
+   "d_own_loo": 0.3686208935265453,
+   "d_best_other": 0.6781802168434686,
+   "margin": -0.3095593233169233,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "Song of Solomon",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.8624510894502292,
+   "d_own_loo": 0.4993605821606635,
+   "d_best_other": 0.7698402070370813,
+   "margin": -0.27047962487641786,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "Sula",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.8993228095201137,
+   "d_own_loo": 0.5280388899648134,
+   "d_best_other": 0.7672177719642849,
+   "margin": -0.23917888199947146,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "morrison-toni",
+   "title": "The Bluest Eye",
+   "n_author_works": 9,
+   "topic_similarity_loo": 0.9073659378786422,
+   "d_own_loo": 0.5460424256393073,
+   "d_best_other": 0.785207430669127,
+   "margin": -0.23916500502981974,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "1Q84",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.7529571026671812,
+   "d_own_loo": 0.470765035478275,
+   "d_best_other": 0.736355548687096,
+   "margin": -0.265590513208821,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "A Wild Sheep Chase",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.8169626006086711,
+   "d_own_loo": 0.6149400922702085,
+   "d_best_other": 0.7533324144963872,
+   "margin": -0.1383923222261787,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "End of the World and Hard-boiled Wonderland : A New Translation",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.9165454589085145,
+   "d_own_loo": 0.4717136318019336,
+   "d_best_other": 0.7895584363108322,
+   "margin": -0.3178448045088986,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "Kafka on the shore",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.7912560935821987,
+   "d_own_loo": 0.6554941963072783,
+   "d_best_other": 0.8145306835432318,
+   "margin": -0.15903648723595343,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "Men Without Women",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.9270585489877996,
+   "d_own_loo": 0.5486668664528114,
+   "d_best_other": 0.7750409040220623,
+   "margin": -0.2263740375692509,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "Norwegian Wood",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.898334804514422,
+   "d_own_loo": 0.576777630119934,
+   "d_best_other": 0.8516327300405623,
+   "margin": -0.2748550999206283,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "murakami-haruki",
+   "title": "The Wind-Up Bird Chronicle",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.9233971988391421,
+   "d_own_loo": 0.4872396173624447,
+   "d_best_other": 0.7948870560883727,
+   "margin": -0.30764743872592804,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "Anil's Ghost",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.926456250560408,
+   "d_own_loo": 0.4175647970084407,
+   "d_best_other": 0.6893667618803256,
+   "margin": -0.27180196487188496,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "Coming Through Slaughter",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.80328877688248,
+   "d_own_loo": 0.7959375573122878,
+   "d_best_other": 0.8728014759821265,
+   "margin": -0.07686391866983877,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "Divisadero",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.8035107302724072,
+   "d_own_loo": 0.4284507836774065,
+   "d_best_other": 0.7223866062658899,
+   "margin": -0.2939358225884834,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "In the Skin of a Lion",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.879732155006572,
+   "d_own_loo": 0.6724224822590457,
+   "d_best_other": 0.8787420849838506,
+   "margin": -0.20631960272480498,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "The Cat's Table",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.8369483827570239,
+   "d_own_loo": 0.607710524957253,
+   "d_best_other": 0.7765627260526479,
+   "margin": -0.1688522010953949,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "The English Patient",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.8916784948747352,
+   "d_own_loo": 0.4412357758121978,
+   "d_best_other": 0.7480812116723339,
+   "margin": -0.3068454358601361,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "ondaatje-michael",
+   "title": "Warlight",
+   "n_author_works": 7,
+   "topic_similarity_loo": 0.8679014733765896,
+   "d_own_loo": 0.6310491688359134,
+   "d_best_other": 0.7920287566420139,
+   "margin": -0.16097958780610044,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "proulx-annie",
+   "title": "Bad Dirt",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.9096241910794002,
+   "d_own_loo": 0.39712042231757244,
+   "d_best_other": 0.62403460572113,
+   "margin": -0.22691418340355757,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "proulx-annie",
+   "title": "Barkskins",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.8446326979408243,
+   "d_own_loo": 0.6094230041401201,
+   "d_best_other": 0.7101549434280575,
+   "margin": -0.10073193928793744,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "proulx-annie",
+   "title": "Fine Just the Way It Is",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.9148091590597591,
+   "d_own_loo": 0.41432163064565186,
+   "d_best_other": 0.6225311721768082,
+   "margin": -0.20820954153115634,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "proulx-annie",
+   "title": "The Shipping News",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.7437120077245876,
+   "d_own_loo": 0.6048651726955169,
+   "d_best_other": 0.7274588019746372,
+   "margin": -0.12259362927912032,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "pynchon-thomas",
+   "title": "Bleeding Edge",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.7319498991816666,
+   "d_own_loo": 0.667586615792808,
+   "d_best_other": 0.7489886280929613,
+   "margin": -0.08140201230015331,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "pynchon-thomas",
+   "title": "Gravity's Rainbow",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.8254140469619649,
+   "d_own_loo": 0.5000186109724518,
+   "d_best_other": 0.6697026052671929,
+   "margin": -0.16968399429474113,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "pynchon-thomas",
+   "title": "V.",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.7547734836932353,
+   "d_own_loo": 0.6854922874971453,
+   "d_best_other": 0.6942191605758938,
+   "margin": -0.008726873078748532,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "pynchon-thomas",
+   "title": "Vineland",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.8695644933506966,
+   "d_own_loo": 0.4665528544784585,
+   "d_best_other": 0.736719296928731,
+   "margin": -0.27016644245027244,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "saunders-george",
+   "title": "CivilWarLand in Bad Decline: Stories and a Novella",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.8687866512059192,
+   "d_own_loo": 0.620575077729722,
+   "d_best_other": 0.6566284251125277,
+   "margin": -0.036053347382805745,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "saunders-george",
+   "title": "Liberation Day: Stories",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.9066755459763804,
+   "d_own_loo": 0.5965516910364971,
+   "d_best_other": 0.7972494617723035,
+   "margin": -0.2006977707358064,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "saunders-george",
+   "title": "Pastoralia",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.9122133687520575,
+   "d_own_loo": 0.5450596641442357,
+   "d_best_other": 0.8131333440829462,
+   "margin": -0.26807367993871056,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "saunders-george",
+   "title": "Tenth of December: Stories",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.7186636520562021,
+   "d_own_loo": 0.5095065928720258,
+   "d_best_other": 0.7624821144111718,
+   "margin": -0.25297552153914593,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "Drive Your Plow Over the Bones of the Dead",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8884901420699897,
+   "d_own_loo": 0.5211249621289319,
+   "d_best_other": 0.7188798925606811,
+   "margin": -0.1977549304317492,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "Flights",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8809795323561658,
+   "d_own_loo": 0.4962728760773203,
+   "d_best_other": 0.6908318199580522,
+   "margin": -0.19455894388073192,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "House of Day, House of Night",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.91748992129976,
+   "d_own_loo": 0.5074659070030746,
+   "d_best_other": 0.6533695382014444,
+   "margin": -0.1459036311983698,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "Primeval and Other Times",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.8772144389518748,
+   "d_own_loo": 0.6472654520269343,
+   "d_best_other": 0.7846777672426855,
+   "margin": -0.13741231521575115,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "The Books of Jacob",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.7588193616775833,
+   "d_own_loo": 0.6150274658056271,
+   "d_best_other": 0.7924235811966172,
+   "margin": -0.1773961153909901,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "tokarczuk-olga",
+   "title": "The Empusium",
+   "n_author_works": 6,
+   "topic_similarity_loo": 0.7024624696433276,
+   "d_own_loo": 0.527243435373344,
+   "d_best_other": 0.7061631760481757,
+   "margin": -0.17891974067483174,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "whitehead-colson",
+   "title": "Crook Manifesto",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.646235198388419,
+   "d_own_loo": 0.49017436140000126,
+   "d_best_other": 0.7088794939117224,
+   "margin": -0.2187051325117212,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "whitehead-colson",
+   "title": "The Intuitionist",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.5397810319048163,
+   "d_own_loo": 0.7522996572918591,
+   "d_best_other": 0.7222366257171877,
+   "margin": 0.030063031574671384,
+   "top1_correct": false,
+   "own_rank": 4
+  },
+  {
+   "author": "whitehead-colson",
+   "title": "The Nickel Boys",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.6744962143212804,
+   "d_own_loo": 0.5256975418347825,
+   "d_best_other": 0.7610629746896145,
+   "margin": -0.23536543285483202,
+   "top1_correct": true,
+   "own_rank": 1
+  },
+  {
+   "author": "whitehead-colson",
+   "title": "The Underground Railroad",
+   "n_author_works": 4,
+   "topic_similarity_loo": 0.6441254553566369,
+   "d_own_loo": 0.5811213077902654,
+   "d_best_other": 0.7001013771466876,
+   "margin": -0.11898006935642225,
+   "top1_correct": true,
+   "own_rank": 1
+  }
+ ]
+}

@@ -1,0 +1,234 @@
+{
+ "meta": {
+  "generated": "2026-06-10T15:49:36.718302+00:00",
+  "baseline_dir": "data/pd_work_baselines",
+  "manifest": "data/pd_manifest.yaml",
+  "authors_filter": null,
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 9,
+  "n_works": 35,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "mfw_delta",
+  "mfw_n": 300,
+  "mfw_n_effective": 300,
+  "mfw_vocab_filter": "none",
+  "blend_scale": 5.072545506638538
+ },
+ "experiment": "e3",
+ "name": "Per-dimension discriminative validity",
+ "pass": true,
+ "criteria": {
+  "n_dimensions_exceeding_null_p99": {
+   "threshold": 6,
+   "comparison": ">=",
+   "observed": 15,
+   "pass": true
+  }
+ },
+ "n_works": 35,
+ "n_authors": 9,
+ "n_dimensions": 18,
+ "n_permutations": 1000,
+ "seed": 20260609,
+ "dimension_table": [
+  {
+   "dimension": "abstract_ratio",
+   "rank": 1,
+   "f_statistic": 19.43694300014661,
+   "eta_squared": 0.856745794266817,
+   "null_p99_eta_squared": 0.49329402483002077,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.8264584862679327,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "metaphor_per_100",
+   "rank": 2,
+   "f_statistic": 15.374227052138043,
+   "eta_squared": 0.8254961136963317,
+   "null_p99_eta_squared": 0.49201202599489136,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.7878164177105195,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "future_ratio",
+   "rank": 3,
+   "f_statistic": 14.443329174719556,
+   "eta_squared": 0.8163149530590523,
+   "null_p99_eta_squared": 0.4917269757339913,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.7764087359356895,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "complexity_score",
+   "rank": 4,
+   "f_statistic": 13.948045760269315,
+   "eta_squared": 0.8110250405596603,
+   "null_p99_eta_squared": 0.4880612606681161,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.7698246392794512,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "sentiment_score",
+   "rank": 5,
+   "f_statistic": 11.152977474766207,
+   "eta_squared": 0.7743522125411951,
+   "null_p99_eta_squared": 0.5231473555832499,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.7239506216037577,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "function_word_ratio_extended",
+   "rank": 6,
+   "f_statistic": 10.555686602330354,
+   "eta_squared": 0.7645897597406411,
+   "null_p99_eta_squared": 0.5240737800048842,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.7116708599480372,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "ttr",
+   "rank": 7,
+   "f_statistic": 7.299574020388059,
+   "eta_squared": 0.6919306889814636,
+   "null_p99_eta_squared": 0.4846229069399257,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.6193660815165419,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "vocabulary_richness",
+   "rank": 8,
+   "f_statistic": 7.274758626078306,
+   "eta_squared": 0.6912043196936477,
+   "null_p99_eta_squared": 0.48178737701110563,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.6184351327186374,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "repetition_ratio",
+   "rank": 9,
+   "f_statistic": 7.221249102033863,
+   "eta_squared": 0.689626331268469,
+   "null_p99_eta_squared": 0.4801272241876374,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.6164121458462843,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "certainty_index",
+   "rank": 10,
+   "f_statistic": 7.028295829042546,
+   "eta_squared": 0.683799721854985,
+   "null_p99_eta_squared": 0.5223651427116383,
+   "permutation_p": 0.001998001998001998,
+   "icc_like": 0.6089357223677525,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "lexical_density",
+   "rank": 11,
+   "f_statistic": 6.361389033163581,
+   "eta_squared": 0.6618594889057087,
+   "null_p99_eta_squared": 0.5051044871402377,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.5806882863685049,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "formality_index",
+   "rank": 12,
+   "f_statistic": 5.597750582021279,
+   "eta_squared": 0.6326749980267262,
+   "null_p99_eta_squared": 0.5466389026357137,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.5428803073729315,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "char_ngram_mean",
+   "rank": 13,
+   "f_statistic": 5.397512813190613,
+   "eta_squared": 0.6241693917998521,
+   "null_p99_eta_squared": 0.4996998350640382,
+   "permutation_p": 0.000999000999000999,
+   "icc_like": 0.5318108580827888,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "self_focus_ratio",
+   "rank": 14,
+   "f_statistic": 5.270458995401311,
+   "eta_squared": 0.6185651498640977,
+   "null_p99_eta_squared": 0.5192782590292427,
+   "permutation_p": 0.001998001998001998,
+   "icc_like": 0.5245047859416773,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "paragraph_cv",
+   "rank": 15,
+   "f_statistic": 3.109365385768471,
+   "eta_squared": 0.48894271631676856,
+   "null_p99_eta_squared": 0.42276330507081505,
+   "permutation_p": 0.001998001998001998,
+   "icc_like": 0.3526898603872061,
+   "exceeds_null_p99": true
+  },
+  {
+   "dimension": "sentence_cv",
+   "rank": 16,
+   "f_statistic": 1.7968149757068146,
+   "eta_squared": 0.3560294927307431,
+   "null_p99_eta_squared": 0.4864141764636951,
+   "permutation_p": 0.08691308691308691,
+   "icc_like": 0.1706883901110453,
+   "exceeds_null_p99": false
+  },
+  {
+   "dimension": "past_ratio",
+   "rank": 17,
+   "f_statistic": 1.4494049892029743,
+   "eta_squared": 0.30842308601472446,
+   "null_p99_eta_squared": 0.49215040405006066,
+   "permutation_p": 0.21578421578421578,
+   "icc_like": 0.10400886377518508,
+   "exceeds_null_p99": false
+  },
+  {
+   "dimension": "present_ratio",
+   "rank": 18,
+   "f_statistic": 0.9879580493778136,
+   "eta_squared": 0.23312124326545858,
+   "null_p99_eta_squared": 0.5079906826935155,
+   "permutation_p": 0.44455544455544455,
+   "icc_like": 0.0,
+   "exceeds_null_p99": false
+  }
+ ],
+ "recommended_dimension_set_v2": [
+  "abstract_ratio",
+  "metaphor_per_100",
+  "future_ratio",
+  "complexity_score",
+  "sentiment_score",
+  "function_word_ratio_extended",
+  "ttr",
+  "vocabulary_richness",
+  "repetition_ratio",
+  "certainty_index",
+  "lexical_density",
+  "formality_index",
+  "char_ngram_mean",
+  "self_focus_ratio",
+  "paragraph_cv"
+ ]
+}

@@ -1,0 +1,5958 @@
+{
+ "meta": {
+  "fwonly_artifact": "data/artifacts/author_space_v1_wave2_fwonly.json",
+  "paired_against": "reports/validation/wave2/e4_results.json (frozen 60-sample set)",
+  "note": "AI corpus manifest has since grown (replicates, gpt-5); this comparison is restricted to the wave-2 frozen sample files."
+ },
+ "summary": {
+  "n_paired": 60,
+  "n_unprompted": 36,
+  "n_styled": 24,
+  "unprompted_violations_wave2": 0,
+  "unprompted_violations_fwonly": 0,
+  "unprompted_min_nearest_wpct_wave2": 98.71794871794872,
+  "unprompted_min_nearest_wpct_fwonly": 98.71794871794872,
+  "styled_nearest_is_target_wave2": 9,
+  "styled_nearest_is_target_fwonly": 7,
+  "styled_entered_wp90_wave2": 0,
+  "styled_entered_wp90_fwonly": 0,
+  "styled_min_target_wpct_wave2": 98.71794871794872,
+  "styled_min_target_wpct_fwonly": 97.43589743589743,
+  "model_ordering": {
+   "wave2": [
+    [
+     "claude-fable-5",
+     1.5643
+    ],
+    [
+     "claude-haiku-4-5",
+     1.6352
+    ],
+    [
+     "claude-sonnet-4-6",
+     1.6487
+    ],
+    [
+     "claude-opus-4-8",
+     1.664
+    ],
+    [
+     "gemma4:26b",
+     1.6971
+    ],
+    [
+     "qwen3.6:35b",
+     1.8246
+    ]
+   ],
+   "fwonly": [
+    [
+     "qwen3.6:35b",
+     1.2866
+    ],
+    [
+     "gemma4:26b",
+     1.3106
+    ],
+    [
+     "claude-sonnet-4-6",
+     1.4063
+    ],
+    [
+     "claude-fable-5",
+     1.4566
+    ],
+    [
+     "claude-opus-4-8",
+     1.468
+    ],
+    [
+     "claude-haiku-4-5",
+     1.7626
+    ]
+   ]
+  }
+ },
+ "rows": [
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2880,
+   "wave2": {
+    "nearest_author": "tokarczuk-olga",
+    "nearest_distance": 1.7158293591133857,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4201005623526666,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4201005623526666,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "whitehead-colson": {
+      "distance": 1.4552269031412746,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "didion-joan": {
+      "distance": 1.46214231030948,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "ondaatje-michael": {
+      "distance": 1.473980952302148,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5072719489843724,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5177827037446223,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5324760890596145,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.563638666930677,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5925501698013915,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "mccarthy-cormac": {
+      "distance": 1.614757105558939,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.623959304080477,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "robinson-marilynne": {
+      "distance": 1.6297392617943178,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "saunders-george": {
+      "distance": 1.6353600781345226,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "murakami-haruki": {
+      "distance": 1.6423162927519537,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7898036310751657,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3337,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6204106458179586,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.7632326354117571,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.7632326354117571,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.8169842429889067,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.849917894068288,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.861473312647776,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.8914121690750842,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.9030294833599168,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.9040893552300746,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.924132433290037,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.9389778744567492,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.9489966989185685,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.9706649433294823,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.9855333802850623,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.01345519655922,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.0297465151409266,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.139116092408837,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3762,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.5789716129523612,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5247365861967648,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.5247365861967648,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.5448814386294596,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "didion-joan": {
+      "distance": 1.5760314291374475,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.5888150098187963,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5909120421694225,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.5948862301877225,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.5952635629642251,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "delillo-don": {
+      "distance": 1.6143935087477834,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6242901845243185,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "pynchon-thomas": {
+      "distance": 1.6308289987554212,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6535397333288466,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.6595995831228485,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.6794502127684756,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.722558221541792,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9339747176762232,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3644,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5632048918945438,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.182783750798343,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.182783750798343,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 92.3992673992674
+     },
+     "didion-joan": {
+      "distance": 1.266606436181086,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.6959706959707
+     },
+     "ondaatje-michael": {
+      "distance": 1.2754338121590074,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.06227106227107
+     },
+     "whitehead-colson": {
+      "distance": 1.2882719389223802,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.42857142857143
+     },
+     "delillo-don": {
+      "distance": 1.3007702763307816,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "mccarthy-cormac": {
+      "distance": 1.3156020552781802,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.88644688644689
+     },
+     "tokarczuk-olga": {
+      "distance": 1.3181934056132243,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.88644688644689
+     },
+     "sebald-w_g": {
+      "distance": 1.3313487712844918,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.43589743589743
+     },
+     "morrison-toni": {
+      "distance": 1.346304500347503,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "murakami-haruki": {
+      "distance": 1.3777184815863814,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "saunders-george": {
+      "distance": 1.380482281004483,
+      "w_percentile": 100.0,
+      "b_percentile": 98.53479853479854
+     },
+     "robinson-marilynne": {
+      "distance": 1.3962446562688742,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "pynchon-thomas": {
+      "distance": 1.4098154948683304,
+      "w_percentile": 100.0,
+      "b_percentile": 98.9010989010989
+     },
+     "foster_wallace-david": {
+      "distance": 1.4142389055624778,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.4861174048739272,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3610,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5100607848123049,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5156581735797572,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.5156581735797572,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.5506804152897466,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5602933447384726,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6057865890505338,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.624755530964082,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "delillo-don": {
+      "distance": 1.625653409740987,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ondaatje-michael": {
+      "distance": 1.6269970622683256,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "foster_wallace-david": {
+      "distance": 1.644405290469527,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.6602213004030406,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.6783499145143228,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.6826958772339007,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.6947852119657874,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.731515923477504,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7434596375093971,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9620043128558833,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3800,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4533747412123734,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3812211278988007,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3812211278988007,
+      "w_percentile": 100.0,
+      "b_percentile": 98.53479853479854
+     },
+     "whitehead-colson": {
+      "distance": 1.4414051740658609,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4503880938487477,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "ondaatje-michael": {
+      "distance": 1.454973197683664,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "morrison-toni": {
+      "distance": 1.471311980656401,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.4917750059350765,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5090866525937097,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5139598295388708,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.524579992468943,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5451787743547303,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "murakami-haruki": {
+      "distance": 1.5664150537173362,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "sebald-w_g": {
+      "distance": 1.5762039446737224,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6104094311334933,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6240170884575924,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8024196517007598,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3785,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6364923699397464,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5169255451187287,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.5169255451187287,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.520597542393061,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.568173215347843,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.577846396993832,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.5865727228349253,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "delillo-don": {
+      "distance": 1.6371641364829526,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "sebald-w_g": {
+      "distance": 1.657245172881247,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.661518471916658,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6685503492832385,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.681308082361245,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7000530663341265,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7473487826122547,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7476630141471445,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7580530133236356,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9741781140533863,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3496,
+   "wave2": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.5654555669830101,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.3975933862415413,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.3975933862415413,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "proulx-annie": {
+      "distance": 1.4276767548886944,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "ondaatje-michael": {
+      "distance": 1.474363223161471,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.47798867283024,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.4806962250695344,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.4913492129777035,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.4995493583099693,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.502381357567627,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5326803261131678,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5362573196991816,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "robinson-marilynne": {
+      "distance": 1.567675136391864,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5690379707619186,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "saunders-george": {
+      "distance": 1.5797151909771074,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.6147417226884864,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7392932221360524,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 3810,
+   "wave2": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.4056962267558422,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872
+   },
+   "fwonly": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.3536931633630547,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872,
+    "per_author": {
+     "mccarthy-cormac": {
+      "distance": 1.3536931633630547,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "proulx-annie": {
+      "distance": 1.5455458338353785,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "whitehead-colson": {
+      "distance": 1.6217299552284707,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "morrison-toni": {
+      "distance": 1.70753198082848,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7221155779651531,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.722667556211401,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.7242696716809345,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.733320327327443,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.7506929089757273,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.769349462017422,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7851206662731876,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7851841402721622,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.8027878382635814,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.81101618786089,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.0620845954215072,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 3760,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 1.388874078824666,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.1405270790538597,
+    "nearest_w_percentile": 97.43589743589743,
+    "min_w_percentile": 97.43589743589743,
+    "target_w_percentile": 97.43589743589743,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.1405270790538597,
+      "w_percentile": 97.43589743589743,
+      "b_percentile": 89.56043956043956
+     },
+     "proulx-annie": {
+      "distance": 1.1942936103516386,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 93.04029304029304
+     },
+     "whitehead-colson": {
+      "distance": 1.206303188361732,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 93.68131868131869
+     },
+     "sebald-w_g": {
+      "distance": 1.2466170078627548,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.14652014652015
+     },
+     "delillo-don": {
+      "distance": 1.2506736370228324,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.32967032967034
+     },
+     "ondaatje-michael": {
+      "distance": 1.2678643011660804,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.6959706959707
+     },
+     "tokarczuk-olga": {
+      "distance": 1.2870367903532811,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.24542124542124
+     },
+     "morrison-toni": {
+      "distance": 1.3252561584692095,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.97802197802197
+     },
+     "saunders-george": {
+      "distance": 1.3463599545656117,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "foster_wallace-david": {
+      "distance": 1.348733338666235,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "mccarthy-cormac": {
+      "distance": 1.3623306356896676,
+      "w_percentile": 100.0,
+      "b_percentile": 97.8021978021978
+     },
+     "murakami-haruki": {
+      "distance": 1.3757031273568603,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "robinson-marilynne": {
+      "distance": 1.4417414767075878,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "pynchon-thomas": {
+      "distance": 1.448406771393032,
+      "w_percentile": 100.0,
+      "b_percentile": 99.35897435897436
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.5644922773261394,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 3712,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.629693362980942,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.1826253703464666,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.1826253703464666,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 92.3992673992674
+     },
+     "ondaatje-michael": {
+      "distance": 1.2026253664206126,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 93.31501831501832
+     },
+     "whitehead-colson": {
+      "distance": 1.2289487218300879,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 94.59706959706959
+     },
+     "didion-joan": {
+      "distance": 1.2582573607121443,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.6043956043956
+     },
+     "tokarczuk-olga": {
+      "distance": 1.304442501162286,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.6117216117216
+     },
+     "sebald-w_g": {
+      "distance": 1.3145925649991745,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.88644688644689
+     },
+     "morrison-toni": {
+      "distance": 1.3380654029818113,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "mccarthy-cormac": {
+      "distance": 1.3424419569717099,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "delillo-don": {
+      "distance": 1.369783488667026,
+      "w_percentile": 100.0,
+      "b_percentile": 98.07692307692308
+     },
+     "pynchon-thomas": {
+      "distance": 1.3979068120316573,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "robinson-marilynne": {
+      "distance": 1.4320242496057312,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "foster_wallace-david": {
+      "distance": 1.4350862062486291,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "saunders-george": {
+      "distance": 1.4427558988162994,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "murakami-haruki": {
+      "distance": 1.493903911227947,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.6872461611882899,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-fable-5",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 3650,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.7425664113824841,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5509153749175801,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.5509153749175801,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "morrison-toni": {
+      "distance": 1.5773974111349978,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "whitehead-colson": {
+      "distance": 1.5994802083896051,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6191570140663167,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "didion-joan": {
+      "distance": 1.6432113714754664,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6468704545423067,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.6681119759635388,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.6812211621902038,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.6852961459983782,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7253139376624298,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7322300657393392,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.737019017962186,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7602880000033012,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.8051369864499307,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.028681267793817,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3647,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.7090477703732134,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2873018868607695,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2873018868607695,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.33699633699634
+     },
+     "whitehead-colson": {
+      "distance": 1.3340061829512038,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "ondaatje-michael": {
+      "distance": 1.403152125123231,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "didion-joan": {
+      "distance": 1.4047141367083202,
+      "w_percentile": 100.0,
+      "b_percentile": 98.80952380952381
+     },
+     "mccarthy-cormac": {
+      "distance": 1.416388169766108,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "morrison-toni": {
+      "distance": 1.4220794242916444,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "delillo-don": {
+      "distance": 1.474854375181165,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.4916087820771864,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5164607137000734,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5194066911552464,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5204319879399888,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5371126253968275,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "pynchon-thomas": {
+      "distance": 1.5485100093952129,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "murakami-haruki": {
+      "distance": 1.5675472724622728,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.79889472396266,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3539,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6438793367521254,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4062306830623577,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4062306830623577,
+      "w_percentile": 100.0,
+      "b_percentile": 98.80952380952381
+     },
+     "didion-joan": {
+      "distance": 1.4317706260506595,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "whitehead-colson": {
+      "distance": 1.45291516354917,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "ondaatje-michael": {
+      "distance": 1.4740228663476376,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.4934551239781868,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5048175664351144,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.512973176978148,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.515306684344893,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5650975174218862,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5712521811517342,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.6024906646620256,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.606776317583882,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6093759721697505,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6144426578606608,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7956138520059806,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3645,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.659157096089719,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6854412419354885,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.6854412419354885,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6933713491117488,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7236058929930111,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7609000422376402,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.7614960212513882,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.7867216571281694,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.796307743257568,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7990208030152193,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.8029523913630623,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.8176505042535185,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.8262049471836281,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.830738604096579,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.9065652648322298,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.915241929243315,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.04309919263228,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3610,
+   "wave2": {
+    "nearest_author": "morrison-toni",
+    "nearest_distance": 1.5294606433782336,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.5556368059138537,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.5556368059138537,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5623642731611167,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "morrison-toni": {
+      "distance": 1.5627669535169317,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "whitehead-colson": {
+      "distance": 1.5717149733209816,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "ondaatje-michael": {
+      "distance": 1.6000144692870821,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "delillo-don": {
+      "distance": 1.6220949368218252,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6236741749363601,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "robinson-marilynne": {
+      "distance": 1.6541620255326388,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6545618189261764,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.6584030942350414,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6985218550973094,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7121018415320213,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7122832321918926,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.8084829434998588,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9393370096489582,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3517,
+   "wave2": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.820268060922222,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.402091977272516,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.402091977272516,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "proulx-annie": {
+      "distance": 1.4241997861962576,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "whitehead-colson": {
+      "distance": 1.485134615421428,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.4876743815714846,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.50313852141281,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.5265744468062041,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5301628178557118,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5472130079306021,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5868529380633707,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.5874784328873044,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.5938790025302967,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.6006167317780793,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6156752492105935,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.645742486235587,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7880312312402096,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3548,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.6688397431355133,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.529753825436868,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.529753825436868,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "proulx-annie": {
+      "distance": 1.5676579709602902,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "whitehead-colson": {
+      "distance": 1.6043842615880703,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.6132386973001,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.6149975235650065,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "delillo-don": {
+      "distance": 1.6279162946951178,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "robinson-marilynne": {
+      "distance": 1.6979624934866986,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.706329845361153,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.7592684495017814,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7618518299475798,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.783666080736062,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7997099430271797,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.8070332804834455,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.8258240690163976,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.965090290572797,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 3805,
+   "wave2": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.5485786327133269,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872
+   },
+   "fwonly": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.7105979065269508,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "mccarthy-cormac": {
+      "distance": 1.7105979065269508,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "proulx-annie": {
+      "distance": 1.8813822725093616,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.938381427703176,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.9453329164732978,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.9459776515665066,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.9526546982172408,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.9641858896061406,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.97724093310179,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.9869094363865458,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 2.0135510114731625,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 2.0735965496896474,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 2.0810675249121773,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.0969037594794804,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.0992206309112262,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.240478522029046,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 3705,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.7063135095538569,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.3984354260057297,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.3984354260057297,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "proulx-annie": {
+      "distance": 1.4009503670664023,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "morrison-toni": {
+      "distance": 1.4309282999493493,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "delillo-don": {
+      "distance": 1.445747066196795,
+      "w_percentile": 100.0,
+      "b_percentile": 99.26739926739927
+     },
+     "whitehead-colson": {
+      "distance": 1.4510653998358465,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "ondaatje-michael": {
+      "distance": 1.4676504990600556,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5017976718827228,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5062610695779581,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5208253563577527,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5287176377580094,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5386479370457038,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "sebald-w_g": {
+      "distance": 1.55080141376567,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5592692516160034,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.607859608624165,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7096436487076259,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 3717,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.7139606235828373,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6743752741852054,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.6743752741852054,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.678183381619813,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.6783978993982727,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.6901713338197162,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.6988552833652177,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.7101976403133516,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7698848314904212,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.7703559045773325,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.772161121705858,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7826091555432897,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.788365489802011,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7981445749893092,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.804961319241686,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.8267933798782088,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9728713203503159,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-opus-4-8",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 3760,
+   "wave2": {
+    "nearest_author": "morrison-toni",
+    "nearest_distance": 1.7113120145667426,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3394678187933542,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3394678187933542,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "whitehead-colson": {
+      "distance": 1.4085693175774774,
+      "w_percentile": 100.0,
+      "b_percentile": 98.9010989010989
+     },
+     "didion-joan": {
+      "distance": 1.4143933809966682,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "morrison-toni": {
+      "distance": 1.4191683948933556,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "delillo-don": {
+      "distance": 1.433878958784638,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4459845773579114,
+      "w_percentile": 100.0,
+      "b_percentile": 99.26739926739927
+     },
+     "ondaatje-michael": {
+      "distance": 1.4552142173402525,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "foster_wallace-david": {
+      "distance": 1.4648842215012483,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "pynchon-thomas": {
+      "distance": 1.4694301512642,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.500831389267552,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5207195927094541,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5222260628544044,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5604505767291974,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "sebald-w_g": {
+      "distance": 1.5935045844136866,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8029941609278626,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3719,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6756852142019159,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2985481875845348,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2985481875845348,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "ondaatje-michael": {
+      "distance": 1.370831906789464,
+      "w_percentile": 100.0,
+      "b_percentile": 98.26007326007326
+     },
+     "didion-joan": {
+      "distance": 1.3739924644267376,
+      "w_percentile": 100.0,
+      "b_percentile": 98.35164835164835
+     },
+     "whitehead-colson": {
+      "distance": 1.385571869017531,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "sebald-w_g": {
+      "distance": 1.3916015875530432,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "delillo-don": {
+      "distance": 1.4149971392867782,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "tokarczuk-olga": {
+      "distance": 1.4371534201667509,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "morrison-toni": {
+      "distance": 1.4655926327565518,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "foster_wallace-david": {
+      "distance": 1.5019814047271953,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5161835645320676,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5321905819420751,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5441910484708077,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "pynchon-thomas": {
+      "distance": 1.5737992591745484,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "saunders-george": {
+      "distance": 1.5786041546484841,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7175253305251328,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3396,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.561927889338145,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3724135316726147,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3724135316726147,
+      "w_percentile": 100.0,
+      "b_percentile": 98.35164835164835
+     },
+     "ondaatje-michael": {
+      "distance": 1.4166371546762087,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "delillo-don": {
+      "distance": 1.42684545604587,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "whitehead-colson": {
+      "distance": 1.4462021144787016,
+      "w_percentile": 100.0,
+      "b_percentile": 99.26739926739927
+     },
+     "tokarczuk-olga": {
+      "distance": 1.464824641047793,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "didion-joan": {
+      "distance": 1.4863433181775636,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5542319571065148,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "morrison-toni": {
+      "distance": 1.5544272869969709,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.568220875810667,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "robinson-marilynne": {
+      "distance": 1.5914852366449095,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.6125089559813015,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.6258960765595851,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "saunders-george": {
+      "distance": 1.6301192193893332,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "murakami-haruki": {
+      "distance": 1.652131073259095,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7424208852564425,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3342,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6252296441849847,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6723755552065012,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.6723755552065012,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.7036400397700413,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.73001601186509,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.7452677941256556,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7529854048833773,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.7625523711365925,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.763075615611525,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.7774013825484751,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7918580629063907,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7930595823799047,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.803096953090995,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.8397191631790633,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.8528413833370463,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.8901567822950927,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9415131561433259,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3668,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.5498596713151145,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4123169879127764,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4123169879127764,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "didion-joan": {
+      "distance": 1.4342033508323755,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "ondaatje-michael": {
+      "distance": 1.4492643431007537,
+      "w_percentile": 100.0,
+      "b_percentile": 99.35897435897436
+     },
+     "whitehead-colson": {
+      "distance": 1.457846219720681,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "morrison-toni": {
+      "distance": 1.4883925430964375,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5153296660966835,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5280954781836178,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5337389852922947,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5677279300056894,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5776122422949619,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.5920841767552143,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6051817339772334,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6107163869223362,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6359799601050709,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.811340124751802,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3776,
+   "wave2": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.6721872042934451,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4002183725936954,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4002183725936954,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "didion-joan": {
+      "distance": 1.4090176312052005,
+      "w_percentile": 100.0,
+      "b_percentile": 98.9010989010989
+     },
+     "whitehead-colson": {
+      "distance": 1.4535091852438131,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "delillo-don": {
+      "distance": 1.460706880371839,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "sebald-w_g": {
+      "distance": 1.4652325131529464,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "ondaatje-michael": {
+      "distance": 1.473718063137001,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.4867185908686291,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.4990900228982091,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5136413543732,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.531451581608595,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.565875659438204,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5688389519534516,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "robinson-marilynne": {
+      "distance": 1.6024886993503855,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6041890217716055,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.714396488979734,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3526,
+   "wave2": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.9077933154169766,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "whitehead-colson",
+    "nearest_distance": 1.5605427197067347,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "whitehead-colson": {
+      "distance": 1.5605427197067347,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5778893696519378,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "proulx-annie": {
+      "distance": 1.5844545761993318,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.6059811856346622,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6480095444883167,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.6486990421128984,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.6871033493617058,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7384892141845436,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7515839481039568,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7524656911426428,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.756900900738871,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7702475176647583,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7718884415018934,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.7969252114956187,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9007511133598742,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 3435,
+   "wave2": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.577919768832617,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872
+   },
+   "fwonly": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.4650089164865359,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "mccarthy-cormac": {
+      "distance": 1.4650089164865359,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "proulx-annie": {
+      "distance": 1.499943496151105,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.518736058975915,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.5651403067277911,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "delillo-don": {
+      "distance": 1.5857653816915596,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.5864745579299855,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.5994982500388952,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "didion-joan": {
+      "distance": 1.6049082915173765,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6173537118149341,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6228063137853574,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6325365401491505,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "pynchon-thomas": {
+      "distance": 1.6501339678863374,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.698534292238063,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7098676327490478,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8672243439559635,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 3585,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.7128775212860958,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.547122017582898,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.547122017582898,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "proulx-annie": {
+      "distance": 1.5673178943641362,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "delillo-don": {
+      "distance": 1.568011322125526,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "whitehead-colson": {
+      "distance": 1.5875741525753866,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.6108957350597528,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.6398263498016847,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6829526708322322,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6880540713150989,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.714682166832171,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.733661956795981,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.742349973837454,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7445597112693993,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7451128171508057,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.812720063552824,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.968230792279408,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 3358,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.5817145164714146,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.503910119687427,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.503910119687427,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5085443184765697,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5511608024894021,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "ondaatje-michael": {
+      "distance": 1.5558254752465885,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5747339695200433,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "whitehead-colson": {
+      "distance": 1.5760339283822085,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.5822256622285673,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "didion-joan": {
+      "distance": 1.5836510653571576,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6007407285799293,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.612223045840248,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.6314130469633177,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "murakami-haruki": {
+      "distance": 1.6495823187684906,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.6641775385017283,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7332743645847328,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8032033654835944,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 3536,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.6864779738000375,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "whitehead-colson",
+    "nearest_distance": 1.337071915167678,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "whitehead-colson": {
+      "distance": 1.337071915167678,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "proulx-annie": {
+      "distance": 1.344464303428434,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "didion-joan": {
+      "distance": 1.356894837719969,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.71062271062272
+     },
+     "delillo-don": {
+      "distance": 1.3880564394649777,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "morrison-toni": {
+      "distance": 1.4033707448808321,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "ondaatje-michael": {
+      "distance": 1.414359888828052,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "tokarczuk-olga": {
+      "distance": 1.4288547357049788,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "robinson-marilynne": {
+      "distance": 1.4637437356422671,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "sebald-w_g": {
+      "distance": 1.505484946741,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.517854399907523,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5278138321056602,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.542894894399201,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "foster_wallace-david": {
+      "distance": 1.5477095266940228,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5558301338354612,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7125722209506498,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3130,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.618439084948099,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.9040146560973759,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.9040146560973759,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.916535692332693,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.9325130161224797,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.9385757859744392,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.959747351691282,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.963301868243427,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.9741643062051843,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.9821989652898184,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.982637139119104,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.9882315164679942,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 2.0330290577730437,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 2.037560454117535,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.064526494582075,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.109081132311533,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.198823178768052,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3057,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.550455011563995,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4138567505002284,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4138567505002284,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "whitehead-colson": {
+      "distance": 1.4289537721992107,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "delillo-don": {
+      "distance": 1.4895320508794796,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.5035642458468181,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5092427333860767,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5177371696557895,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.5230344119981583,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.532539653570154,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5464849197754023,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5625997366928277,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5720345003513403,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "sebald-w_g": {
+      "distance": 1.6027100453851404,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6028553576239146,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.610257372162582,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.783970950074611,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3373,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.649933176721674,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.7821598437712245,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.7821598437712245,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.8591192098496618,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.8795406006371347,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.883317841464819,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.9079714026975636,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.9265909994479975,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.9353918023984238,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.9382016611731072,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.985378024073118,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 2.000220287930933,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.000523389022314,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 2.0054172744476615,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 2.030232156079553,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.035868876014566,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.2047618717681243,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3218,
+   "wave2": {
+    "nearest_author": "tokarczuk-olga",
+    "nearest_distance": 1.7929515527005688,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.7620611120746912,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.7620611120746912,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "proulx-annie": {
+      "distance": 1.79202396415427,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.7932559752527617,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.8198811775456876,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.832904240507045,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.8348192779349028,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.8457010859172567,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.8498848433217143,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.8532597496522707,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.8997755968209227,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.914453410386532,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.9184923818237014,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.954779748595338,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 2.003043377145855,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.0114676456178047,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 2956,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6307331905248046,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.7937271061400066,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.7937271061400066,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.8374849366196164,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.8536145965906992,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.8671832036056044,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.8675251241486528,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.870281232754299,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.8973303596037079,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.9003086989213003,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.9104754253930958,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.910855975419035,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.912854953991789,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.9532084731903463,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.977789323809983,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.0137200593636506,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.1192956846883337,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 3187,
+   "wave2": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.8056049876489495,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "didion-joan",
+    "nearest_distance": 1.4924418405593392,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "didion-joan": {
+      "distance": 1.4924418405593392,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5364048270572888,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "proulx-annie": {
+      "distance": 1.616560876128754,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.6247006711482106,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ondaatje-michael": {
+      "distance": 1.6296033239903247,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "whitehead-colson": {
+      "distance": 1.63945612384085,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.6401298971381826,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.65816631329205,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.668768810156491,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6780661037852838,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7033228668571587,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7166341459878105,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7658613455731271,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.772987210388773,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.782735325599156,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 3510,
+   "wave2": {
+    "nearest_author": "tokarczuk-olga",
+    "nearest_distance": 1.5844566922622527,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6398169142248094,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.6398169142248094,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.6732332614144432,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6927281750411118,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7120987665479979,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 1.716774602289252,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.7297428765354899,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7345036365494073,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.7363541142681727,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.741757026760503,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7637682259700955,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7852986468850596,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.7860711107422094,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.8027381970337903,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.8147350779949993,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9809393897011638,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 2436,
+   "wave2": {
+    "nearest_author": "tokarczuk-olga",
+    "nearest_distance": 2.0085154354868586,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 2.0315422825480027,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 2.0315422825480027,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 2.0521738638005673,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 2.0724687147956558,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 2.0778609010525795,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 2.0795190302824715,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 2.1009663896351047,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 2.104436378913412,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 2.1075944215009925,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 2.107663100110865,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 2.1079333651240395,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 2.1188916529861626,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.1381484191936737,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.1646458134303455,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 2.176784590888856,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.3244797792834007,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2611,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.7122243224114035,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2252569734104015,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2252569734104015,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 94.41391941391942
+     },
+     "whitehead-colson": {
+      "distance": 1.295310118130511,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "ondaatje-michael": {
+      "distance": 1.300662605092397,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "delillo-don": {
+      "distance": 1.3600474231847637,
+      "w_percentile": 100.0,
+      "b_percentile": 97.8021978021978
+     },
+     "sebald-w_g": {
+      "distance": 1.3885860754279407,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "didion-joan": {
+      "distance": 1.4318595600579094,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "tokarczuk-olga": {
+      "distance": 1.432237493648112,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "foster_wallace-david": {
+      "distance": 1.4668715463441113,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4768398681675792,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.4883667337474025,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.4964223560908563,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.5287948125631832,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5457106006714239,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "murakami-haruki": {
+      "distance": 1.5521993254634034,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.6957689763453467,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2012,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 1.6747973199969601,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2920587272355013,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2920587272355013,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "whitehead-colson": {
+      "distance": 1.4172343492601185,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "ondaatje-michael": {
+      "distance": 1.4358805070134082,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "delillo-don": {
+      "distance": 1.4715608703233958,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.47344213290895,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.4838475503055204,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.511423344217114,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.5556710186365181,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.559241426352459,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5732280922044601,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5800848102239966,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6446617401920687,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.657859892265493,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.6801504400960243,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.831325598471506,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2142,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.6627335356209016,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3571318381491,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3571318381491,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.71062271062272
+     },
+     "whitehead-colson": {
+      "distance": 1.4672006733563183,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "delillo-don": {
+      "distance": 1.4731149879306433,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5116077698445896,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.5197864259534501,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5331558164153973,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "pynchon-thomas": {
+      "distance": 1.5677444061848071,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5827853521240387,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.5858087763540347,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "tokarczuk-olga": {
+      "distance": 1.606184281459095,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6082517181098286,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6158900330629418,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.631512566094204,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "murakami-haruki": {
+      "distance": 1.6362298418595012,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7645362811844845,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2819,
+   "wave2": {
+    "nearest_author": "delillo-don",
+    "nearest_distance": 1.681996905090466,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.1998203296483871,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.1998203296483871,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 93.31501831501832
+     },
+     "whitehead-colson": {
+      "distance": 1.2584844850215469,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.6043956043956
+     },
+     "delillo-don": {
+      "distance": 1.2850354638335149,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.24542124542124
+     },
+     "ondaatje-michael": {
+      "distance": 1.3768459030009539,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "mccarthy-cormac": {
+      "distance": 1.3942367092573655,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "didion-joan": {
+      "distance": 1.3975779971302953,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "foster_wallace-david": {
+      "distance": 1.399916398632277,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "sebald-w_g": {
+      "distance": 1.4250708750730041,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "tokarczuk-olga": {
+      "distance": 1.43215768276698,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "saunders-george": {
+      "distance": 1.45729462662008,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "murakami-haruki": {
+      "distance": 1.482306388826004,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.4832397309007839,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.4902930390773044,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5426450775224,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7006506961285797,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2690,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.8848257999362317,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3646749290798421,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3646749290798421,
+      "w_percentile": 100.0,
+      "b_percentile": 97.98534798534799
+     },
+     "whitehead-colson": {
+      "distance": 1.48709706769871,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5008524034125479,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.501748925286768,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.5079404805932204,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5625894587555762,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6045696234150266,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.610960630614477,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.6201597665571852,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6286601756791994,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "robinson-marilynne": {
+      "distance": 1.658741828911681,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.6636624899597292,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.6658899331595265,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.6785266413493503,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8031667698723837,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 1763,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 2.011064164049258,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3291330965180876,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3291330965180876,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.25274725274726
+     },
+     "whitehead-colson": {
+      "distance": 1.4267535271820213,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "delillo-don": {
+      "distance": 1.4334736327459767,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "ondaatje-michael": {
+      "distance": 1.4604219223610997,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "didion-joan": {
+      "distance": 1.468818429055264,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.526725837962344,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.568707689237048,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5864973160614313,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "tokarczuk-olga": {
+      "distance": 1.587784674286399,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "saunders-george": {
+      "distance": 1.6113873010427409,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.6181726538410324,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.641881050778577,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.698544670976871,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7266308896599647,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8462426366432343,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 1550,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.722090825414554,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.1508369412679822,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 98.71794871794872,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.1508369412679822,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 90.38461538461539
+     },
+     "whitehead-colson": {
+      "distance": 1.2085054586679296,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 93.77289377289377
+     },
+     "delillo-don": {
+      "distance": 1.2852808981566712,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.24542124542124
+     },
+     "ondaatje-michael": {
+      "distance": 1.287155101413652,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.24542124542124
+     },
+     "mccarthy-cormac": {
+      "distance": 1.3460818278155975,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "didion-joan": {
+      "distance": 1.3739858085828889,
+      "w_percentile": 100.0,
+      "b_percentile": 98.35164835164835
+     },
+     "tokarczuk-olga": {
+      "distance": 1.3756430651369238,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "sebald-w_g": {
+      "distance": 1.3768051372796564,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "saunders-george": {
+      "distance": 1.439924638007776,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "morrison-toni": {
+      "distance": 1.457341758048166,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "foster_wallace-david": {
+      "distance": 1.470493323919097,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.4843381590567142,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.501502990533168,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5305485014131657,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.689634356683374,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 1802,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 2.068211669963189,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4007501527661315,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4007501527661315,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "delillo-don": {
+      "distance": 1.4803841677968068,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.5084334812414537,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.517321530547821,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5474251116829956,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5757583792543914,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6169641526984992,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "tokarczuk-olga": {
+      "distance": 1.656818493977925,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6745018499383602,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.67634140638995,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.690807224815449,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7041045392753895,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7058087302728622,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.720906548321315,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.8091688558725016,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 2453,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 1.7542945197737758,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3928693633744806,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3928693633744806,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "delillo-don": {
+      "distance": 1.486562877914118,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "whitehead-colson": {
+      "distance": 1.491027062384127,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.4949036412038867,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.50673362618491,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.5707614133337344,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5866511544403057,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.62684443728104,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6475411085981113,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.6630181998538085,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.6841145629590586,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.704954217698961,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7422359400342453,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7759862848495678,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9020215931582216,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "gemma4:26b",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 2061,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 1.8883223234605893,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3858298588846507,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3858298588846507,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "whitehead-colson": {
+      "distance": 1.4404084148125313,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "ondaatje-michael": {
+      "distance": 1.461062008470186,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "sebald-w_g": {
+      "distance": 1.5200645114248186,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.5374856813257929,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5533581614914203,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5597933583307044,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "morrison-toni": {
+      "distance": 1.5971485162702206,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "foster_wallace-david": {
+      "distance": 1.6253077646300353,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "saunders-george": {
+      "distance": 1.6419836037639615,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6452048359685387,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.6638146274827552,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7362464707856118,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7624518567227456,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.875753542576839,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "estate_sale__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2259,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.874638014515416,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.1751659267692467,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.1751659267692467,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 92.12454212454213
+     },
+     "whitehead-colson": {
+      "distance": 1.1858279994505576,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 92.3992673992674
+     },
+     "ondaatje-michael": {
+      "distance": 1.2978591476054984,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.52014652014653
+     },
+     "delillo-don": {
+      "distance": 1.3415123323133393,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "didion-joan": {
+      "distance": 1.355333078438771,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.71062271062272
+     },
+     "tokarczuk-olga": {
+      "distance": 1.3771529727733343,
+      "w_percentile": 100.0,
+      "b_percentile": 98.44322344322345
+     },
+     "morrison-toni": {
+      "distance": 1.411583617642736,
+      "w_percentile": 100.0,
+      "b_percentile": 98.99267399267399
+     },
+     "mccarthy-cormac": {
+      "distance": 1.427192878876776,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "saunders-george": {
+      "distance": 1.4374338290708633,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "robinson-marilynne": {
+      "distance": 1.482293062108814,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.4980185748821684,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.4992006019912822,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.5123821499710803,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5253391827093712,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.6349753895629622,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "night_ferry__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2262,
+   "wave2": {
+    "nearest_author": "foster_wallace-david",
+    "nearest_distance": 1.8275056105386243,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3594431280252286,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3594431280252286,
+      "w_percentile": 100.0,
+      "b_percentile": 97.8021978021978
+     },
+     "delillo-don": {
+      "distance": 1.3975408181483011,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "whitehead-colson": {
+      "distance": 1.4156615416720404,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "ondaatje-michael": {
+      "distance": 1.455834014903239,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4711056628971693,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.4977162281061764,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "morrison-toni": {
+      "distance": 1.4983940461048006,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5100340061715145,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.51165112084284,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5269302873091561,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.5291661964856984,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.55549437251394,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "murakami-haruki": {
+      "distance": 1.5937700972782007,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.6313508296839356,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7107028773130408,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "irrigation__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 2872,
+   "wave2": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.8216387611270943,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2592553806444322,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2592553806444322,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.6043956043956
+     },
+     "whitehead-colson": {
+      "distance": 1.2757751457598896,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.06227106227107
+     },
+     "delillo-don": {
+      "distance": 1.3425345349272242,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "didion-joan": {
+      "distance": 1.3818610900431525,
+      "w_percentile": 100.0,
+      "b_percentile": 98.62637362637362
+     },
+     "morrison-toni": {
+      "distance": 1.3965055301183287,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "ondaatje-michael": {
+      "distance": 1.4211777217448147,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4326395886672725,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "tokarczuk-olga": {
+      "distance": 1.4473799491000678,
+      "w_percentile": 100.0,
+      "b_percentile": 99.35897435897436
+     },
+     "saunders-george": {
+      "distance": 1.4723942094385254,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "pynchon-thomas": {
+      "distance": 1.4929024061652574,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.4948878500829506,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "foster_wallace-david": {
+      "distance": 1.5119689430587877,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "murakami-haruki": {
+      "distance": 1.5253230236908506,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.600164883241869,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.6089171379841116,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "harbor_winter__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3412,
+   "wave2": {
+    "nearest_author": "foster_wallace-david",
+    "nearest_distance": 1.7618340243852315,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3138544923331612,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3138544923331612,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.88644688644689
+     },
+     "whitehead-colson": {
+      "distance": 1.3342907718869375,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "delillo-don": {
+      "distance": 1.4155981406947786,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "didion-joan": {
+      "distance": 1.4423159823333542,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "morrison-toni": {
+      "distance": 1.478573319957682,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.4875402316862327,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5015562885650786,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.503444003573214,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "robinson-marilynne": {
+      "distance": 1.5263418982293648,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5381742341660372,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "foster_wallace-david": {
+      "distance": 1.5386348600108926,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "pynchon-thomas": {
+      "distance": 1.5860039562229098,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "sebald-w_g": {
+      "distance": 1.604609576041546,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6161215693067308,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.6985491432660724,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "hotel_fire__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3308,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.7164341095671403,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.2411380677021207,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.2411380677021207,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 95.05494505494505
+     },
+     "whitehead-colson": {
+      "distance": 1.2852426901400038,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.24542124542124
+     },
+     "didion-joan": {
+      "distance": 1.329476243536105,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.34432234432235
+     },
+     "ondaatje-michael": {
+      "distance": 1.3524735243557098,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 97.61904761904762
+     },
+     "delillo-don": {
+      "distance": 1.3978492971203733,
+      "w_percentile": 100.0,
+      "b_percentile": 98.71794871794872
+     },
+     "morrison-toni": {
+      "distance": 1.4429959125230047,
+      "w_percentile": 100.0,
+      "b_percentile": 99.17582417582418
+     },
+     "sebald-w_g": {
+      "distance": 1.4570699573717922,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4720922099013087,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.5089228588227126,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "saunders-george": {
+      "distance": 1.5361084056891594,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "foster_wallace-david": {
+      "distance": 1.5486555680151246,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "pynchon-thomas": {
+      "distance": 1.5834047722289768,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "robinson-marilynne": {
+      "distance": 1.585339983991122,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "murakami-haruki": {
+      "distance": 1.6443339436978683,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.7600040121807978,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "wire_voices__unprompted",
+   "condition": "unprompted",
+   "style_target": null,
+   "word_count": 3260,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 1.857427353963953,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4262193669533716,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": null,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4262193669533716,
+      "w_percentile": 100.0,
+      "b_percentile": 99.08424908424908
+     },
+     "whitehead-colson": {
+      "distance": 1.4682670440321763,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "didion-joan": {
+      "distance": 1.4893452495667703,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "ondaatje-michael": {
+      "distance": 1.5147876856089613,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "delillo-don": {
+      "distance": 1.546215797784697,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "sebald-w_g": {
+      "distance": 1.6004001403205417,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6159536483911823,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "morrison-toni": {
+      "distance": 1.619206501543848,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "mccarthy-cormac": {
+      "distance": 1.6792046200580542,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7233340869607816,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.7444378384229162,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.750712341327663,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7839596071122563,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7929321876369124,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9939459660067207,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "irrigation__style_mccarthy-cormac",
+   "condition": "style_prompted",
+   "style_target": "mccarthy-cormac",
+   "word_count": 2447,
+   "wave2": {
+    "nearest_author": "mccarthy-cormac",
+    "nearest_distance": 1.8482089640394792,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.4541653811558664,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.4541653811558664,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "whitehead-colson": {
+      "distance": 1.4971599319557078,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "mccarthy-cormac": {
+      "distance": 1.5399816368113266,
+      "w_percentile": 100.0,
+      "b_percentile": 99.63369963369964
+     },
+     "delillo-don": {
+      "distance": 1.5886474971539848,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "ondaatje-michael": {
+      "distance": 1.6034920762933986,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "didion-joan": {
+      "distance": 1.6753606198777045,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.6905353845703848,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.6906369787675135,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.6986537039084662,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.7077154574926612,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.7382913215655453,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.7651592855556775,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.7981023587194238,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.8307298218762806,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.98839081961008,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "hotel_fire__style_didion-joan",
+   "condition": "style_prompted",
+   "style_target": "didion-joan",
+   "word_count": 9241,
+   "wave2": {
+    "nearest_author": "sebald-w_g",
+    "nearest_distance": 3.2088016781920614,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 2.1801892825156384,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 2.1801892825156384,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 2.255727580952476,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 2.266843996245315,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "whitehead-colson": {
+      "distance": 2.277292576636611,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 2.3310690070235203,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 2.3316042178348453,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 2.3879616156363914,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 2.4020418073663157,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 2.4114206984419835,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 2.418357965006476,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 2.4331186392995936,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 2.4934202899958633,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 2.5318796415794207,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 2.5355455848313504,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.6427573006256684,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "night_ferry__style_ondaatje-michael",
+   "condition": "style_prompted",
+   "style_target": "ondaatje-michael",
+   "word_count": 2972,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 1.8192414169627016,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.3214818225663232,
+    "nearest_w_percentile": 98.71794871794872,
+    "min_w_percentile": 98.71794871794872,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.3214818225663232,
+      "w_percentile": 98.71794871794872,
+      "b_percentile": 96.97802197802197
+     },
+     "whitehead-colson": {
+      "distance": 1.4071507612647096,
+      "w_percentile": 100.0,
+      "b_percentile": 98.80952380952381
+     },
+     "delillo-don": {
+      "distance": 1.4460668696539813,
+      "w_percentile": 100.0,
+      "b_percentile": 99.26739926739927
+     },
+     "ondaatje-michael": {
+      "distance": 1.4593476202037337,
+      "w_percentile": 100.0,
+      "b_percentile": 99.45054945054945
+     },
+     "mccarthy-cormac": {
+      "distance": 1.4808758523111631,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "tokarczuk-olga": {
+      "distance": 1.495385604150892,
+      "w_percentile": 100.0,
+      "b_percentile": 99.54212454212454
+     },
+     "sebald-w_g": {
+      "distance": 1.5532344333273898,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "didion-joan": {
+      "distance": 1.5610972307450852,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "foster_wallace-david": {
+      "distance": 1.5755098957182507,
+      "w_percentile": 100.0,
+      "b_percentile": 99.72527472527473
+     },
+     "morrison-toni": {
+      "distance": 1.5941120717869803,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "pynchon-thomas": {
+      "distance": 1.6372935859793007,
+      "w_percentile": 100.0,
+      "b_percentile": 99.9084249084249
+     },
+     "saunders-george": {
+      "distance": 1.6426179625662083,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.7084907675219392,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.738966617854198,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 1.9003795178287854,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  },
+  {
+   "model": "qwen3.6:35b",
+   "sample_id": "estate_sale__style_morrison-toni",
+   "condition": "style_prompted",
+   "style_target": "morrison-toni",
+   "word_count": 2997,
+   "wave2": {
+    "nearest_author": "ondaatje-michael",
+    "nearest_distance": 2.214084176017671,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0
+   },
+   "fwonly": {
+    "nearest_author": "proulx-annie",
+    "nearest_distance": 1.613701272751184,
+    "nearest_w_percentile": 100.0,
+    "min_w_percentile": 100.0,
+    "target_w_percentile": 100.0,
+    "per_author": {
+     "proulx-annie": {
+      "distance": 1.613701272751184,
+      "w_percentile": 100.0,
+      "b_percentile": 99.81684981684981
+     },
+     "whitehead-colson": {
+      "distance": 1.6559432409046801,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "didion-joan": {
+      "distance": 1.6614708750738716,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ondaatje-michael": {
+      "distance": 1.6881204235414082,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "delillo-don": {
+      "distance": 1.6937538464453474,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "morrison-toni": {
+      "distance": 1.7245038475514172,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "mccarthy-cormac": {
+      "distance": 1.7612972298492608,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "tokarczuk-olga": {
+      "distance": 1.8058103291481802,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "sebald-w_g": {
+      "distance": 1.8343361316626718,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "robinson-marilynne": {
+      "distance": 1.8411609426934448,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "saunders-george": {
+      "distance": 1.8508386492076825,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "foster_wallace-david": {
+      "distance": 1.8844172610824763,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "murakami-haruki": {
+      "distance": 1.8945539914627412,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "pynchon-thomas": {
+      "distance": 1.9217502030877132,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     },
+     "ishiguro-kazuo": {
+      "distance": 2.0493182277977584,
+      "w_percentile": 100.0,
+      "b_percentile": 100.0
+     }
+    }
+   }
+  }
+ ]
+}

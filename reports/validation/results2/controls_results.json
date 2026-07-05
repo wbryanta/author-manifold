@@ -1,0 +1,1283 @@
+{
+  "meta": {
+    "generated": "2026-06-11T08:06:52.273417+00:00",
+    "tool": "rerun_entry_analysis.py (controls block)",
+    "window_words": 3000,
+    "practice_floor": 3000,
+    "seed": 20260609,
+    "n_bootstrap": 2000,
+    "scenario_target_binding": {
+      "irrigation": "mccarthy-cormac",
+      "hotel_fire": "didion-joan",
+      "night_ferry": "ondaatje-michael",
+      "estate_sale": "morrison-toni"
+    },
+    "n_unprompted_bound": 121,
+    "n_unprompted_all": 309
+  },
+  "unprompted_entry_control": {
+    "full": {
+      "level": "p90",
+      "design": "unprompted samples on the four BOUND scenarios, >= practice floor, truncated to the envelope window, placed against the BOUND target's LM envelope \u2014 the identical code path as styled entry; isolates envelope porosity to generic AI house style on an adjacent scenario from the imitation effect",
+      "unprompted": {
+        "entered": 20,
+        "n": 121,
+        "rate": 0.1652892561983471,
+        "cp_ci95": [
+          0.10398478528007127,
+          0.2436682380113488
+        ],
+        "clustering": "(model x scenario) cells",
+        "n_cells": 29
+      },
+      "styled": {
+        "entered": 48,
+        "n": 236,
+        "rate": 0.2033898305084746,
+        "cp_ci95": [
+          0.15393708721276442,
+          0.26045866132756623
+        ],
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 54
+      },
+      "increment": {
+        "styled_minus_unprompted_pp": 3.8100574310127477,
+        "cluster_bootstrap_ci95_pp": [
+          -12.570224846376565,
+          18.632982169280567
+        ],
+        "excludes_zero": false,
+        "fisher_two_sided_p_pooled_naive": 0.4766649265247135
+      },
+      "per_model": {
+        "claude-fable-5": {
+          "unprompted_entered": 5,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.25,
+          "styled_entered": 11,
+          "styled_n": 39,
+          "styled_rate": 0.28205128205128205,
+          "increment_pp": 3.205128205128205,
+          "fisher_two_sided_p": 1.0
+        },
+        "claude-haiku-4-5": {
+          "unprompted_entered": 0,
+          "unprompted_n": 9,
+          "unprompted_rate": 0.0,
+          "styled_entered": 1,
+          "styled_n": 17,
+          "styled_rate": 0.058823529411764705,
+          "increment_pp": 5.88235294117647,
+          "fisher_two_sided_p": 1.0
+        },
+        "claude-opus-4-8": {
+          "unprompted_entered": 2,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.1,
+          "styled_entered": 9,
+          "styled_n": 40,
+          "styled_rate": 0.225,
+          "increment_pp": 12.5,
+          "fisher_two_sided_p": 0.30694617513756706
+        },
+        "claude-sonnet-4-6": {
+          "unprompted_entered": 3,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.15,
+          "styled_entered": 6,
+          "styled_n": 32,
+          "styled_rate": 0.1875,
+          "increment_pp": 3.7500000000000004,
+          "fisher_two_sided_p": 1.0
+        },
+        "gemma4:26b": {
+          "unprompted_entered": 0,
+          "unprompted_n": 1,
+          "unprompted_rate": 0.0,
+          "styled_entered": 0,
+          "styled_n": 0,
+          "styled_rate": null,
+          "increment_pp": null,
+          "fisher_two_sided_p": null
+        },
+        "gpt-5": {
+          "unprompted_entered": 6,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.3,
+          "styled_entered": 16,
+          "styled_n": 40,
+          "styled_rate": 0.4,
+          "increment_pp": 10.000000000000004,
+          "fisher_two_sided_p": 0.5731576853867186
+        },
+        "gpt-5-mini": {
+          "unprompted_entered": 3,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.15,
+          "styled_entered": 5,
+          "styled_n": 40,
+          "styled_rate": 0.125,
+          "increment_pp": -2.4999999999999996,
+          "fisher_two_sided_p": 1.0
+        },
+        "qwen3.6:35b": {
+          "unprompted_entered": 1,
+          "unprompted_n": 11,
+          "unprompted_rate": 0.09090909090909091,
+          "styled_entered": 0,
+          "styled_n": 28,
+          "styled_rate": 0.0,
+          "increment_pp": -9.090909090909092,
+          "fisher_two_sided_p": 0.28205128205128205
+        }
+      },
+      "per_target": {
+        "didion-joan": {
+          "unprompted_entered": 0,
+          "unprompted_n": 33,
+          "unprompted_rate": 0.0,
+          "styled_entered": 2,
+          "styled_n": 66,
+          "styled_rate": 0.030303030303030304,
+          "lm_p90": 1.489920193952505
+        },
+        "mccarthy-cormac": {
+          "unprompted_entered": 19,
+          "unprompted_n": 29,
+          "unprompted_rate": 0.6551724137931034,
+          "styled_entered": 41,
+          "styled_n": 56,
+          "styled_rate": 0.7321428571428571,
+          "lm_p90": 1.7153463306553394
+        },
+        "morrison-toni": {
+          "unprompted_entered": 1,
+          "unprompted_n": 29,
+          "unprompted_rate": 0.034482758620689655,
+          "styled_entered": 3,
+          "styled_n": 58,
+          "styled_rate": 0.05172413793103448,
+          "lm_p90": 1.5095639367625855
+        },
+        "ondaatje-michael": {
+          "unprompted_entered": 0,
+          "unprompted_n": 30,
+          "unprompted_rate": 0.0,
+          "styled_entered": 2,
+          "styled_n": 56,
+          "styled_rate": 0.03571428571428571,
+          "lm_p90": 1.4085389941563662
+        }
+      }
+    },
+    "fwonly": {
+      "level": "p90",
+      "design": "unprompted samples on the four BOUND scenarios, >= practice floor, truncated to the envelope window, placed against the BOUND target's LM envelope \u2014 the identical code path as styled entry; isolates envelope porosity to generic AI house style on an adjacent scenario from the imitation effect",
+      "unprompted": {
+        "entered": 13,
+        "n": 121,
+        "rate": 0.10743801652892562,
+        "cp_ci95": [
+          0.05846012106321681,
+          0.1767137640059185
+        ],
+        "clustering": "(model x scenario) cells",
+        "n_cells": 29
+      },
+      "styled": {
+        "entered": 72,
+        "n": 236,
+        "rate": 0.3050847457627119,
+        "cp_ci95": [
+          0.24700587272029403,
+          0.36813754478160715
+        ],
+        "clustering": "(model x target x condition) cells",
+        "n_cells": 54
+      },
+      "increment": {
+        "styled_minus_unprompted_pp": 19.764672923378626,
+        "cluster_bootstrap_ci95_pp": [
+          4.319715897046735,
+          33.53011052469647
+        ],
+        "excludes_zero": true,
+        "fisher_two_sided_p_pooled_naive": 2.1745083588421133e-05
+      },
+      "per_model": {
+        "claude-fable-5": {
+          "unprompted_entered": 0,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.0,
+          "styled_entered": 14,
+          "styled_n": 39,
+          "styled_rate": 0.358974358974359,
+          "increment_pp": 35.8974358974359,
+          "fisher_two_sided_p": 0.001256973990883761
+        },
+        "claude-haiku-4-5": {
+          "unprompted_entered": 0,
+          "unprompted_n": 9,
+          "unprompted_rate": 0.0,
+          "styled_entered": 0,
+          "styled_n": 17,
+          "styled_rate": 0.0,
+          "increment_pp": 0.0,
+          "fisher_two_sided_p": 1.0
+        },
+        "claude-opus-4-8": {
+          "unprompted_entered": 0,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.0,
+          "styled_entered": 9,
+          "styled_n": 40,
+          "styled_rate": 0.225,
+          "increment_pp": 22.5,
+          "fisher_two_sided_p": 0.022939049415897337
+        },
+        "claude-sonnet-4-6": {
+          "unprompted_entered": 0,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.0,
+          "styled_entered": 3,
+          "styled_n": 32,
+          "styled_rate": 0.09375,
+          "increment_pp": 9.375,
+          "fisher_two_sided_p": 0.2760180995475113
+        },
+        "gemma4:26b": {
+          "unprompted_entered": 0,
+          "unprompted_n": 1,
+          "unprompted_rate": 0.0,
+          "styled_entered": 0,
+          "styled_n": 0,
+          "styled_rate": null,
+          "increment_pp": null,
+          "fisher_two_sided_p": null
+        },
+        "gpt-5": {
+          "unprompted_entered": 9,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.45,
+          "styled_entered": 29,
+          "styled_n": 40,
+          "styled_rate": 0.725,
+          "increment_pp": 27.499999999999996,
+          "fisher_two_sided_p": 0.049324161712829245
+        },
+        "gpt-5-mini": {
+          "unprompted_entered": 2,
+          "unprompted_n": 20,
+          "unprompted_rate": 0.1,
+          "styled_entered": 14,
+          "styled_n": 40,
+          "styled_rate": 0.35,
+          "increment_pp": 24.999999999999996,
+          "fisher_two_sided_p": 0.0617615148206659
+        },
+        "qwen3.6:35b": {
+          "unprompted_entered": 2,
+          "unprompted_n": 11,
+          "unprompted_rate": 0.18181818181818182,
+          "styled_entered": 3,
+          "styled_n": 28,
+          "styled_rate": 0.10714285714285714,
+          "increment_pp": -7.467532467532469,
+          "fisher_two_sided_p": 0.6088193456614509
+        }
+      },
+      "per_target": {
+        "didion-joan": {
+          "unprompted_entered": 0,
+          "unprompted_n": 33,
+          "unprompted_rate": 0.0,
+          "styled_entered": 9,
+          "styled_n": 66,
+          "styled_rate": 0.13636363636363635,
+          "lm_p90": 1.2389102345550191
+        },
+        "mccarthy-cormac": {
+          "unprompted_entered": 9,
+          "unprompted_n": 29,
+          "unprompted_rate": 0.3103448275862069,
+          "styled_entered": 43,
+          "styled_n": 56,
+          "styled_rate": 0.7678571428571429,
+          "lm_p90": 1.5528470739525142
+        },
+        "morrison-toni": {
+          "unprompted_entered": 3,
+          "unprompted_n": 29,
+          "unprompted_rate": 0.10344827586206896,
+          "styled_entered": 14,
+          "styled_n": 58,
+          "styled_rate": 0.2413793103448276,
+          "lm_p90": 1.33599093168753
+        },
+        "ondaatje-michael": {
+          "unprompted_entered": 1,
+          "unprompted_n": 30,
+          "unprompted_rate": 0.03333333333333333,
+          "styled_entered": 6,
+          "styled_n": 56,
+          "styled_rate": 0.10714285714285714,
+          "lm_p90": 1.2266086994239063
+        }
+      }
+    }
+  },
+  "width": {
+    "full": {
+      "level": "p90",
+      "model_target_table": {
+        "targets": [
+          "didion-joan",
+          "mccarthy-cormac",
+          "morrison-toni",
+          "ondaatje-michael"
+        ],
+        "per_model": {
+          "claude-fable-5": {
+            "didion-joan": {
+              "entered": 1,
+              "n": 9,
+              "rate": 0.1111111111111111
+            },
+            "mccarthy-cormac": {
+              "entered": 10,
+              "n": 10,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            }
+          },
+          "claude-haiku-4-5": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 8,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 1,
+              "n": 3,
+              "rate": 0.3333333333333333
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 1,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 5,
+              "rate": 0.0
+            }
+          },
+          "claude-opus-4-8": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 9,
+              "n": 10,
+              "rate": 0.9
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            }
+          },
+          "claude-sonnet-4-6": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 6,
+              "n": 6,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 6,
+              "rate": 0.0
+            }
+          },
+          "gpt-5": {
+            "didion-joan": {
+              "entered": 1,
+              "n": 10,
+              "rate": 0.1
+            },
+            "mccarthy-cormac": {
+              "entered": 10,
+              "n": 10,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 3,
+              "n": 10,
+              "rate": 0.3
+            },
+            "ondaatje-michael": {
+              "entered": 2,
+              "n": 10,
+              "rate": 0.2
+            }
+          },
+          "gpt-5-mini": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 5,
+              "n": 10,
+              "rate": 0.5
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            }
+          },
+          "qwen3.6:35b": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 9,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 0,
+              "n": 7,
+              "rate": 0.0
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 7,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 5,
+              "rate": 0.0
+            }
+          }
+        }
+      },
+      "pseudo_target_all_authors": {
+        "design": "every floor-compliant unprompted sample (all scenarios, truncated to the window) placed against every shelf author's LM envelope; entry rate per author vs envelope p90 width \u2014 width-vs-porosity with the imitation prompt removed and n_authors = 15, not 4",
+        "n_unprompted_samples": 309,
+        "n_authors": 15,
+        "per_author": {
+          "delillo-don": {
+            "lm_p90": 1.458465075950291,
+            "entered": 3,
+            "n": 309,
+            "rate": 0.009708737864077669,
+            "median_distance": 1.7133036170935356,
+            "is_imitation_target": false
+          },
+          "didion-joan": {
+            "lm_p90": 1.489920193952505,
+            "entered": 1,
+            "n": 309,
+            "rate": 0.003236245954692557,
+            "median_distance": 1.7380901489274079,
+            "is_imitation_target": true
+          },
+          "foster_wallace-david": {
+            "lm_p90": 1.5995129507318546,
+            "entered": 26,
+            "n": 309,
+            "rate": 0.08414239482200647,
+            "median_distance": 1.7675302062258424,
+            "is_imitation_target": false
+          },
+          "ishiguro-kazuo": {
+            "lm_p90": 1.7147464692594956,
+            "entered": 2,
+            "n": 309,
+            "rate": 0.006472491909385114,
+            "median_distance": 1.9631631205798157,
+            "is_imitation_target": false
+          },
+          "mccarthy-cormac": {
+            "lm_p90": 1.7153463306553394,
+            "entered": 91,
+            "n": 309,
+            "rate": 0.29449838187702265,
+            "median_distance": 1.7666109366637572,
+            "is_imitation_target": true
+          },
+          "morrison-toni": {
+            "lm_p90": 1.5095639367625855,
+            "entered": 7,
+            "n": 309,
+            "rate": 0.022653721682847898,
+            "median_distance": 1.7256304992842169,
+            "is_imitation_target": true
+          },
+          "murakami-haruki": {
+            "lm_p90": 1.6270384294358298,
+            "entered": 36,
+            "n": 309,
+            "rate": 0.11650485436893204,
+            "median_distance": 1.7779681228575812,
+            "is_imitation_target": false
+          },
+          "ondaatje-michael": {
+            "lm_p90": 1.4085389941563662,
+            "entered": 1,
+            "n": 309,
+            "rate": 0.003236245954692557,
+            "median_distance": 1.6609617775796504,
+            "is_imitation_target": true
+          },
+          "proulx-annie": {
+            "lm_p90": 1.4366189299672738,
+            "entered": 6,
+            "n": 309,
+            "rate": 0.019417475728155338,
+            "median_distance": 1.653044122347528,
+            "is_imitation_target": false
+          },
+          "pynchon-thomas": {
+            "lm_p90": 1.430677624034038,
+            "entered": 0,
+            "n": 309,
+            "rate": 0.0,
+            "median_distance": 1.7736296964279321,
+            "is_imitation_target": false
+          },
+          "robinson-marilynne": {
+            "lm_p90": 1.7310739110895244,
+            "entered": 74,
+            "n": 309,
+            "rate": 0.23948220064724918,
+            "median_distance": 1.810037911864616,
+            "is_imitation_target": false
+          },
+          "saunders-george": {
+            "lm_p90": 1.5345143454566323,
+            "entered": 3,
+            "n": 309,
+            "rate": 0.009708737864077669,
+            "median_distance": 1.848492939869815,
+            "is_imitation_target": false
+          },
+          "sebald-w_g": {
+            "lm_p90": 1.2935558889179908,
+            "entered": 0,
+            "n": 309,
+            "rate": 0.0,
+            "median_distance": 1.7525350371753134,
+            "is_imitation_target": false
+          },
+          "tokarczuk-olga": {
+            "lm_p90": 1.452172916108033,
+            "entered": 3,
+            "n": 309,
+            "rate": 0.009708737864077669,
+            "median_distance": 1.685047550208942,
+            "is_imitation_target": false
+          },
+          "whitehead-colson": {
+            "lm_p90": 1.4539453558325903,
+            "entered": 2,
+            "n": 309,
+            "rate": 0.006472491909385114,
+            "median_distance": 1.7132779401148075,
+            "is_imitation_target": false
+          }
+        },
+        "pearson_r_width_vs_rate": 0.7286718750913274,
+        "pearson_r_ci95_fisher_z": [
+          0.3452903473021343,
+          0.9036358169072485
+        ],
+        "pearson_ci_note": "Fisher-z CI treats authors as independent units; the same samples are scored against every envelope, so author rates share sampling noise (the width axis does not)",
+        "spearman_rho": 0.7493409659389418,
+        "spearman_p": 0.0013007390070083687
+      },
+      "per_target_distance_restatement": {
+        "note": "entry = P(distance <= width-quantile) is mechanically increasing in width at fixed distance; the non-circular content is how flat the styled distance distributions are across targets vs how much the widths vary",
+        "per_target": {
+          "didion-joan": {
+            "n_styled": 66,
+            "styled_median_distance": 1.7322148219751534,
+            "lm_p90_width": 1.489920193952505,
+            "median_percentile_in_target_envelope": 100.0
+          },
+          "mccarthy-cormac": {
+            "n_styled": 56,
+            "styled_median_distance": 1.5913381110931497,
+            "lm_p90_width": 1.7153463306553394,
+            "median_percentile_in_target_envelope": 76.89243027888446
+          },
+          "morrison-toni": {
+            "n_styled": 58,
+            "styled_median_distance": 1.787612492408348,
+            "lm_p90_width": 1.5095639367625855,
+            "median_percentile_in_target_envelope": 98.0295566502463
+          },
+          "ondaatje-michael": {
+            "n_styled": 56,
+            "styled_median_distance": 1.6678482781072341,
+            "lm_p90_width": 1.4085389941563662,
+            "median_percentile_in_target_envelope": 100.0
+          }
+        },
+        "spread_of_styled_medians": 0.19627438131519837,
+        "spread_of_widths": 0.3068073364989732
+      }
+    },
+    "fwonly": {
+      "level": "p90",
+      "model_target_table": {
+        "targets": [
+          "didion-joan",
+          "mccarthy-cormac",
+          "morrison-toni",
+          "ondaatje-michael"
+        ],
+        "per_model": {
+          "claude-fable-5": {
+            "didion-joan": {
+              "entered": 3,
+              "n": 9,
+              "rate": 0.3333333333333333
+            },
+            "mccarthy-cormac": {
+              "entered": 10,
+              "n": 10,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 1,
+              "n": 10,
+              "rate": 0.1
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            }
+          },
+          "claude-haiku-4-5": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 8,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 0,
+              "n": 3,
+              "rate": 0.0
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 1,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 5,
+              "rate": 0.0
+            }
+          },
+          "claude-opus-4-8": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 7,
+              "n": 10,
+              "rate": 0.7
+            },
+            "morrison-toni": {
+              "entered": 2,
+              "n": 10,
+              "rate": 0.2
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            }
+          },
+          "claude-sonnet-4-6": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 3,
+              "n": 6,
+              "rate": 0.5
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 10,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 6,
+              "rate": 0.0
+            }
+          },
+          "gpt-5": {
+            "didion-joan": {
+              "entered": 5,
+              "n": 10,
+              "rate": 0.5
+            },
+            "mccarthy-cormac": {
+              "entered": 10,
+              "n": 10,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 9,
+              "n": 10,
+              "rate": 0.9
+            },
+            "ondaatje-michael": {
+              "entered": 5,
+              "n": 10,
+              "rate": 0.5
+            }
+          },
+          "gpt-5-mini": {
+            "didion-joan": {
+              "entered": 1,
+              "n": 10,
+              "rate": 0.1
+            },
+            "mccarthy-cormac": {
+              "entered": 10,
+              "n": 10,
+              "rate": 1.0
+            },
+            "morrison-toni": {
+              "entered": 2,
+              "n": 10,
+              "rate": 0.2
+            },
+            "ondaatje-michael": {
+              "entered": 1,
+              "n": 10,
+              "rate": 0.1
+            }
+          },
+          "qwen3.6:35b": {
+            "didion-joan": {
+              "entered": 0,
+              "n": 9,
+              "rate": 0.0
+            },
+            "mccarthy-cormac": {
+              "entered": 3,
+              "n": 7,
+              "rate": 0.42857142857142855
+            },
+            "morrison-toni": {
+              "entered": 0,
+              "n": 7,
+              "rate": 0.0
+            },
+            "ondaatje-michael": {
+              "entered": 0,
+              "n": 5,
+              "rate": 0.0
+            }
+          }
+        }
+      },
+      "pseudo_target_all_authors": {
+        "design": "every floor-compliant unprompted sample (all scenarios, truncated to the window) placed against every shelf author's LM envelope; entry rate per author vs envelope p90 width \u2014 width-vs-porosity with the imitation prompt removed and n_authors = 15, not 4",
+        "n_unprompted_samples": 309,
+        "n_authors": 15,
+        "per_author": {
+          "delillo-don": {
+            "lm_p90": 1.2871980364053401,
+            "entered": 24,
+            "n": 309,
+            "rate": 0.07766990291262135,
+            "median_distance": 1.4955230088965772,
+            "is_imitation_target": false
+          },
+          "didion-joan": {
+            "lm_p90": 1.2389102345550191,
+            "entered": 5,
+            "n": 309,
+            "rate": 0.016181229773462782,
+            "median_distance": 1.4618488138364731,
+            "is_imitation_target": true
+          },
+          "foster_wallace-david": {
+            "lm_p90": 1.688567776424977,
+            "entered": 235,
+            "n": 309,
+            "rate": 0.7605177993527508,
+            "median_distance": 1.5826902772475815,
+            "is_imitation_target": false
+          },
+          "ishiguro-kazuo": {
+            "lm_p90": 1.5747226473711136,
+            "entered": 22,
+            "n": 309,
+            "rate": 0.07119741100323625,
+            "median_distance": 1.8016593592918582,
+            "is_imitation_target": false
+          },
+          "mccarthy-cormac": {
+            "lm_p90": 1.5528470739525142,
+            "entered": 151,
+            "n": 309,
+            "rate": 0.4886731391585761,
+            "median_distance": 1.5595847756780856,
+            "is_imitation_target": true
+          },
+          "morrison-toni": {
+            "lm_p90": 1.33599093168753,
+            "entered": 27,
+            "n": 309,
+            "rate": 0.08737864077669903,
+            "median_distance": 1.5175735962043568,
+            "is_imitation_target": true
+          },
+          "murakami-haruki": {
+            "lm_p90": 1.7376244095725364,
+            "entered": 244,
+            "n": 309,
+            "rate": 0.7896440129449838,
+            "median_distance": 1.6186935001700518,
+            "is_imitation_target": false
+          },
+          "ondaatje-michael": {
+            "lm_p90": 1.2266086994239063,
+            "entered": 9,
+            "n": 309,
+            "rate": 0.02912621359223301,
+            "median_distance": 1.4695611530565593,
+            "is_imitation_target": true
+          },
+          "proulx-annie": {
+            "lm_p90": 1.1972248002511257,
+            "entered": 31,
+            "n": 309,
+            "rate": 0.10032362459546926,
+            "median_distance": 1.397813660892512,
+            "is_imitation_target": false
+          },
+          "pynchon-thomas": {
+            "lm_p90": 1.4978099260941844,
+            "entered": 57,
+            "n": 309,
+            "rate": 0.18446601941747573,
+            "median_distance": 1.6190588791796703,
+            "is_imitation_target": false
+          },
+          "robinson-marilynne": {
+            "lm_p90": 1.4965732650387233,
+            "entered": 76,
+            "n": 309,
+            "rate": 0.2459546925566343,
+            "median_distance": 1.5933321345512956,
+            "is_imitation_target": false
+          },
+          "saunders-george": {
+            "lm_p90": 1.3731886579883568,
+            "entered": 22,
+            "n": 309,
+            "rate": 0.07119741100323625,
+            "median_distance": 1.6153421789323141,
+            "is_imitation_target": false
+          },
+          "sebald-w_g": {
+            "lm_p90": 1.2358444047433406,
+            "entered": 0,
+            "n": 309,
+            "rate": 0.0,
+            "median_distance": 1.5731502439001064,
+            "is_imitation_target": false
+          },
+          "tokarczuk-olga": {
+            "lm_p90": 1.3912794340139798,
+            "entered": 59,
+            "n": 309,
+            "rate": 0.19093851132686085,
+            "median_distance": 1.5318062871339122,
+            "is_imitation_target": false
+          },
+          "whitehead-colson": {
+            "lm_p90": 1.2432035397989998,
+            "entered": 30,
+            "n": 309,
+            "rate": 0.0970873786407767,
+            "median_distance": 1.4413195245366845,
+            "is_imitation_target": false
+          }
+        },
+        "pearson_r_width_vs_rate": 0.8441987871188628,
+        "pearson_r_ci95_fisher_z": [
+          0.5848525037107615,
+          0.9469521354069704
+        ],
+        "pearson_ci_note": "Fisher-z CI treats authors as independent units; the same samples are scored against every envelope, so author rates share sampling noise (the width axis does not)",
+        "spearman_rho": 0.6845400409932019,
+        "spearman_p": 0.004873765696234934
+      },
+      "per_target_distance_restatement": {
+        "note": "entry = P(distance <= width-quantile) is mechanically increasing in width at fixed distance; the non-circular content is how flat the styled distance distributions are across targets vs how much the widths vary",
+        "per_target": {
+          "didion-joan": {
+            "n_styled": 66,
+            "styled_median_distance": 1.4192880572730653,
+            "lm_p90_width": 1.2389102345550191,
+            "median_percentile_in_target_envelope": 100.0
+          },
+          "mccarthy-cormac": {
+            "n_styled": 56,
+            "styled_median_distance": 1.421698263931394,
+            "lm_p90_width": 1.5528470739525142,
+            "median_percentile_in_target_envelope": 82.47011952191235
+          },
+          "morrison-toni": {
+            "n_styled": 58,
+            "styled_median_distance": 1.4771877724086158,
+            "lm_p90_width": 1.33599093168753,
+            "median_percentile_in_target_envelope": 98.52216748768473
+          },
+          "ondaatje-michael": {
+            "n_styled": 56,
+            "styled_median_distance": 1.3766495235171603,
+            "lm_p90_width": 1.2266086994239063,
+            "median_percentile_in_target_envelope": 100.0
+          }
+        },
+        "spread_of_styled_medians": 0.10053824889145546,
+        "spread_of_widths": 0.32623837452860793
+      }
+    }
+  },
+  "model_matched_completion": {
+    "available": true,
+    "completion_results": "reports/validation/results2/completion_results.json",
+    "completion_generated": "2026-06-11T08:06:40.225669+00:00",
+    "vocab": {
+      "fwonly": {
+        "matched_models": [
+          "claude-fable-5",
+          "claude-haiku-4-5",
+          "claude-opus-4-8",
+          "claude-sonnet-4-6",
+          "gpt-5-mini",
+          "qwen3.6:35b"
+        ],
+        "excluded_models": {
+          "gpt-5": "no compliant completion",
+          "gemma4:26b": "no primary styled sample"
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "completion_entered": 10,
+            "completion_n": 20,
+            "completion_rate": 0.5,
+            "styled_entered": 14,
+            "styled_n": 39,
+            "styled_rate": 0.358974358974359,
+            "diff_pp": 14.102564102564102,
+            "direction": "completion_higher"
+          },
+          "claude-haiku-4-5": {
+            "completion_entered": 0,
+            "completion_n": 2,
+            "completion_rate": 0.0,
+            "styled_entered": 0,
+            "styled_n": 17,
+            "styled_rate": 0.0,
+            "diff_pp": 0.0,
+            "direction": "tie"
+          },
+          "claude-opus-4-8": {
+            "completion_entered": 7,
+            "completion_n": 20,
+            "completion_rate": 0.35,
+            "styled_entered": 9,
+            "styled_n": 40,
+            "styled_rate": 0.225,
+            "diff_pp": 12.499999999999996,
+            "direction": "completion_higher"
+          },
+          "claude-sonnet-4-6": {
+            "completion_entered": 3,
+            "completion_n": 20,
+            "completion_rate": 0.15,
+            "styled_entered": 3,
+            "styled_n": 32,
+            "styled_rate": 0.09375,
+            "diff_pp": 5.624999999999999,
+            "direction": "completion_higher"
+          },
+          "gpt-5-mini": {
+            "completion_entered": 5,
+            "completion_n": 8,
+            "completion_rate": 0.625,
+            "styled_entered": 14,
+            "styled_n": 40,
+            "styled_rate": 0.35,
+            "diff_pp": 27.500000000000004,
+            "direction": "completion_higher"
+          },
+          "qwen3.6:35b": {
+            "completion_entered": 2,
+            "completion_n": 16,
+            "completion_rate": 0.125,
+            "styled_entered": 3,
+            "styled_n": 28,
+            "styled_rate": 0.10714285714285714,
+            "diff_pp": 1.7857142857142863,
+            "direction": "completion_higher"
+          }
+        },
+        "sign_test": {
+          "completion_higher": 5,
+          "styled_higher": 0,
+          "ties_uninformative": 1,
+          "n_informative": 5,
+          "exact_p_one_sided_greater": 0.03125,
+          "exact_p_two_sided": 0.0625
+        },
+        "pooled_matched": {
+          "completion": {
+            "entered": 27,
+            "n": 86,
+            "rate": 0.313953488372093,
+            "cp_ci95": [
+              0.21811834720997633,
+              0.42303010571452354
+            ]
+          },
+          "styled": {
+            "entered": 43,
+            "n": 196,
+            "rate": 0.2193877551020408,
+            "cp_ci95": [
+              0.16355469821880286,
+              0.2839141788280579
+            ]
+          },
+          "diff_pp": 9.456573327005222
+        }
+      },
+      "full": {
+        "matched_models": [
+          "claude-fable-5",
+          "claude-haiku-4-5",
+          "claude-opus-4-8",
+          "claude-sonnet-4-6",
+          "gpt-5-mini",
+          "qwen3.6:35b"
+        ],
+        "excluded_models": {
+          "gpt-5": "no compliant completion",
+          "gemma4:26b": "no primary styled sample"
+        },
+        "per_model": {
+          "claude-fable-5": {
+            "completion_entered": 10,
+            "completion_n": 20,
+            "completion_rate": 0.5,
+            "styled_entered": 11,
+            "styled_n": 39,
+            "styled_rate": 0.28205128205128205,
+            "diff_pp": 21.794871794871796,
+            "direction": "completion_higher"
+          },
+          "claude-haiku-4-5": {
+            "completion_entered": 0,
+            "completion_n": 2,
+            "completion_rate": 0.0,
+            "styled_entered": 1,
+            "styled_n": 17,
+            "styled_rate": 0.058823529411764705,
+            "diff_pp": -5.88235294117647,
+            "direction": "styled_higher"
+          },
+          "claude-opus-4-8": {
+            "completion_entered": 3,
+            "completion_n": 20,
+            "completion_rate": 0.15,
+            "styled_entered": 9,
+            "styled_n": 40,
+            "styled_rate": 0.225,
+            "diff_pp": -7.500000000000001,
+            "direction": "styled_higher"
+          },
+          "claude-sonnet-4-6": {
+            "completion_entered": 5,
+            "completion_n": 20,
+            "completion_rate": 0.25,
+            "styled_entered": 6,
+            "styled_n": 32,
+            "styled_rate": 0.1875,
+            "diff_pp": 6.25,
+            "direction": "completion_higher"
+          },
+          "gpt-5-mini": {
+            "completion_entered": 0,
+            "completion_n": 8,
+            "completion_rate": 0.0,
+            "styled_entered": 5,
+            "styled_n": 40,
+            "styled_rate": 0.125,
+            "diff_pp": -12.5,
+            "direction": "styled_higher"
+          },
+          "qwen3.6:35b": {
+            "completion_entered": 0,
+            "completion_n": 16,
+            "completion_rate": 0.0,
+            "styled_entered": 0,
+            "styled_n": 28,
+            "styled_rate": 0.0,
+            "diff_pp": 0.0,
+            "direction": "tie"
+          }
+        },
+        "sign_test": {
+          "completion_higher": 2,
+          "styled_higher": 3,
+          "ties_uninformative": 1,
+          "n_informative": 5,
+          "exact_p_one_sided_greater": 0.8125,
+          "exact_p_two_sided": 1.0
+        },
+        "pooled_matched": {
+          "completion": {
+            "entered": 18,
+            "n": 86,
+            "rate": 0.20930232558139536,
+            "cp_ci95": [
+              0.12901951501316414,
+              0.3104660055811897
+            ]
+          },
+          "styled": {
+            "entered": 32,
+            "n": 196,
+            "rate": 0.16326530612244897,
+            "cp_ci95": [
+              0.11443373324375308,
+              0.2225931851247021
+            ]
+          },
+          "diff_pp": 4.603701945894639
+        }
+      }
+    }
+  },
+  "e8_yardstick": {
+    "available": true,
+    "e8_path": "reports/validation/wave2/e8_results.json",
+    "overall_strict_gate_pass_as_committed": false,
+    "note": "REPORTING DATA ONLY \u2014 the strict gate verdict is quoted as committed (no re-adjudication). The envelopes are used with the OBSERVED self-entry rate as the comparator; the nominal-0.90 gate FAILS strictly (per-author floor, 3 of 4 shelves) and the pooled rates below are the honest yardstick the entry tables are read against.",
+    "shelves": {
+      "wave2": {
+        "inside_p90": 2495,
+        "n_windows": 2842,
+        "n_works": 78,
+        "rate": 0.8779028852920479,
+        "cp_ci95_window_naive": [
+          0.8652997097148243,
+          0.8897219359648777
+        ],
+        "work_bootstrap_ci95": [
+          0.838370515421353,
+          0.9105084853090172
+        ],
+        "strict_gate_pass_as_committed": false
+      },
+      "wave2_fwonly": {
+        "inside_p90": 2380,
+        "n_windows": 2842,
+        "n_works": 78,
+        "rate": 0.8374384236453202,
+        "cp_ci95_window_naive": [
+          0.8233514622281779,
+          0.8508266978094418
+        ],
+        "work_bootstrap_ci95": [
+          0.7731033855575598,
+          0.9019050093364986
+        ],
+        "strict_gate_pass_as_committed": false
+      },
+      "pd": {
+        "inside_p90": 1375,
+        "n_windows": 1575,
+        "n_works": 35,
+        "rate": 0.873015873015873,
+        "cp_ci95_window_naive": [
+          0.8555574664298254,
+          0.8890698869295661
+        ],
+        "work_bootstrap_ci95": [
+          0.8290641535059635,
+          0.914494580440872
+        ],
+        "strict_gate_pass_as_committed": true
+      },
+      "pd_fwonly": {
+        "inside_p90": 1378,
+        "n_windows": 1575,
+        "n_works": 35,
+        "rate": 0.8749206349206349,
+        "cp_ci95_window_naive": [
+          0.8575643055444789,
+          0.8908651769110844
+        ],
+        "work_bootstrap_ci95": [
+          0.8363451284792809,
+          0.9105416201526787
+        ],
+        "strict_gate_pass_as_committed": false
+      }
+    }
+  }
+}
