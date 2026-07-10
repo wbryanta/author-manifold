@@ -26,7 +26,7 @@ Figures (each written as PDF + PNG, serif fonts, colorblind-safe palette):
       not duplicated) and verified against results2/controls_results.json
       counts before rendering.
   F3  Capacity ceiling: feature-variant comparison (E1 AUC + E2 top-1)
-      against the pre-registered gates.
+      against the stated gates (rule provenance in Appendix B).
   F4  R3 dimension movement ([FIGURES-V3] re-sourced to the floor-compliant
       run, n=236): forest plot of median per-dimension movement toward the
       style target with bootstrap CIs; MFW chassis highlighted; caption
@@ -690,7 +690,7 @@ def figure_f3(variants, out_dir: Path, captions: list) -> None:
     save(
         fig, out_dir, "F3_capacity_ceiling", captions,
         "F3 — The capacity ceiling. Feature-variant comparison on the wave-1 "
-        "gold shelf (11 authors, 59 works) against the pre-registered gates "
+        "gold shelf (11 authors, 59 works) against the stated gates (rule provenance in Appendix B) "
         "(dashed): the 18 interpretable dimensions (D18) are individually "
         "valid but collectively miss both gates; the function-word MFW Delta "
         "block (selected variant, dark blue) clears them. Identity rides on "
@@ -1105,8 +1105,10 @@ def figure_f7(controls, entry, out_dir: Path, captions: list) -> None:
         f"{pooled_c['entered']}/{pooled_c['n']} "
         f"({100 * pooled_c['rate']:.1f}%) vs styled "
         f"{pooled_s['entered']}/{pooled_s['n']} "
-        f"({100 * pooled_s['rate']:.1f}%). Naming the author adds nothing "
-        "that continuing the author's own text does not already achieve. "
+        f"({100 * pooled_s['rate']:.1f}%). For the compliant models, under the primary "
+        f"function-word vocabulary, naming the author adds nothing that continuing "
+        f"the author's own text does not already achieve (the full-vocabulary sign "
+        f"pattern reverses for two of five models; gpt-5 is unobservable). "
         "Full vocabulary (right, secondary): the direction reverses for "
         "2 of 5 informative models — the completion prompt carries the "
         "source passage's content, so the fw-only framing is primary. "

@@ -102,7 +102,7 @@ LEVELS = (90, 95, 99)
 VOCABS = ("fwonly", "full")
 PRIMARY_VOCAB = "fwonly"
 PRIMARY_LEVEL = 90
-DELTA_MARGIN = 0.099  # pre-registered: half the +19.8 pp Sec. 5.2 increment
+DELTA_MARGIN = 0.099  # pre-specified in the analysis plan: half the +19.8 pp Sec. 5.2 increment
 
 EXPECTED_BINDING = {
     "irrigation": "mccarthy-cormac",

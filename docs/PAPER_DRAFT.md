@@ -335,7 +335,7 @@ imitators.
 - **W/B**: within-author and between-author distance distributions at full-novel scale (§3.4).
 - **LM-W envelopes**: per-author distributions of 3,000-word-window distances to the author's own centroid — the length-matched comparator for every window-scale entry claim (§3.9).
 - **p90 entry**: a sample "enters" an author's envelope if its distance is at or below the author's LM p90 quantile (§3.9).
-- **E1–E8 gates**: validation gates the space must pass before any placement claim (§3.5); E8 is the same-author positive control — the authors' own held-out windows must re-enter their own envelopes (§3.9).
+- **E1–E8 gates**: validation gates recorded for the space before any placement claim (§3.5); E8 is the same-author positive control — the authors' own held-out windows re-enter their own envelopes at an observed 84–88% (§3.9).
 
 ### 3.1 The question as a measurement problem
 
@@ -377,7 +377,7 @@ These distributions are valid comparators **only for novel-scale texts**. Delta 
 
 ### 3.5 Validation-gate protocol (E1–E8)
 
-The space is not used for any placement claim until explicit gates (rule provenance: Appendix B) pass on the shelf. Gates, thresholds, and machine-readable pass/fail records:
+The space is not used for any placement claim until every explicit gate (rule provenance: Appendix B) is run on the shelf, its result recorded, and every failure explicitly adjudicated — E8's strict-gate FAIL and its observed-yardstick adjudication (§3.9) being the operative case. Gates, thresholds, and machine-readable pass/fail records:
 
 | Exp | Question | Gate | Observed | Verdict |
 |---|---|---|---|---|
@@ -641,7 +641,7 @@ Style prompting makes prose *denser* and more metronomic than the target (lexica
 | Full-vocab, native-length n=318 (violates the §3.7 floors; superseded, not used) | −0.030 [−0.048, −0.013]; Holm p = 0.042 | retained for audit only |
 | fw-only matched-length distance change | −0.087 Delta (cell-bootstrap 95% [−0.122, −0.055]); 71.6% of samples closer | ≈6% of the fw-only median styled target distance (1.418) |
 
-Denominator note: the −0.4% closure is a share of the unprompted *gap*; the ≈6% is a share of the fw-only median styled *distance* — different denominators, so the two percentages are not directly comparable. Per-target MFW movement is sign-split 2/4 in the floor-compliant run (Didion +0.054 and McCarthy +0.068 toward; Morrison −0.049 and Ondaatje −0.035 away), so no direction claim is available either. So the mechanism is: prompting closes a measurable but small fraction (~6%) of the closed-class gap when content words are excluded, and approximately none of it when they are not.
+Denominator note: the −0.4% closure is a share of the unprompted *gap*; the ≈6% is a share of the fw-only median styled *distance* — different denominators, so the two percentages are not directly comparable. Per-target MFW movement is sign-split 2/4 in the floor-compliant run (Didion +0.054 and McCarthy +0.068 toward; Morrison −0.049 and Ondaatje −0.035 away), so no direction claim is available either. So the mechanism is: prompting moves the closed-class profile by a measurable but small amount — about 6% of the median styled target distance — when content words are excluded, and approximately not at all when they are not.
 
 Caricature survives where the data support it and only there: overshoot past the target (relative position > 1.25 along the unprompted→target axis) crosses the pre-set ≥25%-of-eligible-samples bar for **self_focus_ratio only** (61/200 = 30.5%); metaphor density sits well below the bar (37/233 = 15.9%) and is not claimed. Per-target texture profiles differ — Didion prompts move sentiment hardest (+1.21), Morrison prompts move repetition hardest (+1.94).
 <!-- evidence: reports/validation/author_space/results2/r3_floor_compliant.md (primary); reports/validation/author_space/results2/entry_report.md §§c (rank-vs-metric), e (chassis) -->
@@ -898,7 +898,7 @@ Because the contemporary shelf cannot be redistributed, the full pipeline is rel
 - **Artifact JSONs**: aggregate-only feature vectors, W/B calibration, and LM envelope sidecars (with source-artifact SHA-256 hashes) for the contemporary shelf; full artifacts for the PD shelf.
 - **Machine-readable results**: every table in this paper is generated from committed JSON results with seeds recorded (Appendix B).
 - **Review reports**: both adversarial review reports, committed verbatim (provenance disclosed in §8.11).
-- **Companion repository** (currently private; public at publication) mirroring code, PD shelf manifests, AI corpus, and result artifacts.
+- **Companion repository** (public: github.com/wbryanta/author-manifold) mirroring code, PD shelf manifests, AI corpus, and result artifacts.
 
 **Replication quickstart claim:** from the companion repository alone, a reader can (1) rebuild the PD shelf space and its LM envelopes, (2) verify the E8 positive control at the §3.9 values, (3) reproduce the Brinton pastiche entry rates under both vocabularies (34/36 and 27/36 at p90), and (4) place the released AI corpus against the released envelope sidecars. Contemporary-shelf numbers verify against released aggregate artifacts; regeneration from raw texts requires locally held copies of the novels.
 
