@@ -238,7 +238,10 @@ imitations at 1.4–2k words [@mikros2025]; in-context imitation largely
 fails for everyday authors [@wang2025]; LLM impersonations are *easier*
 for forensic verification to reject than genuine human impostors
 [@zeng2026]; mimicry of literary and political figures is detectable
-from a small stylometric feature set [@alsadhan2026]. What no design in
+from a small stylometric feature set [@alsadhan2026]; and, worked from
+the opposite direction on the within-author axis itself, models that
+capture between-author differences fail to reproduce an author's own
+internal stylistic dynamics [@liu2025]. What no design in
 this class carries — on either side of the verdict — is a porosity
 control (how much never-prompted machine text the criterion already
 admits; for us, 65.5% of it into McCarthy's full-vocabulary envelope), a
@@ -279,8 +282,11 @@ the one this framing must be positioned against rather than merely
 credited: the impostors method [@koppel2014] decides same-author
 questions by ranking a document against background impostors under
 feature subsampling, PAN ran author verification as a shared task for
-years [@stamatatos2015], and Delta's reliability under shrinking samples
-is mapped in detail by Eder [@eder2015]. Those designs produce (sometimes graded) scores in service of a binary
+years [@stamatatos2015] — within which profile-based verifiers already
+derived per-author acceptance thresholds from the dissimilarity spread
+among an author's own known documents [@jankowska2013], the closest
+ancestor of a per-author yardstick — and Delta's reliability under
+shrinking samples is mapped in detail by Eder [@eder2015]. Those designs produce (sometimes graded) scores in service of a binary
 same-or-different verdict, calibrated against verifier-internal score
 distributions; none of them yields the unit this paper is built to
 produce, nor its two guards — the observed (not assumed) same-author
