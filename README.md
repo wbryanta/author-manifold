@@ -4,7 +4,7 @@
 instrument, validation harness, corpora, and recorded results behind
 **"The Width of a Voice: Placing Machine Imitation Inside Authors' Own
 Variation"** (Will Bryant, preprint v0.5.4 — PDF at
-[`docs/paper/`](docs/paper/), DOI: [10.5281/zenodo.21210011](https://doi.org/10.5281/zenodo.21210011); targeting
+[`docs/paper/`](docs/paper/), DOI: [10.5281/zenodo.21302872](https://doi.org/10.5281/zenodo.21302872); targeting
 CHR 2027).
 
 Instead of measuring "voice distance" from a single privileged origin, the
@@ -305,7 +305,7 @@ See `DATA_LICENSES.md` for details.
   title  = {The Width of a Voice: Placing Machine Imitation Inside
             Authors' Own Variation},
   year   = {2026},
-  doi    = {10.5281/zenodo.21210011},
+  doi    = {10.5281/zenodo.21302872},
   note   = {Preprint v0.5.4; targeting CHR 2027},
   url    = {https://github.com/wbryanta/author-manifold}
 }
