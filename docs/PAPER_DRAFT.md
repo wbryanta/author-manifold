@@ -269,6 +269,15 @@ percentiles, no per-author regions); the setting is everyday
 personalization of anonymous authors, not named literary imitation;
 there is no length dimension (no analogue of the E6 curve, the floors,
 or the LM envelopes); and there is no unprompted-porosity control. The
+generation side now optimizes against the same kind of comparator: Liu
+et al. [@liu2026grpo] train an authorship-verification-supervised style
+judge over four classic authors and use it as the reward for GRPO
+fine-tuning of a long-form story generator. The same differences apply
+— a learned judge score, not a distance percentile of the author's own
+length-matched variation, with no observed re-entry rate and no
+porosity control — plus a coupling our instrument avoids by
+construction: their generator is optimized against the very judge that
+then scores it. The
 calibration culture itself we import from forensic text comparison
 [@ishihara2024], whose likelihood-ratio validation compares same-author
 and different-author score distributions — the W/B frame in forensic
