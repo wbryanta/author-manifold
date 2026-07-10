@@ -19,6 +19,10 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest>=7.0"]
+# Paper-figure regeneration (tools/build_paper_figures.py); umap-learn is
+# additionally needed to reproduce the released F1 projection exactly
+# (PCA fallback otherwise, clearly labeled in the figure method note).
+figures = ["matplotlib>=3.7"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

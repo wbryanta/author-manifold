@@ -1,0 +1,1495 @@
+{
+ "meta": {
+  "generated": "2026-06-09T20:15:06.315729+00:00",
+  "baseline_dir": "data/baselines/author_space_build/work_baselines",
+  "manifest": "data/baselines/author_space_build/control_shelf_manifest.yaml",
+  "authors_filter": [
+   "delillo-don",
+   "mccarthy-cormac",
+   "morrison-toni",
+   "whitehead-colson",
+   "saunders-george",
+   "proulx-annie",
+   "didion-joan",
+   "ishiguro-kazuo",
+   "ondaatje-michael",
+   "robinson-marilynne",
+   "pynchon-thomas"
+  ],
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 11,
+  "n_works": 59,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "all",
+  "mfw_n": 300,
+  "blend_scale": 5.374801814131501
+ },
+ "rows": [
+  {
+   "label": "d18",
+   "variant": "d18",
+   "alpha": null,
+   "e1_auc": 0.8915828784831945,
+   "silhouette_fraction": 0.5454545454545454,
+   "top1": 0.6440677966101694,
+   "top3": 0.847457627118644,
+   "e1_auc_pass": false,
+   "silhouette_pass": false,
+   "top1_pass": false,
+   "top3_pass": false,
+   "all_pass": false
+  },
+  {
+   "label": "d18_weighted",
+   "variant": "d18_weighted",
+   "alpha": null,
+   "e1_auc": 0.91304222924447,
+   "silhouette_fraction": 0.6363636363636364,
+   "top1": 0.7457627118644068,
+   "top3": 0.9322033898305084,
+   "e1_auc_pass": true,
+   "silhouette_pass": false,
+   "top1_pass": true,
+   "top3_pass": true,
+   "all_pass": false
+  },
+  {
+   "label": "mfw_delta",
+   "variant": "mfw_delta",
+   "alpha": null,
+   "e1_auc": 0.9236139040505602,
+   "silhouette_fraction": 0.8181818181818182,
+   "top1": 0.9491525423728814,
+   "top3": 0.9661016949152542,
+   "e1_auc_pass": true,
+   "silhouette_pass": true,
+   "top1_pass": true,
+   "top3_pass": true,
+   "all_pass": true
+  },
+  {
+   "label": "combined_alpha0.3",
+   "variant": "combined",
+   "alpha": 0.3,
+   "e1_auc": 0.9325481183567941,
+   "silhouette_fraction": 0.9090909090909091,
+   "top1": 0.9322033898305084,
+   "top3": 0.9491525423728814,
+   "e1_auc_pass": true,
+   "silhouette_pass": true,
+   "top1_pass": true,
+   "top3_pass": true,
+   "all_pass": true
+  },
+  {
+   "label": "combined_alpha0.5",
+   "variant": "combined",
+   "alpha": 0.5,
+   "e1_auc": 0.9297041080149382,
+   "silhouette_fraction": 0.9090909090909091,
+   "top1": 0.8813559322033898,
+   "top3": 0.9491525423728814,
+   "e1_auc_pass": true,
+   "silhouette_pass": true,
+   "top1_pass": true,
+   "top3_pass": true,
+   "all_pass": true
+  },
+  {
+   "label": "combined_alpha0.7",
+   "variant": "combined",
+   "alpha": 0.7,
+   "e1_auc": 0.9182706118931341,
+   "silhouette_fraction": 0.9090909090909091,
+   "top1": 0.8135593220338984,
+   "top3": 0.9322033898305084,
+   "e1_auc_pass": true,
+   "silhouette_pass": true,
+   "top1_pass": true,
+   "top3_pass": true,
+   "all_pass": true
+  }
+ ],
+ "selection": {
+  "selected": "mfw_delta",
+  "reason": "mfw_delta is the simplest passing variant; combined does not clearly beat it, so the simpler model wins."
+ },
+ "full_results": {
+  "d18": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "d18",
+    "pass": false,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.8915828784831945,
+      "pass": false
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.5454545454545454,
+      "pass": false
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 3.0499498134790226,
+    "between_median": 5.2690569454573755,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.075355854840528,
+      "within_median": 3.045549876731693,
+      "between_median": 4.827942360593561
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.16755778504010785,
+      "within_median": 2.84834214170682,
+      "between_median": 4.589734033285271
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.27655485327355717,
+      "within_median": 3.145387884474903,
+      "between_median": 6.5253637879588595
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": 0.08467890580917121,
+      "within_median": 3.1314276019376894,
+      "between_median": 6.102092925319678
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": -0.05979078827971854,
+      "within_median": 3.679416988065926,
+      "between_median": 4.628197792792845
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.18659408317390694,
+      "within_median": 2.7568872349057405,
+      "between_median": 4.568806301750465
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": -0.03121036955270004,
+      "within_median": 3.2656450953544702,
+      "between_median": 4.7681459235712245
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": -0.0061836905122205875,
+      "within_median": 3.971615812620015,
+      "between_median": 5.806657949970183
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.0853541156439281,
+      "within_median": 4.484941330335423,
+      "between_median": 5.6078121103958285
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.3095248123836658,
+      "within_median": 2.8407731218524637,
+      "between_median": 5.969696544038581
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": -0.06384287536063302,
+      "within_median": 2.9103254220136887,
+      "between_median": 5.180218045290603
+     }
+    },
+    "n_authors_silhouette_positive": 6,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "d18",
+    "pass": false,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.6440677966101694,
+      "pass": false
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.847457627118644,
+      "pass": false
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 0.8333333333333334,
+      "top3_accuracy": 0.8333333333333334
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 0.8333333333333334,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.625,
+      "top3_accuracy": 0.625
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 0.5555555555555556,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 0.8571428571428571,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 0.25,
+      "top3_accuracy": 0.75
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 0.5,
+      "top3_accuracy": 0.5
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.3333333333333333,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.25,
+      "top3_accuracy": 0.75
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 5,
+      "didion-joan": 1
+     },
+     "didion-joan": {
+      "didion-joan": 3,
+      "morrison-toni": 1
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 5,
+      "robinson-marilynne": 1
+     },
+     "mccarthy-cormac": {
+      "ondaatje-michael": 2,
+      "mccarthy-cormac": 5,
+      "delillo-don": 1
+     },
+     "morrison-toni": {
+      "robinson-marilynne": 3,
+      "morrison-toni": 5,
+      "didion-joan": 1
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 6,
+      "morrison-toni": 1
+     },
+     "proulx-annie": {
+      "whitehead-colson": 3,
+      "proulx-annie": 1
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 2,
+      "whitehead-colson": 1,
+      "morrison-toni": 1
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "ishiguro-kazuo": 1,
+      "robinson-marilynne": 1
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "proulx-annie": 2,
+      "pynchon-thomas": 1,
+      "whitehead-colson": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.1602553936442568,
+     "min": 0.6064355934126312,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": "cosine similarity on unnormalized raw vectors (LOO centroids)",
+     "top1_accuracy": 0.559322033898305,
+     "note": "Sanity cross-check only; NOT a gate."
+    }
+   }
+  },
+  "d18_weighted": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "d18_weighted",
+    "pass": false,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.91304222924447,
+      "pass": true
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.6363636363636364,
+      "pass": false
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 3.113730471570042,
+    "between_median": 5.321875536530396,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.05431352582723183,
+      "within_median": 3.126507295948182,
+      "between_median": 4.914646203276225
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.1635508474423155,
+      "within_median": 2.8127731202162165,
+      "between_median": 4.709105258344774
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.29528659915364713,
+      "within_median": 3.0306217588390663,
+      "between_median": 6.617493297553214
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": 0.10852799976708907,
+      "within_median": 3.100720370654205,
+      "between_median": 6.188716494049601
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": -0.02169438503127065,
+      "within_median": 3.365319270461458,
+      "between_median": 4.635828098019561
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.17703119103292458,
+      "within_median": 2.6564650681310784,
+      "between_median": 4.642751922386466
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": -0.01737705719562717,
+      "within_median": 2.960229339590201,
+      "between_median": 4.703190015300866
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": 0.07878239881008282,
+      "within_median": 3.6302584472592505,
+      "between_median": 5.706585410747762
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.04874895189596204,
+      "within_median": 4.429659972595342,
+      "between_median": 5.549804748703917
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.2851545687086507,
+      "within_median": 2.847887450022261,
+      "between_median": 6.029292974911145
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": -0.035427300974618464,
+      "within_median": 2.736239384851803,
+      "between_median": 5.007671442270665
+     }
+    },
+    "n_authors_silhouette_positive": 7,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "d18_weighted",
+    "pass": true,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.7457627118644068,
+      "pass": true
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.9322033898305084,
+      "pass": true
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 0.8333333333333334,
+      "top3_accuracy": 1.0
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.875
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 0.8571428571428571,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 0.25,
+      "top3_accuracy": 0.75
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.25,
+      "top3_accuracy": 0.75
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 5,
+      "didion-joan": 1
+     },
+     "didion-joan": {
+      "didion-joan": 3,
+      "morrison-toni": 1
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 6
+     },
+     "mccarthy-cormac": {
+      "ondaatje-michael": 1,
+      "mccarthy-cormac": 6,
+      "delillo-don": 1
+     },
+     "morrison-toni": {
+      "robinson-marilynne": 3,
+      "morrison-toni": 6
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 6,
+      "morrison-toni": 1
+     },
+     "proulx-annie": {
+      "whitehead-colson": 3,
+      "proulx-annie": 1
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 4
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "robinson-marilynne": 2
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "proulx-annie": 2,
+      "pynchon-thomas": 1,
+      "whitehead-colson": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.0981755080048803,
+     "min": 0.5775391950744232,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": null,
+     "top1_accuracy": null,
+     "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: d18_weighted)."
+    }
+   }
+  },
+  "mfw_delta": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "mfw_delta",
+    "pass": true,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.9236139040505602,
+      "pass": true
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.8181818181818182,
+      "pass": true
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 0.5958708083338681,
+    "between_median": 0.9580947975958086,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.1820580262602375,
+      "within_median": 0.5518456912595212,
+      "between_median": 0.8887888600435705
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.2151057113377363,
+      "within_median": 0.6328999946967441,
+      "between_median": 0.9487376717501829
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.11274528453895738,
+      "within_median": 0.7714837966801065,
+      "between_median": 1.1377871761746186
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": -0.005167014222006362,
+      "within_median": 0.781017112216527,
+      "between_median": 1.1978342351226114
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": 0.23347250562950006,
+      "within_median": 0.49442853433265566,
+      "between_median": 0.8716795441641647
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.2066595205166583,
+      "within_median": 0.5797722337242172,
+      "between_median": 0.9383527072932486
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": 0.25206718668425454,
+      "within_median": 0.5023439791556945,
+      "between_median": 0.8133598201560611
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": 0.17989107502060675,
+      "within_median": 0.5843616276629802,
+      "between_median": 0.896982101561736
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.03236535056160813,
+      "within_median": 0.9548633254383346,
+      "between_median": 1.0560371151090888
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.2504088320359204,
+      "within_median": 0.5672119980144237,
+      "between_median": 0.9244476104983457
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": 0.1319280023083821,
+      "within_median": 0.548890157598799,
+      "between_median": 0.9070199426872738
+     }
+    },
+    "n_authors_silhouette_positive": 9,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "mfw_delta",
+    "pass": true,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.9491525423728814,
+      "pass": true
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.9661016949152542,
+      "pass": true
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.875,
+      "top3_accuracy": 0.875
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 6
+     },
+     "didion-joan": {
+      "didion-joan": 4
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 6
+     },
+     "mccarthy-cormac": {
+      "mccarthy-cormac": 7,
+      "saunders-george": 1
+     },
+     "morrison-toni": {
+      "morrison-toni": 9
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 7
+     },
+     "proulx-annie": {
+      "proulx-annie": 4
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 4
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "robinson-marilynne": 2
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "whitehead-colson": 3,
+      "pynchon-thomas": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.6590474009049094,
+     "min": 0.5470753179166665,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": null,
+     "top1_accuracy": null,
+     "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: mfw_delta)."
+    }
+   }
+  },
+  "combined_alpha0.3": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "combined_alpha0.3",
+    "pass": true,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.9325481183567941,
+      "pass": true
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.9090909090909091,
+      "pass": true
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 3.1487286611720995,
+    "between_median": 5.199325898851739,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.18429226004667387,
+      "within_median": 2.9405498454063963,
+      "between_median": 4.665862922103946
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.2174773442589315,
+      "within_median": 3.2466544887107545,
+      "between_median": 4.995820730891216
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.1884733933918116,
+      "within_median": 3.806958980986484,
+      "between_median": 6.2788287850986855
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": 0.043913107834176346,
+      "within_median": 3.7951979565981127,
+      "between_median": 6.3540016772792445
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": 0.1911809158979362,
+      "within_median": 2.933479104114198,
+      "between_median": 4.727933767771965
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.23261121022368794,
+      "within_median": 3.094684696644637,
+      "between_median": 4.86360750239578
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": 0.16992916175768963,
+      "within_median": 2.869693059945185,
+      "between_median": 4.450765008555214
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": 0.14453164605633534,
+      "within_median": 3.3799795022465515,
+      "between_median": 5.132401928529547
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.01947553219968801,
+      "within_median": 4.938023192770146,
+      "between_median": 5.644914645853943
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.280163388621974,
+      "within_median": 2.960795666302055,
+      "between_median": 5.342852872319331
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": 0.08315176454028717,
+      "within_median": 2.9382206969787714,
+      "between_median": 4.916882657573326
+     }
+    },
+    "n_authors_silhouette_positive": 10,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "combined_alpha0.3",
+    "pass": true,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.9322033898305084,
+      "pass": true
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.9491525423728814,
+      "pass": true
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.875,
+      "top3_accuracy": 0.875
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.75
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 6
+     },
+     "didion-joan": {
+      "didion-joan": 4
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 6
+     },
+     "mccarthy-cormac": {
+      "mccarthy-cormac": 7,
+      "delillo-don": 1
+     },
+     "morrison-toni": {
+      "morrison-toni": 9
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 7
+     },
+     "proulx-annie": {
+      "proulx-annie": 4
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 3,
+      "proulx-annie": 1
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "robinson-marilynne": 2
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "whitehead-colson": 3,
+      "pynchon-thomas": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.0459699088114986,
+     "min": 0.531821080630732,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": null,
+     "top1_accuracy": null,
+     "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: combined_alpha0.3)."
+    }
+   }
+  },
+  "combined_alpha0.5": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "combined_alpha0.5",
+    "pass": true,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.9297041080149382,
+      "pass": true
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.9090909090909091,
+      "pass": true
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 3.2974127974185024,
+    "between_median": 5.224019849319497,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.16404157468095854,
+      "within_median": 2.926267185229641,
+      "between_median": 4.732980766717967
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.20549832420981348,
+      "within_median": 3.143282788078006,
+      "between_median": 4.885554684115534
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.21795045041839556,
+      "within_median": 3.617938667697461,
+      "between_median": 6.372978919543372
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": 0.06445189013411716,
+      "within_median": 3.5267884665907645,
+      "between_median": 6.328139459479617
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": 0.14182389485017832,
+      "within_median": 3.1466042138146917,
+      "between_median": 4.684264293921579
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.23734666470575871,
+      "within_median": 3.073546181373552,
+      "between_median": 4.765927627388944
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": 0.11344758153835058,
+      "within_median": 2.9828222129192667,
+      "between_median": 4.538743119598287
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": 0.11498880567792819,
+      "within_median": 3.5154993410913287,
+      "between_median": 5.313960101186428
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.020283082006459216,
+      "within_median": 4.808571232074511,
+      "between_median": 5.598600040386609
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.2899641664687827,
+      "within_median": 2.9022247265533734,
+      "between_median": 5.513188825497904
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": 0.048422888681841435,
+      "within_median": 2.930250618417319,
+      "between_median": 4.929380909860216
+     }
+    },
+    "n_authors_silhouette_positive": 10,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "combined_alpha0.5",
+    "pass": true,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.8813559322033898,
+      "pass": true
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.9491525423728814,
+      "pass": true
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.875
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 0.8571428571428571,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.75
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 6
+     },
+     "didion-joan": {
+      "didion-joan": 4
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 6
+     },
+     "mccarthy-cormac": {
+      "ondaatje-michael": 1,
+      "mccarthy-cormac": 6,
+      "delillo-don": 1
+     },
+     "morrison-toni": {
+      "morrison-toni": 9
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 6,
+      "morrison-toni": 1
+     },
+     "proulx-annie": {
+      "proulx-annie": 3,
+      "whitehead-colson": 1
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 3,
+      "proulx-annie": 1
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "robinson-marilynne": 2
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "whitehead-colson": 3,
+      "pynchon-thomas": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.0637150522794616,
+     "min": 0.5407608052243594,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": null,
+     "top1_accuracy": null,
+     "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: combined_alpha0.5)."
+    }
+   }
+  },
+  "combined_alpha0.7": {
+   "e1": {
+    "experiment": "e1",
+    "name": "Within vs between author separation",
+    "distance_variant": "combined_alpha0.7",
+    "pass": true,
+    "criteria": {
+     "pooled_auc": {
+      "threshold": 0.9,
+      "comparison": ">=",
+      "observed": 0.9182706118931341,
+      "pass": true
+     },
+     "silhouette_positive_fraction": {
+      "threshold": 0.8,
+      "comparison": ">=",
+      "observed": 0.9090909090909091,
+      "pass": true
+     }
+    },
+    "n_within": 59,
+    "n_between": 590,
+    "within_median": 3.1642497006002634,
+    "between_median": 5.238035824946763,
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "silhouette": 0.1365214866355489,
+      "within_median": 2.973980261830462,
+      "between_median": 4.812296962392592
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "silhouette": 0.19187448188589173,
+      "within_median": 3.039911087445258,
+      "between_median": 4.6965656810328
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "silhouette": 0.24467556124924753,
+      "within_median": 3.428918354408438,
+      "between_median": 6.40712577736126
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "silhouette": 0.07886681569520232,
+      "within_median": 3.3589917271171745,
+      "between_median": 6.177207094869195
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "silhouette": 0.06749138854770914,
+      "within_median": 3.3597293235151855,
+      "between_median": 4.682408061353584
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "silhouette": 0.22400549539406497,
+      "within_median": 2.96913032127733,
+      "between_median": 4.678295704960855
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "silhouette": 0.0555396008273422,
+      "within_median": 3.095951365893348,
+      "between_median": 4.678129772805744
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "silhouette": 0.06910428534650573,
+      "within_median": 3.6924851042909257,
+      "between_median": 5.507864879376044
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "silhouette": -0.036646526249672406,
+      "within_median": 4.679119271378876,
+      "between_median": 5.622816362511804
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "silhouette": 0.29946171911641045,
+      "within_median": 2.8436537868046923,
+      "between_median": 5.710514040725947
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "silhouette": 0.00987272326103799,
+      "within_median": 2.922280539855867,
+      "between_median": 5.0489903673815375
+     }
+    },
+    "n_authors_silhouette_positive": 10,
+    "n_authors": 11
+   },
+   "e2": {
+    "experiment": "e2",
+    "name": "Leave-one-work-out attribution",
+    "distance_variant": "combined_alpha0.7",
+    "pass": true,
+    "criteria": {
+     "top1_accuracy": {
+      "threshold": 0.7,
+      "comparison": ">=",
+      "observed": 0.8135593220338984,
+      "pass": true
+     },
+     "top3_accuracy": {
+      "threshold": 0.85,
+      "comparison": ">=",
+      "observed": 0.9322033898305084,
+      "pass": true
+     }
+    },
+    "n_trials": 59,
+    "n_candidate_authors": 11,
+    "skipped_authors": [],
+    "per_author": {
+     "delillo-don": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "didion-joan": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "ishiguro-kazuo": {
+      "n_works": 6,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "mccarthy-cormac": {
+      "n_works": 8,
+      "top1_accuracy": 0.625,
+      "top3_accuracy": 0.875
+     },
+     "morrison-toni": {
+      "n_works": 9,
+      "top1_accuracy": 0.7777777777777778,
+      "top3_accuracy": 1.0
+     },
+     "ondaatje-michael": {
+      "n_works": 7,
+      "top1_accuracy": 0.8571428571428571,
+      "top3_accuracy": 1.0
+     },
+     "proulx-annie": {
+      "n_works": 4,
+      "top1_accuracy": 0.5,
+      "top3_accuracy": 1.0
+     },
+     "pynchon-thomas": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.75
+     },
+     "robinson-marilynne": {
+      "n_works": 3,
+      "top1_accuracy": 0.6666666666666666,
+      "top3_accuracy": 0.6666666666666666
+     },
+     "saunders-george": {
+      "n_works": 4,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0
+     },
+     "whitehead-colson": {
+      "n_works": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.75
+     }
+    },
+    "confusion_matrix": {
+     "delillo-don": {
+      "delillo-don": 6
+     },
+     "didion-joan": {
+      "didion-joan": 4
+     },
+     "ishiguro-kazuo": {
+      "ishiguro-kazuo": 6
+     },
+     "mccarthy-cormac": {
+      "ondaatje-michael": 1,
+      "mccarthy-cormac": 5,
+      "delillo-don": 1,
+      "proulx-annie": 1
+     },
+     "morrison-toni": {
+      "robinson-marilynne": 2,
+      "morrison-toni": 7
+     },
+     "ondaatje-michael": {
+      "ondaatje-michael": 6,
+      "morrison-toni": 1
+     },
+     "proulx-annie": {
+      "proulx-annie": 2,
+      "whitehead-colson": 2
+     },
+     "pynchon-thomas": {
+      "pynchon-thomas": 3,
+      "proulx-annie": 1
+     },
+     "robinson-marilynne": {
+      "ondaatje-michael": 1,
+      "robinson-marilynne": 2
+     },
+     "saunders-george": {
+      "saunders-george": 4
+     },
+     "whitehead-colson": {
+      "whitehead-colson": 3,
+      "pynchon-thomas": 1
+     }
+    },
+    "c_llr": {
+     "value": 1.0936473551718282,
+     "min": 0.5569899365717347,
+     "note": "Descriptive only (softmax(-distance) posteriors); not a gate."
+    },
+    "sanity_check": {
+     "method": null,
+     "top1_accuracy": null,
+     "note": "Sanity cross-check only run for the d18 variant; NOT a gate (variant: combined_alpha0.7)."
+    }
+   }
+  }
+ }
+}

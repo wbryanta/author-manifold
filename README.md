@@ -73,7 +73,14 @@ rates track envelope *width* (r = +0.844) as much as imitation skill; and
 a model continuing an author's own text enters more than a model told the
 author's name (5/5 informative models).
 
-## Quickstart (~30 minutes, everything from shipped data)
+## Quickstart — the paper's §9.2 replication claims (~5 minutes + tests)
+
+The paper (§9.2) promises that from this repository alone a reader can
+**(1)** rebuild the PD shelf space and its LM envelopes, **(2)** verify the
+E8 positive control at the §3.9 values, **(3)** reproduce the Brinton
+pastiche entry rates under both vocabularies, and **(4)** place the
+released AI corpus against the released envelope sidecars. The steps below
+deliver those four claims in order, with the exact expected numbers.
 
 ```bash
 git clone https://github.com/wbryanta/author-manifold.git
@@ -81,55 +88,146 @@ cd author-manifold
 python3 -m venv venv && source venv/bin/activate
 pip install -e .
 
-# 1. E1-E3: validate the public-domain shelf (9 authors, 35 novels)
-#    Gates: E1 AUC >= 0.90, E2 top-1 >= 70% / top-3 >= 85%, E3 >= 6 dims.
-#    Expected: ALL PASS (AUC 0.999, 100%/100%, 15/18). ~2 min.
+# ---- (1a) Rebuild + gate the PD shelf space (9 authors, 35 novels).
+#      E1-E3 from shipped per-work baselines + manifest + texts.
+#      Gates: E1 AUC >= 0.90, E2 top-1 >= 70% / top-3 >= 85%, E3 >= 6 dims.
+#      Expected: "OVERALL: PASS" (E1 AUC 0.999, E2 100%/100%, E3 15/18).
+#      ~20 s.
 python3 tools/validate_author_space.py \
     --baseline-dir data/pd_work_baselines \
     --manifest data/pd_manifest.yaml \
     --distance-variant mfw_delta \
     --output-dir reports/validation/author_space/pd_shelf_rerun
 
-# 2. E4: place the AI corpus into the PD space. Gate: every unprompted
-#    sample off-manifold. Expected: PASS (400/400 unprompted off-manifold,
-#    0/318 styled samples enter the FULL-NOVEL W-p90 — reproduced as the
-#    recorded v2 instrument run; as a paper entry criterion it is retired
-#    in favor of length-matched envelopes, see headline table). The
-#    shipped corpus is the complete frozen design matrix: 912 v2
-#    generations plus the 160-record completion condition (1,072 manifest
-#    records). ~5 min.
-python3 tools/run_e4_ai_placement.py \
-    --artifact data/artifacts/author_space_pd_v1.json \
+# ---- (1b) Rebuild the PD LM envelopes from the shipped novel texts, and
+#      (2) run E8, the same-author positive control, at the paper's values.
+#      Expected output (~5 s; both rebuilt sidecars verified content-equal
+#      to the released ones in data/artifacts/):
+#        E8 [pd]:        PASS (pooled 1375/1575 inside@p90 = 87.3%; released sidecar MATCH)
+#        E8 [pd_fwonly]: FAIL (pooled 1378/1575 inside@p90 = 87.5%; released sidecar MATCH)
+#      Those are the §3.9/§9.1 values: 87.3% full / 87.5% fw-only. The
+#      pd_fwonly FAIL is the Fitzgerald fw-only gate failure the paper
+#      itself reports (§3.9 — "the strict gate verdict is FAIL"), so this
+#      command exits with code 3 BY DESIGN; a reproduction that passed
+#      would be wrong.
+python3 tools/validate_lm_envelopes.py \
     --output-dir reports/validation/author_space/pd_shelf_rerun
 
-# 3. P5: the human pastiche baseline (Brinton 1913 vs Austen). ~1 min.
-python3 tools/place_pastiche_baseline.py \
-    --output-dir reports/validation/author_space/pd_shelf_rerun
+# ---- (3) + (4) Results 2.0: place the released AI corpus (1,072 manifest
+#      records -> 1,069 loadable -> 236 primary styled) and the Brinton
+#      pastiche against the RELEASED envelope sidecars, both vocabularies.
+#      Expected output (~5 s):
+#        Entry@p90 (full vocab, primary): 48/236 (20.3%)
+#        Brinton@p90 (full vocab): 34/36 (94.4%)
+#        Entry@p90 (fwonly vocab, primary): 72/236 (30.5%)
+#        Brinton@p90 (fwonly vocab): 27/36 (75.0%)
+#        G1 control (full): unprompted 20/121 (16.5%) vs styled 48/236 (20.3%); increment +3.8 pp
+#        G1 control (fwonly): unprompted 13/121 (10.7%) vs styled 72/236 (30.5%); increment +19.8 pp
+#      That is promise (3) — Brinton 34/36 and 27/36 at p90 — and promise
+#      (4): the §5.2 headline entry rates, exactly the committed evidence in
+#      reports/validation/author_space/results2/ (the rerun lands in
+#      results2_rerun/ and is numerically identical to the committed run;
+#      only generation timestamps and the translation subsection differ —
+#      the latter needs rights-encumbered novel texts, see the tool
+#      docstring).
+python3 tools/rerun_entry_analysis.py
 
-# 4. Test suite
+# ---- (4, continued) The completion condition (K8) and the strongest
+#      single check in the release: the cross-target matrix re-places the
+#      frozen corpus and HARD-ABORTS unless the clone reproduces every
+#      frozen 5.2 number exactly (pooled + per model, both vocabularies,
+#      thresholds, the 1,072->236 selection chain, the G1 control) before
+#      computing anything new. Expected (~5 s each):
+#        K8 completion: fw-only entry 27/87 = 31.0% @p90; refused 37, sub-floor 35
+#        Positive-control gate: PASS (both vocabularies)
+#        VERDICT: TARGET_SPECIFIC (D=+16.10 pp, CI [+5.05, +27.09])
+python3 tools/analyze_completion_condition.py
+python3 tools/cross_target_entry_matrix.py
+
+# ---- Test suite (~30 s). Expected: 116 passed.
 pip install pytest && pytest
 ```
 
 Everything above runs from this repository alone — the public-domain shelf
-texts, per-work baselines, AI corpus, and space artifacts all ship. Results
-land in `reports/validation/author_space/pd_shelf_rerun/` next to the recorded runs in
-`reports/validation/author_space/pd_shelf/`.
+texts, per-work baselines, AI corpus, space artifacts, and LM envelope
+sidecars all ship. Reruns land in `reports/validation/author_space/
+pd_shelf_rerun/` and `.../results2_rerun/` (both gitignored) next to the
+recorded evidence in `.../pd_shelf/` and `.../results2/`, so `git status`
+stays clean and any drift is a diff away.
 
-To reproduce the wave-2 statistics from the shipped placement results:
+### The retired v0.2 criterion (kept for the retraction's reproducibility)
+
+The first release's E4 entry criterion — "0/318 styled samples enter the
+full-novel W-p90" — was a length-calibration artifact caught by adversarial
+review and **retracted** (§4.5/§5.1 of the paper); the length-matched
+envelopes above replace it. The instrument run is kept reproducible so the
+retraction itself can be audited:
 
 ```bash
+# Reproduces the RECORDED v2 instrument run — a superseded criterion,
+# not a finding. Expected (~5 s):
+#   E4 gate: PASS (400 unprompted, 0 violations; 318 style-prompted,
+#   0 nearest-is-target)
+python3 tools/run_e4_ai_placement.py \
+    --artifact data/artifacts/author_space_pd_v1.json \
+    --output-dir reports/validation/author_space/pd_shelf_rerun
+```
+
+### Other recorded analyses
+
+```bash
+# P5 human-pastiche baseline (full-novel W percentiles, the recorded
+# pre-LM analysis; the paper's 34/36 & 27/36 LM numbers come from
+# rerun_entry_analysis.py above). Expected (~1 s):
+#   P5: 33/37 nearest-is-target, 0/37 entered W-p90; median target
+#   W-pct 100.0
+python3 tools/place_pastiche_baseline.py \
+    --output-dir reports/validation/author_space/pd_shelf_rerun
+
+# Wave-2 tier-1 statistics from the shipped placement results (the
+# recorded run used 10,000 bootstrap/permutation draws). Every numeric
+# value in the shared sections reproduces the recorded
+# wave2/tier1_statistics.json exactly; the recorded file additionally
+# carries the C1b/C1c enter-rate family rows, part of the RETIRED v0.2
+# Holm family (paper §4.5) and produced by the parent project's run.
 python3 tools/tier1_statistics.py \
     --e4-results reports/validation/author_space/wave2/e4_results.json \
-    --artifact data/artifacts/author_space_v1_wave2.json
+    --artifact data/artifacts/author_space_v1_wave2.json \
+    --n-boot 10000 --n-perm 10000 \
+    --out-dir reports/validation/author_space/results2_rerun
 ```
+
+### Regenerating the paper figures (F1-F7)
+
+```bash
+pip install matplotlib umap-learn   # umap-learn: released F1 projection;
+                                    # PCA fallback (labeled) without it
+python3 tools/build_paper_figures.py    # -> docs/figures_rerun/, ~15 s
+```
+
+All seven figures regenerate from the committed evidence JSONs and shipped
+corpus/artifacts; F2 verifies its recomputed distributions against the
+frozen results2 counts before rendering and aborts on any mismatch.
 
 ## What's in the box
 
 ```
 src/author_manifold/        The instrument: AuthorRelativeSpace (calibration,
                             MFW Burrows-Delta block, W/B distributions,
-                            placement), attribution metrics (C_llr, ROC AUC)
-tools/                      CLI: build/validate the space, E4 AI placement,
+                            placement), length-matched envelopes
+                            (LengthMatchedEnvelopes / AuthorLMEnvelope,
+                            work-level LOO + E8 held-out entry), cluster-
+                            robust inference (ICC / design effect),
+                            attribution metrics (C_llr, ROC AUC)
+tools/                      CLI: build/validate the space, LM envelope
+                            construction + E8 (validate_lm_envelopes),
+                            the Results 2.0 re-analysis
+                            (rerun_entry_analysis), completion-condition
+                            placement (analyze_completion_condition),
+                            cross-target specificity matrix with its
+                            positive-control gate
+                            (cross_target_entry_matrix), paper figures
+                            (build_paper_figures), E4 AI placement,
                             tier-1 statistics, robustness probes (paraphrase,
                             self-consistency, cross-topic, style-transfer
                             dimensions), pastiche baseline, PD shelf builder,
@@ -173,6 +271,13 @@ docs/tier1_related_work_reconciliation.md  Related-work reconciliation
   derived aggregate statistics ship (per-work z-scored frequency vectors of
   the 300 most frequent words + 18 scalar dimensions) — see
   `DATA_LICENSES.md`. Rebuilding those artifacts requires your own copies.
+  Consequently the wave-2 LM envelopes cannot be *rebuilt* here (their
+  released sidecars in `data/artifacts/` carry the recorded envelopes and
+  are what every placement tool reads), and the translation-bound
+  subsection of `rerun_entry_analysis.py` reports "none usable" without
+  locally held novels — the paper's §9.2 wording: contemporary-shelf
+  numbers verify against released aggregate artifacts; regeneration from
+  raw texts requires local copies.
 - **The D18 baseline-generation pipeline**: depends on a heavy stack
   (spaCy/transformers); per-work baselines ship precomputed. The MFW-Delta
   identity layer — which carries all headline claims — is computed from raw

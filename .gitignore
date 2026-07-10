@@ -5,4 +5,7 @@ venv/
 .venv/
 .DS_Store
 reports/validation/pd_shelf_rerun/
+reports/validation/author_space/pd_shelf_rerun/
+reports/validation/author_space/results2_rerun/
+docs/figures_rerun/
 data/tmp/

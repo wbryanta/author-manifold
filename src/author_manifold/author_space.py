@@ -50,6 +50,7 @@ Usage:
     space.to_artifact(Path("data/baselines/voice/author_space/author_space_v1.json"))
 """
 
+import hashlib
 import json
 import logging
 import re
@@ -75,6 +76,11 @@ D18_VARIANTS = frozenset({"d18", "d18_weighted", "combined"})
 # MFW block defaults.
 MFW_DEFAULT_N = 300
 MFW_TOKENIZER_ID = "lowercase_regex_v1"
+
+# Length-matched envelope (LM-W) defaults — red-team K1 remediation (E8).
+LM_ENVELOPE_VERSION = "1.0.0"
+LM_DEFAULT_WINDOW_WORDS = 3000
+LM_QUANTILE_LEVELS: Tuple[int, ...] = (50, 90, 95, 99)
 
 # Vocabulary filters for the MFW block (issue #95 P3, paper outline C1
 # topic-confound control). "none" = classic top-N by raw shelf frequency;
@@ -1774,3 +1780,480 @@ class AuthorRelativeSpace:
             dimension_weights=artifact.get("dimension_weights"),
             blend=blend_raw or None,
         )
+
+
+# ---------------------------------------------------------------------------
+# Length-matched per-author envelopes (LM-W) — red-team K1 remediation
+# ---------------------------------------------------------------------------
+#
+# The full-novel W LOO distribution is not a valid entry criterion for
+# ~3,000-word texts: Burrows Delta inflates at sample length, so the target
+# authors' OWN windows cannot satisfy a full-novel-calibrated threshold
+# (docs/redteam/RED_TEAM_SYNTHESIS.md K1 and redteam_claims_attack.md §1 —
+# Austen 0/74 against her own W-p90). The LM envelope is the length-matched
+# replacement:
+# for each calibrated author, slice each work's body text into
+# non-overlapping windows at a fixed token length, featurize each window
+# against the artifact's MFW block, and take the distribution of
+# window -> author-centroid Burrows-Delta distances where the centroid
+# EXCLUDES the window's own work (leave-one-work-out — no self-inflation).
+#
+# E8 (the permanent same-author positive control) is built on the same
+# construction: an author's own held-out windows must enter their own LM
+# envelope at ~the nominal rate, otherwise the criterion is a length
+# detector, not an authorship envelope.
+
+
+def sha256_of_file(path: Union[str, Path]) -> str:
+    """SHA-256 hex digest of a file's bytes (artifact provenance pinning)."""
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def resolve_record_text_path(
+    record: WorkRecord, text_root: Optional[Union[str, Path]] = None
+) -> Optional[Path]:
+    """Resolve a record's ``text_path``: as-is, then relative to ``text_root``.
+
+    Artifacts persist repo-root-relative text paths; consumers loading an
+    artifact from elsewhere pass the repo root (or another base) as
+    ``text_root``.
+    """
+    if not record.text_path:
+        return None
+    path = Path(record.text_path)
+    if path.is_file():
+        return path
+    if not path.is_absolute() and text_root is not None:
+        candidate = Path(text_root) / path
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def record_body_tokens(
+    record: WorkRecord, text_root: Optional[Union[str, Path]] = None
+) -> Optional[List[str]]:
+    """MFW tokens of a record's body text.
+
+    Uses the transient ``body_text`` override when present, else the
+    manifest body slice (``text_path`` + character offsets). Returns None
+    when no text is resolvable (caller decides whether that is an error).
+    """
+    if record.body_text is not None:
+        return mfw_tokenize(record.body_text)
+    path = resolve_record_text_path(record, text_root)
+    if path is None:
+        return None
+    text = path.read_text(encoding="utf-8")
+    start = record.body_start or 0
+    end = record.body_end if record.body_end is not None else len(text)
+    return mfw_tokenize(text[start:end])
+
+
+@dataclass
+class AuthorLMEnvelope:
+    """One author's length-matched window-distance envelope.
+
+    ``windows`` carries per-window provenance: work index/title, window
+    index within the work, and the window's Burrows-Delta distance to the
+    author's leave-one-work-out centroid. Quantiles are np.percentile
+    (linear interpolation) over all window distances at
+    :data:`LM_QUANTILE_LEVELS`.
+    """
+
+    author: str
+    n_works: int
+    works_used: List[str]
+    windows: List[Dict[str, Any]]      # {work_index, work, window, distance}
+    quantiles: Dict[str, float]        # "p50"/"p90"/"p95"/"p99"
+
+    _sorted: Optional[np.ndarray] = field(default=None, repr=False, compare=False)
+
+    @property
+    def n_windows(self) -> int:
+        return len(self.windows)
+
+    def distances(self) -> np.ndarray:
+        """Sorted window distances (cached)."""
+        if self._sorted is None:
+            self._sorted = np.sort(
+                np.asarray([w["distance"] for w in self.windows], dtype=float)
+            )
+        return self._sorted
+
+    def percentile_of(self, distance: float) -> Optional[float]:
+        """Mid-rank empirical percentile of a distance against the envelope."""
+        arr = self.distances()
+        if arr.size == 0:
+            return None
+        below = int(np.searchsorted(arr, distance, side="left"))
+        upper = int(np.searchsorted(arr, distance, side="right"))
+        return float(100.0 * (below + 0.5 * (upper - below)) / arr.size)
+
+    def entered(self, distance: float, level: int = 90) -> bool:
+        """Is ``distance`` inside the envelope's p``level`` threshold?"""
+        return bool(distance <= self.quantiles[f"p{level}"])
+
+    def held_out_entry(self, level: int = 90) -> Dict[str, Any]:
+        """E8 positive control: leave-WORK-out entry of the author's own windows.
+
+        For each work, the threshold is the p``level`` of the OTHER works'
+        window distances (whose own distances already exclude their own work
+        from the centroid — work-level LOO throughout). Comparing each
+        window against the quantile of the full distribution including
+        itself would be circular (~nominal rate by construction); this is
+        the genuine held-out check.
+        """
+        by_work: Dict[int, List[float]] = {}
+        titles: Dict[int, str] = {}
+        for w in self.windows:
+            by_work.setdefault(int(w["work_index"]), []).append(float(w["distance"]))
+            titles[int(w["work_index"])] = str(w["work"])
+        per_work: List[Dict[str, Any]] = []
+        inside_total = 0
+        n_total = 0
+        for idx in sorted(by_work):
+            others = [
+                d for j, ds in by_work.items() if j != idx for d in ds
+            ]
+            if not others:
+                continue
+            threshold = float(np.percentile(others, level))
+            own = by_work[idx]
+            inside = int(sum(d <= threshold for d in own))
+            per_work.append({
+                "work_index": idx,
+                "work": titles[idx],
+                "n_windows": len(own),
+                "threshold": threshold,
+                "inside": inside,
+            })
+            inside_total += inside
+            n_total += len(own)
+        return {
+            "level": level,
+            "n": n_total,
+            "inside": inside_total,
+            "rate": (inside_total / n_total) if n_total else None,
+            "per_work": per_work,
+        }
+
+    def bootstrap_quantile_ci(
+        self,
+        level: int,
+        n_bootstrap: int = 2000,
+        seed: int = 20260609,
+        alpha: float = 0.05,
+    ) -> Tuple[float, float]:
+        """Bootstrap CI on the envelope's p``level`` threshold itself.
+
+        Resamples envelope windows with replacement (K9: entry claims must
+        carry threshold-estimation uncertainty). Note the windows cluster
+        within works, so this CI is mildly anti-conservative; the E8
+        leave-work-out gate is the structural complement.
+        """
+        arr = self.distances()
+        if arr.size < 2:
+            value = self.quantiles[f"p{level}"]
+            return (value, value)
+        rng = np.random.default_rng(seed)
+        idx = rng.integers(0, arr.size, size=(n_bootstrap, arr.size))
+        boot = np.percentile(arr[idx], level, axis=1)
+        lo, hi = np.percentile(boot, [100 * alpha / 2, 100 * (1 - alpha / 2)])
+        return (float(lo), float(hi))
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "n_works": self.n_works,
+            "works_used": list(self.works_used),
+            "n_windows": self.n_windows,
+            "quantiles": {k: float(v) for k, v in self.quantiles.items()},
+            "windows": [
+                {
+                    "work_index": int(w["work_index"]),
+                    "work": str(w["work"]),
+                    "window": int(w["window"]),
+                    "distance": float(w["distance"]),
+                }
+                for w in self.windows
+            ],
+        }
+
+    @classmethod
+    def from_dict(cls, author: str, data: Mapping[str, Any]) -> "AuthorLMEnvelope":
+        return cls(
+            author=author,
+            n_works=int(data["n_works"]),
+            works_used=list(data.get("works_used", [])),
+            windows=[dict(w) for w in data.get("windows", [])],
+            quantiles={k: float(v) for k, v in data.get("quantiles", {}).items()},
+        )
+
+
+class LengthMatchedEnvelopes:
+    """Per-author length-matched (LM-W) envelope collection.
+
+    Build with :meth:`build_from_space` from an MFW-Delta
+    :class:`AuthorRelativeSpace`, persist with :meth:`to_artifact`, reload
+    with :meth:`from_artifact`. The envelope distance is Burrows Delta on
+    the space's persisted MFW block — the same featurization used by
+    ``place()`` for the ``mfw_delta`` variant — so a sample's distance to a
+    target centroid is directly comparable to the target's envelope.
+    """
+
+    def __init__(self, *, authors: Dict[str, AuthorLMEnvelope], meta: Dict[str, Any]):
+        self.authors = authors
+        self.meta = meta
+
+    @property
+    def window_words(self) -> int:
+        return int(self.meta["window_words"])
+
+    def quantile(self, author: str, level: int = 90) -> float:
+        return self.authors[author].quantiles[f"p{level}"]
+
+    def held_out_entry_rates(self, level: int = 90) -> Dict[str, Dict[str, Any]]:
+        """E8 per-author leave-work-out entry rates (see AuthorLMEnvelope)."""
+        return {
+            slug: env.held_out_entry(level)
+            for slug, env in sorted(self.authors.items())
+        }
+
+    @classmethod
+    def build_from_space(
+        cls,
+        space: AuthorRelativeSpace,
+        *,
+        window_words: int = LM_DEFAULT_WINDOW_WORDS,
+        seed: int = 20260609,
+        max_windows_per_work: Optional[int] = None,
+        text_root: Optional[Union[str, Path]] = None,
+        source_artifact: Optional[Union[str, Path]] = None,
+        generated: Optional[str] = None,
+    ) -> "LengthMatchedEnvelopes":
+        """Build LM envelopes from a calibrated space.
+
+        Per calibrated author: each work's body text (``body_text`` override
+        or manifest slice via ``text_path`` + offsets, relative paths
+        resolved against ``text_root``) is MFW-tokenized and cut into
+        non-overlapping ``window_words``-token windows (trailing partial
+        dropped). Each window is z-scored against the space's MFW norm and
+        its Burrows-Delta distance taken to the author's leave-one-WORK-out
+        centroid (mean of the OTHER works' whole-work z-vectors — the
+        window's own work never contributes to its centroid).
+
+        Requires ``distance_variant == "mfw_delta"``: the envelope must live
+        on the same scale as ``place()`` distances, and raw-text windows can
+        only be featurized through the MFW block (d18 features need the full
+        baseline pipeline).
+
+        ``max_windows_per_work`` caps windows per work by seeded sampling
+        without replacement (sorted, deterministic); default None keeps all.
+        """
+        if space.mfw is None:
+            raise ValueError("LM envelopes require the MFW block")
+        if space.distance_variant != "mfw_delta":
+            raise ValueError(
+                "LM envelopes are only defined for distance_variant='mfw_delta' "
+                f"(got {space.distance_variant!r}): envelope distances must be "
+                "on the same scale as place() distances, and raw-text windows "
+                "can only be featurized via the MFW block"
+            )
+        if window_words < 1:
+            raise ValueError(f"window_words must be >= 1 (got {window_words})")
+        rng = np.random.default_rng(seed)
+
+        authors: Dict[str, AuthorLMEnvelope] = {}
+        skipped_authors: List[str] = []
+        works_without_text: List[str] = []
+        works_too_short: List[str] = []
+        for slug in sorted(space.authors):
+            entry = space.authors[slug]
+            works = [w for w in entry.works if w.mfw_z is not None]
+            if len(works) < 2:
+                skipped_authors.append(slug)
+                logger.warning(
+                    "LM envelopes: skipping %s (< 2 works with MFW vectors)", slug
+                )
+                continue
+            mfw_matrix = np.vstack([w.mfw_z for w in works])
+            total = mfw_matrix.sum(axis=0)
+            n_works = mfw_matrix.shape[0]
+            windows: List[Dict[str, Any]] = []
+            works_used: List[str] = []
+            for idx, work in enumerate(works):
+                tokens = record_body_tokens(work, text_root=text_root)
+                if tokens is None:
+                    works_without_text.append(f"{slug}/{work.title}")
+                    continue
+                n_win = len(tokens) // window_words
+                if n_win == 0:
+                    works_too_short.append(f"{slug}/{work.title}")
+                    continue
+                chosen = np.arange(n_win)
+                if max_windows_per_work and n_win > max_windows_per_work:
+                    chosen = np.sort(
+                        rng.choice(n_win, size=max_windows_per_work, replace=False)
+                    )
+                # Leave-one-WORK-out centroid: own work excluded.
+                loo_centroid = (total - mfw_matrix[idx]) / (n_works - 1)
+                works_used.append(work.title)
+                for w_i in chosen:
+                    chunk = tokens[w_i * window_words:(w_i + 1) * window_words]
+                    z = space.mfw.featurize_tokens(chunk)
+                    windows.append({
+                        "work_index": int(idx),
+                        "work": work.title,
+                        "window": int(w_i),
+                        "distance": float(MFWBlock.delta(z, loo_centroid)),
+                    })
+            if not windows:
+                skipped_authors.append(slug)
+                logger.warning("LM envelopes: no windows for %s", slug)
+                continue
+            dists = np.asarray([w["distance"] for w in windows], dtype=float)
+            quantiles = {
+                f"p{q}": float(np.percentile(dists, q)) for q in LM_QUANTILE_LEVELS
+            }
+            authors[slug] = AuthorLMEnvelope(
+                author=slug,
+                n_works=len(works_used),
+                works_used=works_used,
+                windows=windows,
+                quantiles=quantiles,
+            )
+
+        artifact_path = Path(source_artifact) if source_artifact else None
+        meta = {
+            "version": LM_ENVELOPE_VERSION,
+            "generated": generated,
+            "window_words": int(window_words),
+            "window_unit": "mfw_tokens",
+            "seed": int(seed),
+            "max_windows_per_work": max_windows_per_work,
+            "loo": "work_level (window's own work excluded from its centroid)",
+            "distance_variant": space.distance_variant,
+            "n_mfw": space.mfw.n_mfw,
+            "tokenizer": space.mfw.tokenizer,
+            "vocab_filter": space.mfw.vocab_filter,
+            "quantile_levels": list(LM_QUANTILE_LEVELS),
+            "source_artifact": str(artifact_path) if artifact_path else None,
+            "source_artifact_sha256": (
+                sha256_of_file(artifact_path)
+                if artifact_path and artifact_path.is_file() else None
+            ),
+            "n_authors": len(authors),
+            "skipped_authors": skipped_authors,
+            "works_without_text": works_without_text,
+            "works_too_short": works_too_short,
+        }
+        return cls(authors=authors, meta=meta)
+
+    def to_artifact(self, path: Optional[Union[str, Path]] = None) -> Dict[str, Any]:
+        """Serialize; write JSON sidecar when ``path`` is given."""
+        artifact = {
+            "meta": dict(self.meta),
+            "authors": {
+                slug: env.to_dict() for slug, env in sorted(self.authors.items())
+            },
+        }
+        if path is not None:
+            path = Path(path)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with open(path, "w", encoding="utf-8") as handle:
+                json.dump(artifact, handle, indent=1)
+            logger.info("Wrote LM envelope artifact: %s", path)
+        return artifact
+
+    @classmethod
+    def from_artifact(
+        cls, source: Union[str, Path, Mapping[str, Any]]
+    ) -> "LengthMatchedEnvelopes":
+        if isinstance(source, (str, Path)):
+            with open(source, "r", encoding="utf-8") as handle:
+                artifact = json.load(handle)
+        else:
+            artifact = dict(source)
+        return cls(
+            authors={
+                slug: AuthorLMEnvelope.from_dict(slug, data)
+                for slug, data in artifact.get("authors", {}).items()
+            },
+            meta=dict(artifact.get("meta", {})),
+        )
+
+
+# ---------------------------------------------------------------------------
+# Cluster-robust inference helpers (red-team K4: ICC / design effect)
+# ---------------------------------------------------------------------------
+
+def anova_icc(values: Sequence[float], clusters: Sequence[Any]) -> float:
+    """One-way random-effects ICC(1), ANOVA estimator, clipped to [0, 1].
+
+    Standard one-way ANOVA decomposition (Donner 1986 convention for
+    unequal cluster sizes):
+
+        MSB = SSB / (K - 1),  MSW = SSW / (N - K)
+        k0  = (N - sum(n_i^2) / N) / (K - 1)
+        ICC = (MSB - MSW) / (MSB + (k0 - 1) * MSW)
+
+    Works for binary indicators too (the ANOVA estimator on 0/1 data is the
+    standard cluster-randomized-trial ICC). Degenerate inputs (fewer than 2
+    clusters, all singleton clusters, zero total variance) return 0.0.
+    """
+    y = np.asarray(values, dtype=float)
+    labels = np.asarray(clusters)
+    if y.size != labels.size:
+        raise ValueError("values and clusters must have equal length")
+    n_total = y.size
+    uniq = {}
+    for value, label in zip(y, labels):
+        uniq.setdefault(label, []).append(value)
+    k = len(uniq)
+    if k < 2 or n_total <= k:
+        return 0.0
+    grand = float(y.mean())
+    ssb = ssw = 0.0
+    sum_sq_sizes = 0.0
+    for members in uniq.values():
+        arr = np.asarray(members, dtype=float)
+        ssb += arr.size * (arr.mean() - grand) ** 2
+        ssw += float(((arr - arr.mean()) ** 2).sum())
+        sum_sq_sizes += arr.size ** 2
+    msb = ssb / (k - 1)
+    msw = ssw / (n_total - k)
+    k0 = (n_total - sum_sq_sizes / n_total) / (k - 1)
+    denom = msb + (k0 - 1) * msw
+    if denom <= 0:
+        return 0.0
+    return float(np.clip((msb - msw) / denom, 0.0, 1.0))
+
+
+def design_effect(values: Sequence[float], clusters: Sequence[Any]) -> Dict[str, float]:
+    """Cluster design effect for a mean/proportion estimated from clustered data.
+
+    DEFF = 1 + (m_bar - 1) * ICC with m_bar = N / K (mean cluster size);
+    effective sample size n_eff = N / DEFF. Returns the full accounting so
+    reports can show their work:
+    {icc, n, n_clusters, mean_cluster_size, design_effect, n_eff}.
+    """
+    y = np.asarray(values, dtype=float)
+    labels = np.asarray(clusters)
+    icc = anova_icc(y, labels)
+    n_total = int(y.size)
+    k = len(set(labels.tolist()))
+    m_bar = n_total / k if k else float("nan")
+    deff = 1.0 + (m_bar - 1.0) * icc if k else float("nan")
+    deff = max(deff, 1.0)
+    return {
+        "icc": icc,
+        "n": n_total,
+        "n_clusters": k,
+        "mean_cluster_size": float(m_bar),
+        "design_effect": float(deff),
+        "n_eff": float(n_total / deff) if deff else float("nan"),
+    }
