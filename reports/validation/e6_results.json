@@ -1,0 +1,131 @@
+{
+ "meta": {
+  "generated": "2026-06-09T20:31:25.514318+00:00",
+  "baseline_dir": "data/baselines/author_space_build/work_baselines",
+  "manifest": "data/baselines/author_space_build/control_shelf_manifest.yaml",
+  "authors_filter": [
+   "delillo-don",
+   "didion-joan",
+   "ishiguro-kazuo",
+   "mccarthy-cormac",
+   "morrison-toni",
+   "ondaatje-michael",
+   "proulx-annie",
+   "pynchon-thomas",
+   "robinson-marilynne",
+   "saunders-george",
+   "whitehead-colson"
+  ],
+  "min_works": 3,
+  "seed": 20260609,
+  "n_authors": 11,
+  "n_works": 59,
+  "n_dimensions": 18,
+  "dimension_set_version": "v1",
+  "distance_variant": "d18",
+  "mfw_n": 300,
+  "blend_scale": 5.374801814131501
+ },
+ "experiment": "e6",
+ "name": "Window-length sensitivity of W/B separations (MFW block)",
+ "gate": null,
+ "pass": true,
+ "criteria": {},
+ "seed": 20260609,
+ "max_windows_per_work": 5,
+ "window_lengths": [
+  800,
+  1500,
+  3000
+ ],
+ "n_authors": 11,
+ "n_works_with_text": 59,
+ "skipped_works": [],
+ "mfw_n": 300,
+ "per_length": [
+  {
+   "window_words": 800,
+   "n_works": 59,
+   "n_windows": 295,
+   "top1_accuracy": 0.5627118644067797,
+   "top3_accuracy": 0.7796610169491526,
+   "within": {
+    "n": 295,
+    "median": 2.217334099114282,
+    "p25": 2.1065550331157246,
+    "p75": 2.3571294776645866
+   },
+   "between": {
+    "n": 2950,
+    "median": 2.3473427476239985,
+    "p25": 2.231464930365831,
+    "p75": 2.477409747858527
+   },
+   "wb_median_ratio": 1.058632863925039,
+   "auc": 0.6860821602987647
+  },
+  {
+   "window_words": 1500,
+   "n_works": 59,
+   "n_windows": 295,
+   "top1_accuracy": 0.7423728813559322,
+   "top3_accuracy": 0.8779661016949153,
+   "within": {
+    "n": 295,
+    "median": 1.751636062906338,
+    "p25": 1.6468367043366525,
+    "p75": 1.8487266636122255
+   },
+   "between": {
+    "n": 2950,
+    "median": 1.9109539038134211,
+    "p25": 1.7975678619169648,
+    "p75": 2.033895008409031
+   },
+   "wb_median_ratio": 1.090953734215052,
+   "auc": 0.747719620798621
+  },
+  {
+   "window_words": 3000,
+   "n_works": 59,
+   "n_windows": 295,
+   "top1_accuracy": 0.8542372881355932,
+   "top3_accuracy": 0.9423728813559322,
+   "within": {
+    "n": 295,
+    "median": 1.340616329978712,
+    "p25": 1.2369491594347128,
+    "p75": 1.4579404239871656
+   },
+   "between": {
+    "n": 2950,
+    "median": 1.5348077596791807,
+    "p25": 1.430143353218054,
+    "p75": 1.6769878900367698
+   },
+   "wb_median_ratio": 1.144852352875302,
+   "auc": 0.8024533180120655
+  }
+ ],
+ "full_work_reference": {
+  "window_words": "full",
+  "n_works": 59,
+  "n_windows": 59,
+  "top1_accuracy": 0.9491525423728814,
+  "top3_accuracy": 0.9661016949152542,
+  "within": {
+   "n": 59,
+   "median": 0.5958708083338681,
+   "p25": 0.49778454144603335,
+   "p75": 0.7116702843432003
+  },
+  "between": {
+   "n": 590,
+   "median": 0.9580947975958086,
+   "p25": 0.8635275916255776,
+   "p75": 1.0842687395775676
+  },
+  "wb_median_ratio": 1.607890140271791,
+  "auc": 0.9236139040505602
+ }
+}

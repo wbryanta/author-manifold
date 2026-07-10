@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "generated": "2026-06-10T19:48:10.313778+00:00",
+    "seed": 20260610,
+    "artifact": "data/baselines/voice/author_space/author_space_v1_wave2.json",
+    "fwonly_artifact": "data/baselines/voice/author_space/author_space_v1_wave2_fwonly.json",
+    "data": "validation/datasets/pan25_task1/processed/val.jsonl (local path prefix redacted)",
+    "zenodo_record": "14962653",
+    "prereg_threshold": "nearest-author W-percentile > 90 => AI",
+    "score": "nearest-author distance (higher = AI; direction fixed a priori from E4)",
+    "max_samples": null
+  },
+  "dataset": {
+    "split": "val.jsonl",
+    "n": 3589,
+    "n_human": 1277,
+    "n_ai": 2312,
+    "n_sources": 23,
+    "mean_words": 608.2078573418779,
+    "median_words": 616.0,
+    "max_words": 2892,
+    "n_below_800": 3195,
+    "n_below_1500": 3554,
+    "bin_counts": {
+      "<800": 3195,
+      "800-1500": 359,
+      "1500-3000": 35,
+      ">3000": 0
+    },
+    "genre_counts": {
+      "essays": 665,
+      "fiction": 1837,
+      "news": 1087
+    }
+  },
+  "wave2": {
+    "overall": {
+      "n": 3589,
+      "n_human": 1277,
+      "n_ai": 2312,
+      "auc": 0.4392871755547306,
+      "prereg_w_p90": {
+        "accuracy": 0.6441905823349122,
+        "f1": 0.7835960006778512,
+        "precision": 0.6441905823349122,
+        "recall": 1.0
+      },
+      "optimal_f1_sweep": {
+        "threshold": 1.8663773274516795,
+        "accuracy": 0.6533853441069936,
+        "f1": 0.7876408330488222,
+        "precision": 0.6505922165820643,
+        "recall": 0.9978373702422145
+      },
+      "median_score_human": 2.363941606145727,
+      "median_score_ai": 2.305510076091397
+    },
+    "by_length": {
+      "<800": {
+        "n": 3195,
+        "n_human": 1094,
+        "n_ai": 2101,
+        "auc": 0.402330395467641,
+        "prereg_w_p90": {
+          "accuracy": 0.6575899843505477,
+          "f1": 0.793429003021148,
+          "precision": 0.6575899843505477,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.8417577367852913,
+          "accuracy": 0.6572769953051644,
+          "f1": 0.7932011331444759,
+          "precision": 0.6574827802128992,
+          "recall": 0.9995240361732508
+        },
+        "median_score_human": 2.389560814826866,
+        "median_score_ai": 2.31872129676348
+      },
+      "800-1500": {
+        "n": 359,
+        "n_human": 156,
+        "n_ai": 203,
+        "auc": 0.5698496905393456,
+        "prereg_w_p90": {
+          "accuracy": 0.5654596100278552,
+          "f1": 0.7224199288256228,
+          "precision": 0.5654596100278552,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.8663773274516795,
+          "accuracy": 0.6044568245125348,
+          "f1": 0.7380073800738007,
+          "precision": 0.5899705014749262,
+          "recall": 0.9852216748768473
+        },
+        "median_score_human": 2.1397105187158916,
+        "median_score_ai": 2.182552504520848
+      },
+      "1500-3000": {
+        "n": 35,
+        "n_human": 27,
+        "n_ai": 8,
+        "auc": 0.8564814814814814,
+        "prereg_w_p90": {
+          "accuracy": 0.22857142857142856,
+          "f1": 0.3720930232558139,
+          "precision": 0.22857142857142856,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.8264296594408844,
+          "accuracy": 0.8,
+          "f1": 0.6956521739130436,
+          "precision": 0.5333333333333333,
+          "recall": 1.0
+        },
+        "median_score_human": 1.6895479559123499,
+        "median_score_ai": 2.04396275243261
+      },
+      ">3000": {
+        "n": 0,
+        "n_human": 0,
+        "n_ai": 0,
+        "auc": null,
+        "prereg_w_p90": null,
+        "optimal_f1_sweep": null,
+        "median_score_human": null,
+        "median_score_ai": null
+      }
+    },
+    "by_genre": {
+      "essays": {
+        "n": 665,
+        "n_human": 132,
+        "n_ai": 533,
+        "auc": 0.23943942236625165,
+        "prereg_w_p90": {
+          "accuracy": 0.8015037593984963,
+          "f1": 0.8898163606010017,
+          "precision": 0.8015037593984963,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.8767921055302843,
+          "accuracy": 0.8,
+          "f1": 0.8888888888888888,
+          "precision": 0.8012048192771084,
+          "recall": 0.99812382739212
+        },
+        "median_score_human": 2.5004199424415194,
+        "median_score_ai": 2.3095150807856304
+      },
+      "fiction": {
+        "n": 1837,
+        "n_human": 928,
+        "n_ai": 909,
+        "auc": 0.4034700883881492,
+        "prereg_w_p90": {
+          "accuracy": 0.49482852476864453,
+          "f1": 0.662053896576839,
+          "precision": 0.49482852476864453,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.6694566352761662,
+          "accuracy": 0.4953728905824714,
+          "f1": 0.6622950819672131,
+          "precision": 0.4950980392156863,
+          "recall": 1.0
+        },
+        "median_score_human": 2.3501537300160766,
+        "median_score_ai": 2.277580853777278
+      },
+      "news": {
+        "n": 1087,
+        "n_human": 217,
+        "n_ai": 870,
+        "auc": 0.5759733036707453,
+        "prereg_w_p90": {
+          "accuracy": 0.8003679852805887,
+          "f1": 0.8891159938681655,
+          "precision": 0.8003679852805887,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.8663773274516795,
+          "accuracy": 0.8307267709291628,
+          "f1": 0.9042663891779397,
+          "precision": 0.8260456273764258,
+          "recall": 0.9988505747126437
+        },
+        "median_score_human": 2.2670521674178223,
+        "median_score_ai": 2.3372890776857225
+      }
+    }
+  },
+  "fwonly": {
+    "overall": {
+      "n": 3589,
+      "n_human": 1277,
+      "n_ai": 2312,
+      "auc": 0.5120765174649712,
+      "prereg_w_p90": {
+        "accuracy": 0.6441905823349122,
+        "f1": 0.7835960006778512,
+        "precision": 0.6441905823349122,
+        "recall": 1.0
+      },
+      "optimal_f1_sweep": {
+        "threshold": 1.4717365822163286,
+        "accuracy": 0.6542212315408191,
+        "f1": 0.7878269789707644,
+        "precision": 0.6513994910941476,
+        "recall": 0.9965397923875432
+      },
+      "median_score_human": 1.9566455041231074,
+      "median_score_ai": 1.960616889569221
+    },
+    "by_length": {
+      "<800": {
+        "n": 3195,
+        "n_human": 1094,
+        "n_ai": 2101,
+        "auc": 0.49104457092339593,
+        "prereg_w_p90": {
+          "accuracy": 0.6575899843505477,
+          "f1": 0.793429003021148,
+          "precision": 0.6575899843505477,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.4512106020596272,
+          "accuracy": 0.6597809076682316,
+          "f1": 0.7942456937346205,
+          "precision": 0.6593337523570082,
+          "recall": 0.9985721085197525
+        },
+        "median_score_human": 1.9769413497267396,
+        "median_score_ai": 1.967973182510574
+      },
+      "800-1500": {
+        "n": 359,
+        "n_human": 156,
+        "n_ai": 203,
+        "auc": 0.5663761525830491,
+        "prereg_w_p90": {
+          "accuracy": 0.5654596100278552,
+          "f1": 0.7224199288256228,
+          "precision": 0.5654596100278552,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.545986173430367,
+          "accuracy": 0.6267409470752089,
+          "f1": 0.7442748091603054,
+          "precision": 0.6074766355140186,
+          "recall": 0.9605911330049262
+        },
+        "median_score_human": 1.8089542574973567,
+        "median_score_ai": 1.8621019605204112
+      },
+      "1500-3000": {
+        "n": 35,
+        "n_human": 27,
+        "n_ai": 8,
+        "auc": 0.8148148148148149,
+        "prereg_w_p90": {
+          "accuracy": 0.22857142857142856,
+          "f1": 0.3720930232558139,
+          "precision": 0.22857142857142856,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.51528733733892,
+          "accuracy": 0.7714285714285715,
+          "f1": 0.6363636363636364,
+          "precision": 0.5,
+          "recall": 0.875
+        },
+        "median_score_human": 1.468878869629632,
+        "median_score_ai": 1.6085364636749941
+      },
+      ">3000": {
+        "n": 0,
+        "n_human": 0,
+        "n_ai": 0,
+        "auc": null,
+        "prereg_w_p90": null,
+        "optimal_f1_sweep": null,
+        "median_score_human": null,
+        "median_score_ai": null
+      }
+    },
+    "by_genre": {
+      "essays": {
+        "n": 665,
+        "n_human": 132,
+        "n_ai": 533,
+        "auc": 0.3883393029734493,
+        "prereg_w_p90": {
+          "accuracy": 0.8015037593984963,
+          "f1": 0.8898163606010017,
+          "precision": 0.8015037593984963,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.5098753077615605,
+          "accuracy": 0.8030075187969925,
+          "f1": 0.8905597326649958,
+          "precision": 0.802710843373494,
+          "recall": 1.0
+        },
+        "median_score_human": 2.1788257930585466,
+        "median_score_ai": 2.0593055001718144
+      },
+      "fiction": {
+        "n": 1837,
+        "n_human": 928,
+        "n_ai": 909,
+        "auc": 0.4803722829179469,
+        "prereg_w_p90": {
+          "accuracy": 0.49482852476864453,
+          "f1": 0.662053896576839,
+          "precision": 0.49482852476864453,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.463535875467757,
+          "accuracy": 0.502449646162221,
+          "f1": 0.664710198092443,
+          "precision": 0.49862410566868465,
+          "recall": 0.9966996699669967
+        },
+        "median_score_human": 1.9591100988592385,
+        "median_score_ai": 1.948146045920023
+      },
+      "news": {
+        "n": 1087,
+        "n_human": 217,
+        "n_ai": 870,
+        "auc": 0.6501085862598655,
+        "prereg_w_p90": {
+          "accuracy": 0.8003679852805887,
+          "f1": 0.8891159938681655,
+          "precision": 0.8003679852805887,
+          "recall": 1.0
+        },
+        "optimal_f1_sweep": {
+          "threshold": 1.5314181392586235,
+          "accuracy": 0.828886844526219,
+          "f1": 0.9022082018927445,
+          "precision": 0.8313953488372093,
+          "recall": 0.9862068965517241
+        },
+        "median_score_human": 1.787715588895078,
+        "median_score_ai": 1.9075255017977866
+      }
+    }
+  },
+  "baselines": {
+    "availability": {
+      "Binoculars": true,
+      "Fast-DetectGPT": true
+    },
+    "ran": false,
+    "skip_reason": "External detector envs were availability-checked but not run: each predict_score call subprocess-loads Falcon-7B (30-60s cold start on MPS), putting any meaningful subset far over the 30-minute compute budget, and a background Ollama generation job held the GPU during this run. Re-run with --run-baselines on idle hardware to fill this row."
+  },
+  "appendix_paragraph": "To situate the placement method against the dominant short-text benchmark, we evaluated it as a binary scorer on the PAN'25 Voight-Kampff Generative AI Detection task (Zenodo 14962653; validation split, n=3589: 1277 human, 2312 machine texts from 22 generators across essays, news, and fiction; median 616 words). Each text was scored by its nearest-author distance in the 15-author literary-fiction space, with the direction (machine text sits farther off the human manifold) and the operating threshold (within-author p90) fixed a priori; nothing was tuned on PAN data. Overall ROC AUC was 0.439 (function-words-only vocabulary: 0.512). Stratified by length, AUC recovered monotonically: 0.402 (n=3195) below 800 words, 0.570 (n=359) at 800\u20131,500 words, and 0.856 (n=35) at 1,500\u20133,000 words. The benchmark contains no texts above 3,000 words, and 89% of it sits below 800 words \u2014 under the length floor at which our own calibration experiments (E6) already show attribution becoming unreliable. Below that floor the pre-declared direction in fact inverts (AUC < 0.5): short human texts, especially essays, land farther from the literary manifold than short machine texts, consistent with small-sample distance inflation hitting heterogeneous human prose hardest. The pre-registered off-manifold gate saturates \u2014 nearly every PAN text, human or machine, is correctly off-manifold relative to the 15 calibrated authors \u2014 so it carries no detection signal in this regime. We report these numbers as a boundary characterization rather than a competitive entry: the method is designed for long-form, fiction-register authorship placement, and its degradation (and inversion) on short, mixed-genre texts is the measured edge of that design regime, demonstrated on the field's own benchmark. Purpose-built short-text detectors (e.g., the PAN organizers' Binoculars baseline, AUC \u2248 0.9+ here) remain the right tool in that regime."
+}
