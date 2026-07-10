@@ -1,6 +1,6 @@
 # Cross-target entry matrix (Sec. 8.12 specificity control at the entry level)
 
-*Generated 2026-07-10T16:20:53.953361+00:00 by cross_target_entry_matrix.py; seed 20260609, 2000 bootstrap resamples; frozen corpus and envelopes (provenance in the JSON meta). Positive-control gate: PASS (matched entry reproduces Results 2.0 exactly, pooled + per model, both vocabularies).*
+*Generated 2026-07-10T18:56:30.318424+00:00 by cross_target_entry_matrix.py; seed 20260609, 2000 bootstrap resamples; frozen corpus and envelopes (provenance in the JSON meta). Positive-control gate: PASS (matched entry reproduces Results 2.0 exactly, pooled + per model, both vocabularies).*
 
 ## fwonly @p90 (primary)
 
@@ -36,6 +36,7 @@
     - drop gpt-5: D = +10.54 pp, CI95 [-1.07, +22.79] (n=196).
     - drop gpt-5-mini: D = +15.82 pp, CI95 [+4.22, +28.28] (n=196).
     - drop qwen3.6:35b: D = +17.95 pp, CI95 [+6.06, +31.31] (n=208).
+- Difference-in-differences (increment-level specificity): styled own-minus-other +16.10 pp; unprompted own-minus-other -3.31 pp; interaction +19.41 pp, cluster CI95 [+3.12, +34.50].
 - Per-model paired D (that model's samples only):
     - claude-fable-5: D = +16.24 pp, CI95 [-17.09, +52.15] (n=39).
     - claude-haiku-4-5: D = +0.00 pp, CI95 [+0.00, +0.00] (n=17).
