@@ -3,7 +3,7 @@
 **An author-relative measurement space for stylometric placement** — the
 instrument, validation harness, corpora, and recorded results behind
 **"The Width of a Voice: Placing Machine Imitation Inside Authors' Own
-Variation"** (Will Bryant, preprint v0.5.3 — PDF at
+Variation"** (Will Bryant, preprint v0.5.4 — PDF at
 [`docs/paper/`](docs/paper/), DOI: [10.5281/zenodo.21210011](https://doi.org/10.5281/zenodo.21210011); targeting
 CHR 2027).
 
@@ -155,8 +155,8 @@ reports/                    Recorded validation results (aggregates) +
                             interactive HTML report; reports/validation/
                             results2/ is the Results 2.0 (v0.4) evidence
                             set behind every headline number
-docs/paper/                 The preprint PDF (v0.5.3, CC BY 4.0)
-docs/PAPER_DRAFT.md         The paper source (markdown, v0.5.3, figures
+docs/paper/                 The preprint PDF (v0.5.4, CC BY 4.0)
+docs/PAPER_DRAFT.md         The paper source (markdown, v0.5.4, figures
                             placed) + docs/references.bib
 docs/figures/               Print figures F1-F7 (PDF + 600-dpi PNG) with
                             generated captions
@@ -201,7 +201,7 @@ See `DATA_LICENSES.md` for details.
             Authors' Own Variation},
   year   = {2026},
   doi    = {10.5281/zenodo.21210011},
-  note   = {Preprint v0.5.3; targeting CHR 2027},
+  note   = {Preprint v0.5.4; targeting CHR 2027},
   url    = {https://github.com/wbryanta/author-manifold}
 }
 ```

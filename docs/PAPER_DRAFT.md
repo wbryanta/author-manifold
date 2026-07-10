@@ -7,11 +7,11 @@
 
 **Preprint.** This version is released under a **CC BY 4.0** license. Targeting CHR 2027 (Computational Humanities Research).
 
-**Draft v0.5.3 — 2026-07-05.** Decoding-mechanics review pass (independent SME reviewer): §4.2 sampling-configuration disclosure enumerated (incl. qwen presence_penalty 1.5), abstract width sentence carries the flat-distance qualifier, gpt-5 exception tagged to its reasoning regime, §5.5 aggregation caveat, §8.13 position-asymmetry limitation, §5.8 register/unweighted clauses, §5.3 CI-dependence note; numbers unchanged.
+**Draft v0.5.4 — 2026-07-10.** Cross-target entry matrix added — the §8.12 discriminant-validity control, run on this paper's own styled corpus at the entry level; verdict: the §5.2 increment is substantially target-specific (§5.2 pointer, §8.12 resolution with its qualifications stated in full, one abstract clause). Related-work additions: StoryScope and Frankentexts (§2.2), POLARIS (§2.5), and a verification-lineage positioning paragraph (§2.4). Incidental-echo disclosure promoted into the paper (§8.14) with its echo-excluded robustness check. §5.8 checklist-vs-stylometry scope guard. All previously frozen numbers unchanged; the only new numbers are the cross-target matrix analysis and the echo robustness check.
 
-**Evidence files:** entry, completion, and width numbers trace to `reports/validation/author_space/results2/` — `controls_results.md`, `r3_floor_compliant.md`, `e8_yardstick.md`, `entry_report.md`, `entry_results.json`, `completion_results.md` (2026-06-11) — and `wave2/e8_results.md`; instrument-validation numbers remain locked to Number Freeze v2 (`wave2/PRIMARY_ARTIFACT.md`); review reports and the remediation plan are committed at `redteam_stats_attack_v03.md`, `redteam_claims_attack_v03.md`, and `RED_TEAM_SYNTHESIS.md`.
+**Evidence files:** entry, completion, and width numbers trace to `reports/validation/author_space/results2/` — `controls_results.md`, `r3_floor_compliant.md`, `e8_yardstick.md`, `entry_report.md`, `entry_results.json`, `completion_results.md` (2026-06-11), `cross_target_matrix.md`/`.json`, and `echo_robustness.md` (2026-07-10) — and `wave2/e8_results.md`; instrument-validation numbers remain locked to Number Freeze v2 (`wave2/PRIMARY_ARTIFACT.md`); review reports and the remediation plan are committed at `redteam_stats_attack_v03.md`, `redteam_claims_attack_v03.md`, and `RED_TEAM_SYNTHESIS.md`.
 
-Changelog: v0.5.0 (2026-06-11) — structural/rhetorical revision per `first_read_notes_v042.md`; no numeric or substantive changes from v0.4.2. v0.5.1 (2026-06-12) — residual notes from second cold read (provenance consolidation finished, §5.5 chassis passage restructured, §7 de-restated, instrument-at-a-glance added, refusal finding promoted); no numeric or substantive changes. v0.5.2 (2026-07-02) — hygiene pass: claims audit, related-work reconciliation (Thennal DK & Hatzel 2026), discriminant-validity limitation (§8.12); numbers unchanged. v0.5.3 (2026-07-05) — decoding-mechanics review pass: sampling-configuration disclosure (§4.2), abstract temperings, aggregation caveat (§5.5), position-asymmetry limitation (§8.13); numbers unchanged.
+Changelog: v0.5.0 (2026-06-11) — structural/rhetorical revision per `first_read_notes_v042.md`; no numeric or substantive changes from v0.4.2. v0.5.1 (2026-06-12) — residual notes from second cold read (provenance consolidation finished, §5.5 chassis passage restructured, §7 de-restated, instrument-at-a-glance added, refusal finding promoted); no numeric or substantive changes. v0.5.2 (2026-07-02) — hygiene pass: claims audit, related-work reconciliation (Thennal DK & Hatzel 2026), discriminant-validity limitation (§8.12); numbers unchanged. v0.5.3 (2026-07-05) — decoding-mechanics review pass: sampling-configuration disclosure (§4.2), abstract temperings, aggregation caveat (§5.5), position-asymmetry limitation (§8.13); numbers unchanged. v0.5.4 (2026-07-10) — cross-target entry matrix (§5.2/§8.12; one abstract clause); related work: StoryScope/Frankentexts/POLARIS + verification lineage (§2.2/§2.4/§2.5); echo disclosure + robustness (§8.14); §5.8 scope guard; §5.5 dagger legend; frozen numbers unchanged.
 
 ---
 
@@ -30,9 +30,11 @@ length-matched envelopes of within-author variation, validated by a
 positive control — the authors' own held-out text must re-enter its own
 envelope. Four findings. Prompting a model with an author's name roughly
 triples entry into the author's envelope, measured on the closed-class
-function words that classical attribution rests on (10.7% to 30.5%);
-what transfers is surface texture — the underlying function-word
-machinery barely moves. Giving a model the author's own opening, with no
+function words that classical attribution rests on (10.7% to 30.5%); a
+cross-target control finds the increment substantially target-specific
+(text styled for one author enters other authors' envelopes at rates
+indistinguishable from never-prompted text). What transfers is surface
+texture — the underlying function-word machinery barely moves. Giving a model the author's own opening, with no
 author named, beats naming the author for every informative model that
 complied;
 the best style imitator refused every such request, leaving the field's
@@ -167,11 +169,42 @@ cross-model and narrative-level where ours is within-author and
 stylometric — the same collapse read at different scales — and their
 mitigation failure is consistent with the texture-versus-chassis result
 of §5.5: prompt-level steering moves what a prompt can name and does not
-reach the distribution underneath. We take all of this as settled and
+reach the distribution underneath. Above the stylometric layer entirely,
+the same collapse reappears: Russell et al. [@russell2026] induce a
+304-feature space of discourse-level narrative choices — character
+agency, chronological structure, degree of theme-explanation — and
+separate human from machine fiction at 93.2% macro-F1 using no stylistic
+cues, reporting that AI stories cluster in a shared region of narrative
+space (human-to-AI centroid distance 1.6× the AI-to-AI distance; human
+rarity percentile 0.71 vs 0.49) while human stories scatter. This is the
+width asymmetry at a third scale, and the distinction that keeps the two
+from being the same measurement is the axis of dispersion: theirs is
+*cross-author* (the human class against a model's spread) where ours is
+*within-author* (how far one author sits from herself). Where they frame
+narrative structure as durable and surface style as transient, we locate
+a second durable layer their design does not test — the function-word
+chassis, which named-author prompting barely moves (§5.5) — so the two
+"durable signals" coexist at different layers rather than competing.
+(Their "length-matched" re-testing is a length-confound audit and should
+not be confused with the length-matched *envelopes* of §3.9, which are a
+within-author variation instrument: same phrase, different device.)
+
+We take all of this as settled and
 sidestep the frame it was settled in: a detector answers "human or
 machine?" with a score whose error characteristics shift with each model
 generation; our instrument answers "how far from this author, in units of
-her own variation?" Appendix A runs the instrument on the PAN'25
+her own variation?" The frame-dependence of any "passes as human" verdict
+is made vivid by Pham et al. [@pham2025], who constrain a model to copy
+~90% of its tokens verbatim from human books: the resulting collages are
+misclassified as human by Pangram up to 72% of the time — against 100%
+detection for the same model's ordinary output — and evade Binoculars and
+FastDetectGPT almost entirely, a fooling rate that swings with the
+detector and the copy ratio, not with any change in who wrote the text.
+It is the generation-side reductio of our completion condition (§5.4): a
+"human" stylometric verdict is carried by inherited human tokens, and a
+multi-book collage passes precisely because it is mostly human prose —
+while being an imitation of no particular author, which is the
+distinction our within-author unit is built to draw. Appendix A runs the instrument on the PAN'25
 detection benchmark precisely to situate rather than compete — it
 degrades with shrinking length and inverts below our floor, the measured
 edge of its design regime, not an entry in the detection race.
@@ -238,7 +271,20 @@ dress; Zeng & Nini [@zeng2026] already apply it to LLM impersonation.
 What we claim is therefore not calibration per se but the unit: distance
 percentiles of named authors' own length-matched variation, in a
 gate-validated space, with the positive control reported at its observed
-value (84–88%) rather than assumed at nominal.
+value (84–88%) rather than assumed at nominal. The
+authorship-verification lineage is the denominator's other ancestor, and
+the one this framing must be positioned against rather than merely
+credited: the impostors method [@koppel2014] decides same-author
+questions by ranking a document against background impostors under
+feature subsampling, PAN ran author verification as a shared task for
+years [@stamatatos2015], and Delta's reliability under shrinking samples
+is mapped in detail by Eder [@eder2015]. Those designs answer a binary
+same-or-different question against verifier-internal score
+distributions; none of them yields the unit this paper is built to
+produce, nor its two guards — the observed (not assumed) same-author
+re-entry rate and the unprompted-porosity control. Envelopes are not verification
+renamed; they are the verification lineage's comparator turned into a
+calibrated, per-author measuring stick.
 
 ### 2.5 Persona and style-prompting effectiveness
 
@@ -256,6 +302,12 @@ What this literature does not measure — and our envelopes bound — is
 entry into an *individual* author's calibrated variation at matched
 length: the steering is real, and the function-word chassis it fails to
 reach (−0.007 Delta, n.s.; §5.5) is measured in the same experiment.
+Optimization for generation quality reaches the same nameable layer:
+Rajendhran et al. [@rajendhran2026] train a small model against a rubric
+of craft qualities (voice, vividness, coherence) and raters credit its
+"distinctive voice and texture" — surface qualities an author-identity
+chassis need not share; the method neither measures nor targets a named
+author's stylometry.
 
 ### 2.6 Human pastiche and parody scholarship
 
@@ -463,7 +515,7 @@ The question "do styled samples enter?" is only meaningful against the comparato
 | **fw-only (primary)** | 13/121 (10.7%) | 72/236 (**30.5%**) | **+19.8** | **[+4.3, +33.5] — excludes zero** | 2.2e-05 |
 | full (secondary) | 20/121 (16.5%) | 48/236 (20.3%) | +3.8 | [−12.6, +18.6] — n.s. | 0.48 |
 
-**The function-word increment is the controlled finding.** Style prompting roughly triples fw-only entry over the unprompted base, and the per-model increments are where the effect lives: claude-fable-5 goes from **0/20 unprompted to 35.9% styled** (Fisher p = 0.001), claude-opus-4-8 from 0% to 22.5% (p = 0.023), gpt-5 from 45.0% to 72.5% (p = 0.049), gpt-5-mini from 10.0% to 35.0% (p = 0.062). Note the best model's base: 9 of 20 of gpt-5's *never-prompted* samples already enter the target envelopes under fw-only, so its celebrated 72.5% sits on a 45% floor — the styled rate and the unprompted base belong in the same sentence.
+**The function-word increment is the controlled finding.** Style prompting roughly triples fw-only entry over the unprompted base, and the per-model increments are where the effect lives: claude-fable-5 goes from **0/20 unprompted to 35.9% styled** (Fisher p = 0.001), claude-opus-4-8 from 0% to 22.5% (p = 0.023), gpt-5 from 45.0% to 72.5% (p = 0.049), gpt-5-mini from 10.0% to 35.0% (p = 0.062). Note the best model's base: 9 of 20 of gpt-5's *never-prompted* samples already enter the target envelopes under fw-only, so its celebrated 72.5% sits on a 45% floor — the styled rate and the unprompted base belong in the same sentence. Whether the increment is toward the *named* target or merely toward published-fiction register is tested directly by the cross-target entry matrix (§8.12): matched entry exceeds mismatched entry by +16.10 pp (cluster-bootstrap 95% CI [+5.05, +27.09]), with its qualifications recorded there.
 
 **Full-vocabulary "entry" is demoted to a porosity-confounded secondary measure.** The styled increment over the unprompted base is +3.8 pp, nonsignificant pooled and within noise for *every* model individually. The reason is the target envelopes' porosity to AI house style on deliberately adjacent scenarios (§4.1's design admission): McCarthy's full-vocabulary envelope admits **19/29 (65.5%) of generic, never-prompted AI fiction** on the irrigation scenario (Didion 0/33, Morrison 1/29, Ondaatje 0/30). Full-vocabulary rates are retained in the tables below because the full-vs-fw gap measures content reuse (§6.1), but no imitation claim in this paper rests on them.
 
@@ -565,6 +617,8 @@ For each styled sample we measured per-dimension movement toward the target rela
 | present_ratio | +0.201 [+0.071, +0.253] | 0.63 | 0.0014 | 20.2% |
 | past_ratio | +0.159 [+0.082, +0.243] | 0.62 | 0.0036 | 15.5% |
 
+† marks length-sensitive dimensions: the styled-versus-unprompted movement is length-matched and therefore valid, but these dimensions' absolute gaps to novel-length shelf works are length-inflated, so the gap-closure percentages understate the shift there.
+
 **Away from the target (Holm-significant):**
 
 | Dimension | Median movement [95% CI] | Frac toward | Holm p | Median gap closure |
@@ -621,7 +675,7 @@ A parallel folk literature claims AI text is identifiable from surface habits �
 
 At document level the folk list is nearly inert. Two tells of twelve exceed AUC 0.60: the em dash at 0.680 (human median 1.71 per 1,000 words vs AI 3.71; cluster-bootstrap CI [0.48, 0.85], crossing chance once the eight-model, fifteen-author clustering is respected — qwen3.6's median em-dash rate is 0.00 while claude-haiku's is 7.01, so the tell is a model-family variable — and possibly in part a deployment-configuration variable: qwen ran under a presence penalty that suppresses token re-emission (§4.2) — not an AI constant) and contrastive "not X, but Y" at 0.621. Four run backwards — exclamation marks 0.238, superlatives 0.305, hedges 0.410, "Let's" openers 0.446: the celebrated novelists out-score the machines. Six (delve/leverage, corporate jargon, container-word frames, and unnamed-consensus appeals among them) are absent from at least half the unprompted AI fiction samples and can detect nothing there — unsurprisingly, since these tells were coined on chat- and essay-register assistant output and can barely occur in narrative prose; the register mismatch is the mechanism of their degeneracy here. The combined twelve-tell score — combined as the circulating checklists are applied, unweighted, which dilutes the two informative tells with six near-constant ones — is a coin flip: AUC 0.506 [0.377, 0.623], catching 5% of AI at 95% specificity on the human windows.
 
-The converse number is the operative one for anyone applying these lists to people: an em-dash threshold tuned to catch half the AI samples flags 28.7% of the shelf windows (Pynchon 15/20 windows, Whitehead 14/20, Morrison 29/45), and the combined-tell version flags 50.8% — Ishiguro 24/30, Pynchon 16/20, Morrison 34/45. Whatever these tells measure in other registers, in long-form fiction at document level they select Morrison and Pynchon about as often as they select the machine.
+The converse number is the operative one for anyone applying these lists to people: an em-dash threshold tuned to catch half the AI samples flags 28.7% of the shelf windows (Pynchon 15/20 windows, Whitehead 14/20, Morrison 29/45), and the combined-tell version flags 50.8% — Ishiguro 24/30, Pynchon 16/20, Morrison 34/45. Whatever these tells measure in other registers, in long-form fiction at document level they select Morrison and Pynchon about as often as they select the machine. This is a claim about the circulating *checklist* of nameable tells, not about stylometry in general: full feature sets still separate unedited machine fiction from human prose at near-ceiling accuracy (Russell et al. [@russell2026] report 99.8% for a character-n-gram/POS baseline) — but on brittle, edit-removable features; the folk-tell list, by contrast, is already inert before any editing.
 <!-- evidence: reports/validation/author_space/results2/folk_tells.md (descriptive; no pre-set gate) -->
 
 ### 5.9 Robustness summary
@@ -814,9 +868,15 @@ point.
 9. **Clustering limits resolution.** ICCs of 0.55–0.70 within (model × target × condition) cells give design effects ≈3; effective n for the 236-sample primary stratum is ~63–83. All headline intervals carry DEFF-adjusted and cell-bootstrap forms; per-model and per-condition contrasts that do not survive cluster-honest treatment (e.g., exemplar-vs-style) are not claimed.
 10. **Percentile and threshold resolution.** Full-novel W percentiles have 1/79 granularity and are two-valued for window-scale text (§3.4); LM envelope thresholds are quantile estimates, and every entry rate is reported with its sensitivity range over the threshold's bootstrap CI.
 11. **Collaboration disclosure, including the reviews.** The instrument and study were designed and executed in sustained human–AI collaboration (Claude, Opus 4.x through Fable 5); Claude-family models are 4 of the 8 studied. The scenarios, prompts, paraphrases, and exemplar scheme were drafted in that collaboration (§4.1); the four targets were chosen within it without a documented procedure; decoding configuration differs across families (no extended thinking on Claude, default reasoning on gpt-5; §4.2); and drafts of this paper, including this sentence, were written in it. The adversarial reviews were also performed within it: both review cycles were self-commissioned Claude agents — independent of each other, not external to the project — operating on a never-circulated internal draft (what they caught is reported in §5.1). The mitigations that make them evidence rather than theater: the attackers recomputed every number independently from the frozen artifacts; their reports are committed verbatim to the repository and released; and the controls they demanded (unprompted entry, model-matched completion, the 15-author width correlation, the floor-compliant chassis rerun) were run and matched their predictions. The completion prompts named no author (§4.1). Rule provenance is consolidated in Appendix B; stimuli, unlike thresholds, were never fixed independently of the collaborating model family. The collaborating model is not an author; responsibility for all claims rests with the human author.
-12. **Envelope entry does not by itself establish target-specificity.** Entry, as instrumented, is a one-envelope event — distance to the named target at or below the target's LM quantile — and cannot distinguish movement toward *that author* from generic drift toward the region published fiction shares. Subsequent internal work with this instrument (a June 2026 reasoning-effort study, red-teamed and withdrawn before release; nothing in this paper rests on it) made the concern concrete: decomposing one model's movement against all 15 author centroids, roughly two-thirds of its movement toward the target was attributable to movement toward *all* author centroids at once, and the target-specific residual (dTarget − dOthers) was null. This does not weaken the findings here, which run in the failure direction: entry rates that include non-specific entries are upper bounds on target-specific imitation, so the low entry rates and the immobile chassis only tighten under the concern — and the porosity control (§5.2) and the flat-distance observation (§5.3: styled samples land at nearly the same distance from every target) already display the non-specific component rather than hiding it. It does bound the positive readings: an individual entry event should not be read as target-specific imitation, and future applications that need entry to carry that meaning should pair it with a target-versus-others decomposition (dTarget − dOthers against all shelf centroids) as a discriminant-validity control.
+12. **Envelope entry does not by itself establish target-specificity.** Entry, as instrumented, is a one-envelope event — distance to the named target at or below the target's LM quantile — and cannot distinguish movement toward *that author* from generic drift toward the region published fiction shares. Nor does the §5.2 unprompted-base subtraction remove the generic component: the style prompt plausibly does two things at once — move text toward the named author, and shift register toward published fiction in general — and the second component, being created by the prompt, is absent from the unprompted baseline by construction (and movement decompositions at the distance level do not map linearly onto entry rates, so the two-thirds figure below bounds nothing about §5.2 by itself). Subsequent internal work with this instrument made the concern concrete. (That work — a June 2026 reasoning-effort study, red-teamed and withdrawn before release — used a different corpus under a different manipulation, reasoning-effort dosing rather than style prompting; nothing in this paper rests on it.) Decomposing one model's movement against all 15 author centroids, roughly two-thirds of its movement toward the target was attributable to movement toward *all* author centroids at once, and the target-specific residual (dTarget − dOthers) was null. This does not weaken the findings here, which run in the failure direction: entry rates that include non-specific entries are upper bounds on target-specific imitation, so the low entry rates and the immobile chassis only tighten under the concern — and the porosity control (§5.2) and the flat-distance observation (§5.3: styled samples land at nearly the same distance from every target) already display the non-specific component rather than hiding it. It does bound the positive readings: an individual entry event should not be read as target-specific imitation, and future applications that need entry to carry that meaning should pair it with a target-versus-others decomposition (dTarget − dOthers against all shelf centroids) as a discriminant-validity control.
+
+    **Resolution (v0.5.4).** That control has now been run on this paper's own styled corpus, at the entry level where the §5.2 headline lives: a cross-target entry matrix comparing P(entry into X's envelope | styled *for* X) against P(entry into X's envelope | styled for Y ≠ X), function-word vocabulary, matched length, on the frozen primary stratum (n = 236) — with the matched arm required to reproduce §5.2's frozen rates exactly before any mismatched number was computed. The increment is substantially target-specific: styled-for-X samples enter X's envelope at +16.10 pp above styled-for-others (paired per-sample contrast; cluster-bootstrap 95% CI [+5.05, +27.09]; per-target contrasts all positive — Didion +11.9, McCarthy +25.7, Morrison +20.2, Ondaatje +10.7 pp), and styled-for-others enter X at rates statistically indistinguishable from never-prompted cross-scenario text (differences −2.2 to +5.5 pp, every interval spanning zero) — no detectable cross-entry increment from the prompt-created register component. The verdict followed a decision rule pre-specified before the analysis ran, whose negative branches required renaming this paper's second contribution — and, in the fully negative branch, downgrading its abstract. Its qualifications, stated in full: the pooled significance is fragile to the best model (excluding gpt-5: +10.54 pp, CI [−1.07, +22.79], crossing zero — target-specificity is individually demonstrated only for gpt-5); the style-prompted arm alone is marginal (+14.78 pp, CI [−0.25, +30.77]) where the exemplar arm is not (+17.56 pp, CI [+2.70, +34.29]); the Ondaatje row's lower bound is degenerate (0/180 mismatched entries, so its bootstrap difference cannot fall below zero); the p95/p99 replicas cross zero where the p90 and full-vocabulary p90 replicas ([+4.60, +26.40]) do not; and the interval does not exclude target-specificity smaller than half the §5.2 increment — the matrix vindicates the increment's direction and its name, not a magnitude. The June 2026 concern therefore did not transfer to this corpus at the entry level. An individual entry event still should not be read as target-specific imitation; the pooled §5.2 increment now carries a direct discriminant-validity control.
+    <!-- evidence: reports/validation/author_space/results2/cross_target_matrix.md; reports/validation/author_space/results2/cross_target_matrix.json (positive-control gate: matched arm reproduces entry_results.json exactly, pooled + per model, both vocabularies) -->
 
 13. **AI samples are document openings; envelope windows tile whole works.** Every AI sample is a self-contained generation scored on its first 3,000 MFW tokens, while the human envelopes are built from windows tiling entire novels — so the comparison is length-matched but not position-matched, and openings are register-atypical (scene-setting and expositional density). The asymmetry is also differential: models that overshoot the length target are scored on an earlier fraction of a longer planned arc than models that hit it. The E8 yardstick is position-balanced; the AI placements are not. An openings-only envelope variant is the natural robustness check and is left to future work.
+
+14. **Incidental verbatim echo, quantified and controlled.** Because the exemplar and completion conditions supply the model with an author's own prose (two ~600-word excerpts, or the opening to continue), a few generations echo short runs of it: an audit of the released corpus found 4 of 1,072 samples with verbatim runs of ≤30 words (the longest, 30 words, is a traditional song the source novel itself quotes as an epigraph; the longest authorial prose run is 24 words), one in an exemplar cell and three in completion cells (disclosed in the companion repository's `DATA_LICENSES`). This is incidental echo, not method — orders of magnitude below the ~90%-by-design copy rate of token-reuse systems such as Frankentexts [@pham2025]. It bears on no result: the lone exemplar echo is a full-vocabulary non-entry (on the primary function-word vocabulary it is one of the 72 entries; removing it leaves the styled rate at 71/235 = 30.2%, within the published interval); removing all four samples leaves every §5.2 and §5.4 rate within its interval and the §5.4 model-matched sign test unchanged (5/5, p = 0.031); and the width correlation (§5.3), the unprompted base rates (§5.2), and the folk-tell analysis (§5.8) draw only on unprompted samples and are therefore unaffected. We flag it because the AI corpus is released verbatim, so the echoes are discoverable, and because reused-token imitation is exactly the confound a distance-to-author measurement must wall off.
+    <!-- evidence: reports/validation/author_space/results2/echo_robustness.md; DATA_LICENSES.md (companion repository) -->
 
 ---
 
