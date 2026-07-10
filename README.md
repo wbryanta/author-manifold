@@ -197,7 +197,7 @@ python3 tools/tier1_statistics.py \
     --out-dir reports/validation/author_space/results2_rerun
 ```
 
-### Regenerating the paper figures (F1-F7)
+### Regenerating the paper figures (F1-F8)
 
 ```bash
 pip install matplotlib umap-learn   # umap-learn: released F1 projection;
@@ -205,7 +205,7 @@ pip install matplotlib umap-learn   # umap-learn: released F1 projection;
 python3 tools/build_paper_figures.py    # -> docs/figures_rerun/, ~15 s
 ```
 
-All seven figures regenerate from the committed evidence JSONs and shipped
+All eight figures regenerate from the committed evidence JSONs and shipped
 corpus/artifacts; F2 verifies its recomputed distributions against the
 frozen results2 counts before rendering and aborts on any mismatch.
 
@@ -256,7 +256,7 @@ reports/                    Recorded validation results (aggregates) +
 docs/paper/                 The preprint PDF (v0.5.4, CC BY 4.0)
 docs/PAPER_DRAFT.md         The paper source (markdown, v0.5.4, figures
                             placed) + docs/references.bib
-docs/figures/               Print figures F1-F7 (PDF + 600-dpi PNG) with
+docs/figures/               Print figures F1-F8 (PDF + 600-dpi PNG) with
                             generated captions
 docs/redteam/               All three adversarial-review cycles + synthesis
                             (cycle3_2026-07/ includes the retraction record)

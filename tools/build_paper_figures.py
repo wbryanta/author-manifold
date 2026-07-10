@@ -1121,6 +1121,144 @@ def figure_f7(controls, entry, out_dir: Path, captions: list) -> None:
 
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# F8 — folk "AI tells" at document level (per-tell AUC dot plot)
+# ---------------------------------------------------------------------------
+
+F8_TELL_LABELS = {
+    "em_dash": "em dash",
+    "not_x_but_y": "\u201cnot X, but Y\u201d",
+    "staging_adverbs": "staging adverbs",
+    "tricolon": "tricolon (serial triad)",
+    "corporate_jargon": "corporate jargon",
+    "container_words": "container words",
+    "delve_leverage": "delve / leverage",
+    "unnamed_consensus": "unnamed consensus",
+    "lets_opener": "\u201cLet\u2019s\u201d openers",
+    "hedges": "hedges",
+    "superlative": "superlatives",
+    "exclamation": "exclamation marks",
+}
+
+
+def figure_f8(folk, out_dir: Path, captions: list) -> None:
+    """Per-tell separations: AUC with cluster-bootstrap CIs against the
+    chance line, plus the combined checklist score. Renders only from the
+    frozen folk_tells.json (Appendix C's table, drawn)."""
+    tells = folk["tells"]
+    combined = folk["combined_z_sum"]
+    order = sorted(tells, key=lambda k: tells[k]["auc_ai_high"], reverse=True)
+
+    fig, ax = plt.subplots(figsize=(SINGLE_COL + 0.9, 3.7))
+    n = len(order)
+    ys = np.arange(n + 1)[::-1] + 0.0  # combined row at the bottom (y=0)
+
+    for y, key in zip(ys[:n], order):
+        t = tells[key]
+        auc = t["auc_ai_high"]
+        lo, hi = t["auc_ci95_cluster_bootstrap"]
+        degen = t["witch_hunt"]["degenerate_threshold"]
+        if degen:
+            color = "#b8b8b8"
+        elif auc > 0.5:
+            color = C_BLUE
+        else:
+            color = C_VERMILLION
+        ax.plot([lo, hi], [y, y], color=color, lw=1.0, zorder=2,
+                solid_capstyle="butt")
+        ax.plot([auc], [y], marker="o", markersize=3.6,
+                markerfacecolor=color, markeredgecolor="white",
+                markeredgewidth=0.4, zorder=3)
+        label = F8_TELL_LABELS.get(key, key)
+        ax.annotate(label, (-0.02, y), xycoords=("axes fraction", "data"),
+                    ha="right", va="center", fontsize=6.6, color="#222222")
+
+    # combined checklist row, band-highlighted (suite convention: F4 chassis)
+    yc = ys[n]
+    auc_c = combined["auc_ai_high"]
+    lo_c, hi_c = combined["auc_ci95_cluster_bootstrap"]
+    ax.axhspan(yc - 0.45, yc + 0.45, color="#f0e6dc", zorder=0)
+    ax.plot([lo_c, hi_c], [yc, yc], color="#000000", lw=1.1, zorder=2,
+            solid_capstyle="butt")
+    ax.plot([auc_c], [yc], marker="D", markersize=4.2,
+            markerfacecolor="#000000", markeredgecolor="white",
+            markeredgewidth=0.4, zorder=3)
+    ax.annotate("combined 12-tell score", (-0.02, yc),
+                xycoords=("axes fraction", "data"), ha="right", va="center",
+                fontsize=6.6, color="#000000", fontweight="bold")
+    ax.axhline(yc + 0.62, color="#888888", lw=0.5, linestyle=(0, (2, 2)))
+
+    # selective callouts: the best tell and the checklist verdict
+    em = tells["em_dash"]["witch_hunt"]
+    ax.annotate(
+        "the best tell — yet tuned to catch half\n"
+        f"the machine samples, it flags {em['human_windows_flagged_pct']*100:.1f}% of\n"
+        "novelist windows (Pynchon, Whitehead, Morrison)",
+        (0.03, ys[0]), xycoords=("axes fraction", "data"),
+        ha="left", va="center", fontsize=5.8, color="#444444")
+    cwh = combined["witch_hunt"]
+    ax.annotate(
+        f"coin flip \u2014 at the same tuning, flags {cwh['human_windows_flagged_pct']*100:.1f}%\n"
+        "of novelist windows (Ishiguro, Pynchon, Morrison)",
+        (hi_c + 0.015, yc),
+        ha="left", va="center", fontsize=5.8, color="#000000")
+
+    ax.axvline(0.5, color="#555555", lw=0.7, zorder=1,
+               linestyle=(0, (4, 3)))
+    ax.annotate("chance (0.5)", (0.5, n + 1.05), ha="center", fontsize=6.2,
+                color="#555555", annotation_clip=False)
+    ax.annotate("machine scores higher $\\rightarrow$", (0.99, 1.005),
+                xycoords="axes fraction", ha="right", fontsize=6.4,
+                color=C_BLUE)
+    ax.annotate("$\\leftarrow$ novelists score higher", (0.01, 1.005),
+                xycoords="axes fraction", ha="left", fontsize=6.4,
+                color=C_VERMILLION)
+
+    ax.set_xlim(0.0, 1.0)
+    ax.set_xticks([0.0, 0.25, 0.5, 0.75, 1.0])
+    ax.set_ylim(-0.7, n + 0.9)
+    ax.set_yticks([])
+    ax.set_xlabel("AUC, AI-high direction (document level; 3,500-word windows)")
+    handles = [
+        Line2D([], [], marker="o", linestyle="", markersize=4,
+               markerfacecolor=C_BLUE, markeredgecolor="white",
+               label="folk direction (AI higher)"),
+        Line2D([], [], marker="o", linestyle="", markersize=4,
+               markerfacecolor=C_VERMILLION, markeredgecolor="white",
+               label="backwards (novelists higher)"),
+        Line2D([], [], marker="o", linestyle="", markersize=4,
+               markerfacecolor="#b8b8b8", markeredgecolor="white",
+               label="degenerate on fiction"),
+        Line2D([], [], marker="D", linestyle="", markersize=4,
+               markerfacecolor="#000000", markeredgecolor="white",
+               label="combined checklist"),
+    ]
+    ax.legend(handles=handles, loc="center right", frameon=False,
+              bbox_to_anchor=(1.0, 0.40), handletextpad=0.3,
+              borderaxespad=0.2)
+
+    save(
+        fig, out_dir, "F8_folk_tells", captions,
+        "F8 \u2014 Folk \u201cAI tells\u201d at document level (Appendix C, drawn). "
+        "Per-tell ROC AUC in the folk (AI-high) direction with cluster-bootstrap "
+        "95% CIs (resampling 15 authors / 8 models), on 390 length-matched "
+        "3,500-word windows from the 78 shelf works vs the 400 unprompted AI "
+        "samples. Two of twelve tells exceed AUC 0.60 (em dash 0.680, "
+        "\u201cnot X, but Y\u201d 0.621); four run backwards \u2014 the "
+        "celebrated novelists out-score the machines (vermillion; the two "
+        "backwards tells that are also degenerate are drawn gray); six "
+        "(gray) are absent from at least half the AI fiction samples and "
+        "are degenerate as detectors here. The combined, unweighted "
+        "twelve-tell checklist "
+        "\u2014 combined as the circulating lists are applied \u2014 is a "
+        "coin flip (AUC 0.506 [0.377, 0.623]) and, tuned to catch half the "
+        "machine samples, flags 50.8% of the novelist windows. Descriptive; "
+        "no pre-set gate (Appendix B). "
+        "*Source:* `results2/folk_tells.json`; the full per-tell table with "
+        "thresholds and flagged-author detail is Appendix C.",
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Build Tier 1 paper print figures F1-F7 (PDF+PNG) from "
@@ -1139,6 +1277,10 @@ def main():
         "--skip-f2", action="store_true",
         help="skip F2 (re-featurizes the styled + unprompted samples "
              "through the rerun_entry_analysis placement path)")
+    parser.add_argument(
+        "--only-f8", action="store_true",
+        help="render only F8 (folk tells) and merge its caption into the "
+             "existing captions.md, leaving F1-F7 outputs untouched")
     args = parser.parse_args()
 
     out_dir = args.out_dir
@@ -1155,6 +1297,20 @@ def main():
     completion = json.loads(COMPLETION_R2.read_text())
 
     captions: list = []
+    folk = json.loads((R3_FC.parent / "folk_tells.json").read_text())
+    if args.only_f8:
+        figure_f8(folk, out_dir, captions)
+        cap_path = out_dir / "captions.md"
+        existing = cap_path.read_text() if cap_path.exists() else ""
+        # drop any prior F8 block (headered or raw), then append fresh
+        import re as _re
+        existing = _re.sub(
+            r"\n*(## F8_folk_tells\n+)?F8 — Folk.*", "\n",
+            existing, flags=_re.S)
+        name, cap = captions[0]
+        cap_path.write_text(existing.rstrip() + f"\n\n## {name}\n\n{cap}\n")
+        print(f"  merged F8 caption into {cap_path}")
+        return
     if not args.skip_f1:
         figure_f1(artifact, out_dir, captions)
     if not args.skip_f2:
@@ -1164,6 +1320,7 @@ def main():
     figure_f5(e6, pan, artifact, variants, out_dir, captions)
     figure_f6(controls, out_dir, captions)
     figure_f7(controls, entry, out_dir, captions)
+    figure_f8(folk, out_dir, captions)
 
     cap_path = out_dir / "captions.md"
     lines = [
