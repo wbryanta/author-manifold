@@ -22,7 +22,7 @@ All entry numbers are read against per-author **length-matched envelopes**
 is topic-porous and reported as secondary. The earlier full-novel W-p90
 entry criterion (v2: "0/318 enter") was a length-calibration artifact
 caught by adversarial review and is retired; see
-`reports/validation/wave2/PRIMARY_ARTIFACT.md` (Number Freeze v3) and
+`reports/validation/author_space/wave2/PRIMARY_ARTIFACT.md` (Number Freeze v3) and
 `docs/PAPER_DRAFT.md` §4-5.
 
 | Finding | Number |
@@ -30,7 +30,7 @@ caught by adversarial review and is retired; see
 | Styled entry as a **controlled increment** over the unprompted base rate (fw-only, @p90): never-prompted AI on the same scenarios already enters 13/121 (10.7%); naming the author raises it to 72/236 (30.5%) | **+19.8 pp** [+4.3, +33.5] cluster-bootstrap 95%, excludes zero (full-vocabulary increment: +3.8 pp [−12.6, +18.6] — porosity, not imitation) |
 | Model-matched **completion vs named-style** (fw-only, @p90): continuing the author's own text beats being told the author's name for every informative model | **5/5** completion-higher, exact one-sided p = 0.031; GPT-5 (the best styled model) refused all completions — the previously reported pooled "parity" was that composition artifact |
 | **Envelope width predicts entry** (de-circularized: all 15 shelf authors as pseudo-targets for 309 unprompted samples) | Pearson **r = +0.844** [+0.59, +0.95] fw-only (full vocab +0.73); Ishiguro is the wide-but-distant outlier |
-| **E8 positive control** (held-out windows inside own LM p90) | strict gate as committed: **FAIL** (3/4 shelves); the observed self-entry yardstick is reported instead — pooled 83.7–87.8% (`reports/validation/results2/e8_yardstick.md`) |
+| **E8 positive control** (held-out windows inside own LM p90) | strict gate as committed: **FAIL** (3/4 shelves); the observed self-entry yardstick is reported instead — pooled 83.7–87.8% (`reports/validation/author_space/results2/e8_yardstick.md`) |
 | Human pastiche (Brinton 1913 vs Austen's LM envelope) — **descriptive juxtaposition only** (chunks of one novel, not independent) | 27/36 (75%) fw-only chunks enter Austen's p90; 34/36 full-vocabulary |
 | Public-domain shelf validation (9 authors / 35 novels, fully shipped) | E1 separation **AUC 0.999**, E2 leave-one-out attribution **100%** top-1 |
 | Contemporary shelf validation (15 authors / 78 novels, artifacts shipped, texts not) | E1 AUC 0.941, E2 top-1 96.2% |
@@ -38,10 +38,10 @@ caught by adversarial review and is retired; see
 Exact statistical treatment (Clopper-Pearson + design-effect-adjusted +
 cluster-bootstrap intervals on every pooled rate, threshold-quantile CI
 sweeps, exact tests, Holm registry):
-`reports/validation/results2/entry_report.md` and
-`reports/validation/results2/controls_results.md`; instrument validation
+`reports/validation/author_space/results2/entry_report.md` and
+`reports/validation/author_space/results2/controls_results.md`; instrument validation
 remains locked to Number Freeze v2
-(`reports/validation/wave2/tier1_statistics.md`).
+(`reports/validation/author_space/wave2/tier1_statistics.md`).
 
 **Method note — adversarial review is part of the pipeline.** The results
 above survived three full red-team cycles run against the project's own
@@ -58,7 +58,7 @@ produced two significant-looking headline results (p = 0.011 / p = 0.021)
 construct-validity failures, and **both claims were retracted before any
 external reader saw them**. Four headline claims retracted and corrected
 across three cycles; each cycle's findings are owned by the pipeline
-(`reports/validation/results2/`), not hand-patched.
+(`reports/validation/author_space/results2/`), not hand-patched.
 
 ## This is NOT an AI detector
 
@@ -88,7 +88,7 @@ python3 tools/validate_author_space.py \
     --baseline-dir data/pd_work_baselines \
     --manifest data/pd_manifest.yaml \
     --distance-variant mfw_delta \
-    --output-dir reports/validation/pd_shelf_rerun
+    --output-dir reports/validation/author_space/pd_shelf_rerun
 
 # 2. E4: place the AI corpus into the PD space. Gate: every unprompted
 #    sample off-manifold. Expected: PASS (400/400 unprompted off-manifold,
@@ -100,11 +100,11 @@ python3 tools/validate_author_space.py \
 #    records). ~5 min.
 python3 tools/run_e4_ai_placement.py \
     --artifact data/artifacts/author_space_pd_v1.json \
-    --output-dir reports/validation/pd_shelf_rerun
+    --output-dir reports/validation/author_space/pd_shelf_rerun
 
 # 3. P5: the human pastiche baseline (Brinton 1913 vs Austen). ~1 min.
 python3 tools/place_pastiche_baseline.py \
-    --output-dir reports/validation/pd_shelf_rerun
+    --output-dir reports/validation/author_space/pd_shelf_rerun
 
 # 4. Test suite
 pip install pytest && pytest
@@ -112,14 +112,14 @@ pip install pytest && pytest
 
 Everything above runs from this repository alone — the public-domain shelf
 texts, per-work baselines, AI corpus, and space artifacts all ship. Results
-land in `reports/validation/pd_shelf_rerun/` next to the recorded runs in
-`reports/validation/pd_shelf/`.
+land in `reports/validation/author_space/pd_shelf_rerun/` next to the recorded runs in
+`reports/validation/author_space/pd_shelf/`.
 
 To reproduce the wave-2 statistics from the shipped placement results:
 
 ```bash
 python3 tools/tier1_statistics.py \
-    --e4-results reports/validation/wave2/e4_results.json \
+    --e4-results reports/validation/author_space/wave2/e4_results.json \
     --artifact data/artifacts/author_space_v1_wave2.json
 ```
 

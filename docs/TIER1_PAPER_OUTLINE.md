@@ -12,7 +12,7 @@ Fiction Measured Against Calibrated Within-Author Variation
 **Status:** outline v0.3 (2026-06-10, scaled-corpus results in).
 
 **Number Freeze v2 (2026-06-10):** the corpus-dependent numbers below are
-superseded by `reports/validation/wave2/PRIMARY_ARTIFACT.md` (full 8-model
+superseded by `reports/validation/author_space/wave2/PRIMARY_ARTIFACT.md` (full 8-model
 matrix, 910 placed): off-manifold **400/400**; enter rate **0/318**
 (0/159 style + 0/159 exemplar); approach 63/159 style / 83/159 exemplar;
 self-attribution 97.8%; R3 MFW closure −1.8%. The v0.3/v0.2 sections are

@@ -90,7 +90,7 @@ Variant comparison (wave-1 shelf):
 interpretation** (how the prose behaves). A function-words-only vocabulary
 variant (`--vocab-filter function_words_only`) controls the topic confound;
 headline results are robust under it (see
-`reports/validation/topic_controls/`).
+`reports/validation/author_space/topic_controls/`).
 
 ## Validation experiments (`tools/validate_author_space.py` and companions)
 
@@ -108,13 +108,13 @@ The space is not trusted until these gates pass on the calibration shelf:
 
 ## Recorded results (shipped under `reports/`)
 
-**Wave 2 (contemporary shelf, `reports/validation/wave2/`):** E1 AUC 0.941,
+**Wave 2 (contemporary shelf, `reports/validation/author_space/wave2/`):** E1 AUC 0.941,
 silhouette 14/15; E2 top-1 96.2%. Translator substructure is real
 (cross-translator within-author pairs median 0.750 vs same-translator
 0.569) but sits well inside the within-vs-between gap — authors survive
 translation; stability-weighted distance NOT adopted.
 
-**Public-domain shelf (`reports/validation/pd_shelf/`):** E1 AUC 0.999,
+**Public-domain shelf (`reports/validation/author_space/pd_shelf/`):** E1 AUC 0.999,
 silhouette 9/9; E2 top-1 and top-3 100%; E3 15/18 dimensions above null.
 Fully replicable from this repository alone.
 
@@ -127,9 +127,9 @@ although the space was never trained on AI text. Styled samples
 (style prompting moves text in the right direction) but **0/318 enter the
 target's within-author p90 region**. Statistical treatment (exact
 Clopper-Pearson bounds, permutation framings, Holm-Bonferroni registry) in
-`reports/validation/wave2/tier1_statistics.md`.
+`reports/validation/author_space/wave2/tier1_statistics.md`.
 
-**P5 — human pastiche baseline (`reports/validation/pd_shelf/`):** Brinton's
+**P5 — human pastiche baseline (`reports/validation/author_space/pd_shelf/`):** Brinton's
 *Old Friends and New Fancies* (1913), the first published Austen pastiche:
 33/37 chunks land nearest Austen, **0/37 enter her within-author p90
 region** — a dedicated human imitator shows the same
