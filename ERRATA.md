@@ -68,3 +68,53 @@ computed and are deliberately left intact; the values in them should be
 disregarded for the reasons above.
 
 *Found by the forensic code and data review of 2026-08-06 (finding A-6).*
+
+---
+
+## E-2 (2026-08-06) — PD envelope sidecars: `source_artifact_sha256` corrected in place
+
+**What changed.** Two shipped artifact files were **edited in place** on
+2026-08-06:
+
+- `data/artifacts/lm_envelopes_pd_3000w.json`
+- `data/artifacts/lm_envelopes_pd_fwonly_3000w.json`
+
+In each, `meta.source_artifact_sha256` was corrected to the sha256 of the
+source artifact **as shipped in this repository**:
+
+| Sidecar | Was | Now |
+|---|---|---|
+| `lm_envelopes_pd_3000w.json` | `9568b219…` | `eae85165…` |
+| `lm_envelopes_pd_fwonly_3000w.json` | `e1ef12ad…` | `e006db67…` |
+
+The original values are **preserved, not discarded**: they are kept in the
+same meta block under `source_artifact_sha256_parent_canonical`, alongside a
+note recording why they differ.
+
+**Why they were wrong.** Building the public release rewrote path strings
+inside `author_space_pd_v1.json` and its fw-only twin *after* those files had
+been hashed, so the sidecars declared the hashes of the parent project's
+canonical copies while the shipped bytes hashed to something else. Nothing
+verified the declaration, so the mismatch was invisible.
+
+**Why this is safe.** Before changing anything, each shipped artifact was
+compared against the parent canonical copy by full recursive JSON comparison
+at zero tolerance: **0 numeric and 0 structural differences**, and exactly 71
+string differences per file, all of them paths (35 baseline paths, 35 text
+paths, 1 manifest path). The envelopes are built from numerically identical
+inputs, so no envelope value, and no number anywhere in the paper, is
+affected.
+
+`tools/validate_lm_envelopes.py` now **asserts** the declared hash against
+the artifact it names and aborts on mismatch, so this class of drift cannot
+recur silently.
+
+**Note for anyone diffing clones.** If you compare a clone taken before
+2026-08-06 against one taken after, these two artifact files differ. That is
+this correction and nothing else: the changed bytes are the declared
+provenance hash, the added `source_artifact_sha256_parent_canonical` key, and
+its explanatory note. All envelope quantiles, window counts, and window
+distances are byte-identical, which
+`tools/validate_lm_envelopes.py` verifies on every run.
+
+*Found by the forensic code and data review of 2026-08-06 (finding C-1).*
