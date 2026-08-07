@@ -1,3 +1,25 @@
+# Public-domain shelf build manifest. Licence: CC0 1.0 (see DATA_LICENSES.md).
+#
+# NOTE ON `source_hash` (forensic review 2026-08-06, finding D-7). Despite the
+# name, this field does NOT hash the original Project Gutenberg download. It
+# is the first 8 hex characters of the sha256 of the *trimmed body slice* of
+# the shipped file -- that is, of `text[body_start_offset:body_end_offset]`
+# for the file named in `file_path`. It is an OUTPUT hash, verifiable against
+# what ships here:
+#
+#     import hashlib, pathlib, yaml
+#     m = yaml.safe_load(open("data/pd_manifest.yaml"))
+#     for w in m["works"]:
+#         text = pathlib.Path(m["corpus_root"], w["file_path"]).read_text()
+#         body = text[w["body_start_offset"]:w["body_end_offset"]]
+#         assert hashlib.sha256(body.encode()).hexdigest()[:8] == w["source_hash"]
+#
+# The field is NOT renamed to `output_hash` because the same loader
+# (author_manifold.author_space.load_manifest / load_shelf) reads this
+# manifest and the parent project's contemporary-shelf manifest, which is not
+# part of this release and cannot be updated in step; a rename here would
+# break that format compatibility silently. The name is kept and its meaning
+# documented instead.
 schema_version: 1.0.0
 generated: '2026-06-10T00:18:20+00:00'
 corpus_root: data/pd_shelf/

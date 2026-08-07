@@ -127,13 +127,19 @@ while cluster 4 degenerates to n=4, reproducing Bryant v2.0's micro-cluster
 
 ## Consequence (binding for ADR-0041 Phase 5)
 
-- **Do NOT re-cluster Bryant** (ADR-0035 Phase C) with this pipeline as-is.
-  The clean_v2.1 corpus is ready, but the identical recipe on clean literary
+*Release note (2026-08-06): the two bullets below concern a private personal
+corpus that is not part of this research release. The channel names and the
+internal filename they originally cited have been replaced with "private
+source strata (details withheld)"; nothing about the E7 control itself is
+changed.*
+
+- **Do NOT re-cluster the private personal corpus** with this pipeline as-is.
+  The cleaned corpus is ready, but the identical recipe on clean literary
   text still produces a trivial 2-way lexical split and, at higher k,
   micro-clusters — it would manufacture registers again.
-- The supported Bryant decomposition remains **stratification by
-  source/context** (gmail / documents / facebook / forum — see
-  `bryant_strata_placement.md`): observed structure, not clustered structure.
+- The supported decomposition of that corpus remains **stratification by
+  private source strata (details withheld)**: observed structure, not
+  clustered structure.
 - Per-register detector thresholds (ADR-0035 Phase C deliverable) remain
   deferred pending a methodology that passes this control with G1–G4
   addressed (candidates: decorrelated feature space + stability-selected k +
@@ -144,3 +150,13 @@ while cluster 4 degenerates to n=4, reproducing Bryant v2.0's micro-cluster
 Raw numbers: `e7_results.json`. Full eval dump: `data/tmp/e7/e7_eval_out.json`.
 Window inventory: `data/tmp/e7/window_index.json`. Register library artifact:
 `data/tmp/e7/delillo_registers_e7.json`.
+
+*Release note (2026-08-06): none of the four files named in the paragraph
+above ships with this release. The `data/tmp/e7/` paths are the original
+run's gitignored working directory, and `e7_results.json` was likewise not
+carried into the public mirror. **This report is the committed evidence for
+E7**; its numbers are reported in the tables above rather than in a shipped
+JSON. E7 is a methodology negative control whose verdict is "does not
+validate" — no claim in the paper rests on it, so nothing downstream depends
+on the missing files. The pointers are left in place as the original run's
+own record.*

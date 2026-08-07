@@ -353,11 +353,20 @@ docs/tier1_related_work_reconciliation.md  Related-work reconciliation
 ## Licensing
 
 - Code: Apache-2.0 (`LICENSE`)
-- AI corpus + derived baselines + reports: CC0 1.0
+- AI corpus + derived baselines + reports + `data/pd_manifest.yaml`: CC0 1.0
+- Documentation and figures (`docs/`, and the root-level `README.md`,
+  `MODELS.md`, `ERRATA.md`, `DATA_LICENSES.md`): CC BY 4.0 — the same licence
+  the preprint carries
 - Public-domain shelf and pastiche text: public domain (US), Project
-  Gutenberg provenance recorded per file
+  Gutenberg provenance recorded per file; the Project Gutenberg license ships
+  at `data/pd_shelf/GUTENBERG_LICENSE.txt`
 
-See `DATA_LICENSES.md` for details.
+See `DATA_LICENSES.md` for details, including the per-provider basis for the
+CC0 dedication on model outputs, the corpus composition (refusals and
+sub-floor outputs are flagged in `data/ai-longform/sample_flags.json`), and
+the file-level exception ledger for the 13 samples carrying incidental
+verbatim echoes of in-copyright text. `MODELS.md` records model pinning
+status, including where it is weaker than it should be.
 
 ## Citation
 
