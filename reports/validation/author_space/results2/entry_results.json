@@ -1775,7 +1775,7 @@
     },
     "positive_controls": {
       "available": true,
-      "e8_path": "reports/validation/wave2/e8_results.json",
+      "e8_path": "reports/validation/author_space/wave2/e8_results.json",
       "shelves": {
         "wave2": {
           "pooled_inside_p90": 2495,
@@ -2637,7 +2637,7 @@
   },
   "chassis": {
     "available": true,
-    "r3_path": "reports/validation/r3_dimension_gap.json",
+    "r3_path": "reports/validation/author_space/r3_dimension_gap.json",
     "n": 318,
     "median_movement_delta": -0.029976986767881075,
     "median_movement_ci95": [

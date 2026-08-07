@@ -3,7 +3,7 @@
   "relates": "issue #95 P7; TIER1_PAPER_OUTLINE.md \u00a710",
   "meta": {
     "generated": "2026-06-11T00:32:04.855686+00:00",
-    "e4_results": "reports/validation/wave2/e4_results.json",
+    "e4_results": "reports/validation/author_space/wave2/e4_results.json",
     "artifact": "data/artifacts/author_space_v1_wave2.json",
     "n_placed": 910,
     "n_unprompted": 400,

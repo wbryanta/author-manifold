@@ -1,7 +1,7 @@
 # Tier 1 statistical treatment (issue #95 P7)
 
 - Generated: 2026-06-11T00:32:04.855686+00:00
-- E4 results: `reports/validation/wave2/e4_results.json` (n placed = 910; 400 unprompted, 159 style-prompted, 159 exemplar, 8 models, 15 anchor authors)
+- E4 results: `reports/validation/author_space/wave2/e4_results.json` (n placed = 910; 400 unprompted, 159 style-prompted, 159 exemplar, 8 models, 15 anchor authors)
 - Artifact: `data/artifacts/author_space_v1_wave2.json`
 - Manuscript trajectory: `not provided`
 - Seed: 20260609; bootstrap resamples: 10000; permutations: 10000

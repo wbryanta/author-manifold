@@ -3,7 +3,7 @@
 
 Computes confidence intervals, exact tests, bootstrap CIs, permutation
 framings, and a Holm-Bonferroni multiple-comparison registry for the headline
-claims frozen in reports/validation/wave2/PRIMARY_ARTIFACT.md:
+claims frozen in reports/validation/author_space/wave2/PRIMARY_ARTIFACT.md:
 
 1. Enter-rate (style-prompted samples entering the target author's W-p90
    region): Clopper-Pearson bounds on k/n, exact one-sided binomial tests
@@ -276,6 +276,8 @@ def load_artifact_w_info(artifact_path: Path) -> Dict[str, Any]:
 def section_enter_rate(sp: List[dict], up: List[dict], seed: int, n_perm: int) -> Dict[str, Any]:
     """Claim 1 — style-prompted samples entering the target W-p90 region."""
     n = len(sp)
+    n_models = len({p.get("model") for p in sp if p.get("model")})
+    n_targets = len({p.get("style_target") for p in sp if p.get("style_target")})
     enters = [
         1 if (p.get("per_author", {}).get(p.get("style_target"), {})
               .get("w_percentile", 101.0) <= W_REGION_PCT) else 0
@@ -325,10 +327,11 @@ def section_enter_rate(sp: List[dict], up: List[dict], seed: int, n_perm: int) -
         "permutation_vs_unprompted_target_region": perm,
         "permutation_vs_unprompted_any_region": perm_any,
         "assumptions": [
-            "Samples treated as independent Bernoulli trials; the 24 samples "
-            "come from 6 models x 4 targets, so model/target clustering is "
-            "ignored — with k=0 the CP bound is unaffected by clustering "
-            "direction but the effective n may be smaller than the nominal n.",
+            f"Samples treated as independent Bernoulli trials; the {n} "
+            f"samples come from {n_models} model(s) x {n_targets} target(s), "
+            "so model/target clustering is ignored — with k=0 the CP bound "
+            "is unaffected by clustering direction but the effective n may "
+            "be smaller than the nominal n.",
             "Permutation framing assumes exchangeability of prompted and "
             "unprompted samples w.r.t. region membership under the null.",
         ],
@@ -346,6 +349,7 @@ def section_enter_rate(sp: List[dict], up: List[dict], seed: int, n_perm: int) -
 def section_off_manifold(up: List[dict], w_info: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     """Claim 2 — unprompted samples off-manifold (nearest W-pct > 90)."""
     n = len(up)
+    n_models = len({p.get("model") for p in up if p.get("model")})
     k = int(sum(1 for p in up if p.get("nearest_w_percentile", 0.0) > W_REGION_PCT))
     obs_min = min(p.get("nearest_w_percentile", 0.0) for p in up) if up else None
 
@@ -398,9 +402,9 @@ def section_off_manifold(up: List[dict], w_info: Optional[Dict[str, Any]]) -> Di
         },
         "w_percentile_resolution": resolution,
         "assumptions": [
-            "Samples treated as independent across models and prompts "
-            "(6 models x 6 prompts in the pilot); per-model clustering would "
-            "widen the effective CI.",
+            f"Samples treated as independent across models and prompts "
+            f"({n} samples from {n_models} model(s)); per-model clustering "
+            "would widen the effective CI.",
             "The W-percentile inherits sampling noise from the finite W LOO "
             "reference sample; ranks, not tail probabilities, are the claim.",
         ],
@@ -484,6 +488,8 @@ def section_model_medians(
 def section_approach(sp: List[dict], up: List[dict], n_authors: int) -> Dict[str, Any]:
     """Claim 4 — style-prompted nearest-is-target above chance."""
     n = len(sp)
+    n_models = len({p.get("model") for p in sp if p.get("model")})
+    n_targets = len({p.get("style_target") for p in sp if p.get("style_target")})
     k = int(sum(1 for p in sp if p.get("nearest_author") == p.get("style_target")))
 
     target_counts = Counter(p["style_target"] for p in sp)
@@ -516,8 +522,9 @@ def section_approach(sp: List[dict], up: List[dict], n_authors: int) -> Dict[str
             "p_value_one_sided_greater": binom_p(k, n, p_empirical, alternative="greater"),
         },
         "assumptions": [
-            "Binomial tests treat the 24 samples as independent; they share "
-            "models and prompts (clustering ignored).",
+            f"Binomial tests treat the {n} samples as independent; they "
+            f"share models and prompts ({n_models} model(s), {n_targets} "
+            "target(s); clustering ignored).",
             "The empirical null is the stronger (more conservative) one: it "
             "credits the prompted condition only for matches beyond what the "
             "models' baseline nearest-author preferences already produce.",
@@ -959,7 +966,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--e4-results", type=Path,
-        default=REPO_ROOT / "reports/validation/wave2/e4_results.json",
+        default=REPO_ROOT / "reports/validation/author_space/wave2/e4_results.json",
         help="E4 placement results JSON (pilot or scaled corpus)",
     )
     parser.add_argument(

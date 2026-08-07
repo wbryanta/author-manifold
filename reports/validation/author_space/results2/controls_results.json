@@ -997,7 +997,7 @@
   },
   "model_matched_completion": {
     "available": true,
-    "completion_results": "reports/validation/results2/completion_results.json",
+    "completion_results": "reports/validation/author_space/results2/completion_results.json",
     "completion_generated": "2026-06-11T08:06:40.225669+00:00",
     "vocab": {
       "fwonly": {
@@ -1214,7 +1214,7 @@
   },
   "e8_yardstick": {
     "available": true,
-    "e8_path": "reports/validation/wave2/e8_results.json",
+    "e8_path": "reports/validation/author_space/wave2/e8_results.json",
     "overall_strict_gate_pass_as_committed": false,
     "note": "REPORTING DATA ONLY \u2014 the strict gate verdict is quoted as committed (no re-adjudication). The envelopes are used with the OBSERVED self-entry rate as the comparator; the nominal-0.90 gate FAILS strictly (per-author floor, 3 of 4 shelves) and the pooled rates below are the honest yardstick the entry tables are read against.",
     "shelves": {

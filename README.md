@@ -32,7 +32,7 @@ caught by adversarial review and is retired; see
 |---|---|
 | Styled entry as a **controlled increment** over the unprompted base rate (fw-only, @p90): never-prompted AI on the same scenarios already enters 13/121 (10.7%); naming the author raises it to 72/236 (30.5%) | **+19.8 pp** [+4.3, +33.5] cluster-bootstrap 95%, excludes zero (full-vocabulary increment: +3.8 pp [−12.6, +18.6] — porosity, not imitation) |
 | Model-matched **completion vs named-style** (fw-only, @p90): continuing the author's own text beats being told the author's name for every informative model | **5/5** completion-higher, exact one-sided p = 0.031; GPT-5 (the best styled model) refused all completions — the previously reported pooled "parity" was that composition artifact |
-| **Envelope width predicts entry** (de-circularized: all 15 shelf authors as pseudo-targets for 309 unprompted samples) | Pearson **r = +0.844** [+0.59, +0.95] fw-only (full vocab +0.73); Ishiguro is the wide-but-distant outlier |
+| **Envelope width predicts entry** (de-circularized: all 15 shelf authors as pseudo-targets for 309 unprompted samples) | Pearson **r = +0.844** [+0.59, +0.95] fw-only (full vocab +0.73); Ishiguro is the wide-but-distant outlier. The paper's own caveat travels with the number: the interval is Fisher-z, and the 15 per-author rates share the same 309 samples, so it treats correlated rows as independent and is **optimistic** (§5.6) |
 | **E8 positive control** (held-out windows inside own LM p90) | strict gate as committed: **FAIL** (3/4 shelves); the observed self-entry yardstick is reported instead — pooled 83.7–87.8% (`reports/validation/author_space/results2/e8_yardstick.md`) |
 | Human pastiche (Brinton 1913 vs Austen's LM envelope) — **descriptive juxtaposition only** (chunks of one novel, not independent) | 27/36 (75%) fw-only chunks enter Austen's p90; 34/36 full-vocabulary |
 | Public-domain shelf validation (9 authors / 35 novels, fully shipped) | E1 separation **AUC 0.999**, E2 leave-one-out attribution **100%** top-1 |
@@ -193,6 +193,13 @@ python3 tools/place_pastiche_baseline.py \
 # wave2/tier1_statistics.json exactly; the recorded file additionally
 # carries the C1b/C1c enter-rate family rows, part of the RETIRED v0.2
 # Holm family (paper §4.5) and produced by the parent project's run.
+#
+# Precision note (forensic review 2026-08-06): because those two extra
+# rows are in the recorded Holm family, the recorded registry corrects
+# across 33 tests and this rerun across 31. All 31 shared registry rows
+# reproduce their p_raw, estimate, CI, and significance verdict exactly;
+# 19 of them differ in the p_holm column only, by the family-size factor.
+# No significance verdict changes.
 python3 tools/tier1_statistics.py \
     --e4-results reports/validation/author_space/wave2/e4_results.json \
     --artifact data/artifacts/author_space_v1_wave2.json \

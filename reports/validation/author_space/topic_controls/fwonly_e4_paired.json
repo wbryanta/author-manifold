@@ -1,7 +1,7 @@
 {
  "meta": {
   "fwonly_artifact": "data/artifacts/author_space_v1_wave2_fwonly.json",
-  "paired_against": "reports/validation/wave2/e4_results.json (frozen 60-sample set)",
+  "paired_against": "reports/validation/author_space/wave2/e4_results.json (frozen 60-sample set)",
   "note": "AI corpus manifest has since grown (replicates, gpt-5); this comparison is restricted to the wave-2 frozen sample files."
  },
  "summary": {

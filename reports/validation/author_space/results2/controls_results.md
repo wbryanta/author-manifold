@@ -62,7 +62,7 @@ Reading: at full vocabulary the imitation increment is small and per-model nonsi
 
 ## f2. Model-matched completion vs styled entry (G2)
 
-- Source: `reports/validation/results2/completion_results.json` (completion run 2026-06-11T08:06:40.225669+00:00).
+- Source: `reports/validation/author_space/results2/completion_results.json` (completion run 2026-06-11T08:06:40.225669+00:00).
 - Matched pools only: models with >= 1 compliant completion AND >= 1 primary styled sample. Pooled unmatched comparisons are composition artifacts (the best styled model refused all completions).
 
 ### Vocabulary: fwonly (PRIMARY)

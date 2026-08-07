@@ -1,6 +1,6 @@
 # E8 Yardstick — Observed Self-Entry Comparators (G4, reporting only)
 
-- Generated: 2026-06-11T08:06:52.273417+00:00; source: `reports/validation/wave2/e8_results.json`.
+- Generated: 2026-06-11T08:06:52.273417+00:00; source: `reports/validation/author_space/wave2/e8_results.json`.
 - REPORTING DATA ONLY — the strict gate verdict is quoted as committed (no re-adjudication). The envelopes are used with the OBSERVED self-entry rate as the comparator; the nominal-0.90 gate FAILS strictly (per-author floor, 3 of 4 shelves) and the pooled rates below are the honest yardstick the entry tables are read against.
 - Overall strict gate as committed: **FAIL**.
 
