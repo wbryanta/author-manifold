@@ -34,7 +34,9 @@ pytest==9.1.1
 #
 # The suite was 116 tests at the time of this verification run. 12
 # value-pinning tests (tests/test_published_chain.py) were added afterwards,
-# on 2026-08-06; the current suite is 128 passing.
+# on 2026-08-06, and 24 more on 2026-08-07 (chain recomputation, the
+# paper-configuration certification guards, the corpus-flag cross-check,
+# and the retired-metric stub); the current suite is 152 passing.
 
 # Platform of the verification run:
 #   macOS-26.6-arm64 (CPython)
@@ -54,6 +56,6 @@ pytest==9.1.1
 #   G1 control, fw-only: unprompted 13/121 (10.7%) vs styled 72/236 (30.5%)
 #   Completion (K8) fw-only entry              27/87 = 31.0%
 #   Cross-target specificity                   D = +16.10 pp
-#   Test suite                                 116 passed (128 today; see above)
+#   Test suite                                 116 passed (152 today; see above)
 #
 # Reproduce them with the quickstart in README.md.

@@ -111,6 +111,12 @@ are published whichever way they fell:
 | Do any styled samples refuse the styling instruction? | `results2/declined_styling_disclosure.md` — 21 of 236 do (all OpenAI models). Excluding them leaves the styled rate and the increment inside their published intervals; the raw entry gap does not survive matching on model and target (stratified p = 0.32) |
 | Was anything published that turned out to be wrong? | `ERRATA.md` |
 
+**Package version: `author-manifold` 2.0.0** (2026-08-07). The one breaking
+change from 1.0.0 is the removal of `compute_c_llr()` from
+`author_manifold.attribution_metrics` (`ERRATA.md`, E-1); the name is kept as
+a stub that raises with a pointer to that entry. No result, gate, or figure
+moved with it.
+
 ## This is NOT an AI detector
 
 The instrument answers a calibrated **authorship** question — "does this
@@ -195,11 +201,12 @@ python3 tools/rerun_entry_analysis.py
 python3 tools/analyze_completion_condition.py
 python3 tools/cross_target_entry_matrix.py
 
-# ---- Test suite (~5 s). Expected: 128 passed. Includes
-#      tests/test_published_chain.py, which pins the paper's §5.2
-#      selection chain and headline rates to exact values from the
-#      shipped artifacts, so numeric drift fails rather than passing
-#      quietly.
+# ---- Test suite (~5 s). Expected: 152 passed. Includes
+#      tests/test_published_chain.py, which RECOMPUTES the paper's §5.2
+#      selection chain (1,072 -> 1,069 -> 318 -> 236) from the shipped
+#      manifest and corpus through the analysis tool's own loader, and
+#      pins the headline rates to exact values from the shipped
+#      artifacts, so numeric drift fails rather than passing quietly.
 pip install pytest && pytest
 ```
 

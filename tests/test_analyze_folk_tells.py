@@ -139,3 +139,55 @@ class TestWindowing:
         assert list(ft.iter_windows("too short",
                                     np.random.default_rng(0),
                                     window_words=10)) == []
+
+
+class TestPaperConfigurationCertification:
+    """An artifact's name is a claim; the structure is the certification.
+
+    Before the cross-family review of 2026-08-07 (finding F2), a file
+    renamed to the paper's artifact name was stamped
+    is_paper_configuration = true on that basis alone. These pin that the
+    structural facts decide it, and that a mismatch stops the run instead
+    of labelling the output as the paper's.
+    """
+
+    def test_matching_structure_certifies(self):
+        ft.assert_paper_configuration("author_space_v1_wave2.json", [
+            ("shelf works", ft.PAPER_HUMAN_WORKS, ft.PAPER_HUMAN_WORKS),
+            ("shelf authors", ft.PAPER_HUMAN_AUTHORS, ft.PAPER_HUMAN_AUTHORS),
+        ])
+
+    def test_wrong_shelf_size_hard_fails(self):
+        with pytest.raises(SystemExit) as excinfo:
+            ft.assert_paper_configuration("author_space_v1_wave2.json", [
+                ("shelf works", 35, ft.PAPER_HUMAN_WORKS),
+                ("shelf authors", 9, ft.PAPER_HUMAN_AUTHORS),
+            ])
+        message = str(excinfo.value)
+        assert "STRUCTURE DOES NOT" in message
+        # The message must name what differed, on both sides.
+        assert "shelf works: this run 35, paper run 78" in message
+        assert "shelf authors: this run 9, paper run 15" in message
+
+    def test_changed_run_parameter_hard_fails(self):
+        with pytest.raises(SystemExit) as excinfo:
+            ft.assert_paper_configuration("author_space_v1_wave2.json", [
+                ("--seed", 1234, ft.PAPER_SEED),
+            ])
+        assert "--seed: this run 1234" in str(excinfo.value)
+
+    def test_pinned_expectations_match_the_committed_evidence(self):
+        """The constants are transcribed from the recorded run; check that."""
+        import json
+        meta = json.loads(
+            (REPO_ROOT / "reports/validation/author_space/results2"
+             / "folk_tells.json").read_text(encoding="utf-8"))["meta"]
+        assert meta["n_human_works"] == ft.PAPER_HUMAN_WORKS
+        assert meta["n_human_authors"] == ft.PAPER_HUMAN_AUTHORS
+        assert meta["n_human_windows"] == ft.PAPER_HUMAN_WINDOWS
+        assert meta["n_ai_samples"] == ft.PAPER_AI_SAMPLES
+        assert meta["n_ai_models"] == ft.PAPER_AI_MODELS
+        assert meta["window_words"] == ft.PAPER_WINDOW_WORDS
+        assert meta["max_windows_per_work"] == ft.PAPER_MAX_WINDOWS_PER_WORK
+        assert meta["seed"] == ft.PAPER_SEED
+        assert meta["n_bootstrap"] == ft.PAPER_N_BOOTSTRAP

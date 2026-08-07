@@ -4,7 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "author-manifold"
-version = "1.0.0"
+# 2.0.0 (2026-08-07): compute_c_llr() was removed from the public API.
+# Breaking change, so a major bump -- see ERRATA.md E-1.
+version = "2.0.0"
 description = "Author-relative measurement space for stylometric placement: calibration, validation harness, and AI long-form placement experiments"
 readme = "README.md"
 license = { file = "LICENSE" }

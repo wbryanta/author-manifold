@@ -236,9 +236,29 @@ def build_flags() -> Dict[str, Any]:
     }
 
 
+# The published completion condition, pinned. A comparison whose two sides
+# do not have this shape is not comparing the published table against the
+# sidecar -- it is comparing something else, or nothing at all -- so it
+# fails before any per-model count is inspected. Without this, a sidecar
+# carrying no completion samples (a renamed condition, a partial run) put
+# an empty set through an empty loop body and reported PASS.
+EXPECTED_COMPLETION_MODELS = 8
+EXPECTED_COMPLETION_SAMPLES = 160
+
+# The published table keys use the raw model names (e.g. "qwen3.6:35b");
+# sidecar model slugs spell the separator as ".".
+MODEL_KEY_ALIASES = {"gemma4.26b": "gemma4:26b", "qwen3.6.35b": "qwen3.6:35b"}
+
+
 def check_against_published(flags: Dict[str, Any]) -> int:
     """Cross-check the completion condition against the published per-model
-    compliance table in results2/completion_results.json."""
+    compliance table in results2/completion_results.json.
+
+    Returns the number of failures. Both sides must carry the expected
+    number of models and samples, and name the same models, before any
+    count is compared: a missing or extra model is a failure in itself,
+    not a row that is quietly skipped.
+    """
     published_path = (REPO_ROOT / "reports/validation/author_space/results2"
                       / "completion_results.json")
     published = json.loads(published_path.read_text(encoding="utf-8"))
@@ -249,20 +269,53 @@ def check_against_published(flags: Dict[str, Any]) -> int:
         if s.get("condition") != "completion":
             continue
         model = (s.get("model_slug") or "").replace("_", ".")
-        mine.setdefault(model, Counter())[s["length_class"]] += 1
+        mine.setdefault(MODEL_KEY_ALIASES.get(model, model),
+                        Counter())[s["length_class"]] += 1
 
-    # The published table keys use the raw model names (e.g. "qwen3.6:35b").
-    alias = {"gemma4.26b": "gemma4:26b", "qwen3.6.35b": "qwen3.6:35b"}
     failures = 0
+
+    def fail(message: str) -> None:
+        nonlocal failures
+        failures += 1
+        print(f"FAIL  {message}")
+
+    published_total = sum(row["compliant"] + row["subfloor"] + row["refused"]
+                          for row in table.values())
+    sidecar_total = sum(sum(counts.values()) for counts in mine.values())
+
+    for label, models, total in (
+            ("published table", set(table), published_total),
+            ("sidecar", set(mine), sidecar_total)):
+        if not models:
+            fail(f"{label}: no completion-condition models at all "
+                 f"(expected {EXPECTED_COMPLETION_MODELS})")
+        elif len(models) != EXPECTED_COMPLETION_MODELS:
+            fail(f"{label}: {len(models)} models, expected "
+                 f"{EXPECTED_COMPLETION_MODELS}: {sorted(models)}")
+        if total != EXPECTED_COMPLETION_SAMPLES:
+            fail(f"{label}: {total} completion samples, expected "
+                 f"{EXPECTED_COMPLETION_SAMPLES}")
+
+    missing = sorted(set(table) - set(mine))
+    extra = sorted(set(mine) - set(table))
+    if missing:
+        fail(f"models in the published table with no sidecar rows: {missing}")
+    if extra:
+        fail("models in the sidecar the published table does not name: "
+             f"{extra}")
+
+    if failures:
+        print("\nCross-check vs published completion compliance table: "
+              f"{failures} STRUCTURAL FAILURE(S) -- the two sides do not "
+              "describe the same set of samples, so per-model counts were "
+              "not compared.")
+        return failures
+
     print(f"{'model':20s} {'published (comp/sub/ref)':>26s} "
           f"{'sidecar (comp/sub/ref)':>24s}")
-    for model, counts in sorted(mine.items()):
-        key = alias.get(model, model)
-        pub = table.get(key)
-        if pub is None:
-            print(f"{key:20s} {'NOT IN PUBLISHED TABLE':>26s}")
-            failures += 1
-            continue
+    for key in sorted(table):
+        counts = mine[key]
+        pub = table[key]
         # Published "refused/partial" = below the hard floor, including empty.
         ref = counts["below_hard_floor"] + counts["empty"]
         got = (counts["compliant"], counts["sub_floor"], ref)

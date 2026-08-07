@@ -81,6 +81,21 @@ MIN_WORKS = 4
 PAPER_ARTIFACT = "author_space_v1_wave2.json"
 PAPER_RESULT = "reports/validation/author_space/topic_controls/cross_topic_probe.md"
 
+# A filename is not an identity. A file from a different shelf, renamed to
+# the one above, would previously have been certified as the paper's
+# configuration and its output stamped is_paper_configuration = true. So the
+# name is treated as a claim, and these structural facts -- pinned from the
+# committed evidence at PAPER_RESULT and its sibling JSON -- are what
+# certify it. Any mismatch is a hard failure, not a banner: a run that
+# cannot be identified as the paper's must not be labelled as the paper's.
+PAPER_SHELF_AUTHORS = 15          # the wave-2 shelf as built
+PAPER_SHELF_WORKS = 78
+PAPER_DISTANCE_VARIANT = "mfw_delta"
+PAPER_CONTENT_N = 2000            # --content-n of the recorded run
+PAPER_MIN_WORKS = 4               # --min-works of the recorded run
+PAPER_PROBE_AUTHORS = 12          # authors with >= 4 works
+PAPER_PROBE_WORKS = 69            # held-out works actually probed
+
 MISSING_TEXT_MESSAGE = (
     "Cannot run the cross-topic probe on this artifact: no body text is "
     "resolvable for {author}/{title}.\n"
@@ -122,6 +137,45 @@ WRONG_CONFIG_BANNER = (
     "  copies of the contemporary novels (DATA_LICENSES.md).\n"
     + _RULE
 )
+
+STRUCTURE_MISMATCH_BANNER = (
+    _RULE + "\n"
+    "  ARTIFACT NAME MATCHES THE PAPER'S; STRUCTURE DOES NOT\n"
+    + _RULE + "\n"
+    "  Artifact: {artifact}\n"
+    "\n"
+    "  The file is named like the paper's C1b artifact, so this run would\n"
+    "  have been stamped is_paper_configuration = true -- but it does not\n"
+    "  have the paper's configuration:\n"
+    "\n"
+    "{discrepancies}\n"
+    "\n"
+    "  Refusing to run rather than publish a result labelled as the\n"
+    "  paper's that is not the paper's. Either restore the recorded\n"
+    "  configuration (the paper's run is at {result}), or run this probe\n"
+    "  under a different artifact filename, where the output is honestly\n"
+    "  labelled as a different configuration.\n"
+    + _RULE
+)
+
+
+def assert_paper_configuration(artifact_name: str,
+                               checks: List[Tuple[str, Any, Any]]) -> None:
+    """Hard-fail if a run claiming the paper's artifact is not its configuration.
+
+    ``checks`` is (what, observed, expected). The caller passes whichever
+    facts it can see at the point of the call; certification is the
+    conjunction of all of them.
+    """
+    bad = [(what, got, want) for what, got, want in checks if got != want]
+    if not bad:
+        return
+    discrepancies = "\n".join(
+        f"      {what}: this run {got!r}, paper run {want!r}"
+        for what, got, want in bad)
+    raise SystemExit(STRUCTURE_MISMATCH_BANNER.format(
+        artifact=artifact_name, discrepancies=discrepancies,
+        result=PAPER_RESULT))
 
 
 def _resolve(path_str: str) -> Path:
@@ -475,7 +529,28 @@ def main(argv: Optional[List[str]] = None) -> int:
         print(WRONG_CONFIG_BANNER.format(artifact=artifact.name), flush=True)
 
     space = AuthorRelativeSpace.from_artifact(artifact)
+    if is_paper_config:
+        # The shelf and the run parameters, before anything is computed.
+        assert_paper_configuration(artifact.name, [
+            ("shelf authors", space.meta.get("n_authors"),
+             PAPER_SHELF_AUTHORS),
+            ("shelf works", space.meta.get("n_works"), PAPER_SHELF_WORKS),
+            ("authors loaded", len(space.authors), PAPER_SHELF_AUTHORS),
+            ("distance variant", space.distance_variant,
+             PAPER_DISTANCE_VARIANT),
+            ("--content-n", args.content_n, PAPER_CONTENT_N),
+            ("--min-works", args.min_works, PAPER_MIN_WORKS),
+        ])
+
     result = run_probe(space, content_n=args.content_n, min_works=args.min_works)
+    if is_paper_config:
+        # The probe's own shape: how many authors cleared --min-works, and
+        # how many works were actually held out and attributed.
+        assert_paper_configuration(artifact.name, [
+            ("probed authors (>= min-works)", result["n_authors"],
+             PAPER_PROBE_AUTHORS),
+            ("held-out works", result["n_works"], PAPER_PROBE_WORKS),
+        ])
     meta = {
         "generated": datetime.now(timezone.utc).isoformat(),
         "versions": _runtime_versions(),

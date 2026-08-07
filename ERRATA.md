@@ -67,7 +67,17 @@ contain a `c_llr` block. Those files are the record of what those runs
 computed and are deliberately left intact; the values in them should be
 disregarded for the reasons above.
 
-*Found by the forensic code and data review of 2026-08-06 (finding A-6).*
+**API and version (added 2026-08-07).** Removing an exported helper is a
+breaking API change, and the release that carried it did not say so: the
+package still declared `1.0.0`. It now declares **2.0.0**, in both
+`pyproject.toml` and `author_manifold.__version__`, so a consumer can tell
+the two APIs apart. `compute_c_llr` itself is retained as a stub that
+raises `NotImplementedError` naming this entry, so 1.x code fails with the
+reason rather than with a bare `AttributeError`. No behaviour, gate, or
+published number is affected by the bump.
+
+*Found by the forensic code and data review of 2026-08-06 (finding A-6);
+the version bump added after the cross-family review of 2026-08-07.*
 
 ---
 

@@ -67,7 +67,7 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Callable, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
@@ -83,6 +83,23 @@ DEFAULT_SEED = 20260609      # repo-wide analysis seed
 # Any other shelf produces a different, non-comparable number.
 PAPER_ARTIFACT = "author_space_v1_wave2.json"
 PAPER_RESULT = "reports/validation/author_space/results2/folk_tells.md"
+
+# A filename is not an identity. A file from a different shelf, renamed to
+# the one above, would previously have been certified as the paper's
+# configuration and its output stamped is_paper_configuration = true. So the
+# name is treated as a claim, and these structural facts -- pinned from the
+# meta block of the committed evidence beside PAPER_RESULT -- are what
+# certify it. Any mismatch is a hard failure, not a banner: a run that
+# cannot be identified as the paper's must not be labelled as the paper's.
+PAPER_HUMAN_AUTHORS = 15
+PAPER_HUMAN_WORKS = 78
+PAPER_HUMAN_WINDOWS = 390
+PAPER_AI_SAMPLES = 400
+PAPER_AI_MODELS = 8
+PAPER_WINDOW_WORDS = 3500
+PAPER_MAX_WINDOWS_PER_WORK = 5
+PAPER_SEED = 20260609
+PAPER_N_BOOTSTRAP = 2000
 
 MISSING_TEXT_MESSAGE = (
     "Cannot build the human side of the folk-tells comparison from this "
@@ -127,6 +144,45 @@ WRONG_CONFIG_BANNER = (
     "  copies of the contemporary novels (DATA_LICENSES.md).\n"
     + _RULE
 )
+
+STRUCTURE_MISMATCH_BANNER = (
+    _RULE + "\n"
+    "  ARTIFACT NAME MATCHES THE PAPER'S; STRUCTURE DOES NOT\n"
+    + _RULE + "\n"
+    "  Human-side artifact: {artifact}\n"
+    "\n"
+    "  The file is named like the paper's §5.8 human side, so this run\n"
+    "  would have been stamped is_paper_configuration = true -- but it\n"
+    "  does not have the paper's configuration:\n"
+    "\n"
+    "{discrepancies}\n"
+    "\n"
+    "  Refusing to run rather than publish a result labelled as the\n"
+    "  paper's that is not the paper's. Either restore the recorded\n"
+    "  configuration (the paper's run is at {result}), or run this tool\n"
+    "  under a different artifact filename, where the output is honestly\n"
+    "  labelled as a different configuration.\n"
+    + _RULE
+)
+
+
+def assert_paper_configuration(artifact_name: str,
+                               checks: Sequence[Tuple[str, Any, Any]]) -> None:
+    """Hard-fail if a run claiming the paper's artifact is not its configuration.
+
+    ``checks`` is (what, observed, expected). The caller passes whichever
+    facts it can see at the point of the call; certification is the
+    conjunction of all of them.
+    """
+    bad = [(what, got, want) for what, got, want in checks if got != want]
+    if not bad:
+        return
+    discrepancies = "\n".join(
+        f"      {what}: this run {got!r}, paper run {want!r}"
+        for what, got, want in bad)
+    raise SystemExit(STRUCTURE_MISMATCH_BANNER.format(
+        artifact=artifact_name, discrepancies=discrepancies,
+        result=PAPER_RESULT))
 
 # ---------------------------------------------------------------------------
 # Tell operationalizations. Each is a conservative regex/heuristic; rates are
@@ -735,14 +791,29 @@ def main() -> int:
 
     rng = np.random.default_rng(args.seed)
 
-    is_paper_config = Path(args.space_artifact).name == PAPER_ARTIFACT
+    artifact_name = Path(args.space_artifact).name
+    is_paper_config = artifact_name == PAPER_ARTIFACT
     if not is_paper_config:
-        print(WRONG_CONFIG_BANNER.format(
-            artifact=Path(args.space_artifact).name), flush=True)
+        print(WRONG_CONFIG_BANNER.format(artifact=artifact_name), flush=True)
+    else:
+        # The run parameters, before anything is read.
+        assert_paper_configuration(artifact_name, [
+            ("--window-words", args.window_words, PAPER_WINDOW_WORDS),
+            ("--max-windows-per-work", args.max_windows_per_work,
+             PAPER_MAX_WINDOWS_PER_WORK),
+            ("--seed", args.seed, PAPER_SEED),
+            ("--n-bootstrap", args.n_bootstrap, PAPER_N_BOOTSTRAP),
+        ])
 
     # --- HUMAN side -------------------------------------------------------
     works = load_human_works(args.space_artifact, args.shelf_manifest)
     logger.info("loaded %d shelf works", len(works))
+    if is_paper_config:
+        assert_paper_configuration(artifact_name, [
+            ("shelf works", len(works), PAPER_HUMAN_WORKS),
+            ("shelf authors", len({w["author"] for w in works}),
+             PAPER_HUMAN_AUTHORS),
+        ])
     human_rows: List[dict] = []
     work_rates: List[dict] = []
     chat_hits_human = 0
@@ -772,6 +843,14 @@ def main() -> int:
         ai_rows.append({"sample_id": s["sample_id"], "model": s["model"],
                         "scenario": s["scenario"], "n_words": s["n_words"],
                         "rates": rates_for(s["text"], s["n_words"])})
+
+    if is_paper_config:
+        # The comparison's own shape, once both sides are built.
+        assert_paper_configuration(artifact_name, [
+            ("human windows", len(human_rows), PAPER_HUMAN_WINDOWS),
+            ("AI samples", len(ai_rows), PAPER_AI_SAMPLES),
+            ("AI models", len({r["model"] for r in ai_rows}), PAPER_AI_MODELS),
+        ])
 
     tids = [t[0] for t in TELLS]
     human_mat = {tid: np.array([r["rates"][tid] for r in human_rows]) for tid in tids}
