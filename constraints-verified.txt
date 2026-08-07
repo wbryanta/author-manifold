@@ -2,8 +2,10 @@
 #
 # The environment in which full digit-for-digit reproduction of this
 # repository's published results was INDEPENDENTLY VERIFIED, on 2026-08-06,
-# from a fresh clone and a fresh virtualenv, by a reviewer who was not the
-# author.
+# from a fresh clone and a fresh virtualenv, by an independent AI review
+# lane, per the project's disclosed review practice (see
+# docs/redteam/README.md and paper §8.11) -- not by the author, and not by
+# external human peer review.
 #
 # This is a RECORD OF A VERIFIED RUN, not a pin. It is deliberately not
 # named "constraints.txt" and is not passed to pip: installing these exact
@@ -27,8 +29,12 @@ scipy==1.18.0
 scikit-learn==1.9.0
 pyyaml==6.0.3
 
-# Test runner used for the 116-test suite (not a runtime dependency):
+# Test runner used for the suite (not a runtime dependency):
 pytest==9.1.1
+#
+# The suite was 116 tests at the time of this verification run. 12
+# value-pinning tests (tests/test_published_chain.py) were added afterwards,
+# on 2026-08-06; the current suite is 128 passing.
 
 # Platform of the verification run:
 #   macOS-26.6-arm64 (CPython)
@@ -48,6 +54,6 @@ pytest==9.1.1
 #   G1 control, fw-only: unprompted 13/121 (10.7%) vs styled 72/236 (30.5%)
 #   Completion (K8) fw-only entry              27/87 = 31.0%
 #   Cross-target specificity                   D = +16.10 pp
-#   Test suite                                 116 passed
+#   Test suite                                 116 passed (128 today; see above)
 #
 # Reproduce them with the quickstart in README.md.

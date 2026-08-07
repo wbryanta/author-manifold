@@ -54,14 +54,23 @@ CP interval of [21.8, 42.3]%.
 | §5.4 sign test, full | 2/5, p = 0.813 | 2/5, p = 0.813 | 2/5, p = 0.813 | — | unchanged |
 | §5.6 approach, fw-only | 69/236 = 29.24% | 69/235 = 29.36% | 69/235 = 29.36% | DEFF-adj CP [19.4, 40.7]% | yes |
 | §5.6 approach, full | 122/236 = 51.69% | 121/235 = 51.49% | 121/235 = 51.49% | DEFF-adj CP [41.3, 62.0]% | yes |
-| §5.5 chassis MFW movement | −0.029977 | −0.029977 | **−0.029977** | CI [−0.04755, −0.01314] | identical |
+| §5.5 chassis MFW movement (secondary native-length run, **superseded** — see `entry_report.md` §(e); the primary floor-compliant §5.5 value −0.0070 [−0.023, +0.020] is likewise byte-identical under exclusion) | −0.029977 | −0.029977 | **−0.029977** | CI [−0.04755, −0.01314] | identical |
 
 The unprompted base rates (13/121 fw-only, 20/121 full) are untouched by
 construction: no echo-bearing sample is unprompted.
 
-§5.5 is **byte-identical** across all three conditions because the chassis
-analysis runs on the styled stratum, and 12 of the 13 echoes are completions,
-which that analysis never included.
+§5.5 is **byte-identical** across all three conditions — in both the
+native-length run tabulated above and the primary floor-compliant run
+(−0.0070 [−0.023, +0.020], Holm p = 1.0) — because the chassis analysis runs
+on the styled stratum, and 12 of the 13 echoes are completions, which that
+analysis never included.
+
+**Do not read the tabulated chassis CI as the paper's §5.5 result.** The row
+above reports the **superseded native-length n=318 run**, whose interval
+excludes zero; the paper's primary §5.5 value is the floor-compliant n=236
+run, −0.0070 [−0.023, +0.020], which does not. Both are unchanged by the
+exclusion, which is the only thing this file is testing. See
+`entry_report.md` §(e) and `r3_floor_compliant.md`.
 
 ---
 

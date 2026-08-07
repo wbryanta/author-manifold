@@ -29,7 +29,7 @@ regenerate with `python3 tools/flag_corpus_samples.py`):
 | — refusal messages, no usable prose (all in the completion condition) | **32** |
 | — empty outputs (zero tokens) | **3** |
 | — other outputs below the 1,500-MFW-token hard floor | **17** |
-| — usable as fiction (everything else) | **1,037** |
+| — usable as fiction (everything except refusals and empties; **includes** the 17 short-but-real outputs above) | **1,037** |
 
 By length against the paper's §3.7 floors: 778 compliant (≥3,000 MFW tokens),
 242 sub-floor (1,500–2,999), 49 below the hard floor, 3 empty.
@@ -109,7 +109,7 @@ rate within its published interval and the sign test unchanged (5/5,
 p = 0.031):
 `reports/validation/author_space/results2/echo_robustness_13.md`.
 
-**Disposition: keep and defend, not scrub.** The samples ship as generated
+**Disposition: disclose and mark, not scrub.** The samples ship as generated
 because the corpus is a measurement record and silently editing it would
 break the correspondence between the published numbers and the released
 files. The exception ledger below marks the affected files instead, per

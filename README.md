@@ -107,7 +107,7 @@ are published whichever way they fell:
 |---|---|
 | Do the results hold if you remove *every* sample with a verbatim echo, not just the 4 above the disclosed threshold? | `results2/echo_robustness_13.md` — yes: every rate within its published interval, sign test unchanged |
 | Is there *near*-verbatim leakage that exact matching would miss? | `results2/near_copy_scan.md` — no: zero spans at ≥40 tokens/80% identity, on a scan validated by a planted positive |
-| Would a different subset of the folk tells beat the reported coin flip? | `results2/folk_tells_sensitivity.md` — yes, and the best a-priori subset (0.73) is now disclosed in the paper; the full-list result is the honest test of the folk claim |
+| Would a different subset of the folk tells beat the reported coin flip? | `results2/folk_tells_sensitivity.md` — yes, and the result is disclosed here: the best a-priori subset reaches 0.73, while the full-list result is the honest test of the folk claim |
 | Do any styled samples refuse the styling instruction? | `results2/declined_styling_disclosure.md` — 21 of 236 do (all OpenAI models). Excluding them leaves the styled rate and the increment inside their published intervals; the raw entry gap does not survive matching on model and target (stratified p = 0.32) |
 | Was anything published that turned out to be wrong? | `ERRATA.md` |
 

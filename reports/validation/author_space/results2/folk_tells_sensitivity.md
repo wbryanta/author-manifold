@@ -66,9 +66,11 @@ pooling; the gains all come from choosing which tells to keep.
 
 These are the load-bearing rows. A subset named in advance, by someone not
 looking at the answer, reaches ~0.73 — so **the coin flip is a property of
-the full circulating list, not of its best members.** The paper's v0.5.5 text
-discloses this directly, and the abstract's "barely separate" should be read
-as scoped to the whole list.
+the full circulating list, not of its best members.** This is disclosed here
+rather than in the paper: the published v0.5.5 text carries no
+subset-sensitivity sentence, so its "nearly inert" (§5.8) and the abstract's
+"barely separate" should be read as scoped to the whole twelve-tell list,
+with this file as the qualifier.
 
 ## Construct validity of the `not_x_but_y` counter
 
@@ -88,23 +90,32 @@ on the novelists as on the models — that is, *toward* this paper's own
 conclusion that the tells do not single out AI. Because the difference is
 0.003 AUC and correcting it would change a published number for no
 interpretive gain, the counter is left exactly as it was and the bias is
-recorded here. (The paper's v0.5.5 wording drops the word "conservative" for
-this reason.)
+recorded here. The published v0.5.5 text calls these counters "conservative"
+(§5.8 and Appendix C); that wording should be discounted per the measured
+overcount above.
 
 ## Superlative counter: `-est` blocklist gaps
 
 The superlative heuristic blocks common `-est` words that are not
-superlatives. Some are missed (`unrest`, `budapest`, `bucharest`,
-`palimpsest`, `tempest`):
+superlatives. Four are missed: `unrest`, `budapest`, `bucharest`,
+`palimpsest`. (`tempest` **is** in the shipped blocklist and cannot leak —
+an earlier version of this table wrongly included it, inflating the AI row
+from 9 to 11.)
 
 | Corpus | Unblocked false positives | Total superlative counts | Rate |
 |---|---|---|---|
 | Human (390 windows) | 8 | 1,506 | 0.53% |
-| AI (400 samples) | 11 | 759 | 1.45% |
+| AI (400 samples) | 9 | 759 | 1.19% |
 
-Under 1.5% either way, and again biased toward this paper's own conclusion
-(a slightly inflated AI count would make the tells look *better*, not worse).
-Documented, not silently patched.
+Under 1.2% either way **for these four tokens**, and again biased toward this
+paper's own conclusion (a slightly inflated AI count would make the tells
+look *better*, not worse). Documented, not silently patched.
+
+Note the scope: the rows above count only the four named tokens. A fuller
+pass that hand-classifies *every* unblocked `-est` type puts the total
+false-superlative share higher — 41/1,506 (2.7%) human and 29/759 AI — and is
+reported in the companion `mnemosyne-overview` repository's `tells/README.md`.
+The direction of the bias is the same at either scope.
 
 ## The number that matters to a person accused
 
