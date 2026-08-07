@@ -1,0 +1,53 @@
+# constraints-verified.txt
+#
+# The environment in which full digit-for-digit reproduction of this
+# repository's published results was INDEPENDENTLY VERIFIED, on 2026-08-06,
+# from a fresh clone and a fresh virtualenv, by a reviewer who was not the
+# author.
+#
+# This is a RECORD OF A VERIFIED RUN, not a pin. It is deliberately not
+# named "constraints.txt" and is not passed to pip: installing these exact
+# versions is not required, and pyproject.toml's floors
+# (numpy>=1.24, scipy>=1.10, scikit-learn>=1.3, pyyaml>=6.0,
+# requires-python>=3.10) remain the supported range.
+#
+# HONEST LIMITATION: the ORIGINAL runs that produced the committed evidence
+# in reports/ predate any version stamping. Their exact dependency versions
+# were not recorded at the time and cannot now be recovered. What is
+# established is the stronger practical property: the published numbers
+# reproduce exactly on a MODERN, UNPINNED stack that is several major
+# versions ahead of what the original runs would have used -- so the results
+# are not artifacts of a particular library version. Runs from 2026-08-06
+# onward stamp their interpreter and library versions into the artifact meta
+# blocks (see the "versions" key), so this gap does not recur.
+
+python==3.14.6
+numpy==2.5.1
+scipy==1.18.0
+scikit-learn==1.9.0
+pyyaml==6.0.3
+
+# Test runner used for the 116-test suite (not a runtime dependency):
+pytest==9.1.1
+
+# Platform of the verification run:
+#   macOS-26.6-arm64 (CPython)
+#
+# Results verified digit-for-digit in this environment:
+#   E1 pooled AUC                 0.999   (gate >= 0.90)   PASS
+#   E1 silhouette positive frac   1.000   (gate >= 0.80)   PASS
+#   E2 top-1 / top-3              100% / 100%              PASS
+#   E3 dims above null p99        15/18   (gate >= 6)      PASS
+#   E8 [pd]        pooled inside@p90  1375/1575 = 87.3%    PASS
+#   E8 [pd_fwonly] pooled inside@p90  1378/1575 = 87.5%    FAIL (disclosed;
+#                                     the Fitzgerald fw-only gate failure the
+#                                     paper itself reports in §3.9)
+#   Entry@p90 full vocab, primary stratum      48/236 (20.3%)
+#   Entry@p90 fw-only vocab, primary stratum   72/236 (30.5%)
+#   Brinton pastiche @p90                      34/36 full / 27/36 fw-only
+#   G1 control, fw-only: unprompted 13/121 (10.7%) vs styled 72/236 (30.5%)
+#   Completion (K8) fw-only entry              27/87 = 31.0%
+#   Cross-target specificity                   D = +16.10 pp
+#   Test suite                                 116 passed
+#
+# Reproduce them with the quickstart in README.md.

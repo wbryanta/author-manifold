@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Within-shelf cross-topic robustness probe for MFW-Delta attribution.
 
-Topic-confound control C1(b) (issue #95 P3; docs/research/TIER1_PAPER_OUTLINE.md
-section 6). The worry: MFW-Delta attribution might ride on subject matter
+Topic-confound control C1(b) (paper §6.1). The worry: MFW-Delta attribution might ride on subject matter
 rather than authorial habit. This probe asks, for every gold-shelf author
 with >= 4 works: when a held-out work's CONTENT overlaps less with the
 author's other works (the work is "off-topic" for that author), does
@@ -34,6 +33,12 @@ Usage:
 
 import sys
 from pathlib import Path
+
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
 
 
 def _ensure_repo_paths() -> Path:
@@ -473,6 +478,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     result = run_probe(space, content_n=args.content_n, min_works=args.min_works)
     meta = {
         "generated": datetime.now(timezone.utc).isoformat(),
+        "versions": _runtime_versions(),
         "artifact": str(artifact),
         "distance_variant": space.distance_variant,
         "content_n": args.content_n,

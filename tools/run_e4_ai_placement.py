@@ -15,7 +15,8 @@ into the validated AuthorRelativeSpace and answers:
 
 Outputs reports/validation/e4_results.json + e4_report.md.
 
-Relates: ADR-0041 experiment E4.
+Relates: docs/adr/ADR-0041-author-relative-measurement-space.md,
+experiment E4.
 """
 
 from __future__ import annotations
@@ -30,6 +31,12 @@ from pathlib import Path
 logger = logging.getLogger("run_e4_ai_placement")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
 
 
 def main() -> int:
@@ -132,6 +139,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "artifact": str(args.artifact),
             "distance_variant": space.distance_variant,
             "n_placed": len(placements),

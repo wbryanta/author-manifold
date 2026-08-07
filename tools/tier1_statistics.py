@@ -30,7 +30,8 @@ all n's are detected from the data files, never hard-coded.
 
 Outputs <out-dir>/tier1_statistics.json + tier1_statistics.md.
 
-Relates: issue #95 P7; docs/research/TIER1_PAPER_OUTLINE.md §10.
+Relates: paper §4.5 (statistical treatment) and Appendix B (gate,
+threshold, and seed registry).
 """
 
 from __future__ import annotations
@@ -62,6 +63,12 @@ W_REGION_PCT = 90.0
 # ---------------------------------------------------------------------------
 # Statistical helpers (unit-tested in tests/test_tier1_statistics.py)
 # ---------------------------------------------------------------------------
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
 
 def clopper_pearson(k: int, n: int, alpha: float = 0.05) -> Tuple[float, float]:
     """Exact two-sided (1 - alpha) Clopper-Pearson CI for a binomial proportion.
@@ -934,6 +941,7 @@ def run(
         "relates": "issue #95 P7; TIER1_PAPER_OUTLINE.md §10",
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "e4_results": str(e4_path),
             "trajectory_results": str(trajectory_path) if trajectory is not None else None,
             "artifact": str(artifact_path) if w_info else None,

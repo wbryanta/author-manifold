@@ -1,15 +1,11 @@
 """
 Shared attribution metric helpers.
 
-Metric machinery used by both validation harnesses:
-
-- ``backend/pipeline/tools/validate_attribution.py`` (hybrid-model harness)
-- ``backend/pipeline/tools/validate_author_space.py`` (author-relative space
-  go/no-go gate, ADR-0041 forthcoming, issue #60)
-
-The functions were lifted verbatim from validate_attribution.py so that the
-author-space harness can reuse them without importing a CLI tool module (and
-its model dependencies). validate_attribution.py now imports from here.
+Metric machinery for the validation harnesses. In this release the caller
+is ``tools/validate_author_space.py`` (the author-relative space go/no-go
+gate; docs/adr/ADR-0041-author-relative-measurement-space.md). The helpers
+live here rather than inside that CLI module so they can be reused without
+importing a tool module and its dependencies.
 
 Note: a ``compute_c_llr`` helper was removed on 2026-08-06 -- its
 implementation was not a valid log-likelihood-ratio cost and its values

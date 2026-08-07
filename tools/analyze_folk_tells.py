@@ -157,6 +157,12 @@ _MOST_ADJ_RE = re.compile(
 )
 
 
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
+
 def _count_superlatives(text: str) -> int:
     """-est superlatives (blocklist-filtered) + most/least + adjective-suffix
     heuristic + irregular 'best'/'worst'. Conservative: multiword adjectives
@@ -813,6 +819,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "tool": "tools/analyze_folk_tells.py",
             "space_artifact": str(args.space_artifact),
             "shelf_manifest": str(args.shelf_manifest),

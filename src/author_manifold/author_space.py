@@ -13,8 +13,12 @@ distance is placed on two empirical calibration distributions:
 A statement like "distance to ondaatje-michael is at p38 of within-author
 variation" is therefore meaningful without any privileged reference author.
 
-Architecture (see docs/METHODOLOGY.md, derived from ADR-0041 of the parent
-project; centroid-hygiene flags follow its ADR-0036):
+Architecture (design of record: docs/adr/ADR-0041-author-relative-measurement-space.md,
+and docs/METHODOLOGY.md; the paper's Methods §3 is authoritative). The
+centroid-hygiene rules referred to below as ADR-0036 are stated in the
+ADR-0041 summary §1: only fiction enters author centroids, works whose body
+trim is not clean/edge_cleaned are excluded, and non-author buckets never
+enter the space.
 
 - Feature extraction: scalar stylometric dimensions from per-work baseline
   JSONs (``d18_profile`` with ``style_features`` fallback).
@@ -161,14 +165,14 @@ theyre theyve theyd theyll lets thats theres whos whats heres
 """.split())
 
 # Scalar numeric stylometric dimensions usable for author discrimination.
-# All 18 verified present in d18_profile across the full authors_voice shelf
-# (90/90 works, 2026-06-09 audit). Unlike INFLUENCE_DIMENSIONS in
-# influence_adjacency.py, length-dependent dims (ttr, vocabulary_richness,
-# repetition_ratio, sentiment_score) are retained here: pooled-shelf
+# All 18 verified present in d18_profile across the full calibration shelf
+# (90/90 works, 2026-06-09 audit). The length-dependent dimensions (ttr,
+# vocabulary_richness, repetition_ratio, sentiment_score) are RETAINED here,
+# unlike in origin-relative distance measures that must drop them: pooled-shelf
 # normalization plus W/B calibration measures them against how much they vary
 # within vs between authors instead of against a single foreign centroid, so
-# they inform rather than dominate. Their behavior is re-examined in the
-# Phase 3 ablation experiments (ADR-0041, forthcoming).
+# they inform rather than dominate. See paper §3.3 and
+# docs/adr/ADR-0041-author-relative-measurement-space.md §2.
 DIMENSION_SET_V1: List[str] = [
     "lexical_density",
     "abstract_ratio",
@@ -193,14 +197,15 @@ DIMENSION_SET_V1: List[str] = [
 # Quantile levels reported for the W/B calibration distributions.
 QUANTILE_LEVELS: Tuple[int, ...] = (5, 10, 25, 50, 75, 90, 95)
 
-# Forms eligible for the fiction calibration shelf (mirrors the §Q4
-# fiction-only filter in influence_adjacency.py, per ADR-0036 Amendment 2).
+# Forms eligible for the fiction calibration shelf: only fiction enters
+# author centroids (centroid hygiene; ADR-0041 summary §1).
 FICTION_FORMS = frozenset({"novel", "story_collection"})
 
 # Fidelity verdicts accepted from the Control Shelf manifest.
 ACCEPTED_FIDELITY = frozenset({"clean", "edge_cleaned"})
 
-# Non-author buckets that must never enter the space (see ADR-0036).
+# Non-author buckets that must never enter the space (centroid hygiene;
+# ADR-0041 summary §1).
 EXCLUDED_SLUGS = frozenset({"NONFIC_ON-WRITING"})
 
 _HASH_RE = re.compile(r"-([0-9a-f]{8})_baseline$")
@@ -244,13 +249,20 @@ _MFW_TOKEN_RE = re.compile(r"\b[a-z\']+\b")
 def mfw_tokenize(text: str) -> List[str]:
     """Lowercase word tokenization for the MFW block.
 
-    Uses the exact regex convention of ``stylometry.tokenize_text`` /
-    ``genetic_analyzer.tokenize_words`` (their non-spaCy fallback path:
-    ``\\b[a-z']+\\b`` over lowercased text). The regex is applied directly
-    rather than through those helpers because they prefer spaCy when it is
-    installed: MFW z-vectors are persisted in the artifact, so featurization
-    of new text at ``place()`` time must be byte-for-byte deterministic
-    across environments (and cheap enough for 59 novels at build time).
+    The tokenizer is exactly this and nothing else::
+
+        re.compile(r"\\b[a-z\']+\\b").findall(text.lower())
+
+    That is, lowercase the text and take maximal runs of ASCII letters and
+    apostrophes at word boundaries. Contractions stay whole ("don't" is one
+    token); digits, punctuation, and non-ASCII letters are dropped.
+
+    It is written out inline, and applied directly rather than through any
+    NLP library, on purpose: MFW z-vectors are persisted in the artifact, so
+    featurizing new text at ``place()`` time must be byte-for-byte
+    deterministic across environments and library versions. A tokenizer that
+    prefers spaCy when installed would not be. The convention is recorded in
+    artifacts as ``tokenizer: "lowercase_regex_v1"``.
     """
     return _MFW_TOKEN_RE.findall(text.lower())
 
@@ -259,8 +271,8 @@ def mfw_tokenize(text: str) -> List[str]:
 class MFWBlock:
     """Burrows-Delta most-frequent-word frequency block.
 
-    Math (classic Burrows 2002, mirroring ``stylometry.calculate_burrows_delta``
-    conventions):
+    Math — classic Burrows's Delta (Burrows 2002), stated in full so this
+    class is self-contained:
 
     1. Vocabulary = top-N words by total count across the calibration shelf
        (ties broken alphabetically for determinism). With
@@ -795,8 +807,9 @@ class AuthorRelativeSpace:
     """Author-relative measurement space calibrated on a gold shelf.
 
     Build with :meth:`build` from WorkRecords, or load a persisted artifact
-    with :meth:`from_artifact`. See module docstring and ADR-0041
-    (forthcoming) for the measurement model; ADR-0036 for centroid hygiene.
+    with :meth:`from_artifact`. See the module docstring and
+    docs/adr/ADR-0041-author-relative-measurement-space.md for the
+    measurement model, including the centroid-hygiene rules.
     """
 
     def __init__(
@@ -1802,6 +1815,34 @@ class AuthorRelativeSpace:
 # construction: an author's own held-out windows must enter their own LM
 # envelope at ~the nominal rate, otherwise the criterion is a length
 # detector, not an authorship envelope.
+
+
+def runtime_versions() -> Dict[str, str]:
+    """Interpreter and numeric-library versions, for artifact meta blocks.
+
+    Recorded so a result file states the stack that produced it. Runs before
+    2026-08-06 predate this stamping and carry no ``versions`` key; the
+    environment in which those results were independently re-verified is
+    recorded in ``constraints-verified.txt`` at the repo root.
+
+    Missing optional libraries are reported as ``"not installed"`` rather
+    than raising: a stamp must never be able to fail a run.
+    """
+    import platform
+
+    versions: Dict[str, str] = {"python": platform.python_version()}
+    for label, module in (
+        ("numpy", "numpy"),
+        ("scipy", "scipy"),
+        ("scikit-learn", "sklearn"),
+        ("pyyaml", "yaml"),
+    ):
+        try:
+            mod = __import__(module)
+            versions[label] = str(getattr(mod, "__version__", "unknown"))
+        except Exception:
+            versions[label] = "not installed"
+    return versions
 
 
 def sha256_of_file(path: Union[str, Path]) -> str:

@@ -57,6 +57,12 @@ from rerun_entry_analysis import (  # noqa: E402
 ARTIFACT_DIR = REPO_ROOT / "data/artifacts"
 
 
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="K8: completion placement")
     parser.add_argument("--corpus-dir", type=Path,
@@ -129,6 +135,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "n_records": len(manifest_completion),
             "n_records_loaded": len(records),
             "n_zero_length_refused": len(zero_length),

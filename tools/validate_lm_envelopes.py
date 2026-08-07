@@ -63,6 +63,12 @@ import sys
 from pathlib import Path
 
 
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
+
 def _ensure_repo_paths() -> Path:
     """Ensure the repo root and src/ are importable when run uninstalled."""
     repo_root = Path(__file__).resolve().parents[1]
@@ -498,6 +504,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "tool": "validate_lm_envelopes.py",
             "window_words": args.window_words,
             "seed": args.seed,

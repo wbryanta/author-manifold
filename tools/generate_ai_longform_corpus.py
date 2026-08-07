@@ -50,7 +50,8 @@ Comparability decisions (uniform across models):
 - Sequential calls within a model (rate-limit friendly); retry-once on
   transient API errors.
 
-Relates: ADR-0041 (author-relative measurement space), experiments E4/C3,
+Relates: docs/adr/ADR-0041-author-relative-measurement-space.md
+(author-relative measurement space), experiments E4/C3,
 TIER1_PAPER_OUTLINE.md §4/§6/§10, issue #95 (P1, P4).
 
 Usage:

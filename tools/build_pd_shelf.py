@@ -2,12 +2,13 @@
 """Public-domain replication shelf builder — issue #95 item P8.
 
 Builds ``data/pd_shelf/`` from Project Gutenberg plain-text
-editions so paper reviewers can run the full ADR-0041 pipeline (E1-E4) on
+editions so paper reviewers can run the full pipeline (E1-E4;
+docs/adr/ADR-0041-author-relative-measurement-space.md) on
 rights-free texts. Every selected work is:
 
 - public domain in the United States (published before 1930);
 - an English ORIGINAL (no translations, so no translator-voice confound,
-  per ADR-0036);
+  per the centroid-hygiene rules, ADR-0041 summary section 1);
 - by an author with >= 3 substantial works on the shelf.
 
 Cleaning policy (deterministic, reviewer-reproducible):
@@ -80,7 +81,7 @@ class PDWork:
 # The shelf: 9 authors, 35 works. All first published < 1930 (US public
 # domain as of 2026), all English originals, >= 3 works per author.
 # Translated authors in calibration/ (Dostoevsky, Tolstoy, Hugo, Cervantes,
-# Kafka, Dumas) are excluded — translator-mixed voice (ADR-0036).
+# Kafka, Dumas) are excluded — translator-mixed voice (centroid hygiene).
 # Emily Bronte (Wuthering Heights) excluded: single work, and kept strictly
 # separate from Charlotte (the historical misattribution fix).
 # Faulkner excluded: only one pre-1930 work on Gutenberg (< 3 works).

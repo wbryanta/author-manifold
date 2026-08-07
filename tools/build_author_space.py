@@ -176,7 +176,7 @@ def print_summary(space: AuthorRelativeSpace, output: Path) -> None:
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(
         description="Build the author-relative measurement space artifact "
-                    "(ADR-0041, forthcoming)"
+                    "(ADR-0041, docs/adr/ADR-0041-author-relative-measurement-space.md)"
     )
     parser.add_argument(
         "--baseline-dir", default=DEFAULT_BASELINE_DIR,

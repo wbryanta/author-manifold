@@ -18,7 +18,8 @@ LOO distances and (b) the style-prompted LLM numbers for contrast.
 
 Outputs reports/validation/pd_shelf/pastiche_baseline.{json,md}.
 
-Relates: ADR-0041, TIER1_PAPER_OUTLINE.md §6 C2, issue #95 P5.
+Relates: docs/adr/ADR-0041-author-relative-measurement-space.md;
+paper §5.2 (human-pastiche baseline).
 """
 
 from __future__ import annotations
@@ -38,6 +39,12 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 GUTENBERG_START = re.compile(r"\*\*\* ?START OF (THE|THIS) PROJECT GUTENBERG.*?\*\*\*", re.I)
 GUTENBERG_END = re.compile(r"\*\*\* ?END OF (THE|THIS) PROJECT GUTENBERG.*?\*\*\*", re.I)
+
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
 
 
 def strip_gutenberg(text: str) -> str:
@@ -122,6 +129,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "artifact": str(args.artifact),
             "pastiche": str(args.pastiche),
             "target_author": args.target_author,

@@ -4,19 +4,20 @@
 E4 established the headline placement result (wave-2: 9/24 style-prompted
 samples have the target as nearest author, 0/24 enter the target's
 within-author p90 region under MFW Delta). This tool answers the mechanistic
-follow-up at the heart of the Tier 1 paper (outline §5 R3, issue #95 P2):
+follow-up at the heart of the paper (§5.5, R5):
 under style prompting, WHICH of the 18 interpretable D18 dimensions actually
 move toward the target author, and which do not — versus the MFW
 (most-frequent-word / Burrows Delta) chassis that never moves.
 
 Method
 ------
-1. Inputs: the AI long-form corpus manifest (manifest.jsonl) + per-sample D18
-   baselines produced by the D18 baseline pipeline (not part of this release; ``--tier
-   better --input-dir data/ai-longform --output-dir
-   data/ai_baselines`` (the same feature pipeline as the gold shelf), and
-   the wave-2 author-space artifact (15 authors; d18 shelf_norm + per-author
-   d18 centroids + MFW block + MFW centroids).
+1. Inputs: the AI long-form corpus manifest (manifest.jsonl); the per-sample
+   D18 baselines under ``data/ai_baselines/``, which SHIP precomputed (the
+   D18 baseline-generation pipeline itself depends on a heavy spaCy/
+   transformers stack and is not part of this release — see the README's
+   "What's NOT in the box"); and the wave-2 author-space artifact (15
+   authors; d18 shelf_norm + per-author d18 centroids + MFW block + MFW
+   centroids).
 2. Every sample is normalized into pooled-shelf sigma units per dimension:
    ``z(d) = (raw(d) - shelf_mean(d)) / shelf_std(d)`` via
    ``AuthorRelativeSpace.normalize_raw``. Target positions are the author
@@ -49,18 +50,25 @@ Method
    comparable across rows). Overshoot is undefined for a scalar distance —
    reported as n/a.
 
-Re-runnability on the scaled corpus: the tool reads whatever rows are in the
-manifest at run time, filters by condition, and skips (with counts) rows
-whose baseline JSON does not exist yet — re-run generate_baselines.py with
---skip-existing first, then this tool. Style conditions default to
-``style_prompted`` and ``exemplar_targeted`` (the latter for the planned C3
-few-shot condition); any row whose condition is in --style-conditions and
-which has a style_target that exists in the space is analyzed.
+Re-runnability: the tool reads whatever rows are in the manifest at run
+time, filters by condition, and skips (with counts) rows whose baseline JSON
+is absent. Style conditions default to ``style_prompted`` and ``exemplar``,
+the two style-targeted conditions in the released corpus; any row whose
+condition is in --style-conditions and which has a style_target present in
+the space is analyzed. A requested condition matching zero manifest rows is
+a hard error rather than a silently smaller stratum.
+
+Two constructions: without ``--min-tokens-styled-floor`` the tool reproduces
+the native-length run (n=318, recorded in results2/entry_report.md section
+(e)); with ``--min-tokens-styled-floor 3000`` it reproduces the paper's
+PRIMARY floor-compliant artifact (n=236, results2/r3_floor_compliant.md).
+See the README for the exact invocations.
 
 Outputs ``r3_dimension_gap.json`` + ``r3_dimension_gap.md`` under
 --output-dir.
 
-Relates: ADR-0041; TIER1_PAPER_OUTLINE.md §5 R3; issue #95 item P2.
+Relates: docs/adr/ADR-0041-author-relative-measurement-space.md;
+paper §5.5 (R5 — where the style-prompting gap lives).
 """
 
 from __future__ import annotations
@@ -79,8 +87,8 @@ import numpy as np
 logger = logging.getLogger("analyze_style_transfer_dimensions")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT / "backend/core") not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT / "backend/core"))
+if str(REPO_ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT / "src"))
 
 # Plain-language glosses for the report (paper figure F4 axis labels).
 DIMENSION_GLOSS: Dict[str, str] = {
@@ -115,6 +123,12 @@ MFW_ROW = "mfw_delta"
 LENGTH_SENSITIVE_DIMS = frozenset({
     "ttr", "vocabulary_richness", "repetition_ratio", "sentiment_score",
 })
+
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
 
 
 def strip_comment_lines(raw: str) -> str:
@@ -566,6 +580,7 @@ def main() -> int:
     results: Dict[str, Any] = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "tool": "analyze_style_transfer_dimensions.py",
             "artifact": str(args.artifact),
             "distance_variant": space.distance_variant,

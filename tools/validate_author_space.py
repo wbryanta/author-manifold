@@ -3,7 +3,7 @@
 Author-Relative Space Validation Harness (Phase 3: E1-E3)
 
 Scientific go/no-go gate for the author-relative measurement space
-(ADR-0041, forthcoming; issue #60). Before any placement of a new text is trusted,
+(ADR-0041, docs/adr/ADR-0041-author-relative-measurement-space.md). Before any placement of a new text is trusted,
 these experiments must prove the D18++ dimensions and the pooled-normalized
 space separate KNOWN authors on a calibration shelf.
 
@@ -71,6 +71,12 @@ import sys
 from pathlib import Path
 
 
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
+
 def _ensure_repo_paths() -> Path:
     """Ensure the repo root and src/ are importable when run uninstalled."""
     repo_root = Path(__file__).resolve().parents[1]
@@ -123,7 +129,7 @@ COMBINED_ALPHAS = (0.3, 0.5, 0.7)
 # multiple variants pass the gates).
 VARIANT_SIMPLICITY = {"d18": 0, "d18_weighted": 1, "mfw_delta": 2, "combined": 3}
 
-# Gate thresholds (Phase 3 plan; ADR-0041 forthcoming).
+# Gate thresholds (paper §3.5; docs/adr/ADR-0041-author-relative-measurement-space.md).
 E1_AUC_THRESHOLD = 0.90
 E1_SILHOUETTE_FRACTION_THRESHOLD = 0.80
 E2_TOP1_THRESHOLD = 0.70
@@ -1383,7 +1389,7 @@ def run_experiments(
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(
         description="Validation experiments E1-E3 for the author-relative "
-                    "measurement space (ADR-0041, forthcoming; issue #60)"
+                    "measurement space (ADR-0041, docs/adr/ADR-0041-author-relative-measurement-space.md)"
     )
     parser.add_argument(
         "--baseline-dir", default=DEFAULT_BASELINE_DIR,
@@ -1522,6 +1528,7 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     meta = {
         "generated": datetime.now(timezone.utc).isoformat(),
+        "versions": _runtime_versions(),
         "baseline_dir": str(baseline_dir),
         "manifest": str(manifest_path) if manifest_path else None,
         "authors_filter": authors,

@@ -161,6 +161,12 @@ FROZEN = {
 # Selection (must reproduce the frozen 236 exactly)
 # ---------------------------------------------------------------------------
 
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
+
+
 def select_strata(
     corpus_dir: Path, hard_floor: int, practice_floor: int,
 ) -> Tuple[List[Dict], List[Dict], Dict[str, str], List[str]]:
@@ -959,6 +965,7 @@ def main() -> int:
     result = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "tool": "cross_target_entry_matrix.py",
             "question": ("Sec. 8.12 target-specificity at the entry level: "
                          "matched vs mismatched envelope entry on the frozen "

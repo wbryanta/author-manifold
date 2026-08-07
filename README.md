@@ -151,6 +151,17 @@ python3 tools/cross_target_entry_matrix.py
 pip install pytest && pytest
 ```
 
+**Environment.** `pyproject.toml` carries deliberately loose floors
+(Python ≥ 3.10, numpy ≥ 1.24, scipy ≥ 1.10, scikit-learn ≥ 1.3) and the
+results do not depend on pinning: `constraints-verified.txt` records the
+exact modern, unpinned stack (Python 3.14.6 / numpy 2.5.1 / scipy 1.18.0 /
+scikit-learn 1.9.0) in which every number above was independently
+reproduced digit-for-digit on 2026-08-06, from a fresh clone, by someone
+other than the author. It also states the honest limitation: the original
+runs behind the committed evidence predate version stamping and their exact
+versions cannot be recovered. Runs from 2026-08-06 onward stamp interpreter
+and library versions into their artifact `meta.versions` block.
+
 Everything above runs from this repository alone — the public-domain shelf
 texts, per-work baselines, AI corpus, space artifacts, and LM envelope
 sidecars all ship. Reruns land in `reports/validation/author_space/
@@ -303,6 +314,11 @@ docs/figures/               Print figures F1-F8 (PDF + 600-dpi PNG) with
 docs/redteam/               All three adversarial-review cycles + synthesis
                             (cycle3_2026-07/ includes the retraction record)
 docs/METHODOLOGY.md         The measurement model and validation design
+docs/adr/                   ADR-0041, the design of record (release summary
+                            written from the paper's Methods §3)
+ERRATA.md                   Corrections to previously published material
+constraints-verified.txt    The environment in which reproduction was
+                            independently verified (2026-08-06)
 docs/TIER1_PAPER_OUTLINE.md Paper skeleton and claim framing
 docs/tier1_related_work_reconciliation.md  Related-work reconciliation
 ```

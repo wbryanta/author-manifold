@@ -9,7 +9,8 @@ carry stable, mutually distinguishable lexical signatures?
 
 Outputs reports/validation/wave2/model_self_consistency.{json,md}.
 
-Relates: ADR-0041, TIER1_PAPER_OUTLINE.md §6 C5, issue #95.
+Relates: docs/adr/ADR-0041-author-relative-measurement-space.md;
+paper §5.7 (R7 — model self-consistency).
 """
 
 from __future__ import annotations
@@ -27,6 +28,12 @@ import numpy as np
 
 logger = logging.getLogger("analyze_model_self_consistency")
 REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _runtime_versions():
+    """Interpreter + numeric-library versions for this run's meta block."""
+    from author_manifold.author_space import runtime_versions
+    return runtime_versions()
 
 
 def main() -> int:
@@ -118,6 +125,7 @@ def main() -> int:
     results = {
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
+            "versions": _runtime_versions(),
             "artifact": str(args.artifact),
             "min_words": args.min_words,
         },
