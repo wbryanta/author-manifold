@@ -71,6 +71,53 @@ DEFAULT_OUTPUT_DIR = "reports/validation/topic_controls"
 DEFAULT_CONTENT_N = 2000
 MIN_WORKS = 4
 
+# The artifact the paper's C1b result was computed on, and where that result
+# lives. Any other artifact produces a different, non-comparable number.
+PAPER_ARTIFACT = "author_space_v1_wave2.json"
+PAPER_RESULT = "reports/validation/author_space/topic_controls/cross_topic_probe.md"
+
+MISSING_TEXT_MESSAGE = (
+    "Cannot run the cross-topic probe on this artifact: no body text is "
+    "resolvable for {author}/{title}.\n"
+    "\n"
+    "This probe reads raw novel text, and the contemporary (wave-2) shelf's "
+    "novels are rights-encumbered and do NOT ship with this repository -- "
+    "only their derived aggregate artifacts do (see DATA_LICENSES.md). "
+    "Running the wave-2 artifact therefore requires your own copies of the "
+    "works at the artifact-recorded text paths.\n"
+    "\n"
+    "From this repository alone, the probe runs on the public-domain shelf:\n"
+    "    python3 tools/cross_topic_probe.py "
+    "--artifact data/artifacts/author_space_pd_v1.json\n"
+    "That is a different shelf from the paper's -- see the configuration "
+    f"banner it prints, and the paper's recorded result at {PAPER_RESULT}."
+)
+
+_RULE = "=" * 72
+
+WRONG_CONFIG_BANNER = (
+    _RULE + "\n"
+    "  NOT THE PAPER'S CONFIGURATION\n"
+    + _RULE + "\n"
+    "  This run uses the artifact:\n"
+    "      {artifact}\n"
+    "  The paper's cross-topic control (C1b) is computed on the\n"
+    f"  CONTEMPORARY wave-2 shelf ({PAPER_ARTIFACT}): 15 authors, 78\n"
+    "  in-copyright novels, 12 authors with >= 4 works, 69 held-out works,\n"
+    "  Spearman rho(topic similarity, margin) = -0.373. That recorded\n"
+    f"  result is at {PAPER_RESULT}.\n"
+    "\n"
+    "  The numbers below are computed on a DIFFERENT shelf and are not\n"
+    "  comparable to the paper's: a different author set, a different\n"
+    "  content vocabulary, and a different topic-similarity range. They\n"
+    "  neither reproduce nor contradict the paper's C1b result.\n"
+    "\n"
+    "  Why the default is the PD shelf: it is the only shelf whose novel\n"
+    "  texts ship here. The paper's configuration needs locally held\n"
+    "  copies of the contemporary novels (DATA_LICENSES.md).\n"
+    + _RULE
+)
+
 
 def _resolve(path_str: str) -> Path:
     path = Path(path_str)
@@ -126,10 +173,8 @@ def run_probe(
         for idx, work in enumerate(space.authors[slug].works):
             tokens = _work_tokens(work)
             if not tokens:
-                raise ValueError(
-                    f"No body text for {slug}/{work.title} "
-                    f"(text_path={work.text_path!r})"
-                )
+                raise SystemExit(MISSING_TEXT_MESSAGE.format(
+                    author=slug, title=work.title))
             tokens_by[(slug, idx)] = tokens
             shelf_counts.update(tokens)
     top = [
@@ -290,6 +335,13 @@ def build_markdown(result: Dict[str, Any], meta: Dict[str, Any]) -> str:
     lines = [
         "# Cross-Topic Robustness Probe (C1b, issue #95 P3)",
         "",
+    ]
+    if meta.get("configuration_note"):
+        lines += [
+            "> **NOT THE PAPER'S CONFIGURATION.** " + meta["configuration_note"],
+            "",
+        ]
+    lines += [
         f"- Generated: {meta['generated']}",
         f"- Artifact: {meta['artifact']} (variant {meta['distance_variant']})",
         f"- Authors with >= {result['min_works']} works: "
@@ -413,6 +465,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     )
 
     artifact = _resolve(args.artifact)
+    is_paper_config = artifact.name == PAPER_ARTIFACT
+    if not is_paper_config:
+        print(WRONG_CONFIG_BANNER.format(artifact=artifact.name), flush=True)
+
     space = AuthorRelativeSpace.from_artifact(artifact)
     result = run_probe(space, content_n=args.content_n, min_works=args.min_works)
     meta = {
@@ -420,6 +476,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         "artifact": str(artifact),
         "distance_variant": space.distance_variant,
         "content_n": args.content_n,
+        "is_paper_configuration": is_paper_config,
+        "configuration_note": (
+            None if is_paper_config else
+            f"Not the paper's C1b configuration: computed on {artifact.name}, "
+            f"not the contemporary wave-2 shelf ({PAPER_ARTIFACT}). Not "
+            f"comparable to the recorded result at {PAPER_RESULT}."
+        ),
     }
 
     output_dir = Path(args.output_dir)
@@ -439,6 +502,9 @@ def main(argv: Optional[List[str]] = None) -> int:
           f"{result['n_works']} works; "
           f"rho(topic, margin) = "
           f"{result['correlations']['spearman_topic_sim_vs_margin']['rho']:.3f}")
+    if not is_paper_config:
+        print(f"  ^ NOT the paper's C1b numbers (artifact {artifact.name}, "
+              f"not {PAPER_ARTIFACT}); see {PAPER_RESULT}.")
     return 0
 
 

@@ -5,6 +5,14 @@
     "space_artifact": "data/baselines/voice/author_space/author_space_v1_wave2.json",
     "shelf_manifest": "data/baselines/author_space_build/control_shelf_manifest.yaml",
     "ai_corpus_dir": "data/raw/ai-longform",
+    "release_note_2026_08_06": "The four path strings above are the parent project's paths, recorded by the original run; they are kept verbatim as the run's own provenance. The release-relative equivalents are given in the release_paths block below (forensic review 2026-08-06). Nothing numeric is affected.",
+    "release_paths": {
+      "tool": "tools/analyze_folk_tells.py",
+      "space_artifact": "data/artifacts/author_space_v1_wave2.json",
+      "shelf_manifest": null,
+      "shelf_manifest_note": "The contemporary (wave-2) shelf manifest and its 78 in-copyright novel texts are rights-encumbered and do NOT ship (DATA_LICENSES.md). This result therefore cannot be regenerated from this repository alone; the tool's shipped default runs the public-domain shelf instead, which is a different configuration and prints a banner saying so.",
+      "ai_corpus_dir": "data/ai-longform"
+    },
     "window_words": 3500,
     "max_windows_per_work": 5,
     "n_human_works": 78,

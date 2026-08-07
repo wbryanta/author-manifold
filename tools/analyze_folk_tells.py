@@ -47,7 +47,14 @@ Outputs reports/validation/results2/folk_tells.{json,md}.
 Relates: r3_floor_compliant.md (texture/chassis split this tests);
 draft_v01.md Discussion ("the tells are the transferable layer").
 
-Mirror note: defaults here point at the public-domain shelf (data/pd_manifest.yaml), the redistributable reproduction path. The paper's reported numbers were computed against the 15-author contemporary shelf, whose source texts cannot be redistributed; those aggregates are in reports/validation/results2/folk_tells.json.
+Mirror note: defaults here point at the public-domain shelf
+(data/pd_manifest.yaml), the redistributable reproduction path. **That is
+NOT the paper's configuration**, and a default run says so in a banner: the
+paper's §5.8 numbers were computed against the 15-author contemporary
+shelf, whose source texts cannot be redistributed. The recorded aggregates
+are in reports/validation/author_space/results2/folk_tells.{json,md}, and
+the JSON's meta carries both the original run's paths and their
+release-relative equivalents.
 """
 
 from __future__ import annotations
@@ -71,6 +78,55 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 WINDOW_WORDS = 3500          # matches the AI corpus ~3,500-word target
 MAX_WINDOWS_PER_WORK = 5     # seeded sample of non-overlapping windows
 DEFAULT_SEED = 20260609      # repo-wide analysis seed
+
+# The human side the paper's §5.8 result was computed on, and where it lives.
+# Any other shelf produces a different, non-comparable number.
+PAPER_ARTIFACT = "author_space_v1_wave2.json"
+PAPER_RESULT = "reports/validation/author_space/results2/folk_tells.md"
+
+MISSING_TEXT_MESSAGE = (
+    "Cannot build the human side of the folk-tells comparison from this "
+    "shelf: {reason}\n"
+    "\n"
+    "This tool reads raw novel text. The contemporary (wave-2) shelf's 78 "
+    "novels are rights-encumbered and do NOT ship with this repository -- "
+    "only their derived aggregate artifacts do (see DATA_LICENSES.md), and "
+    "the shelf manifest that maps them to text files is likewise not part of "
+    "the release. Running the paper's configuration requires your own copies "
+    "of the works plus a manifest pointing at them.\n"
+    "\n"
+    "From this repository alone, the tool runs on the public-domain shelf "
+    "(its shipped default):\n"
+    "    python3 tools/analyze_folk_tells.py\n"
+    "That is a different human side from the paper's -- see the "
+    f"configuration banner it prints, and the recorded result at "
+    f"{PAPER_RESULT}."
+)
+
+_RULE = "=" * 72
+
+WRONG_CONFIG_BANNER = (
+    _RULE + "\n"
+    "  NOT THE PAPER'S CONFIGURATION\n"
+    + _RULE + "\n"
+    "  Human side of this run: {artifact}\n"
+    "  The paper's folk-tells result (§5.8) is computed against the\n"
+    f"  CONTEMPORARY wave-2 shelf ({PAPER_ARTIFACT}): 15 celebrated\n"
+    "  novelists, 78 in-copyright novels, 390 windows -- combined 12-tell\n"
+    "  z-sum AUC 0.506 [0.377, 0.623]. That recorded result is at\n"
+    f"  {PAPER_RESULT}.\n"
+    "\n"
+    "  The numbers below use a DIFFERENT human comparison set (the\n"
+    "  public-domain shelf: 9 pre-1930 novelists). Pre-1930 prose differs\n"
+    "  from contemporary literary prose on exactly the surface habits\n"
+    "  these tells count, so these AUCs are not comparable to the paper's\n"
+    "  and neither reproduce nor contradict it.\n"
+    "\n"
+    "  Why the default is the PD shelf: it is the only shelf whose novel\n"
+    "  texts ship here. The paper's configuration needs locally held\n"
+    "  copies of the contemporary novels (DATA_LICENSES.md).\n"
+    + _RULE
+)
 
 # ---------------------------------------------------------------------------
 # Tell operationalizations. Each is a conservative regex/heuristic; rates are
@@ -256,12 +312,21 @@ def load_human_works(space_path: Path, manifest_path: Path) -> List[dict]:
         for w in space["authors"][slug]["works"]:
             m = re.search(r"-([0-9a-f]{8})_baseline\.json$", w["path"])
             if not m:
-                raise ValueError(f"no source hash in {w['path']}")
+                raise SystemExit(MISSING_TEXT_MESSAGE.format(
+                    reason=f"the space artifact's baseline path for "
+                           f"{slug}/{w['title']!r} carries no source hash, so "
+                           f"it cannot be matched to a manifest row."))
             row = by_hash.get(m.group(1))
             if row is None:
-                raise ValueError(f"hash {m.group(1)} ({w['title']}) not in manifest")
-            raw = (corpus_root / row["file_path"]).read_text(
-                encoding="utf-8", errors="replace")
+                raise SystemExit(MISSING_TEXT_MESSAGE.format(
+                    reason=f"the work {w['title']!r} ({slug}) is not in the "
+                           f"shelf manifest, so its text cannot be located."))
+            text_path = corpus_root / row["file_path"]
+            if not text_path.is_file():
+                raise SystemExit(MISSING_TEXT_MESSAGE.format(
+                    reason=f"the text for {w['title']!r} ({slug}) is listed in "
+                           f"the manifest but is not present on disk."))
+            raw = text_path.read_text(encoding="utf-8", errors="replace")
             start = row.get("body_start_offset") or 0
             end = row.get("body_end_offset")
             works.append({
@@ -444,11 +509,18 @@ def build_markdown(results: dict) -> str:
     lines = [
         "# Folk \"AI Tells\" vs the Corpora — Document-Level Discrimination",
         "",
+    ]
+    if meta.get("configuration_note"):
+        lines += [
+            "> **NOT THE PAPER'S CONFIGURATION.** " + meta["configuration_note"],
+            "",
+        ]
+    lines += [
         f"- Generated: {meta['generated']}",
         f"- HUMAN: {meta['n_human_windows']} windows of {meta['window_words']} words "
         f"({meta['max_windows_per_work']} seeded non-overlapping windows/work) from the "
-        f"{meta['n_human_works']} wave-2 shelf works, {meta['n_human_authors']} authors; "
-        "body offsets per Control Shelf manifest",
+        f"{meta['n_human_works']} shelf works, {meta['n_human_authors']} authors "
+        f"(`{Path(meta['space_artifact']).name}`); body offsets per the shelf manifest",
         f"- AI: {meta['n_ai_samples']} unprompted ai-longform samples "
         f"({meta['n_ai_models']} models), truncated to {meta['window_words']} words "
         "(length symmetry; rates are per 1,000 words)",
@@ -657,6 +729,11 @@ def main() -> int:
 
     rng = np.random.default_rng(args.seed)
 
+    is_paper_config = Path(args.space_artifact).name == PAPER_ARTIFACT
+    if not is_paper_config:
+        print(WRONG_CONFIG_BANNER.format(
+            artifact=Path(args.space_artifact).name), flush=True)
+
     # --- HUMAN side -------------------------------------------------------
     works = load_human_works(args.space_artifact, args.shelf_manifest)
     logger.info("loaded %d shelf works", len(works))
@@ -749,6 +826,14 @@ def main() -> int:
             "n_ai_models": len(per_model),
             "seed": args.seed,
             "n_bootstrap": args.n_bootstrap,
+            "is_paper_configuration": is_paper_config,
+            "configuration_note": (
+                None if is_paper_config else
+                f"Not the paper's §5.8 configuration: the human side is "
+                f"{Path(args.space_artifact).name}, not the contemporary "
+                f"wave-2 shelf ({PAPER_ARTIFACT}). Not comparable to the "
+                f"recorded result at {PAPER_RESULT}."
+            ),
             "direction": "AUC = P(AI > human window); folk claim is AI-high "
                          "for every tell",
         },
@@ -778,6 +863,10 @@ def main() -> int:
     json_path.write_text(json.dumps(results, indent=1), encoding="utf-8")
     md_path.write_text(build_markdown(results), encoding="utf-8")
     logger.info("wrote %s and %s", json_path, md_path)
+    if not is_paper_config:
+        print(f"\nNOTE: the numbers above are NOT the paper's §5.8 folk-tells "
+              f"result (human side {Path(args.space_artifact).name}, not "
+              f"{PAPER_ARTIFACT}); see {PAPER_RESULT}.")
     return 0
 
 
