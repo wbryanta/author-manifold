@@ -147,7 +147,11 @@ python3 tools/rerun_entry_analysis.py
 python3 tools/analyze_completion_condition.py
 python3 tools/cross_target_entry_matrix.py
 
-# ---- Test suite (~5 s). Expected: 116 passed.
+# ---- Test suite (~5 s). Expected: 128 passed. Includes
+#      tests/test_published_chain.py, which pins the paper's §5.2
+#      selection chain and headline rates to exact values from the
+#      shipped artifacts, so numeric drift fails rather than passing
+#      quietly.
 pip install pytest && pytest
 ```
 
