@@ -1,3 +1,14 @@
+> **STATUS — cycle 1 of 3, statistics lane.**
+> **Attacked:** this paper, **draft v0.2** ("Approaching Without Entering"), 2026-06-10.
+> **Verdict:** the entry half of the paper is a length-calibration artifact.
+> **Disposition: ACCEPTED AND FIXED BY RE-ANALYSIS.** The v0.2 entry criterion
+> was retired, not reworded: it was replaced by per-author length-matched
+> envelopes (LM-W) with a permanent same-author positive control (E8). The
+> retracted criterion and its reproduction are kept in the release so the
+> retraction itself can be audited. See `docs/redteam/README.md` for the full
+> cycle map, and `RED_TEAM_SYNTHESIS.md` for the remediation plan this fed.
+> *(Header added 2026-08-06.)*
+
 # Hostile Statistical Review: `draft_v01.md` ("Approaching Without Entering")
 
 **Reviewer stance**: adversarial by assignment. Every check below was re-computed from the

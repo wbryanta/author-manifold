@@ -1,3 +1,14 @@
+> **STATUS — cycle 2 of 3, statistics lane.**
+> **Attacked:** this paper, **draft v0.3** ("The Width of a Voice"), 2026-06-11.
+> **Verdict:** major revision — the instrument survives; several headline
+> sentences did not.
+> **Disposition: ADDRESSED IN v0.4/v0.5.4.** The unprompted-entry control, the
+> model-matched completion comparison, and the de-circularized width test were
+> all added as this review demanded. **The E8 gate verdict is now reported as
+> the committed FAIL throughout** — paper, README, and tooling (which exits
+> nonzero by design) — not relabelled. See `docs/redteam/README.md`.
+> *(Header added 2026-08-06.)*
+
 # Hostile Statistical Review v2: `draft_v01.md` v0.3 ("The Width of a Voice")
 
 **Reviewer stance**: same hostile reviewer as `redteam_stats_attack.md` (the v0.2 attack).

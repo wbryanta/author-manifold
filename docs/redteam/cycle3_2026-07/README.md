@@ -1,3 +1,13 @@
+> # ⚠ SCOPE — THIS CYCLE IS **NOT** ABOUT "THE WIDTH OF A VOICE"
+>
+> **STATUS — cycle 3 of 3, 2026-07-02.** This directory reviews the
+> **WITHDRAWN** June 2026 reasoning-effort dose-response study, which was
+> never part of the Width-of-a-Voice paper. Verdicts here — including "Not
+> submittable as framed" — are about that study. The paper's §9.2 phrase
+> "both adversarial review reports" refers to cycles 1 and 2, the two that
+> reviewed the paper. See `docs/redteam/README.md`.
+> *(Header added 2026-08-06.)*
+
 # Adversarial cycle 3 (2026-07): the effort-study headlines, red-teamed and retracted
 
 This directory documents the third self-commissioned adversarial review cycle of this

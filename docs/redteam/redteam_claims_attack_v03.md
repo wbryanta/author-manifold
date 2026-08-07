@@ -1,3 +1,15 @@
+> **STATUS — cycle 2 of 3, claims lane.**
+> **Attacked:** this paper, **draft v0.3** ("The Width of a Voice"), 2026-06-11.
+> **Verdict:** MAJOR REVISION.
+> **Disposition: ADDRESSED IN v0.4/v0.5.4.** Its FATAL — that the completion
+> condition's "parity with named-style prompting" was a composition artifact
+> created by GPT-5 refusing all completions — was accepted and the claim
+> **retracted and inverted**: the paper now reports that model-matched,
+> completion beats naming the author for every informative model (5/5, exact
+> one-sided p = 0.031). **The E8 gate verdict is reported as the committed
+> FAIL throughout.** See `docs/redteam/README.md`.
+> *(Header added 2026-08-06.)*
+
 # Red-Team Claims Attack v2 — draft_v01.md (v0.3, "The Width of a Voice")
 
 **Reviewer posture:** same hostile empiricist who rejected v0.2. The authors claim full remediation per `RED_TEAM_SYNTHESIS.md`; this pass re-attacks every headline sentence against the Results 2.0 evidence (`reports/validation/results2/`, `wave2/e8_results.md`), the raw corpus on disk, and the git record. Every number below was re-checked read-only; reproduction snippets in §12. This run discharges the remediation plan's own step 5 ("re-run both red-team agents on v0.3").

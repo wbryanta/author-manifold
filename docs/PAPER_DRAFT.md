@@ -925,6 +925,17 @@ Because the contemporary shelf cannot be redistributed, the full pipeline is rel
 - **Artifact JSONs**: aggregate-only feature vectors, W/B calibration, and LM envelope sidecars (with source-artifact SHA-256 hashes) for the contemporary shelf; full artifacts for the PD shelf.
 - **Machine-readable results**: every table in this paper is generated from committed JSON results with seeds recorded (Appendix B).
 - **Review reports**: both adversarial review reports, committed verbatim (provenance disclosed in §8.11).
+
+  > *Release note (2026-08-06): "both" refers to the **two review cycles that
+  > attacked this paper** — cycle 1 against draft v0.2 and cycle 2 against
+  > draft v0.3, four documents in total (a statistics lane and a claims lane
+  > each, plus cycle 1's synthesis). The release repository also publishes a
+  > **third** cycle, `docs/redteam/cycle3_2026-07/`, which reviewed a separate
+  > **withdrawn** study (the June 2026 reasoning-effort experiment) that was
+  > never part of this paper; its verdicts, including "Not submittable as
+  > framed," do not refer to this work. The README's "three cycles" counts all
+  > three; this sentence counts the two that reviewed the paper. Full map:
+  > `docs/redteam/README.md`.*
 - **Companion repository** (public: github.com/wbryanta/author-manifold) mirroring code, PD shelf manifests, AI corpus, and result artifacts.
 
 **Replication quickstart claim:** from the companion repository alone, a reader can (1) rebuild the PD shelf space and its LM envelopes, (2) verify the E8 positive control at the §3.9 values, (3) reproduce the Brinton pastiche entry rates under both vocabularies (34/36 and 27/36 at p90), and (4) place the released AI corpus against the released envelope sidecars. Contemporary-shelf numbers verify against released aggregate artifacts; regeneration from raw texts requires locally held copies of the novels.

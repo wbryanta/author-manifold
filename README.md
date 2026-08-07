@@ -46,6 +46,40 @@ sweeps, exact tests, Holm registry):
 remains locked to Number Freeze v2
 (`reports/validation/author_space/wave2/tier1_statistics.md`).
 
+## About this repository's history
+
+Worth knowing before you read the commit log, because all three facts below
+look odd out of context and each has a plain explanation.
+
+**This is a curated public mirror, built fresh.** It is not the working
+repository's history rewritten or truncated — it is a separate repository
+created for the release. The working repository cannot be published: it holds
+in-copyright novel corpora and a private personal corpus, neither of which is
+distributable (see "What's NOT in the box"). So the release was assembled as
+its own repository containing only what can ship. Nothing was removed from a
+public history; there was no public history to remove from.
+
+**The commit dates cluster tightly.** They reflect evidence-completeness
+work against an already-frozen paper — shipping the artifacts the paper
+cites, checking they reproduce, fixing what did not — rather than the pace at
+which the research happened. The research spans 2026-06 to 2026-08; the
+mirror's commits are the packaging of it.
+
+**Commits carry `Co-Authored-By: Claude` trailers.** The paper discloses the
+same thing more directly than the trailers do: this work was built in
+sustained human–AI collaboration, and §8.11 says so explicitly, including
+what the models did and what the sole author is answerable for. The trailers
+are consistent with that disclosure, not a substitute for it — read §8.11.
+
+**Adversarial review was run by AI reviewers, including a cross-family one.**
+`docs/redteam/README.md` records who reviewed what, which draft each cycle
+attacked, and what changed as a result — including that an OpenAI-family
+model ("SOL") was used as an outside gate on work produced with
+Anthropic-family models, specifically so the project is not grading its own
+homework. Note that **cycle 3 reviewed a different, withdrawn study** and its
+verdicts do not refer to this paper; every file in that directory now says so
+at the top.
+
 **Method note — adversarial review is part of the pipeline.** The results
 above survived three full red-team cycles run against the project's own
 claims and statistics (v0.2: `docs/redteam/redteam_stats_attack.md`,

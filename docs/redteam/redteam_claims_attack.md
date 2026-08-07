@@ -1,3 +1,13 @@
+> **STATUS — cycle 1 of 3, claims lane.**
+> **Attacked:** this paper, **draft v0.2** ("Approaching Without Entering"), 2026-06-10.
+> **Verdict:** REJECT in current form.
+> **Disposition: ACCEPTED AND FIXED BY RE-ANALYSIS.** The central interpretive
+> claims rested on a length-unmatched calibration; that calibration is gone.
+> This review's own inverted prediction — that under a length-matched
+> criterion the human pastiche *enters* — is what the published paper now
+> reports. See `docs/redteam/README.md` for the full cycle map.
+> *(Header added 2026-08-06.)*
+
 # Red-Team Claims Attack — draft_v01.md
 
 **Reviewer posture:** hostile empiricist (falsifiable claims only, baselines or it didn't happen) crossed with a prose reviewer who deletes every sentence that survives only because it is vague.

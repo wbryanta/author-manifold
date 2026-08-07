@@ -1,3 +1,22 @@
+> # ⚠ SCOPE — THIS REVIEW IS **NOT** ABOUT "THE WIDTH OF A VOICE"
+>
+> **STATUS — cycle 3 of 3.** **Attacked:** the **June 2026
+> reasoning-effort dose-response study**, a follow-on experiment that was
+> **WITHDRAWN** and **never formed any part of the Width-of-a-Voice paper**.
+> Different corpus (~450 samples, 15 conditions, 4 vendor labs), different
+> claims, different instrument layer.
+>
+> **Every verdict in this document — including "Not submittable as framed" —
+> refers to that withdrawn study, not to the paper this repository
+> supports.** Quoting it against the Width paper would be a category error.
+>
+> **Disposition: BOTH HEADLINE CLAIMS RETRACTED** (p = 0.011 and p = 0.021,
+> construct-validity failures) **before any external reader saw them**, and
+> the study withdrawn. It is published here deliberately: the retraction
+> record is part of the work. See `README.md` in this directory and
+> `docs/redteam/README.md`.
+> *(Header added 2026-08-06.)*
+
 # Independent Fable-5 adversarial review (6 lanes + senior synthesis) — 2026-07-02
 
 # SENIOR CONSOLIDATED REVIEW — "The Width of a Voice" effort-control/dose-response study

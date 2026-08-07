@@ -1,3 +1,13 @@
+> **STATUS — cycle 1 of 3, synthesis and remediation plan.**
+> **Attacked:** this paper, **draft v0.2**, 2026-06-10 (synthesizes
+> `redteam_stats_attack.md` and `redteam_claims_attack.md`).
+> **Verdict:** REJECT v0.2 as framed.
+> **Disposition: PLAN EXECUTED.** Every FATAL was addressed by re-analysis.
+> The plan's own step 5 ("re-run both red-team agents on v0.3") was
+> discharged — that rerun is cycle 2, the `*_v03.md` pair in this directory.
+> See `docs/redteam/README.md` for the full cycle map.
+> *(Header added 2026-08-06.)*
+
 # Red Team Synthesis — draft v0.2 verdict and remediation plan
 
 Date: 2026-06-10. Inputs: `redteam_stats_attack.md`, `redteam_claims_attack.md`
