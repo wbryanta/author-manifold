@@ -147,7 +147,7 @@ python3 tools/rerun_entry_analysis.py
 python3 tools/analyze_completion_condition.py
 python3 tools/cross_target_entry_matrix.py
 
-# ---- Test suite (~30 s). Expected: 116 passed.
+# ---- Test suite (~5 s). Expected: 116 passed.
 pip install pytest && pytest
 ```
 
@@ -198,7 +198,37 @@ python3 tools/tier1_statistics.py \
     --artifact data/artifacts/author_space_v1_wave2.json \
     --n-boot 10000 --n-perm 10000 \
     --out-dir reports/validation/author_space/results2_rerun
+
+# R3 dimension-level movement — the PRIMARY §5.5 artifact
+# (results2/r3_floor_compliant.json, floor-compliant n=236). The floor is
+# the paper's §3.7 MFW-token floor applied to the STYLE-TARGETED samples
+# only; the matched unprompted baselines stay unfiltered so the movement
+# contrast remains comparable. Expected (~2 s):
+#   236 styled samples; skipped styled_below_min_tokens=82,
+#   missing_baseline=2, other_condition=352
+#   Transferred (Holm p<0.05, toward): repetition_ratio,
+#   vocabulary_richness, ttr, sentiment_score, present_ratio, past_ratio
+#   MFW chassis: median movement -0.0070 Delta (closure -0.4%)
+python3 tools/analyze_style_transfer_dimensions.py \
+    --min-tokens-styled-floor 3000 \
+    --output-dir reports/validation/author_space/results2_rerun \
+    --output-prefix r3_floor_compliant
+
+# Without the flag the tool reproduces the SECONDARY native-length run
+# (n=318) recorded in results2/entry_report.md section (e).
+python3 tools/analyze_style_transfer_dimensions.py \
+    --output-dir reports/validation/author_space/results2_rerun
 ```
+
+**Provenance note on the R3 baselines (forensic review 2026-08-06).** The
+recorded `results2/r3_floor_compliant.json` meta names
+`data/tmp/r3_baselines` as its `baselines_dir` — that was the original
+run's private working directory, not a shipped path. Re-running the
+command above against the **shipped** `data/ai_baselines/` reproduces the
+recorded artifact exactly: a full recursive JSON comparison at zero
+tolerance found differences only in `meta.generated` and the three
+`meta.*` path strings, with every numeric value identical (verified
+2026-08-06). No unshipped input is required.
 
 ### Regenerating the paper figures (F1-F8)
 

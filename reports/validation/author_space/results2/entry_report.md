@@ -183,7 +183,21 @@ Rank-vs-metric (stated plainly): median styled-minus-matched-unprompted distance
 
 ## e. Chassis restated (K10 — immobility)
 
-- Source: `reports/validation/r3_dimension_gap.json` (n = 318)
+> **Release note (2026-08-06): this section is SUPERSEDED as the chassis
+> result.** It reports the **native-length** R3 run (n = 318, no MFW-token
+> floor on the styled samples). The **primary, floor-compliant** chassis
+> result — n = 236, the same stratum every entry rate in section (a) is
+> computed on — is
+> `reports/validation/author_space/results2/r3_floor_compliant.md`, and that
+> is the artifact the paper cites (§5.5). The two runs differ in the sign
+> test: floor-compliant Holm p = 1.0 versus the p = 0.042 below. Read
+> `r3_floor_compliant.md` for the reported result; this section is retained
+> as the length-unmatched comparison. Regenerate either with
+> `tools/analyze_style_transfer_dimensions.py` (with and without
+> `--min-tokens-styled-floor 3000`; see the README).
+
+- Source: `reports/validation/author_space/r3_dimension_gap.json` (n = 318;
+  native-length run — see the release note above)
 - MFW median movement: -0.0300 Delta [-0.0475, -0.0131]; unprompted gap 1.654; closure -2.9% to -0.8%; sign-test Holm p = 0.042
 - Per-target MFW movement: didion-joan +0.033, mccarthy-cormac +0.058, morrison-toni -0.079, ondaatje-michael -0.067
 - Reading: Immobility, not directed movement-away: aggregate MFW movement median -0.030 Delta [-0.048, -0.013] on an unprompted gap of 1.654 (closure -2.9% to -0.8%), with per-target signs split 2/4 toward. The CI brackets zero-to-slightly-negative and the sign flips across targets; the defensible claim is |closure| <= ~3% in either direction against 14-21% closure on texture dimensions (K10).

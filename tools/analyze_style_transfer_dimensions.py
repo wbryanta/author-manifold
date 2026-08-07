@@ -197,8 +197,9 @@ def main() -> int:
     parser.add_argument("--output-prefix", default="r3_dimension_gap")
     parser.add_argument(
         "--style-conditions", nargs="+",
-        default=["style_prompted", "exemplar_targeted"],
-        help="Manifest conditions treated as style-targeted",
+        default=["style_prompted", "exemplar"],
+        help="Manifest conditions treated as style-targeted "
+             "(released corpus: style_prompted, exemplar)",
     )
     parser.add_argument(
         "--baseline-condition", default="unprompted",
@@ -208,6 +209,17 @@ def main() -> int:
                         help="Optional restriction to these model slugs")
     parser.add_argument("--min-words", type=int, default=800,
                         help="Skip samples shorter than this (matches E4)")
+    parser.add_argument(
+        "--min-tokens-styled-floor", "--min-tokens", dest="min_tokens",
+        type=int, default=None,
+        help="Floor in MFW tokens applied to STYLE-TARGETED samples (the "
+             "paper's §3.7 floors are in MFW tokens; 3000 = practice floor "
+             "-> the n=236 primary entry stratum; v0.3 red-team G5/claims "
+             "§6). Unprompted baselines are NOT filtered: they are the "
+             "matched per-(model,scenario) comparator, unchanged from the "
+             "native-length run so the movement contrast stays comparable. "
+             "Default off (native-length construction, n=318).",
+    )
     parser.add_argument(
         "--min-axis-gap", type=float, default=0.25,
         help="Minimum |z_target - z_unprompted| (sigma) for the relative-"
@@ -223,7 +235,9 @@ def main() -> int:
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    from author_manifold.author_space import AuthorRelativeSpace, extract_features
+    from author_manifold.author_space import (
+        AuthorRelativeSpace, extract_features, mfw_tokenize,
+    )
 
     space = AuthorRelativeSpace.from_artifact(args.artifact)
     dims = list(space.dimensions)
@@ -234,12 +248,28 @@ def main() -> int:
             if line.strip()]
     # Dedup by file_path (keep last — re-generated samples supersede).
     rows = list({r["file_path"]: r for r in rows}.values())
+
+    # Fail loud on a condition name that matches nothing. A silent zero-match
+    # condition (e.g. the retired 'exemplar_targeted' label) halves the styled
+    # stratum without any visible error, so the run must abort instead.
+    present = {r.get("condition") for r in rows}
+    requested = list(args.style_conditions) + [args.baseline_condition]
+    absent = [c for c in requested if c not in present]
+    if absent:
+        raise SystemExit(
+            f"Condition(s) {absent} match zero records in {manifest_path}. "
+            f"Conditions present: {sorted(c for c in present if c)}. "
+            "Fix --style-conditions/--baseline-condition; a zero-match "
+            "condition would silently shrink the analyzed stratum."
+        )
+
     rng = np.random.default_rng(args.seed)
 
     # ------------------------------------------------------------------
     # Load + featurize every eligible manifest row.
     # ------------------------------------------------------------------
     skipped = {"missing_baseline": 0, "missing_text": 0, "short": 0,
+               "styled_below_min_tokens": 0,
                "model_filtered": 0, "other_condition": 0,
                "unknown_target": 0, "no_matched_unprompted": 0}
     samples: List[Dict[str, Any]] = []
@@ -272,6 +302,10 @@ def main() -> int:
         body = strip_comment_lines(text_path.read_text(encoding="utf-8"))
         if len(body.split()) < args.min_words:
             skipped["short"] += 1
+            continue
+        if is_style and args.min_tokens is not None \
+                and len(mfw_tokenize(body)) < args.min_tokens:
+            skipped["styled_below_min_tokens"] += 1
             continue
         z, coverage, imputed = space.normalize_raw(extract_features(baseline, dims))
         if imputed:
@@ -541,6 +575,12 @@ def main() -> int:
             "baseline_condition": args.baseline_condition,
             "models": args.models,
             "min_words": args.min_words,
+            "min_tokens_styled_floor": args.min_tokens,
+            "min_tokens_note": (
+                None if args.min_tokens is None else
+                "styled samples below this MFW-token floor are excluded "
+                "(paper §3.7 floor discipline; v0.3 red-team G5); the "
+                "unprompted matched baselines are unfiltered"),
             "min_axis_gap_sigma": args.min_axis_gap,
             "overshoot_threshold": args.overshoot_threshold,
             "n_bootstrap": args.n_bootstrap,
@@ -610,6 +650,12 @@ def main() -> int:
         f"(conditions: {', '.join(args.style_conditions)}); matched unprompted "
         f"cells: {len(unprompted_by_cell)}; skipped: "
         + ", ".join(f"{k}={v}" for k, v in skipped.items() if v) + "",
+        (f"- Styled floor: >= {args.min_tokens} MFW tokens "
+         "(floor-compliant construction; sub-floor and hard-floor styled "
+         "samples excluded per §3.7; unprompted matched baselines unfiltered)"
+         if args.min_tokens is not None else
+         "- Styled floor: none (native-length construction, all styled "
+         "samples regardless of token floor)"),
         f"- Movement units: pooled-shelf sigma per dimension (MFW row: Burrows "
         f"Delta over the top-300 shelf vocabulary). Positive = the "
         f"style-prompted sample sits closer to the target author than the same "
