@@ -86,6 +86,7 @@ from author_manifold.author_space import (
     LengthMatchedEnvelopes,
     LM_DEFAULT_WINDOW_WORDS,
     design_effect,
+    sha256_of_file,
 )
 
 logger = logging.getLogger("validate_lm_envelopes")
@@ -134,18 +135,38 @@ def clopper_pearson(x: float, n: float, alpha: float = 0.05) -> Tuple[float, flo
 
 
 def verify_against_released(
-    envelopes: LengthMatchedEnvelopes, released_path: Path
+    envelopes: LengthMatchedEnvelopes,
+    released_path: Path,
+    artifact_path: Path,
 ) -> Dict[str, Any]:
     """Compare a rebuilt envelope set against a released sidecar.
 
-    Content comparison only (per-author quantiles, window counts, and window
-    distances); the meta blocks legitimately differ (generation timestamp,
-    and the released sidecars pin the source artifact bytes of the run that
-    built them).
+    Two independent checks:
+
+    1. Content (per-author quantiles, window counts, window distances) —
+       the rebuilt envelopes must reproduce the released ones exactly.
+    2. Provenance — the released sidecar's declared
+       ``meta.source_artifact_sha256`` must equal the actual sha256 of the
+       source artifact it names. A declared hash that is never checked is
+       not provenance, so a mismatch here is a hard failure: it means the
+       shipped artifact is not the bytes the shipped envelopes were built
+       from (forensic review 2026-08-06, finding C-1).
+
+    Only ``meta.generated`` legitimately differs between a rebuild and the
+    release.
     """
     released = json.loads(released_path.read_text(encoding="utf-8"))
     rel_authors = released.get("authors", {})
     mismatches: List[str] = []
+
+    declared = (released.get("meta") or {}).get("source_artifact_sha256")
+    actual = sha256_of_file(artifact_path)
+    hash_ok = declared == actual
+    if not hash_ok:
+        mismatches.append(
+            f"declared source_artifact_sha256 {declared!r} != actual sha256 "
+            f"of {rel_to_repo(artifact_path)} ({actual!r})"
+        )
     max_quantile_diff = 0.0
     if sorted(rel_authors) != sorted(envelopes.authors):
         mismatches.append(
@@ -178,6 +199,9 @@ def verify_against_released(
         "released_sidecar": rel_to_repo(released_path),
         "match": not mismatches,
         "max_quantile_abs_diff": max_quantile_diff,
+        "source_artifact_sha256_declared": declared,
+        "source_artifact_sha256_actual": actual,
+        "source_artifact_sha256_match": hash_ok,
         "mismatches": mismatches,
     }
 
@@ -221,11 +245,29 @@ def run_shelf(
     released_path = ARTIFACT_DIR / envelope_out.name
     verification: Optional[Dict[str, Any]] = None
     if released_path.is_file() and released_path.resolve() != envelope_out.resolve():
-        verification = verify_against_released(envelopes, released_path)
+        verification = verify_against_released(
+            envelopes, released_path, artifact_path)
         logger.info(
-            "[%s] released-sidecar verification: %s", label,
+            "[%s] released-sidecar verification: %s "
+            "(content + declared source_artifact_sha256)", label,
             "MATCH" if verification["match"] else "MISMATCH",
         )
+        if not verification["source_artifact_sha256_match"]:
+            # A declared hash that does not match the bytes it names is a
+            # broken provenance chain, not drift to be reported: abort.
+            # Content drift stays reported (MISMATCH + per-author detail in
+            # the results file) so a rerun that finds it still produces
+            # evidence.
+            raise SystemExit(
+                f"Provenance failure on {rel_to_repo(released_path)}: its "
+                f"declared meta.source_artifact_sha256 "
+                f"{verification['source_artifact_sha256_declared']!r} does "
+                f"not match the actual sha256 of "
+                f"{rel_to_repo(artifact_path)} "
+                f"({verification['source_artifact_sha256_actual']!r}). The "
+                f"shipped envelopes do not provably come from the shipped "
+                f"artifact; do not trust either until this is resolved."
+            )
 
     held_out = envelopes.held_out_entry_rates(level=NOMINAL_LEVEL)
     authors: List[Dict[str, Any]] = []
@@ -328,11 +370,16 @@ def build_markdown(results: Dict[str, Any]) -> str:
         ]
         ver = shelf.get("released_sidecar_verification")
         if ver is not None:
+            hash_verdict = (
+                "asserted against the shipped artifact and MATCHES"
+                if ver["source_artifact_sha256_match"] else "MISMATCH"
+            )
             lines.append(
                 f"- Released-sidecar verification vs "
                 f"`{ver['released_sidecar']}`: "
                 f"**{'MATCH' if ver['match'] else 'MISMATCH'}** "
-                f"(max |quantile diff| {ver['max_quantile_abs_diff']:g})"
+                f"(max |quantile diff| {ver['max_quantile_abs_diff']:g}; "
+                f"declared source_artifact_sha256 {hash_verdict})"
             )
         lines += [
             f"- Pooled held-out inside@p90: "

@@ -18,7 +18,9 @@
    99
   ],
   "source_artifact": "data/artifacts/author_space_pd_v1.json",
-  "source_artifact_sha256": "9568b219ba7eb316c09901009470924e7166297ee97a9613a15e85933820d503",
+  "source_artifact_sha256": "eae85165e3e1c0f5d0ce26cd9681f297a53b46115d93d8a97ce5543d9987fa29",
+  "source_artifact_sha256_release_note_2026_08_06": "This field now holds the sha256 of the artifact AS SHIPPED in this repository, which is what tools/validate_lm_envelopes.py asserts. It previously held 9568b219ba7eb316c09901009470924e7166297ee97a9613a15e85933820d503, the sha256 of the parent project's canonical copy of the same artifact -- the copy this envelope set was actually built from. Building the release rewrote path strings inside the artifact after it was hashed, so the declared hash no longer matched the shipped bytes. The two copies differ ONLY in path strings: a full recursive JSON comparison at zero tolerance (forensic review 2026-08-06) found 0 numeric or structural differences and 71 string differences, all of them paths (35 baseline paths, 35 text paths, 1 manifest path). No envelope number is affected.",
+  "source_artifact_sha256_parent_canonical": "9568b219ba7eb316c09901009470924e7166297ee97a9613a15e85933820d503",
   "n_authors": 9,
   "skipped_authors": [],
   "works_without_text": [],
