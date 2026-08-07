@@ -201,7 +201,7 @@ python3 tools/rerun_entry_analysis.py
 python3 tools/analyze_completion_condition.py
 python3 tools/cross_target_entry_matrix.py
 
-# ---- Test suite (~5 s). Expected: 152 passed. Includes
+# ---- Test suite (~5 s). Expected: 162 passed. Includes
 #      tests/test_published_chain.py, which RECOMPUTES the paper's §5.2
 #      selection chain (1,072 -> 1,069 -> 318 -> 236) from the shipped
 #      manifest and corpus through the analysis tool's own loader, and

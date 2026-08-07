@@ -108,6 +108,53 @@ def test_expected_shape_matches_the_published_table(published_table):
     assert total == EXPECTED_COMPLETION_SAMPLES
 
 
+def test_missing_completion_file_fails_cleanly(published_table, capsys):
+    """A missing file used to raise KeyError('length_class') and abort.
+
+    build_flags records an unreadable sample as {file_missing: True} with no
+    length_class. The cross-check read that key unconditionally, so a single
+    missing completion file took the whole check down with a traceback
+    instead of reporting it. It is now a named structural failure.
+    """
+    flags = sidecar_from_published(published_table)
+    victim = next(key for key, s in flags["samples"].items()
+                  if s["model_slug"] == "gpt-5")
+    flags["samples"][victim] = {
+        "condition": "completion",
+        "model_slug": "gpt-5",
+        "file_missing": True,
+    }
+    failures = check_against_published(flags)  # must not raise
+    assert failures > 0
+    out = capsys.readouterr().out
+    assert "could not be classified" in out
+    assert victim in out
+    assert "PASS" not in out
+
+
+def test_completion_sample_without_length_class_fails_cleanly(
+        published_table, capsys):
+    """Same guard, reached by an absent key rather than the file_missing flag."""
+    flags = sidecar_from_published(published_table)
+    victim = next(iter(flags["samples"]))
+    flags["samples"][victim].pop("length_class")
+    assert check_against_published(flags) > 0
+    assert "could not be classified" in capsys.readouterr().out
+
+
+def test_all_completion_files_missing_fails_cleanly(published_table, capsys):
+    """The degenerate case: nothing classifiable, and still no traceback."""
+    flags = sidecar_from_published(published_table)
+    flags["samples"] = {
+        key: {"condition": "completion",
+              "model_slug": s["model_slug"],
+              "file_missing": True}
+        for key, s in flags["samples"].items()
+    }
+    assert check_against_published(flags) > 0
+    assert "PASS" not in capsys.readouterr().out
+
+
 def test_count_mismatch_is_still_caught(published_table):
     """Structural checks must not have displaced the count comparison."""
     flags = sidecar_from_published(published_table)

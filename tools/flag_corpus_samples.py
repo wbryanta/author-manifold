@@ -257,7 +257,9 @@ def check_against_published(flags: Dict[str, Any]) -> int:
     Returns the number of failures. Both sides must carry the expected
     number of models and samples, and name the same models, before any
     count is compared: a missing or extra model is a failure in itself,
-    not a row that is quietly skipped.
+    not a row that is quietly skipped. A completion sample whose file could
+    not be read carries no length_class; it is reported as a structural
+    failure naming the file, rather than crashing on the absent key.
     """
     published_path = (REPO_ROOT / "reports/validation/author_space/results2"
                       / "completion_results.json")
@@ -265,8 +267,16 @@ def check_against_published(flags: Dict[str, Any]) -> int:
     table = published["compliance_per_model"]
 
     mine: Dict[str, Counter] = {}
+    unclassifiable: List[str] = []
     for rel, s in flags["samples"].items():
         if s.get("condition") != "completion":
+            continue
+        # A sample whose file was missing at build time has no length_class
+        # at all. Reading it as if it did raised KeyError and took the whole
+        # check down with a traceback; a missing file is a finding, so it is
+        # reported as one.
+        if s.get("file_missing") or "length_class" not in s:
+            unclassifiable.append(rel)
             continue
         model = (s.get("model_slug") or "").replace("_", ".")
         mine.setdefault(MODEL_KEY_ALIASES.get(model, model),
@@ -278,6 +288,13 @@ def check_against_published(flags: Dict[str, Any]) -> int:
         nonlocal failures
         failures += 1
         print(f"FAIL  {message}")
+
+    if unclassifiable:
+        shown = ", ".join(sorted(unclassifiable)[:5])
+        if len(unclassifiable) > 5:
+            shown += f", ... (+{len(unclassifiable) - 5} more)"
+        fail(f"{len(unclassifiable)} completion sample(s) have no readable "
+             f"file and could not be classified: {shown}")
 
     published_total = sum(row["compliant"] + row["subfloor"] + row["refused"]
                           for row in table.values())

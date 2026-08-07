@@ -47,6 +47,14 @@ Outputs reports/validation/results2/folk_tells.{json,md}.
 Relates: r3_floor_compliant.md (texture/chassis split this tests);
 draft_v01.md Discussion ("the tells are the transferable layer").
 
+Paper-configuration labelling: output carries ``is_paper_configuration``,
+which identifies the human-side ARTIFACT by content hash (sha256, pinned
+below) and the RUN by its structural parameters (shelf size, window and
+sampling settings, seed, bootstrap count, and the resulting window/sample/
+model counts). It does not authenticate the corpus texts on either side of
+the comparison: it is a misconfiguration guard, not a tamper-evidence
+system.
+
 Mirror note: defaults here point at the public-domain shelf
 (data/pd_manifest.yaml), the redistributable reproduction path. **That is
 NOT the paper's configuration**, and a default run says so in a banner: the
@@ -60,6 +68,7 @@ release-relative equivalents.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import re
@@ -75,6 +84,21 @@ logger = logging.getLogger("analyze_folk_tells")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
+
+def _sha256_of_file(path: Path) -> str:
+    """SHA-256 hex digest of a file's bytes.
+
+    Mirrors author_manifold.author_space.sha256_of_file; kept local so this
+    tool stays importable without the package on the path, as the rest of
+    it already is. A test pins the two against each other.
+    """
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 WINDOW_WORDS = 3500          # matches the AI corpus ~3,500-word target
 MAX_WINDOWS_PER_WORK = 5     # seeded sample of non-overlapping windows
 DEFAULT_SEED = 20260609      # repo-wide analysis seed
@@ -87,10 +111,28 @@ PAPER_RESULT = "reports/validation/author_space/results2/folk_tells.md"
 # A filename is not an identity. A file from a different shelf, renamed to
 # the one above, would previously have been certified as the paper's
 # configuration and its output stamped is_paper_configuration = true. So the
-# name is treated as a claim, and these structural facts -- pinned from the
-# meta block of the committed evidence beside PAPER_RESULT -- are what
-# certify it. Any mismatch is a hard failure, not a banner: a run that
+# name is treated as a claim, and the facts below are what certify it: the
+# artifact's CONTENT, by sha256, plus the shape and parameters of the run
+# (pinned from the meta block of the committed evidence beside
+# PAPER_RESULT). Any mismatch is a hard failure, not a banner -- a run that
 # cannot be identified as the paper's must not be labelled as the paper's.
+#
+# SCOPE. This certifies the artifact by content hash and the run by its
+# structural parameters. It does NOT authenticate the corpus texts on
+# either side of the comparison: it is a misconfiguration guard, not a
+# tamper-evidence system.
+#
+# The hash is the one this repository already records for the shipped
+# artifact -- data/artifacts/lm_envelopes_wave2_3000w.json declares it as
+# meta.source_artifact_sha256 for meta.source_artifact
+# "data/artifacts/author_space_v1_wave2.json", and four committed evidence
+# files carry the same value (results2/entry_results.json,
+# results2/cross_target_matrix.json, results2/completion_results.json,
+# wave2/e8_results.json). tools/validate_lm_envelopes.py asserts that
+# declaration against the file it names, so this constant is pinned to a
+# value the release already verifies rather than to a fresh measurement.
+PAPER_ARTIFACT_SHA256 = (
+    "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338")
 PAPER_HUMAN_AUTHORS = 15
 PAPER_HUMAN_WORKS = 78
 PAPER_HUMAN_WINDOWS = 390
@@ -147,7 +189,7 @@ WRONG_CONFIG_BANNER = (
 
 STRUCTURE_MISMATCH_BANNER = (
     _RULE + "\n"
-    "  ARTIFACT NAME MATCHES THE PAPER'S; STRUCTURE DOES NOT\n"
+    "  ARTIFACT NAME MATCHES THE PAPER'S; THE RUN DOES NOT\n"
     + _RULE + "\n"
     "  Human-side artifact: {artifact}\n"
     "\n"
@@ -162,6 +204,11 @@ STRUCTURE_MISMATCH_BANNER = (
     "  configuration (the paper's run is at {result}), or run this tool\n"
     "  under a different artifact filename, where the output is honestly\n"
     "  labelled as a different configuration.\n"
+    "\n"
+    "  Scope: is_paper_configuration identifies the ARTIFACT by content\n"
+    "  hash and the RUN by its structural parameters. It does not\n"
+    "  authenticate the corpus texts on either side -- this is a\n"
+    "  misconfiguration guard, not a tamper-evidence system.\n"
     + _RULE
 )
 
@@ -796,8 +843,10 @@ def main() -> int:
     if not is_paper_config:
         print(WRONG_CONFIG_BANNER.format(artifact=artifact_name), flush=True)
     else:
-        # The run parameters, before anything is read.
+        # Content identity and the run parameters, before anything is read.
         assert_paper_configuration(artifact_name, [
+            ("artifact sha256", _sha256_of_file(Path(args.space_artifact)),
+             PAPER_ARTIFACT_SHA256),
             ("--window-words", args.window_words, PAPER_WINDOW_WORDS),
             ("--max-windows-per-work", args.max_windows_per_work,
              PAPER_MAX_WINDOWS_PER_WORK),

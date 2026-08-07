@@ -142,13 +142,13 @@ class TestWindowing:
 
 
 class TestPaperConfigurationCertification:
-    """An artifact's name is a claim; the structure is the certification.
+    """An artifact's name is a claim; content and shape are the certification.
 
     Before the cross-family review of 2026-08-07 (finding F2), a file
     renamed to the paper's artifact name was stamped
     is_paper_configuration = true on that basis alone. These pin that the
-    structural facts decide it, and that a mismatch stops the run instead
-    of labelling the output as the paper's.
+    artifact's sha256 and the run's structural facts decide it, and that a
+    mismatch stops the run instead of labelling the output as the paper's.
     """
 
     def test_matching_structure_certifies(self):
@@ -164,7 +164,7 @@ class TestPaperConfigurationCertification:
                 ("shelf authors", 9, ft.PAPER_HUMAN_AUTHORS),
             ])
         message = str(excinfo.value)
-        assert "STRUCTURE DOES NOT" in message
+        assert "THE RUN DOES NOT" in message
         # The message must name what differed, on both sides.
         assert "shelf works: this run 35, paper run 78" in message
         assert "shelf authors: this run 9, paper run 15" in message
@@ -175,6 +175,61 @@ class TestPaperConfigurationCertification:
                 ("--seed", 1234, ft.PAPER_SEED),
             ])
         assert "--seed: this run 1234" in str(excinfo.value)
+
+    def test_wrong_content_hash_hard_fails(self):
+        with pytest.raises(SystemExit) as excinfo:
+            ft.assert_paper_configuration("author_space_v1_wave2.json", [
+                ("artifact sha256", "0" * 64, ft.PAPER_ARTIFACT_SHA256),
+            ])
+        assert "artifact sha256" in str(excinfo.value)
+
+    def test_local_hash_helper_matches_the_canonical_one(self):
+        """The local _sha256_of_file mirrors author_manifold's; pin that."""
+        from author_manifold.author_space import sha256_of_file
+        path = REPO_ROOT / "data/artifacts" / ft.PAPER_ARTIFACT
+        assert ft._sha256_of_file(path) == sha256_of_file(path)
+
+    def test_pinned_hash_is_the_hash_the_release_already_declares(self):
+        """Provenance: the sidecar's declaration, the constant, the bytes."""
+        import json
+        sidecar = json.loads(
+            (REPO_ROOT / "data/artifacts/lm_envelopes_wave2_3000w.json")
+            .read_text(encoding="utf-8"))
+        assert sidecar["meta"]["source_artifact"].endswith(ft.PAPER_ARTIFACT)
+        assert (sidecar["meta"]["source_artifact_sha256"]
+                == ft.PAPER_ARTIFACT_SHA256)
+        assert ft._sha256_of_file(
+            REPO_ROOT / "data/artifacts" / ft.PAPER_ARTIFACT
+        ) == ft.PAPER_ARTIFACT_SHA256
+
+    @pytest.mark.integration
+    def test_mutated_artifact_is_refused_before_any_text_is_read(
+            self, tmp_path):
+        """Right shelf, one MFW centroid changed: only content identity sees it.
+
+        Also pins that the refusal happens before load_human_works, which
+        would otherwise fail on the rights-encumbered texts instead.
+        """
+        import json
+        import subprocess
+        artifact = json.loads(
+            (REPO_ROOT / "data/artifacts" / ft.PAPER_ARTIFACT)
+            .read_text(encoding="utf-8"))
+        slug = sorted(artifact["authors"])[0]
+        artifact["authors"][slug]["mfw_centroid"][0] += 0.01
+        impostor = tmp_path / ft.PAPER_ARTIFACT
+        impostor.write_text(json.dumps(artifact), encoding="utf-8")
+
+        out_dir = tmp_path / "out"
+        proc = subprocess.run(
+            [sys.executable, str(REPO_ROOT / "tools/analyze_folk_tells.py"),
+             "--space-artifact", str(impostor), "--output-dir", str(out_dir)],
+            capture_output=True, text=True)
+        output = proc.stdout + proc.stderr
+        assert proc.returncode != 0, output
+        assert "THE RUN DOES NOT" in output
+        assert "artifact sha256" in output
+        assert not out_dir.exists() or not list(out_dir.iterdir())
 
     def test_pinned_expectations_match_the_committed_evidence(self):
         """The constants are transcribed from the recorded run; check that."""

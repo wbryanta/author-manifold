@@ -25,6 +25,13 @@ Operationalization:
 If attribution stays high across the whole observed topic-similarity range
 (and the correlations are weak), MFW identity is not riding topic.
 
+Paper-configuration labelling: output carries ``is_paper_configuration``,
+which identifies the ARTIFACT by content hash (sha256, pinned below) and
+the RUN by its structural parameters (shelf size, distance variant,
+``--content-n``, ``--min-works``, and the probe's own author/work counts).
+It does not authenticate the corpus texts the artifact was built from: it
+is a misconfiguration guard, not a tamper-evidence system.
+
 Usage:
     python3 tools/cross_topic_probe.py \
         --artifact data/artifacts/author_space_v1_wave2.json \
@@ -67,6 +74,7 @@ from author_manifold.author_space import (
     MFWBlock,
     STYLOMETRIC_FUNCTION_WORDS,
     mfw_tokenize,
+    sha256_of_file,
 )
 
 logger = logging.getLogger("cross_topic_probe")
@@ -84,10 +92,27 @@ PAPER_RESULT = "reports/validation/author_space/topic_controls/cross_topic_probe
 # A filename is not an identity. A file from a different shelf, renamed to
 # the one above, would previously have been certified as the paper's
 # configuration and its output stamped is_paper_configuration = true. So the
-# name is treated as a claim, and these structural facts -- pinned from the
-# committed evidence at PAPER_RESULT and its sibling JSON -- are what
-# certify it. Any mismatch is a hard failure, not a banner: a run that
-# cannot be identified as the paper's must not be labelled as the paper's.
+# name is treated as a claim, and the facts below are what certify it: the
+# artifact's CONTENT, by sha256, plus the shape and parameters of the run.
+# Any mismatch is a hard failure, not a banner -- a run that cannot be
+# identified as the paper's must not be labelled as the paper's.
+#
+# SCOPE. This certifies the artifact by content hash and the run by its
+# structural parameters. It does NOT authenticate the corpus texts those
+# numbers were derived from: it is a misconfiguration guard, not a
+# tamper-evidence system.
+#
+# The hash is the one this repository already records for the shipped
+# artifact -- data/artifacts/lm_envelopes_wave2_3000w.json declares it as
+# meta.source_artifact_sha256 for meta.source_artifact
+# "data/artifacts/author_space_v1_wave2.json", and four committed evidence
+# files carry the same value (results2/entry_results.json,
+# results2/cross_target_matrix.json, results2/completion_results.json,
+# wave2/e8_results.json). tools/validate_lm_envelopes.py asserts that
+# declaration against the file it names, so this constant is pinned to a
+# value the release already verifies rather than to a fresh measurement.
+PAPER_ARTIFACT_SHA256 = (
+    "e1907b2a287dff21075c82555eac3f152d5c5bc546bf1960fc3a4d67b8f8e338")
 PAPER_SHELF_AUTHORS = 15          # the wave-2 shelf as built
 PAPER_SHELF_WORKS = 78
 PAPER_DISTANCE_VARIANT = "mfw_delta"
@@ -140,7 +165,7 @@ WRONG_CONFIG_BANNER = (
 
 STRUCTURE_MISMATCH_BANNER = (
     _RULE + "\n"
-    "  ARTIFACT NAME MATCHES THE PAPER'S; STRUCTURE DOES NOT\n"
+    "  ARTIFACT NAME MATCHES THE PAPER'S; THE RUN DOES NOT\n"
     + _RULE + "\n"
     "  Artifact: {artifact}\n"
     "\n"
@@ -155,6 +180,11 @@ STRUCTURE_MISMATCH_BANNER = (
     "  configuration (the paper's run is at {result}), or run this probe\n"
     "  under a different artifact filename, where the output is honestly\n"
     "  labelled as a different configuration.\n"
+    "\n"
+    "  Scope: is_paper_configuration identifies the ARTIFACT by content\n"
+    "  hash and the RUN by its structural parameters. It does not\n"
+    "  authenticate the corpus texts behind the artifact -- this is a\n"
+    "  misconfiguration guard, not a tamper-evidence system.\n"
     + _RULE
 )
 
@@ -530,8 +560,12 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     space = AuthorRelativeSpace.from_artifact(artifact)
     if is_paper_config:
-        # The shelf and the run parameters, before anything is computed.
+        # Content first: the hash settles identity, and the shape checks
+        # below say *how* a non-matching file differs, which a hash alone
+        # cannot. Both are reported together.
         assert_paper_configuration(artifact.name, [
+            ("artifact sha256", sha256_of_file(artifact),
+             PAPER_ARTIFACT_SHA256),
             ("shelf authors", space.meta.get("n_authors"),
              PAPER_SHELF_AUTHORS),
             ("shelf works", space.meta.get("n_works"), PAPER_SHELF_WORKS),
