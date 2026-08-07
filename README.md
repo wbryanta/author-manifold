@@ -95,7 +95,21 @@ produced two significant-looking headline results (p = 0.011 / p = 0.021)
 construct-validity failures, and **both claims were retracted before any
 external reader saw them**. Four headline claims retracted and corrected
 across three cycles; each cycle's findings are owned by the pipeline
-(`reports/validation/author_space/results2/`), not hand-patched.
+(`reports/validation/author_space/results2/`), not hand-patched. Cycle map,
+dispositions, and reviewer provenance: `docs/redteam/README.md`.
+
+**Evidence a skeptic would ask for, computed here first.** A forensic
+code-and-data review (2026-08-06, seven independent reviewer lanes plus a
+cross-family gate) ran the analyses an adversarial reader would run, and they
+are published whichever way they fell:
+
+| Question | File |
+|---|---|
+| Do the results hold if you remove *every* sample with a verbatim echo, not just the 4 above the disclosed threshold? | `results2/echo_robustness_13.md` — yes: every rate within its published interval, sign test unchanged |
+| Is there *near*-verbatim leakage that exact matching would miss? | `results2/near_copy_scan.md` — no: zero spans at ≥40 tokens/80% identity, on a scan validated by a planted positive |
+| Would a different subset of the folk tells beat the reported coin flip? | `results2/folk_tells_sensitivity.md` — yes, and the best a-priori subset (0.73) is now disclosed in the paper; the full-list result is the honest test of the folk claim |
+| Do any styled samples refuse the styling instruction? | `results2/declined_styling_disclosure.md` — 13 of 236 do, and they enter at 61.5% vs 28.7%; no published number moves |
+| Was anything published that turned out to be wrong? | `ERRATA.md` |
 
 ## This is NOT an AI detector
 
