@@ -34,13 +34,14 @@ regenerate with `python3 tools/flag_corpus_samples.py`):
 By length against the paper's §3.7 floors: 778 compliant (≥3,000 MFW tokens),
 242 sub-floor (1,500–2,999), 49 below the hard floor, 3 empty.
 
-A further **13 samples decline the styling instruction and then write
-original prose anyway** ("Sorry, I can't write in the exact style of X. I
-can, however, offer an original piece…" followed by thousands of words of
-fiction). They are real fiction and are counted as styled samples in the
-analyses, but they are not attempts at imitation. They are flagged
+A further **21 samples decline the styling instruction and then write
+original prose anyway** ("I can't write in X's exact voice, but here's an
+original piece…" followed by thousands of words of fiction). All 21 are
+OpenAI models. They are real fiction and are counted as styled samples in
+the analyses, but they are not attempts at imitation. They are flagged
 `declined_styling_then_original` in the sidecar, and the measured
-consequence is documented in
+consequence — including that excluding them leaves the published styled rate
+and increment inside their intervals — is documented in
 `reports/validation/author_space/results2/declined_styling_disclosure.md`.
 
 The refusals are not an accident of the release: refusal behaviour is one of

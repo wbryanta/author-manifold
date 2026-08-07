@@ -55,6 +55,14 @@ Two orthogonal flags per sample.
 ``usable_as_fiction`` is the conjunction a reader most often wants: not a
 refusal, and not empty.
 
+Tokenization note (for maintainers): this tool strips leading ``#`` lines
+before tokenizing, matching the featurization path, whereas
+``rerun_entry_analysis.load_corpus`` tokenizes the raw file. The difference
+is at most 5 tokens (a markdown title line) and **zero** samples fall on
+different sides of the 0 / 1,500 / 3,000-token boundaries under the two
+conventions, so the strata are identical either way. Verified 2026-08-06;
+noted so the discrepancy does not have to be rediscovered.
+
 Usage:
     python3 tools/flag_corpus_samples.py                      # write sidecar
     python3 tools/flag_corpus_samples.py --check              # verify only
@@ -97,6 +105,11 @@ REFUSAL_WINDOW = 600          # characters inspected at the head of the file
 REFUSAL_PATTERNS: List[str] = [
     r"\bsorry[,—\-\s]*(?:but\s+)?i\s+can(?:'|’)?t\b",
     r"\bi\s+can(?:'|’)?t\s+(?:continue|help\s+with|reproduce|provide|write\s+that)\b",
+    # "I can't write in X's exact voice/style, but here's an original piece..."
+    # -- a declination with no "Sorry" in front of it. The first two patterns
+    # both require either "sorry" or a specific verb object, so these were
+    # missed on the first pass (forensic review follow-up, 2026-08-06).
+    r"\bi\s+can(?:'|’)?t\s+write\s+in\b",
     r"\bi\s+(?:am|'m|’m)\s+(?:unable|not\s+able)\s+to\b",
     r"\bi\s+won(?:'|’)?t\s+(?:continue|reproduce)\b",
     r"\bi\s+cannot\s+(?:continue|help\s+with|reproduce|provide)\b",

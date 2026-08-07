@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-07T03:34:55.100172+00:00",
+  "generated": "2026-08-07T04:02:37.444962+00:00",
   "versions": {
    "python": "3.14.6",
    "numpy": "2.5.1",
@@ -11,12 +11,12 @@
   "tool": "tools/flag_corpus_samples.py",
   "purpose": "Sidecar flags for data/ai-longform/. Marks which manifest records are refusal messages rather than fiction, and which fall below the paper's measurement floors. Does NOT modify manifest.jsonl, which is the frozen generation record every published number was computed against.",
   "added": "2026-08-06 (forensic code and data review, finding D-3)",
-  "rule_refusal_class": "Regex match for assistant-register declination in the first 600 characters of the body; if matched, split by whether the sample still reaches the 1500-token hard floor (declined_styling_then_original) or not (refusal_only). Patterns: \\bsorry[,\u2014\\-\\s]*(?:but\\s+)?i\\s+can(?:'|\u2019)?t\\b | \\bi\\s+can(?:'|\u2019)?t\\s+(?:continue|help\\s+with|reproduce|provide|write\\s+that)\\b | \\bi\\s+(?:am|'m|\u2019m)\\s+(?:unable|not\\s+able)\\s+to\\b | \\bi\\s+won(?:'|\u2019)?t\\s+(?:continue|reproduce)\\b | \\bi\\s+cannot\\s+(?:continue|help\\s+with|reproduce|provide)\\b",
+  "rule_refusal_class": "Regex match for assistant-register declination in the first 600 characters of the body; if matched, split by whether the sample still reaches the 1500-token hard floor (declined_styling_then_original) or not (refusal_only). Patterns: \\bsorry[,\u2014\\-\\s]*(?:but\\s+)?i\\s+can(?:'|\u2019)?t\\b | \\bi\\s+can(?:'|\u2019)?t\\s+(?:continue|help\\s+with|reproduce|provide|write\\s+that)\\b | \\bi\\s+can(?:'|\u2019)?t\\s+write\\s+in\\b | \\bi\\s+(?:am|'m|\u2019m)\\s+(?:unable|not\\s+able)\\s+to\\b | \\bi\\s+won(?:'|\u2019)?t\\s+(?:continue|reproduce)\\b | \\bi\\s+cannot\\s+(?:continue|help\\s+with|reproduce|provide)\\b",
   "rule_length_class": "MFW token count against the paper's \u00a73.7 floors: empty = 0; below_hard_floor < 1500 (excluded from every claim); sub_floor 1500-2999 (reported separately); compliant >= 3000 (primary stratum). Tokenizer: mfw_tokenize (lowercase_regex_v1), the same one used for every measurement in the paper.",
   "n_records": 1072,
   "refusal_class_counts": {
-   "declined_styling_then_original": 13,
-   "none": 1027,
+   "declined_styling_then_original": 21,
+   "none": 1019,
    "refusal_only": 32
   },
   "n_usable_as_fiction": 1037,
@@ -75,7 +75,7 @@
    "gpt-5": {
     "n": 134,
     "refusal_only": 20,
-    "declined_styling_then_original": 3,
+    "declined_styling_then_original": 9,
     "empty": 0,
     "below_hard_floor": 20,
     "sub_floor": 0,
@@ -84,7 +84,7 @@
    "gpt-5-mini": {
     "n": 134,
     "refusal_only": 12,
-    "declined_styling_then_original": 10,
+    "declined_styling_then_original": 12,
     "empty": 0,
     "below_hard_floor": 12,
     "sub_floor": 0,
@@ -7508,7 +7508,7 @@
    "mfw_tokens": 5222,
    "word_count_manifest": 5182,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -7858,7 +7858,7 @@
    "mfw_tokens": 5259,
    "word_count_manifest": 5196,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -8398,7 +8398,7 @@
    "mfw_tokens": 8232,
    "word_count_manifest": 8088,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -8508,7 +8508,7 @@
    "mfw_tokens": 8776,
    "word_count_manifest": 8613,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -8738,7 +8738,7 @@
    "mfw_tokens": 6564,
    "word_count_manifest": 6523,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -8948,7 +8948,7 @@
    "mfw_tokens": 7216,
    "word_count_manifest": 7187,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -9178,7 +9178,7 @@
    "mfw_tokens": 8509,
    "word_count_manifest": 8422,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },
@@ -9328,7 +9328,7 @@
    "mfw_tokens": 7537,
    "word_count_manifest": 7484,
    "stop_reason": "completed",
-   "refusal_class": "none",
+   "refusal_class": "declined_styling_then_original",
    "length_class": "compliant",
    "usable_as_fiction": true
   },

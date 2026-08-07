@@ -108,7 +108,7 @@ are published whichever way they fell:
 | Do the results hold if you remove *every* sample with a verbatim echo, not just the 4 above the disclosed threshold? | `results2/echo_robustness_13.md` — yes: every rate within its published interval, sign test unchanged |
 | Is there *near*-verbatim leakage that exact matching would miss? | `results2/near_copy_scan.md` — no: zero spans at ≥40 tokens/80% identity, on a scan validated by a planted positive |
 | Would a different subset of the folk tells beat the reported coin flip? | `results2/folk_tells_sensitivity.md` — yes, and the best a-priori subset (0.73) is now disclosed in the paper; the full-list result is the honest test of the folk claim |
-| Do any styled samples refuse the styling instruction? | `results2/declined_styling_disclosure.md` — 13 of 236 do, and they enter at 61.5% vs 28.7%; no published number moves |
+| Do any styled samples refuse the styling instruction? | `results2/declined_styling_disclosure.md` — 21 of 236 do (all OpenAI models). Excluding them leaves the styled rate and the increment inside their published intervals; the raw entry gap does not survive matching on model and target (stratified p = 0.32) |
 | Was anything published that turned out to be wrong? | `ERRATA.md` |
 
 ## This is NOT an AI detector
@@ -292,13 +292,23 @@ python3 tools/analyze_style_transfer_dimensions.py \
 
 **Provenance note on the R3 baselines (forensic review 2026-08-06).** The
 recorded `results2/r3_floor_compliant.json` meta names
-`data/tmp/r3_baselines` as its `baselines_dir` — that was the original
-run's private working directory, not a shipped path. Re-running the
-command above against the **shipped** `data/ai_baselines/` reproduces the
-recorded artifact exactly: a full recursive JSON comparison at zero
-tolerance found differences only in `meta.generated` and the three
-`meta.*` path strings, with every numeric value identical (verified
-2026-08-06). No unshipped input is required.
+`data/tmp/r3_baselines` as its `baselines_dir` — the original run's private
+working directory, not a shipped path. That is not a reproducibility gap but
+a **positive provenance result**: re-running the command above against the
+**shipped** `data/ai_baselines/` reproduces the artifact that was built from
+the unshipped `data/tmp/r3_baselines` **digit-for-digit**, so the two
+baseline sets are demonstrably the same inputs. A full recursive JSON
+comparison at zero tolerance differs in exactly five fields, all of them
+metadata, with every numeric value identical:
+
+- `meta.generated` — the run timestamp
+- `meta.artifact`, `meta.manifest`, `meta.baselines_dir` — path strings
+- `meta.versions` — present only in the rerun, because interpreter/library
+  version stamping was added on 2026-08-06 and postdates the recorded
+  2026-06-11 artifact
+
+No unshipped input is required to regenerate the paper's primary §5.5
+artifact.
 
 ### Regenerating the paper figures (F1-F8)
 
