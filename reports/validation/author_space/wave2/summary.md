@@ -43,7 +43,7 @@ Pooled AUC: 0.941 (within n=78, median 0.579; between n=1092, median 0.956)
 
 ## E2 — Leave-one-work-out attribution
 
-Top-1: 96.2%, top-3: 96.2% over 78 held-out works, 15 candidate authors. C_llr 1.826 (min 0.732; descriptive only). Sanity check (cosine on raw vectors, not a gate): top-1 n/a.
+Top-1: 96.2%, top-3: 96.2% over 78 held-out works, 15 candidate authors. Release note (2026-08-06): the C_llr line previously printed here was removed — the implementation was not a valid C_llr and its values were not interpretable; see ERRATA.md. Sanity check (cosine on raw vectors, not a gate): top-1 n/a.
 
 Confusion matrix (rows = true author, columns = predicted, by index):
 

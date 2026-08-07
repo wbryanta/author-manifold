@@ -15,8 +15,8 @@ Experiments:
     E2  Leave-one-work-out attribution. Each work attributed by nearest
         centroid (own author's centroid rebuilt without the held-out work).
         Gate: top-1 accuracy >= 70% AND top-3 accuracy >= 85%.
-        Also reports C_llr (descriptive) and a cosine-similarity-on-raw-
-        vectors sanity check (NOT a gate).
+        Also reports a cosine-similarity-on-raw-vectors sanity check
+        (NOT a gate).
     E3  Per-dimension discriminative validity at work level. One-way ANOVA
         F / eta-squared per dimension vs a seeded permutation null (1000
         label shuffles, per-dimension null p99), plus an ICC(1)-like ratio.
@@ -62,8 +62,9 @@ Usage:
         --manifest data/pd_manifest.yaml \
         --distance-variant all
 
-Metric reuse: C_llr and ROC AUC come from
-author_manifold.attribution_metrics.
+Metric reuse: ROC AUC comes from author_manifold.attribution_metrics.
+(A C_llr helper was reported here until 2026-08-06; it was not a valid
+C_llr and was removed -- see ERRATA.md E-1.)
 """
 
 import sys
@@ -91,7 +92,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
-from author_manifold.attribution_metrics import compute_c_llr, compute_roc_auc
+from author_manifold.attribution_metrics import compute_roc_auc
 from author_manifold.author_space import (
     AuthorRelativeSpace,
     DIMENSION_SET_V1,
@@ -409,14 +410,6 @@ def run_e1(
 # E2 — Leave-one-work-out attribution
 # =============================================================================
 
-def _softmin_posteriors(distances: Sequence[float]) -> np.ndarray:
-    """Posterior-like scores from distances: softmax(-d) over candidates."""
-    z = -np.asarray(distances, dtype=float)
-    z -= z.max()
-    exp = np.exp(z)
-    return exp / exp.sum()
-
-
 def run_e2(
     space: AuthorRelativeSpace, spec: Optional[VariantSpec] = None
 ) -> Dict[str, Any]:
@@ -432,9 +425,6 @@ def run_e2(
     UNNORMALIZED raw vectors (shelf-mean-imputed) against the same LOO
     centroids. This is deliberately a different geometry; agreement indicates
     the primary result is not an artifact of the pooled normalization.
-
-    C_llr is descriptive only: distances are converted to posterior-like
-    scores via softmax(-d), target = true author's posterior per trial.
     """
     spec = spec or _spec_from_space(space)
     slugs, vec_by = _author_arrays(space)
@@ -458,8 +448,6 @@ def run_e2(
 
     confusion: Dict[str, Dict[str, int]] = {s: {} for s in slugs}
     per_author: Dict[str, Dict[str, Any]] = {}
-    target_scores: List[float] = []
-    non_target_scores: List[float] = []
     n_trials = n_top1 = n_top3 = n_sanity_top1 = 0
     skipped_authors: List[str] = []
 
@@ -502,13 +490,6 @@ def run_e2(
                 a_top3 += 1
             confusion[slug][predicted] = confusion[slug].get(predicted, 0) + 1
 
-            posteriors = _softmin_posteriors(distances)
-            for j, other in enumerate(slugs):
-                if other == slug:
-                    target_scores.append(float(posteriors[j]))
-                else:
-                    non_target_scores.append(float(posteriors[j]))
-
             # Sanity method: cosine on raw vectors, same LOO protocol
             # (d18 variant only — it cross-checks the pooled normalization).
             if run_sanity:
@@ -532,7 +513,6 @@ def run_e2(
 
     top1 = n_top1 / n_trials if n_trials else 0.0
     top3 = n_top3 / n_trials if n_trials else 0.0
-    c_llr, c_llr_min = compute_c_llr(target_scores, non_target_scores)
 
     if run_sanity:
         sanity_check: Dict[str, Any] = {
@@ -563,11 +543,6 @@ def run_e2(
         "skipped_authors": skipped_authors,
         "per_author": per_author,
         "confusion_matrix": confusion,
-        "c_llr": {
-            "value": c_llr,
-            "min": c_llr_min,
-            "note": "Descriptive only (softmax(-distance) posteriors); not a gate.",
-        },
         "sanity_check": sanity_check,
     }
 
@@ -1258,8 +1233,6 @@ def build_summary_markdown(
             f"top-3: {_fmt(e2['criteria']['top3_accuracy']['observed'], '.1%')} "
             f"over {e2['n_trials']} held-out works, "
             f"{e2['n_candidate_authors']} candidate authors. "
-            f"C_llr {_fmt(e2['c_llr']['value'])} "
-            f"(min {_fmt(e2['c_llr']['min'])}; descriptive only). "
             f"Sanity check (cosine on raw vectors, not a gate): top-1 "
             f"{_fmt(e2['sanity_check']['top1_accuracy'], '.1%')}.",
             "",

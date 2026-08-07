@@ -251,7 +251,7 @@ src/author_manifold/        The instrument: AuthorRelativeSpace (calibration,
                             (LengthMatchedEnvelopes / AuthorLMEnvelope,
                             work-level LOO + E8 held-out entry), cluster-
                             robust inference (ICC / design effect),
-                            attribution metrics (C_llr, ROC AUC)
+                            attribution metrics (ROC AUC)
 tools/                      CLI: build/validate the space, LM envelope
                             construction + E8 (validate_lm_envelopes),
                             the Results 2.0 re-analysis

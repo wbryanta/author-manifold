@@ -150,8 +150,11 @@ def test_e2_top1_high_on_separated_authors(space):
     # Confusion diagonal dominates.
     for slug, row in result["confusion_matrix"].items():
         assert row.get(slug, 0) >= 5, (slug, row)
-    # C_llr is reported and better than a random system (= 1.0).
-    assert 0.0 <= result["c_llr"]["value"] < 1.0
+    # The former "C_llr" block is gone: the implementation was not a valid
+    # C_llr (perfect system scored 0.5, non-informative 1.29) and every
+    # published shelf value violated the bound this test used to assert.
+    # Removed 2026-08-06 -- see ERRATA.md E-1.
+    assert "c_llr" not in result
     # Sanity method reported and clearly labeled as not a gate.
     assert "NOT a gate" in result["sanity_check"]["note"]
     assert 0.0 <= result["sanity_check"]["top1_accuracy"] <= 1.0
