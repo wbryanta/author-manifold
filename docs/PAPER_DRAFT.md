@@ -485,7 +485,7 @@ Authorship of stimuli, disclosed: the scenarios, base instruction, style prompts
 5. **completion** — the model receives the opening ~600 words of one of the target author's own novels and is asked to continue it for ~3,500 words; only the continuation is scored. **The completion prompt does not name the author**: the condition is text-only conditioning, so the §5.4 contrast with style prompting is name-only versus text-only. This is the contrast literature's actual success mechanism [@jemama2025]: the model's continuation locally inherits the author's function-word stream. 8 models × 4 targets × 5 samples were requested (160 generations; one zero-length qwen3.6 output is counted as refused/partial, §4.3; per-model compliance and refusals in §5.4).
 
 **Rights-conscious exemplar and completion design:** the in-context excerpts and openings are copyrighted author text from locally held files, transmitted to model APIs solely for single-user research generation. They are never stored in the corpus output or manifest; the manifest records only work titles, body offsets, and excerpt positions, so the conditions are reproducible from a local copy of the shelf without redistributing any author text.
-<!-- evidence: backend/pipeline/tools/generate_ai_longform_corpus.py (header, RIGHTS NOTE, SCENARIOS, STYLE_TARGETS); reports/validation/author_space/results2/completion_results.md -->
+<!-- evidence: tools/generate_ai_longform_corpus.py (header, RIGHTS NOTE, SCENARIOS, STYLE_TARGETS) — the parent project's backend/pipeline/tools/ path in earlier drafts; reports/validation/author_space/results2/completion_results.md -->
 
 ### 4.2 Models and configuration
 
