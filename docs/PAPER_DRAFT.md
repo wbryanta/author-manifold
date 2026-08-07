@@ -7,6 +7,18 @@
 
 **Preprint.** This version is released under a **CC BY 4.0** license. Targeting CHR 2027 (Computational Humanities Research).
 
+> **Release note (2026-08-06) — edition of this file.** This markdown is the
+> **v0.5.4** edition of the paper source, kept in the repository for
+> diffability (it is the form in which the text is edited and reviewed, so
+> version-to-version changes are readable here). The **current preprint is
+> v0.5.5**: `docs/paper/width_of_a_voice_preprint_v0.5.5.pdf`, concept DOI
+> [10.5281/zenodo.21210010](https://doi.org/10.5281/zenodo.21210010)
+> (v0.5.5 version DOI 10.5281/zenodo.21562806). Where this markdown and the
+> v0.5.5 PDF differ, **the PDF is authoritative**. v0.5.5 (2026-07-24) was a
+> citation-and-reference audit plus three wording precision tightenings and
+> one related-work addition (Chakrabarty & Dhillon, CHI 2026, §2.3); no
+> numbers or findings changed between v0.5.4 and v0.5.5.
+
 **Draft v0.5.4 — 2026-07-10.** Cross-target entry matrix added — the §8.12 discriminant-validity control, run on this paper's own styled corpus at the entry level; verdict: the §5.2 increment is substantially target-specific (§5.2 pointer, §8.12 resolution with its qualifications stated in full, one abstract clause). Related-work additions: StoryScope and Frankentexts (§2.2), POLARIS (§2.5), and a verification-lineage positioning paragraph (§2.4). Incidental-echo disclosure promoted into the paper (§8.14) with its echo-excluded robustness check. §5.8 checklist-vs-stylometry scope guard. Figure F8 draws the §5.8 folk-tells result from the frozen evidence. All previously frozen numbers unchanged; the only new numbers are the cross-target matrix analysis and the echo robustness check.
 
 **Evidence files:** entry, completion, and width numbers trace to `reports/validation/author_space/results2/` — `controls_results.md`, `r3_floor_compliant.md`, `e8_yardstick.md`, `entry_report.md`, `entry_results.json`, `completion_results.md` (2026-06-11), `cross_target_matrix.md`/`.json`, and `echo_robustness.md` (2026-07-10) — and `wave2/e8_results.md`; instrument-validation numbers remain locked to Number Freeze v2 (`wave2/PRIMARY_ARTIFACT.md`); review reports and the remediation plan are committed at `redteam_stats_attack_v03.md`, `redteam_claims_attack_v03.md`, and `RED_TEAM_SYNTHESIS.md`.

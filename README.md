@@ -3,9 +3,12 @@
 **An author-relative measurement space for stylometric placement** — the
 instrument, validation harness, corpora, and recorded results behind
 **"The Width of a Voice: Placing Machine Imitation Inside Authors' Own
-Variation"** (Will Bryant, preprint v0.5.4 — PDF at
-[`docs/paper/`](docs/paper/), DOI: [10.5281/zenodo.21302872](https://doi.org/10.5281/zenodo.21302872); targeting
-CHR 2027).
+Variation"** (Will Bryant, preprint v0.5.5 — PDF at
+[`docs/paper/`](docs/paper/), concept DOI:
+[10.5281/zenodo.21210010](https://doi.org/10.5281/zenodo.21210010) —
+resolves to the latest version; the v0.5.5 version DOI is
+[10.5281/zenodo.21562806](https://doi.org/10.5281/zenodo.21562806);
+targeting CHR 2027).
 
 Instead of measuring "voice distance" from a single privileged origin, the
 instrument calibrates on shelves of known authors measured **relative to
@@ -253,9 +256,11 @@ reports/                    Recorded validation results (aggregates) +
                             interactive HTML report; reports/validation/
                             results2/ is the Results 2.0 (v0.4) evidence
                             set behind every headline number
-docs/paper/                 The preprint PDF (v0.5.4, CC BY 4.0)
-docs/PAPER_DRAFT.md         The paper source (markdown, v0.5.4, figures
-                            placed) + docs/references.bib
+docs/paper/                 The preprint PDFs (v0.5.5 current, v0.5.4 kept
+                            for the record; CC BY 4.0)
+docs/PAPER_DRAFT.md         The paper source (markdown, v0.5.4 edition kept
+                            for diffability; the v0.5.5 PDF is current) +
+                            docs/references.bib
 docs/figures/               Print figures F1-F8 (PDF + 600-dpi PNG) with
                             generated captions
 docs/redteam/               All three adversarial-review cycles + synthesis
@@ -305,8 +310,11 @@ See `DATA_LICENSES.md` for details.
   title  = {The Width of a Voice: Placing Machine Imitation Inside
             Authors' Own Variation},
   year   = {2026},
-  doi    = {10.5281/zenodo.21302872},
-  note   = {Preprint v0.5.4; targeting CHR 2027},
+  doi    = {10.5281/zenodo.21210010},
+  note   = {Preprint v0.5.5; targeting CHR 2027. The DOI above is the
+            Zenodo concept DOI and always resolves to the latest
+            version; to pin v0.5.5 specifically, cite
+            10.5281/zenodo.21562806},
   url    = {https://github.com/wbryanta/author-manifold}
 }
 ```
